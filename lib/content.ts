@@ -160,3 +160,36 @@ export const contactInterests = [
   "An integrated campaign",
   "Not sure yet",
 ];
+
+/** Contact form shape. */
+export interface ContactFormData {
+  name: string;
+  email: string;
+  company: string;
+  service: string;
+  message: string;
+}
+
+export const contactInitialData: ContactFormData = {
+  name: "",
+  email: "",
+  company: "",
+  service: contactInterests[0],
+  message: "",
+};
+
+/**
+ * Maps internal form keys to the field names delivered to the FormBold
+ * dashboard / notification email — adjust here without touching the JSX.
+ * (Same pattern as onehub's `formBoldFieldNames`.)
+ */
+export const formBoldFieldNames = {
+  name: "name",
+  email: "email",
+  company: "company",
+  service: "interest",
+  message: "message",
+} as const satisfies Record<keyof ContactFormData, string>;
+
+export const contactSuccessMessage =
+  "Your message has been sent. We'll be in touch shortly to schedule your chat.";
