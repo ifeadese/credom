@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-paper text-body font-body antialiased;
+  }
+
+  ::selection {
+    background: #d89a2e;
+    color: #201d1b;
+  }
+
+  /* Visible, accessible focus states for keyboard users */
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible {
+    outline: 2px solid #d89a2e;
+    outline-offset: 2px;
+  }
+}
