@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<template id="__bundler_thumbnail">
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+<rect width="100" height="100" fill="#201D1B"/>
+<text x="50" y="46" font-family="Georgia, serif" font-weight="700" font-size="15" fill="#FAF7F2" text-anchor="middle">CRED</text>
+<circle cx="50" cy="58" r="6" fill="#D89A2E"/>
+<rect x="43" y="66" width="14" height="3" rx="1.5" fill="#D89A2E"/>
+</svg>
+</template>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rokkitt:wght@400;500;600;700;800;900&family=Mulish:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body { font-family: 'Mulish', system-ui, sans-serif; background: #FAF7F2; color: #35302B; -webkit-font-smoothing: antialiased; }
+  a { text-decoration: none; color: inherit; }
+  input, textarea, select, button { font-family: inherit; }
+  ::selection { background: #D89A2E; color: #201D1B; }
+  @keyframes credFade { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+</style>
+</helmet>
+<div style="min-height:100vh; display:flex; flex-direction:column; background:#FAF7F2; overflow-x:hidden;">
+
+  <!-- ============ NAV ============ -->
+  <nav style="position:sticky; top:0; z-index:50; background:rgba(250,247,242,0.9); backdrop-filter:blur(10px); border-bottom:1px solid #E4DDD2;">
+    <div style="max-width:1240px; margin:0 auto; padding:18px 40px; display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap;">
+      <a href="#" onClick="{{ goHome }}" style="display:inline-flex; align-items:center; font-family:'Mulish'; font-weight:800; font-size:23px; letter-spacing:0.04em; color:#201D1B;">
+        CRED<span style="display:inline-flex; flex-direction:column; align-items:center; margin:0 2px;"><span style="width:15px;height:15px;border-radius:50%;background:#D89A2E;"></span><span style="width:17px;height:3px;background:#D89A2E;margin-top:2px;border-radius:2px;"></span></span>M
+      </a>
+      <div style="display:flex; align-items:center; gap:34px; flex-wrap:wrap;">
+        <a href="#" onClick="{{ goHome }}" style="font-size:14px; font-weight:600; letter-spacing:0.04em; color:#201D1B; padding:6px 0; border-bottom:2px solid transparent; position:relative;">Home<sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}"><span style="position:absolute; left:0; right:0; bottom:-2px; height:2px; background:#D89A2E;"></span></sc-if></a>
+        <a href="#" onClick="{{ goAbout }}" style="font-size:14px; font-weight:600; letter-spacing:0.04em; color:#201D1B; padding:6px 0; position:relative;">About<sc-if value="{{ isAbout }}" hint-placeholder-val="{{ true }}"><span style="position:absolute; left:0; right:0; bottom:-2px; height:2px; background:#D89A2E;"></span></sc-if></a>
+        <a href="#" onClick="{{ goServices }}" style="font-size:14px; font-weight:600; letter-spacing:0.04em; color:#201D1B; padding:6px 0; position:relative;">Services<sc-if value="{{ isServices }}" hint-placeholder-val="{{ true }}"><span style="position:absolute; left:0; right:0; bottom:-2px; height:2px; background:#D89A2E;"></span></sc-if></a>
+        <a href="#" onClick="{{ goContact }}" style="font-size:14px; font-weight:600; letter-spacing:0.04em; color:#201D1B; padding:6px 0; position:relative;">Contact<sc-if value="{{ isContact }}" hint-placeholder-val="{{ true }}"><span style="position:absolute; left:0; right:0; bottom:-2px; height:2px; background:#D89A2E;"></span></sc-if></a>
+        <a href="#" onClick="{{ goContact }}" style="font-size:14px; font-weight:700; letter-spacing:0.02em; color:#201D1B; background:#D89A2E; padding:11px 22px; border-radius:2px;">Schedule a Chat</a>
+      </div>
+    </div>
+  </nav>
+
+  <main style="flex:1;">
+
+    <!-- ==================== HOME ==================== -->
+    <sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
+    <div>
+
+      <!-- HERO -->
+      <section style="position:relative; background:#201D1B; color:#FAF7F2; overflow:hidden;">
+        <div style="position:absolute; inset:0; background:linear-gradient(105deg,#201D1B 0%,#201D1B 42%,#2E2A25 100%); opacity:1;"></div>
+        <div style="position:absolute; top:0; right:0; width:44%; height:100%; background:#2A2621; display:flex; align-items:center; justify-content:center; border-left:1px solid #3A342E;">
+          <span style="font-family:'Mulish'; font-size:12px; letter-spacing:0.22em; text-transform:uppercase; color:#6B625A;">Hero Image</span>
+        </div>
+        <div style="position:relative; max-width:1240px; margin:0 auto; padding:clamp(80px,12vw,150px) 40px clamp(80px,11vw,140px);">
+          <div style="max-width:760px;">
+            <span style="display:inline-block; font-size:13px; font-weight:700; letter-spacing:0.24em; text-transform:uppercase; color:#D89A2E; margin-bottom:26px;">Integrated Brand Experience Agency</span>
+            <h1 style="font-family:'Rokkitt'; font-weight:800; font-size:clamp(52px,8.5vw,110px); line-height:0.92; letter-spacing:-0.01em; margin:0 0 24px; color:#FAF7F2;">Attention<br>Is Earned.</h1>
+            <p style="font-family:'Rokkitt'; font-weight:600; font-size:clamp(22px,3vw,32px); color:#D89A2E; margin:0 0 28px;">Experience Makes It Last.</p>
+            <p style="font-size:18px; line-height:1.7; color:#C9C0B6; max-width:560px; margin:0 0 40px;">CREDOM transforms ideas into immersive activations, strategic experiences, and memorable brand moments designed to capture attention and leave lasting impact.</p>
+            <div style="display:flex; gap:16px; flex-wrap:wrap;">
+              <a href="#" onClick="{{ goContact }}" style="font-size:15px; font-weight:700; color:#201D1B; background:#D89A2E; padding:16px 34px; border-radius:2px;">Schedule a Chat</a>
+              <a href="#" onClick="{{ goServices }}" style="font-size:15px; font-weight:700; color:#FAF7F2; border:1px solid #4A443D; padding:16px 34px; border-radius:2px;">Explore Services</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- STATEMENT -->
+      <section style="max-width:1240px; margin:0 auto; padding:clamp(80px,10vw,130px) 40px;">
+        <p style="font-family:'Rokkitt'; font-weight:600; font-size:clamp(30px,4.6vw,58px); line-height:1.12; letter-spacing:-0.01em; color:#201D1B; max-width:1000px; margin:0;">We create moments people don't just attend; <span style="color:#D89A2E;">they remember.</span></p>
+      </section>
+
+      <!-- SERVICES PREVIEW -->
+      <section style="background:#F0EBE3; padding:clamp(80px,10vw,120px) 0;">
+        <div style="max-width:1240px; margin:0 auto; padding:0 40px;">
+          <div style="display:flex; align-items:flex-end; justify-content:space-between; gap:24px; flex-wrap:wrap; margin-bottom:56px;">
+            <div>
+              <span style="display:block; font-size:13px; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:#B87D1E; margin-bottom:14px;">What We Do</span>
+              <h2 style="font-family:'Rokkitt'; font-weight:700; font-size:clamp(38px,5vw,64px); line-height:1; letter-spacing:-0.01em; margin:0; color:#201D1B;">Full-spectrum capability.</h2>
+            </div>
+            <a href="#" onClick="{{ goServices }}" style="font-size:14px; font-weight:700; letter-spacing:0.02em; color:#201D1B; border-bottom:2px solid #D89A2E; padding-bottom:4px;">All services &rarr;</a>
+          </div>
+          <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:18px;">
+            <div style="background:#D89A2E; color:#201D1B; padding:38px 34px; border-radius:3px; min-height:220px; display:flex; flex-direction:column; justify-content:space-between;"><span style="font-family:'Rokkitt'; font-weight:700; font-size:22px; opacity:0.55;">01</span><div><h3 style="font-family:'Rokkitt'; font-weight:700; font-size:26px; margin:0 0 10px;">Brand Experience Strategy</h3><p style="font-size:15px; line-height:1.6; margin:0; opacity:0.85;">We set the strategic foundation before a single activation is planned.</p></div></div>
+            <div style="background:#201D1B; color:#FAF7F2; padding:38px 34px; border-radius:3px; min-height:220px; display:flex; flex-direction:column; justify-content:space-between;"><span style="font-family:'Rokkitt'; font-weight:700; font-size:22px; color:#D89A2E;">02</span><div><h3 style="font-family:'Rokkitt'; font-weight:700; font-size:26px; margin:0 0 10px;">Experiential Marketing &amp; Activation</h3><p style="font-size:15px; line-height:1.6; margin:0; color:#C9C0B6;">Live, real-world experiences that drive genuine trial and advocacy.</p></div></div>
+            <div style="background:#C50E8B; color:#FAF7F2; padding:38px 34px; border-radius:3px; min-height:220px; display:flex; flex-direction:column; justify-content:space-between;"><span style="font-family:'Rokkitt'; font-weight:700; font-size:22px; opacity:0.6;">03</span><div><h3 style="font-family:'Rokkitt'; font-weight:700; font-size:26px; margin:0 0 10px;">Corporate Events &amp; Experiences</h3><p style="font-size:15px; line-height:1.6; margin:0; opacity:0.9;">Polished, professionally managed events and brand-owned platforms.</p></div></div>
+            <div style="background:#5A2A17; color:#FAF7F2; padding:38px 34px; border-radius:3px; min-height:220px; display:flex; flex-direction:column; justify-content:space-between;"><span style="font-family:'Rokkitt'; font-weight:700; font-size:22px; color:#D89A2E;">04</span><div><h3 style="font-family:'Rokkitt'; font-weight:700; font-size:26px; margin:0 0 10px;">Traditional Media</h3><p style="font-size:15px; line-height:1.6; margin:0; color:#D8CCC2;">TV, radio and print campaigns that extend reach at every stage.</p></div></div>
+            <div style="background:#18827B; color:#FAF7F2; padding:38px 34px; border-radius:3px; min-height:220px; display:flex; flex-direction:column; justify-content:space-between;"><span style="font-family:'Rokkitt'; font-weight:700; font-size:22px; opacity:0.6;">05</span><div><h3 style="font-family:'Rokkitt'; font-weight:700; font-size:26px; margin:0 0 10px;">Out-of-Home (OOH)</h3><p style="font-size:15px; line-height:1.6; margin:0; opacity:0.9;">Physical brand presence that makes you unmissable.</p></div></div>
+            <div style="background:#2B2724; color:#FAF7F2; padding:38px 34px; border-radius:3px; min-height:220px; display:flex; flex-direction:column; justify-content:space-between;"><span style="font-family:'Rokkitt'; font-weight:700; font-size:22px; color:#D89A2E;">06</span><div><h3 style="font-family:'Rokkitt'; font-weight:700; font-size:26px; margin:0 0 10px;">Digital Marketing</h3><p style="font-size:15px; line-height:1.6; margin:0; color:#C9C0B6;">Turning online attention into engagement, leads and sales.</p></div></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- MOST MARKETING IS IGNORED -->
+      <section style="background:#D89A2E; color:#FAF7F2; padding:clamp(80px,11vw,140px) 0; overflow:hidden;">
+        <div style="max-width:1240px; margin:0 auto; padding:0 40px; display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:50px; align-items:center;">
+          <h2 style="font-family:'Rokkitt'; font-weight:800; font-size:clamp(48px,7vw,96px); line-height:0.94; letter-spacing:-0.01em; margin:0; color:#FFFFFF;">Most<br>Marketing<br>Is Ignored.</h2>
+          <div style="max-width:440px;">
+            <p style="font-size:19px; line-height:1.7; color:#FBEFDB; margin:0 0 22px;">Consumers scroll past ads. Skip commercials. Forget campaigns.</p>
+            <p style="font-size:19px; line-height:1.7; color:#FFFFFF; font-weight:600; margin:0;">But experiences? Experiences create emotion, conversation, and memory. Brands that win today don't just market to people. They involve them.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- HOW WE WORK -->
+      <section style="max-width:1240px; margin:0 auto; padding:clamp(80px,10vw,120px) 40px;">
+        <div style="margin-bottom:52px; max-width:720px;">
+          <span style="display:block; font-size:13px; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:#B87D1E; margin-bottom:14px;">Our Process &mdash; 4D1M</span>
+          <h2 style="font-family:'Rokkitt'; font-weight:700; font-size:clamp(38px,5vw,64px); line-height:1; letter-spacing:-0.01em; margin:0 0 20px; color:#201D1B;">How We Work</h2>
+          <p style="font-size:18px; line-height:1.7; color:#6E665F; margin:0;">Great experiences don't happen by chance. Every campaign follows an intentional yet flexible process that takes ideas from insight to full-spectrum results.</p>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:2px;">
+          <div style="background:#201D1B; color:#FAF7F2; padding:30px 38px; display:grid; grid-template-columns:200px 1fr; gap:24px; align-items:center;"><h3 style="font-family:'Rokkitt'; font-weight:700; font-size:30px; margin:0;">Discover</h3><p style="font-size:16px; line-height:1.65; margin:0; color:#C9C0B6;">We dive deep into your brand, audience, objectives, and media environment. Before any concept is sketched, we understand what success looks and feels like.</p></div>
+          <div style="background:#201D1B; color:#FAF7F2; padding:30px 38px; display:grid; grid-template-columns:200px 1fr; gap:24px; align-items:center;"><h3 style="font-family:'Rokkitt'; font-weight:700; font-size:30px; margin:0;">Design</h3><p style="font-size:16px; line-height:1.65; margin:0; color:#C9C0B6;">We develop bold, insight-led concepts and immersive integrated experience strategies that connect your brand story across all channels.</p></div>
+          <div style="background:#201D1B; color:#FAF7F2; padding:30px 38px; display:grid; grid-template-columns:200px 1fr; gap:24px; align-items:center;"><h3 style="font-family:'Rokkitt'; font-weight:700; font-size:30px; margin:0;">Develop</h3><p style="font-size:16px; line-height:1.65; margin:0; color:#C9C0B6;">We plan every detail from logistics and production to media scheduling and site selection, ensuring every channel is deployed with precision.</p></div>
+          <div style="background:#201D1B; color:#FAF7F2; padding:30px 38px; display:grid; grid-template-columns:200px 1fr; gap:24px; align-items:center;"><h3 style="font-family:'Rokkitt'; font-weight:700; font-size:30px; margin:0;">Deliver</h3><p style="font-size:16px; line-height:1.65; margin:0; color:#C9C0B6;">We execute every element end-to-end, bringing the campaign to life with the same standard of precision and excellence across every touchpoint.</p></div>
+          <div style="background:#D89A2E; color:#201D1B; padding:30px 38px; display:grid; grid-template-columns:200px 1fr; gap:24px; align-items:center;"><h3 style="font-family:'Rokkitt'; font-weight:700; font-size:30px; margin:0;">Measure</h3><p style="font-size:16px; line-height:1.65; margin:0; opacity:0.85;">We evaluate performance across every channel, quantifying reach, engagement and commercial impact to optimise for future growth.</p></div>
+        </div>
+      </section>
+
+      <!-- CLIENTS -->
+      <section style="background:#201D1B; color:#FAF7F2; padding:clamp(70px,8vw,100px) 0;">
+        <div style="max-width:1240px; margin:0 auto; padding:0 40px;">
+          <span style="display:block; font-size:13px; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:#D89A2E; margin-bottom:38px; text-align:center;">Brands We've Served</span>
+          <div style="display:flex; flex-wrap:wrap; gap:14px 48px; justify-content:center; align-items:center;">
+            <span style="font-family:'Rokkitt'; font-weight:600; font-size:clamp(20px,2.4vw,30px); color:#8A8079;">Midea</span>
+            <span style="font-family:'Rokkitt'; font-weight:600; font-size:clamp(20px,2.4vw,30px); color:#8A8079;">Visa</span>
+            <span style="font-family:'Rokkitt'; font-weight:600; font-size:clamp(20px,2.4vw,30px); color:#8A8079;">MTN</span>
+            <span style="font-family:'Rokkitt'; font-weight:600; font-size:clamp(20px,2.4vw,30px); color:#8A8079;">Coca-Cola</span>
+            <span style="font-family:'Rokkitt'; font-weight:600; font-size:clamp(20px,2.4vw,30px); color:#8A8079;">Guinness</span>
+            <span style="font-family:'Rokkitt'; font-weight:600; font-size:clamp(20px,2.4vw,30px); color:#8A8079;">Reckitt</span>
+            <span style="font-family:'Rokkitt'; font-weight:600; font-size:clamp(20px,2.4vw,30px); color:#8A8079;">Diageo</span>
+            <span style="font-family:'Rokkitt'; font-weight:600; font-size:clamp(20px,2.4vw,30px); color:#8A8079;">Spotify</span>
+            <span style="font-family:'Rokkitt'; font-weight:600; font-size:clamp(20px,2.4vw,30px); color:#8A8079;">Terra</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA BAND -->
+      <section style="background:#F0EBE3; padding:clamp(80px,10vw,120px) 40px; text-align:center;">
+        <div style="max-width:820px; margin:0 auto;">
+          <h2 style="font-family:'Rokkitt'; font-weight:800; font-size:clamp(40px,6vw,80px); line-height:0.98; letter-spacing:-0.01em; margin:0 0 26px; color:#201D1B;">Let's make something they'll remember.</h2>
+          <a href="#" onClick="{{ goContact }}" style="display:inline-block; font-size:16px; font-weight:700; color:#201D1B; background:#D89A2E; padding:18px 40px; border-radius:2px;">Schedule a Chat</a>
+        </div>
+      </section>
+
+    </div>
+    </sc-if>
+
+    <!-- ==================== ABOUT ==================== -->
+    <sc-if value="{{ isAbout }}" hint-placeholder-val="{{ true }}">
+    <div>
+
+      <!-- ABOUT HERO -->
+      <section style="max-width:1240px; margin:0 auto; padding:clamp(70px,9vw,120px) 40px clamp(50px,6vw,80px);">
+        <span style="display:block; font-size:13px; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:#B87D1E; margin-bottom:26px;">About CREDOM</span>
+        <h1 style="font-family:'Rokkitt'; font-weight:800; font-size:clamp(56px,10vw,128px); line-height:0.9; letter-spacing:-0.015em; margin:0 0 40px; color:#201D1B;">Bold.<br>Strategic.<br>Immersive.</h1>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:40px; max-width:960px;">
+          <p style="font-size:17px; line-height:1.75; color:#4A443D; margin:0;">We are an integrated brand experience agency built to shape how people encounter, understand, and connect with brands across every touchpoint. We unify strategy, creativity, and execution to design the full arc of a brand's presence &mdash; from immersive live experiences and cultural activations to out-of-home and media channels that extend reach.</p>
+          <p style="font-size:17px; line-height:1.75; color:#4A443D; margin:0;">Every campaign is engineered with an insight-led strategy to resonate, inspire action, and leave a lasting imprint. We pair strategic rigour with creative excellence to ensure every brand interaction lands with precision and purpose.</p>
+        </div>
+      </section>
+
+      <!-- BELIEF QUOTE -->
+      <section style="max-width:1240px; margin:0 auto; padding:clamp(40px,6vw,70px) 40px clamp(70px,9vw,110px);">
+        <p style="font-family:'Rokkitt'; font-style:italic; font-weight:600; font-size:clamp(30px,4.6vw,58px); line-height:1.14; letter-spacing:-0.01em; color:#D89A2E; max-width:960px; margin:0;">We believe the most powerful brand experiences are not merely seen or attended, they are felt.</p>
+      </section>
+
+      <!-- VISION / MISSION -->
+      <section style="display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr));">
+        <div style="background:#201D1B; color:#FAF7F2; padding:clamp(56px,7vw,90px) clamp(40px,5vw,70px);">
+          <h2 style="font-family:'Rokkitt'; font-weight:700; font-size:clamp(34px,4vw,48px); color:#D89A2E; margin:0 0 22px;">Vision</h2>
+          <p style="font-size:20px; line-height:1.65; color:#E7DFD5; max-width:420px; margin:0;">To redefine brand impact in Africa through immersive experiences.</p>
+        </div>
+        <div style="background:#D89A2E; color:#201D1B; padding:clamp(56px,7vw,90px) clamp(40px,5vw,70px);">
+          <h2 style="font-family:'Rokkitt'; font-weight:700; font-size:clamp(34px,4vw,48px); margin:0 0 22px;">Mission</h2>
+          <p style="font-size:18px; line-height:1.7; margin:0 0 16px; max-width:460px;">Design and deliver integrated brand experiences that forge deep connections that drive engagement and generate measurable growth.</p>
+          <p style="font-size:18px; line-height:1.7; margin:0; max-width:460px;">Lead with creative excellence and strategic precision across every market that transcends Africa.</p>
+        </div>
+      </section>
+
+      <!-- WHAT WE STAND FOR -->
+      <section style="max-width:1240px; margin:0 auto; padding:clamp(80px,10vw,120px) 40px;">
+        <div style="margin-bottom:52px; max-width:680px;">
+          <span style="display:block; font-size:13px; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:#B87D1E; margin-bottom:14px;">Our Principles</span>
+          <h2 style="font-family:'Rokkitt'; font-weight:700; font-size:clamp(38px,5vw,64px); line-height:1; letter-spacing:-0.01em; margin:0 0 20px; color:#201D1B;">What We Stand For</h2>
+          <p style="font-size:18px; line-height:1.7; color:#6E665F; margin:0;">Every brand has a story worth experiencing, not just telling. These are the five principles that govern how we think, work, and deliver.</p>
+        </div>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:18px;">
+          <div style="background:#C50E8B; color:#FAF7F2; padding:36px 32px; border-radius:3px;"><span style="font-family:'Rokkitt'; font-weight:700; font-size:20px; opacity:0.6; display:block; margin-bottom:14px;">01</span><h3 style="font-family:'Rokkitt'; font-weight:700; font-size:24px; margin:0 0 12px;">People-Centricity</h3><p style="font-size:15px; line-height:1.65; margin:0; opacity:0.92;">We design for humans first, brands second. Every experience starts with one question: how do we want people to feel?</p></div>
+          <div style="background:#5A2A17; color:#FAF7F2; padding:36px 32px; border-radius:3px;"><span style="font-family:'Rokkitt'; font-weight:700; font-size:20px; color:#D89A2E; display:block; margin-bottom:14px;">02</span><h3 style="font-family:'Rokkitt'; font-weight:700; font-size:24px; margin:0 0 12px;">Reliability &amp; Detail</h3><p style="font-size:15px; line-height:1.65; margin:0; color:#E4D8CE;">We do what we say, deliver on our promise, and sweat the small things so the big moments land exactly as they should.</p></div>
+          <div style="background:#D89A2E; color:#201D1B; padding:36px 32px; border-radius:3px;"><span style="font-family:'Rokkitt'; font-weight:700; font-size:20px; opacity:0.55; display:block; margin-bottom:14px;">03</span><h3 style="font-family:'Rokkitt'; font-weight:700; font-size:24px; margin:0 0 12px;">Innovation</h3><p style="font-size:15px; line-height:1.65; margin:0; opacity:0.88;">Every brief is an invitation to push further. We challenge the expected and only settle when the idea is genuinely better.</p></div>
+          <div style="background:#18827B; color:#FAF7F2; padding:36px 32px; border-radius:3px;"><span style="font-family:'Rokkitt'; font-weight:700; font-size:20px; opacity:0.6; display:block; margin-bottom:14px;">04</span><h3 style="font-family:'Rokkitt'; font-weight:700; font-size:24px; margin:0 0 12px;">Excellence</h3><p style="font-size:15px; line-height:1.65; margin:0; opacity:0.92;">We hold ourselves to a standard beyond delivery &mdash; every touchpoint, visible and invisible, reflects the full measure of our craft.</p></div>
+          <div style="background:#FFFFFF; color:#201D1B; padding:36px 32px; border-radius:3px; border:1px solid #E4DDD2;"><span style="font-family:'Rokkitt'; font-weight:700; font-size:20px; color:#D89A2E; display:block; margin-bottom:14px;">05</span><h3 style="font-family:'Rokkitt'; font-weight:700; font-size:24px; margin:0 0 12px;">Teamwork</h3><p style="font-size:15px; line-height:1.65; margin:0; color:#6E665F;">Behind every seamless campaign is a team working in precise coordination, internally and with our clients.</p></div>
+        </div>
+      </section>
+
+      <!-- MEET THE FORCE -->
+      <section style="background:#201D1B; color:#FAF7F2; padding:clamp(80px,10vw,120px) 0;">
+        <div style="max-width:1240px; margin:0 auto; padding:0 40px;">
+          <span style="display:block; font-size:13px; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:#D89A2E; margin-bottom:14px;">Meet the Force</span>
+          <h2 style="font-family:'Rokkitt'; font-weight:700; font-size:clamp(38px,5vw,64px); line-height:1; letter-spacing:-0.01em; margin:0 0 52px; color:#FAF7F2;">The people behind the moments.</h2>
+          <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:36px;">
+            <div>
+              <div style="position:relative; margin-bottom:28px;">
+                <div style="position:absolute; left:-14px; top:14px; width:200px; height:230px; background:#D89A2E; border-radius:2px;"></div>
+                <div style="position:relative; width:220px; height:250px; background:#2E2A25; border:1px solid #3A342E; display:flex; align-items:center; justify-content:center; border-radius:2px;"><span style="font-size:12px; letter-spacing:0.18em; text-transform:uppercase; color:#6B625A;">Photo</span></div>
+              </div>
+              <h3 style="font-family:'Rokkitt'; font-weight:700; font-size:32px; margin:0 0 4px;">Pelumi Adese <span style="font-size:16px; color:#D89A2E; font-weight:600;">Business Lead / COO</span></h3>
+              <p style="font-size:15px; line-height:1.75; color:#B7AEA4; margin:16px 0 0;">An experiential marketing and brand experience professional with over a decade of experience translating business strategy into immersive, high-impact brand engagements across Nigeria, the UK, and the wider African market. Her work bridges strategy and creativity to deliver experiences that resonate deeply &mdash; spanning FMCG, fintech, banking, and lifestyle, with brands including Midea, Visa, Reckitt Benckiser and Total.</p>
+            </div>
+            <div>
+              <div style="position:relative; margin-bottom:28px;">
+                <div style="position:absolute; left:-14px; top:14px; width:200px; height:230px; background:#5A2A17; border-radius:2px;"></div>
+                <div style="position:relative; width:220px; height:250px; background:#2E2A25; border:1px solid #3A342E; display:flex; align-items:center; justify-content:center; border-radius:2px;"><span style="font-size:12px; letter-spacing:0.18em; text-transform:uppercase; color:#6B625A;">Photo</span></div>
+              </div>
+              <h3 style="font-family:'Rokkitt'; font-weight:700; font-size:32px; margin:0 0 4px;">Fetuga S.O <span style="font-size:16px; color:#D89A2E; font-weight:600;">Project Manager</span></h3>
+              <p style="font-size:15px; line-height:1.75; color:#B7AEA4; margin:16px 0 0;">A results-driven Project Manager with a proven track record across brand strategy, experiential marketing, and end-to-end delivery. He brings a rare combination of strategic clarity and operational precision, leading cross-functional teams under pressure. His portfolio spans iconic brands including British American Tobacco, MTN, Procter &amp; Gamble, Guinness, Coca-Cola, Diageo and Spotify.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section style="background:#F0EBE3; padding:clamp(80px,10vw,120px) 40px; text-align:center;">
+        <div style="max-width:820px; margin:0 auto;">
+          <h2 style="font-family:'Rokkitt'; font-weight:800; font-size:clamp(40px,6vw,80px); line-height:0.98; letter-spacing:-0.01em; margin:0 0 26px; color:#201D1B;">Ready to be felt, not just seen?</h2>
+          <a href="#" onClick="{{ goContact }}" style="display:inline-block; font-size:16px; font-weight:700; color:#201D1B; background:#D89A2E; padding:18px 40px; border-radius:2px;">Schedule a Chat</a>
+        </div>
+      </section>
+
+    </div>
+    </sc-if>
+
+    <!-- ==================== SERVICES ==================== -->
+    <sc-if value="{{ isServices }}" hint-placeholder-val="{{ true }}">
+    <div>
+
+      <section style="max-width:1240px; margin:0 auto; padding:clamp(70px,9vw,120px) 40px clamp(40px,5vw,70px);">
+        <span style="display:block; font-size:13px; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:#B87D1E; margin-bottom:26px;">Our Services</span>
+        <p style="font-family:'Rokkitt'; font-style:italic; font-weight:600; font-size:clamp(28px,4.2vw,52px); line-height:1.16; letter-spacing:-0.01em; color:#D89A2E; max-width:1000px; margin:0;"><span style="color:#201D1B; font-style:normal;">Our capabilities span the full spectrum of experiential marketing.</span> Every service works independently or as part of a fully integrated campaign strategy.</p>
+      </section>
+
+      <section style="max-width:1240px; margin:0 auto; padding:0 40px clamp(80px,10vw,120px); display:flex; flex-direction:column; gap:20px;">
+
+        <div style="background:#D89A2E; color:#201D1B; padding:clamp(40px,4vw,56px); border-radius:4px; display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:32px;">
+          <div><span style="font-family:'Rokkitt'; font-weight:700; font-size:22px; opacity:0.55; display:block; margin-bottom:12px;">01</span><h3 style="font-family:'Rokkitt'; font-weight:700; font-size:clamp(28px,3vw,38px); line-height:1.05; margin:0 0 16px;">Brand Experience Strategy</h3><p style="font-size:16px; line-height:1.65; margin:0; opacity:0.85;">We set the strategic foundation before a single activation is planned or a single media space is booked.</p></div>
+          <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:12px; align-self:center;"><li style="font-size:16px; padding-left:18px; position:relative;"><span style="position:absolute; left:0; top:9px; width:6px; height:6px; background:#201D1B; border-radius:50%;"></span>Brand and campaign strategy</li><li style="font-size:16px; padding-left:18px; position:relative;"><span style="position:absolute; left:0; top:9px; width:6px; height:6px; background:#201D1B; border-radius:50%;"></span>Brand exhibitions and pop-ups</li><li style="font-size:16px; padding-left:18px; position:relative;"><span style="position:absolute; left:0; top:9px; width:6px; height:6px; background:#201D1B; border-radius:50%;"></span>Experience design and storytelling</li><li style="font-size:16px; padding-left:18px; position:relative;"><span style="position:absolute; left:0; top:9px; width:6px; height:6px; background:#201D1B; border-radius:50%;"></span>Go-to-market activation planning</li></ul>
+        </div>
+
+        <div style="background:#201D1B; color:#FAF7F2; padding:clamp(40px,4vw,56px); border-radius:4px; display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:32px;">
+          <div><span style="font-family:'Rokkitt'; font-weight:700; font-size:22px; color:#D89A2E; display:block; margin-bottom:12px;">02</span><h3 style="font-family:'Rokkitt'; font-weight:700; font-size:clamp(28px,3vw,38px); line-height:1.05; margin:0 0 16px;">Experiential Marketing &amp; Activation</h3><p style="font-size:16px; line-height:1.65; margin:0; color:#C9C0B6;">We put your brand directly in front of your audience through live, real-world experiences that drive genuine trial, loyalty, and advocacy.</p></div>
+          <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:12px; align-self:center;"><li style="font-size:16px; padding-left:18px; position:relative; color:#E7DFD5;"><span style="position:absolute; left:0; top:9px; width:6px; height:6px; background:#D89A2E; border-radius:50%;"></span>Market and retail activations</li><li style="font-size:16px; padding-left:18px; position:relative; color:#E7DFD5;"><span style="position:absolute; left:0; top:9px; width:6px; height:6px; background:#D89A2E; border-radius:50%;"></span>Product sampling and consumer engagement</li><li style="font-size:16px; padding-left:18px; position:relative; color:#E7DFD5;"><span style="position:absolute; left:0; top:9px; width:6px; height:6px; background:#D89A2E; border-radius:50%;"></span>Roadshows and multi-location deployment</li><li style="font-size:16px; padding-left:18px; position:relative; color:#E7DFD5;"><span style="position:absolute; left:0; top:9px; width:6px; height:6px; background:#D89A2E; border-radius:50%;"></span>PR stunts and high-impact campaigns</li></ul>
+        </div>
+
+        <div style="background:#C50E8B; color:#FAF7F2; padding:clamp(40px,4vw,56px); border-radius:4px; display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:32px;">
+          <div><span style="font-family:'Rokkitt'; font-weight:700; font-size:22px; opacity:0.6; display:block; margin-bottom:12px;">03</span><h3 style="font-family:'Rokkitt'; font-weight:700; font-size:clamp(28px,3vw,38px); line-height:1.05; margin:0 0 16px;">Corporate Events &amp; Experiences</h3><p style="font-size:16px; line-height:1.65; margin:0; opacity:0.92;">We produce polished, professionally managed events and brand-owned platforms that reflect your brand's ambition, credibility, and long-term equity.</p></div>
+          <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:12px; align-self:center;"><li style="font-size:16px; padding-left:18px; position:relative;"><span style="position:absolute; left:0; top:9px; width:6px; height:6px; background:#FAF7F2; border-radius:50%;"></span>Proprietary event creation</li><li style="font-size:16px; padding-left:18px; position:relative;"><span style="position:absolute; left:0; top:9px; width:6px; height:6px; background:#FAF7F2; border-radius:50%;"></span>Brand sponsorship strategy &amp; execution</li><li style="font-size:16px; padding-left:18px; position:relative;"><span style="position:absolute; left:0; top:9px; width:6px; height:6px; background:#FAF7F2; border-radius:50%;"></span>Product launches, conferences &amp; summits</li><li style="font-size:16px; padding-left:18px; position:relative;"><span style="position:absolute; left:0; top:9px; width:6px; height:6px; background:#FAF7F2; border-radius:50%;"></span>Award ceremonies, galas &amp; cultural festivals</li></ul>
+        </div>
+
+        <div style="background:#5A2A17; color:#FAF7F2; padding:clamp(40px,4vw,56px); border-radius:4px; display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:32px;">
+          <div><span style="font-family:'Rokkitt'; font-weight:700; font-size:22px; color:#D89A2E; display:block; margin-bottom:12px;">04</span><h3 style="font-family:'Rokkitt'; font-weight:700; font-size:clamp(28px,3vw,38px); line-height:1.05; margin:0 0 16px;">Traditional Media</h3><p style="font-size:16px; line-height:1.65; margin:0; color:#E4D8CE;">We plan, place, and manage traditional media campaigns that extend your brand messaging and maximise reach at every stage of the consumer journey.</p></div>
+          <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:12px; align-self:center;"><li style="font-size:16px; padding-left:18px; position:relative; color:#E4D8CE;"><span style="position:absolute; left:0; top:9px; width:6px; height:6px; background:#D89A2E; border-radius:50%;"></span>Television and radio campaign planning &amp; buying</li><li style="font-size:16px; padding-left:18px; position:relative; color:#E4D8CE;"><span style="position:absolute; left:0; top:9px; width:6px; height:6px; background:#D89A2E; border-radius:50%;"></span>Print media strategy and placement</li><li style="font-size:16px; padding-left:18px; position:relative; color:#E4D8CE;"><span style="position:absolute; left:0; top:9px; width:6px; height:6px; background:#D89A2E; border-radius:50%;"></span>Media schedule development &amp; audience targeting</li><li style="font-size:16px; padding-left:18px; position:relative; color:#E4D8CE;"><span style="position:absolute; left:0; top:9px; width:6px; height:6px; background:#D89A2E; border-radius:50%;"></span>Integrated campaign management</li></ul>
+        </div>
+
+        <div style="background:#18827B; color:#FAF7F2; padding:clamp(40px,4vw,56px); border-radius:4px; display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:32px;">
+          <div><span style="font-family:'Rokkitt'; font-weight:700; font-size:22px; opacity:0.6; display:block; margin-bottom:12px;">05</span><h3 style="font-family:'Rokkitt'; font-weight:700; font-size:clamp(28px,3vw,38px); line-height:1.05; margin:0 0 16px;">Out-of-Home (OOH) Marketing</h3><p style="font-size:16px; line-height:1.65; margin:0; opacity:0.92;">We design and deploy OOH campaigns that make your brand unmissable in the environments where your audience lives, works, and moves.</p></div>
+          <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:12px; align-self:center;"><li style="font-size:16px; padding-left:18px; position:relative;"><span style="position:absolute; left:0; top:9px; width:6px; height:6px; background:#FAF7F2; border-radius:50%;"></span>Billboard and large-format outdoor</li><li style="font-size:16px; padding-left:18px; position:relative;"><span style="position:absolute; left:0; top:9px; width:6px; height:6px; background:#FAF7F2; border-radius:50%;"></span>Transit and commuter media placements</li><li style="font-size:16px; padding-left:18px; position:relative;"><span style="position:absolute; left:0; top:9px; width:6px; height:6px; background:#FAF7F2; border-radius:50%;"></span>Street furniture, mall &amp; point-of-sale OOH</li><li style="font-size:16px; padding-left:18px; position:relative;"><span style="position:absolute; left:0; top:9px; width:6px; height:6px; background:#FAF7F2; border-radius:50%;"></span>Digital OOH, site selection &amp; media buying</li></ul>
+        </div>
+
+        <div style="background:#2B2724; color:#FAF7F2; padding:clamp(40px,4vw,56px); border-radius:4px; display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:32px;">
+          <div><span style="font-family:'Rokkitt'; font-weight:700; font-size:22px; color:#D89A2E; display:block; margin-bottom:12px;">06</span><h3 style="font-family:'Rokkitt'; font-weight:700; font-size:clamp(28px,3vw,38px); line-height:1.05; margin:0 0 16px;">Digital Marketing</h3><p style="font-size:16px; line-height:1.65; margin:0; color:#C9C0B6;">We build and manage digital campaigns that keep your brand visible and competitive, turning online attention into engagement, leads, and long-term relationships.</p></div>
+          <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:12px; align-self:center;"><li style="font-size:16px; padding-left:18px; position:relative; color:#E7DFD5;"><span style="position:absolute; left:0; top:9px; width:6px; height:6px; background:#D89A2E; border-radius:50%;"></span>Social media &amp; content marketing</li><li style="font-size:16px; padding-left:18px; position:relative; color:#E7DFD5;"><span style="position:absolute; left:0; top:9px; width:6px; height:6px; background:#D89A2E; border-radius:50%;"></span>Paid digital &amp; display advertising</li><li style="font-size:16px; padding-left:18px; position:relative; color:#E7DFD5;"><span style="position:absolute; left:0; top:9px; width:6px; height:6px; background:#D89A2E; border-radius:50%;"></span>Influencer &amp; creator marketing</li><li style="font-size:16px; padding-left:18px; position:relative; color:#E7DFD5;"><span style="position:absolute; left:0; top:9px; width:6px; height:6px; background:#D89A2E; border-radius:50%;"></span>Email, CRM &amp; performance reporting</li></ul>
+        </div>
+
+      </section>
+
+      <!-- CTA -->
+      <section style="background:#F0EBE3; padding:clamp(80px,10vw,120px) 40px; text-align:center;">
+        <div style="max-width:820px; margin:0 auto;">
+          <h2 style="font-family:'Rokkitt'; font-weight:800; font-size:clamp(40px,6vw,80px); line-height:0.98; letter-spacing:-0.01em; margin:0 0 26px; color:#201D1B;">One channel or all of them.</h2>
+          <a href="#" onClick="{{ goContact }}" style="display:inline-block; font-size:16px; font-weight:700; color:#201D1B; background:#D89A2E; padding:18px 40px; border-radius:2px;">Schedule a Chat</a>
+        </div>
+      </section>
+
+    </div>
+    </sc-if>
+
+    <!-- ==================== CONTACT ==================== -->
+    <sc-if value="{{ isContact }}" hint-placeholder-val="{{ true }}">
+    <div>
+
+      <section style="background:#201D1B; color:#FAF7F2; padding:clamp(70px,9vw,120px) 0 clamp(60px,8vw,100px);">
+        <div style="max-width:1240px; margin:0 auto; padding:0 40px;">
+          <span style="display:block; font-size:13px; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:#D89A2E; margin-bottom:24px;">Let's Talk</span>
+          <h1 style="font-family:'Rokkitt'; font-weight:800; font-size:clamp(52px,9vw,120px); line-height:0.9; letter-spacing:-0.015em; margin:0 0 26px; color:#FAF7F2;">From Insight<br>To Impact.</h1>
+          <p style="font-size:19px; line-height:1.7; color:#C9C0B6; max-width:560px; margin:0;">Tell us about the moment you want to create. We'll bring the strategy, creativity, and seamless execution to make it happen.</p>
+        </div>
+      </section>
+
+      <section style="max-width:1240px; margin:0 auto; padding:clamp(70px,9vw,110px) 40px; display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:60px; align-items:start;">
+
+        <!-- FORM -->
+        <div>
+          <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
+            <div style="background:#F0EBE3; border-left:4px solid #18827B; padding:24px 28px; border-radius:3px; margin-bottom:28px;"><p style="margin:0; font-size:16px; line-height:1.6; color:#201D1B;"><strong>Thank you.</strong> Your message is ready to send from your email app. We'll be in touch shortly to schedule your chat.</p></div>
+          </sc-if>
+          <form ref="{{ formRef }}" onSubmit="{{ onSubmit }}">
+            <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:22px; margin-bottom:22px;">
+              <label style="display:block;"><span style="display:block; font-size:13px; font-weight:700; letter-spacing:0.05em; color:#201D1B; margin-bottom:9px;">Full Name</span><input name="name" type="text" required placeholder="Your name" style="width:100%; padding:14px 16px; border:1px solid #DDD4C7; border-radius:2px; font-size:15px; background:#FFFFFF; color:#201D1B; outline:none;"></label>
+              <label style="display:block;"><span style="display:block; font-size:13px; font-weight:700; letter-spacing:0.05em; color:#201D1B; margin-bottom:9px;">Email</span><input name="email" type="email" required placeholder="you@company.com" style="width:100%; padding:14px 16px; border:1px solid #DDD4C7; border-radius:2px; font-size:15px; background:#FFFFFF; color:#201D1B; outline:none;"></label>
+            </div>
+            <label style="display:block; margin-bottom:22px;"><span style="display:block; font-size:13px; font-weight:700; letter-spacing:0.05em; color:#201D1B; margin-bottom:9px;">Company / Organization</span><input name="company" type="text" placeholder="Optional" style="width:100%; padding:14px 16px; border:1px solid #DDD4C7; border-radius:2px; font-size:15px; background:#FFFFFF; color:#201D1B; outline:none;"></label>
+            <label style="display:block; margin-bottom:22px;"><span style="display:block; font-size:13px; font-weight:700; letter-spacing:0.05em; color:#201D1B; margin-bottom:9px;">What are you interested in?</span><select name="service" style="width:100%; padding:14px 16px; border:1px solid #DDD4C7; border-radius:2px; font-size:15px; background:#FFFFFF; color:#201D1B; outline:none;"><option>Brand Experience Strategy</option><option>Experiential Marketing &amp; Activation</option><option>Corporate Events &amp; Experiences</option><option>Traditional Media</option><option>Out-of-Home (OOH) Marketing</option><option>Digital Marketing</option><option>An integrated campaign</option><option>Not sure yet</option></select></label>
+            <label style="display:block; margin-bottom:28px;"><span style="display:block; font-size:13px; font-weight:700; letter-spacing:0.05em; color:#201D1B; margin-bottom:9px;">Tell us about your project</span><textarea name="message" rows="5" placeholder="What moment do you want to create?" style="width:100%; padding:14px 16px; border:1px solid #DDD4C7; border-radius:2px; font-size:15px; background:#FFFFFF; color:#201D1B; outline:none; resize:vertical; line-height:1.6;"></textarea></label>
+            <button type="submit" style="font-size:16px; font-weight:700; color:#201D1B; background:#D89A2E; padding:16px 38px; border:none; border-radius:2px; cursor:pointer;">Schedule a Chat</button>
+          </form>
+        </div>
+
+        <!-- SIDEBAR -->
+        <div style="background:#F0EBE3; border-radius:4px; padding:clamp(36px,4vw,48px);">
+          <h2 style="font-family:'Rokkitt'; font-weight:700; font-size:30px; margin:0 0 30px; color:#201D1B;">Reach us directly</h2>
+          <div style="margin-bottom:28px;">
+            <span style="display:block; font-size:12px; font-weight:700; letter-spacing:0.18em; text-transform:uppercase; color:#B87D1E; margin-bottom:8px;">Email</span>
+            <a href="mailto:hello@credomlimited.com" style="font-size:17px; color:#201D1B; font-weight:600;">hello@credomlimited.com</a>
+          </div>
+          <div style="margin-bottom:28px;">
+            <span style="display:block; font-size:12px; font-weight:700; letter-spacing:0.18em; text-transform:uppercase; color:#B87D1E; margin-bottom:8px;">Studio</span>
+            <p style="font-size:16px; line-height:1.7; color:#4A443D; margin:0;">3 Jakande Crescent,<br>Victoria Island,<br>Lagos, Nigeria.</p>
+          </div>
+          <div style="padding-top:26px; border-top:1px solid #DDD4C7;">
+            <p style="font-family:'Rokkitt'; font-style:italic; font-weight:600; font-size:22px; line-height:1.4; color:#D89A2E; margin:0;">We create moments people don't just attend; they remember.</p>
+          </div>
+        </div>
+
+      </section>
+
+    </div>
+    </sc-if>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer style="background:#201D1B; color:#C9C0B6; padding:70px 0 40px;">
+    <div style="max-width:1240px; margin:0 auto; padding:0 40px;">
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:44px; padding-bottom:54px; border-bottom:1px solid #3A342E;">
+        <div>
+          <div style="display:inline-flex; align-items:center; font-family:'Mulish'; font-weight:800; font-size:24px; letter-spacing:0.04em; color:#FAF7F2; margin-bottom:18px;">CRED<span style="display:inline-flex; flex-direction:column; align-items:center; margin:0 2px;"><span style="width:15px;height:15px;border-radius:50%;background:#D89A2E;"></span><span style="width:17px;height:3px;background:#D89A2E;margin-top:2px;border-radius:2px;"></span></span>M</div>
+          <p style="font-family:'Rokkitt'; font-weight:500; font-size:19px; line-height:1.4; color:#8A8079; max-width:280px; margin:0;">We create moments people don't just attend; they remember.</p>
+        </div>
+        <div>
+          <span style="display:block; font-size:12px; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:#D89A2E; margin-bottom:18px;">Explore</span>
+          <div style="display:flex; flex-direction:column; gap:12px;">
+            <a href="#" onClick="{{ goHome }}" style="font-size:15px; color:#C9C0B6;">Home</a>
+            <a href="#" onClick="{{ goAbout }}" style="font-size:15px; color:#C9C0B6;">About</a>
+            <a href="#" onClick="{{ goServices }}" style="font-size:15px; color:#C9C0B6;">Services</a>
+            <a href="#" onClick="{{ goContact }}" style="font-size:15px; color:#C9C0B6;">Contact</a>
+          </div>
+        </div>
+        <div>
+          <span style="display:block; font-size:12px; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:#D89A2E; margin-bottom:18px;">Visit</span>
+          <p style="font-size:15px; line-height:1.7; color:#C9C0B6; margin:0;">3 Jakande Crescent,<br>Victoria Island,<br>Lagos, Nigeria.</p>
+        </div>
+        <div>
+          <span style="display:block; font-size:12px; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:#D89A2E; margin-bottom:18px;">Connect</span>
+          <div style="display:flex; flex-direction:column; gap:12px;">
+            <a href="mailto:hello@credomlimited.com" style="font-size:15px; color:#C9C0B6;">hello@credomlimited.com</a>
+            <a href="#" onClick="{{ goContact }}" style="font-size:15px; font-weight:700; color:#D89A2E;">Schedule a Chat &rarr;</a>
+          </div>
+        </div>
+      </div>
+      <div style="padding-top:26px; display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap;">
+        <span style="font-size:13px; color:#6B625A;">&copy; 2026 CREDOM Limited. All rights reserved.</span>
+        <span style="font-size:13px; color:#6B625A;">Redefining brand impact in Africa.</span>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { page: 'home', sent: false };
+  constructor(props) {
+    super(props);
+    this.formRef = React.createRef();
+  }
+  go(p) {
+    this.setState({ page: p, sent: false });
+    if (typeof window !== 'undefined') window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+  submit(e) {
+    e.preventDefault();
+    const f = this.formRef.current;
+    if (!f) return;
+    const d = new FormData(f);
+    const name = (d.get('name') || '').toString();
+    const email = (d.get('email') || '').toString();
+    const company = (d.get('company') || '').toString();
+    const service = (d.get('service') || '').toString();
+    const message = (d.get('message') || '').toString();
+    const subject = encodeURIComponent('Schedule a Chat — ' + (name || 'New enquiry'));
+    const body = encodeURIComponent(
+      'Name: ' + name + '\nEmail: ' + email + '\nCompany: ' + company +
+      '\nInterested in: ' + service + '\n\n' + message
+    );
+    if (typeof window !== 'undefined') {
+      window.location.href = 'mailto:ifeoluwaadese@gmail.com?subject=' + subject + '&body=' + body;
+    }
+    this.setState({ sent: true });
+  }
+  renderVals() {
+    const p = this.state.page;
+    return {
+      page: p, sent: this.state.sent,
+      isHome: p === 'home', isAbout: p === 'about', isServices: p === 'services', isContact: p === 'contact',
+      goHome: () => this.go('home'),
+      goAbout: () => this.go('about'),
+      goServices: () => this.go('services'),
+      goContact: () => this.go('contact'),
+      formRef: this.formRef,
+      onSubmit: (e) => this.submit(e),
+    };
+  }
+}
+</script>
+</body>
+</html>
