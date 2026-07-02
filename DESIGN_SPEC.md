@@ -142,7 +142,7 @@ Ink color on light backgrounds; `#FAF7F2` on dark. Dot/bar stay gold in both.
 - **Contact form:**
   - Client validation: Name + Email required; Email must be a valid address.
   - Reference behavior: builds a `mailto:ifeoluwaadese@gmail.com` with subject `Schedule a Chat — {name}` and a body containing Name / Email / Company / Interested in / Message, then shows the success panel.
-  - **Production:** replace `mailto` with a real submission (Formspree / Resend / serverless route) posting to **ifeoluwaadese@gmail.com**; keep the success state.
+  - **Production:** replace `mailto` with a real submission via **FormBold** (chosen for cost — free tier of 100 submissions/month, paid from ~$4/mo, cheaper than Formspree). POST the form to a FormBold form endpoint configured to deliver to **ifeoluwaadese@gmail.com**. Store the endpoint URL in `.env.local` (e.g. `NEXT_PUBLIC_FORMBOLD_ENDPOINT`), never hardcode it. Keep client-side validation and the success state. Enable FormBold's spam protection in the form settings.
 - No entrance animations are required (an earlier fade was removed because it gated visibility — do not reintroduce opacity-based entrance animations that can get stuck).
 
 ## 5. Assets

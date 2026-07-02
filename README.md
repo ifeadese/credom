@@ -40,7 +40,7 @@ This is a small marketing site — a single-page app with client routing (as the
 ### Definition of done
 - [ ] All four pages match the reference in layout, color, type, and copy.
 - [ ] Responsive from 320px → large desktop (the reference uses `clamp()` + CSS auto-fit grids — no fixed breakpoints required, but verify on mobile).
-- [ ] Contact form validates and delivers to **ifeoluwaadese@gmail.com** (see spec — the reference uses a `mailto:` fallback; production should use a real form backend such as Formspree, Resend, or a serverless route).
+- [ ] Contact form validates and delivers to **ifeoluwaadese@gmail.com** (see spec — the reference uses a `mailto:` fallback; production should use **FormBold** as the form backend).
 - [ ] Fonts: **Rokkitt** (display) + **Mulish** (body), loaded via Google Fonts or self-hosted.
 - [ ] Logo reproduced (CRED + gold dot/underline "O" + M).
 - [ ] Accessible: semantic landmarks, labelled form fields, visible focus states, AA contrast.
