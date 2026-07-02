@@ -55,3 +55,33 @@ See **DESIGN_SPEC.md** for every measurement, hex value, and line of copy.
 - **Public email** shown on the site is `hello@credomlimited.com`. The **contact form** routes to `ifeoluwaadese@gmail.com`.
 - **Contact address:** 3 Jakande Crescent, Victoria Island, Lagos, Nigeria.
 - Keep the editorial, high-whitespace character of the brand — do not compress the generous vertical rhythm.
+
+---
+
+## Development
+
+Production implementation: **Next.js 14 (App Router) + TypeScript + Tailwind CSS**.
+
+```bash
+npm install
+cp .env.example .env.local   # then set NEXT_PUBLIC_FORMBOLD_ENDPOINT
+npm run dev                  # http://localhost:3000
+npm run build && npm run start
+npm run lint
+```
+
+### Project structure
+- `app/` — routes: `/` (Home), `/about`, `/services`, `/contact`, plus `sitemap.ts` / `robots.ts`.
+- `components/` — `Logo`, `Nav`, `Footer`, and layout primitives (`Button`, `Eyebrow`, `Container`, `CtaBand`, `ImagePlaceholder`, `ServiceCard`, `ContactForm`).
+- `lib/` — copy/content data (`services.ts`, `content.ts`) so text + color themes live in one place.
+- Design tokens (colors, fonts, radii) live in `tailwind.config.ts`; no hardcoded hex in components.
+
+### Contact form (FormBold)
+- The form POSTs to `NEXT_PUBLIC_FORMBOLD_ENDPOINT`. Create a form at [formbold.com](https://formbold.com), set delivery to `ifeoluwaadese@gmail.com`, and enable spam protection.
+- Client-side validation requires a name and a valid email; a hidden honeypot field backs up FormBold's spam protection.
+- Set the same env var in Vercel's project settings before deploying.
+
+### Deploy (Vercel)
+1. Import the repo into Vercel (framework auto-detected as Next.js).
+2. Add `NEXT_PUBLIC_FORMBOLD_ENDPOINT` under Project → Settings → Environment Variables.
+3. Deploy.

@@ -64,9 +64,32 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "CREDOM Limited",
+    url: siteUrl,
+    email: "hello@credomlimited.com",
+    slogan: "We create moments people don't just attend; they remember.",
+    description:
+      "Integrated brand experience agency in Lagos, Nigeria — strategy, activation, corporate events, traditional media, out-of-home, and digital.",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "3 Jakande Crescent, Victoria Island",
+      addressLocality: "Lagos",
+      addressCountry: "NG",
+    },
+  };
+
   return (
     <html lang="en" className={`${rokkitt.variable} ${mulish.variable}`}>
       <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationSchema),
+          }}
+        />
         <div className="flex min-h-screen flex-col overflow-x-hidden bg-paper">
           <Nav />
           <main className="flex-1">{children}</main>
