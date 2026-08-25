@@ -23,12 +23,7 @@ export default function Footer() {
         <div className="grid grid-cols-[repeat(auto-fit,minmax(220px,1fr))] gap-11 border-b border-ink-line pb-[54px]">
           {/* Brand */}
           <div>
-            <div className="mb-[18px]">
-              <Logo size={24} variant="dark" />
-            </div>
-            <p className="m-0 max-w-[280px] font-display text-[19px] font-medium leading-[1.4] text-muted-dark">
-              We create moments people don&apos;t just attend; they remember.
-            </p>
+            <Logo size={24} variant="dark" />
           </div>
 
           {/* Explore */}
@@ -66,6 +61,14 @@ export default function Footer() {
                 className="text-[15px] text-on-dark transition-colors hover:text-paper"
               >
                 hello@credomlimited.com
+              </a>
+              <a
+                href="https://www.instagram.com/wearecredom"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[15px] text-on-dark transition-colors hover:text-paper"
+              >
+                Instagram — @wearecredom
               </a>
               <Link
                 href="/contact#join-our-team"

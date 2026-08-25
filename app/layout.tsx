@@ -91,6 +91,7 @@ export default function RootLayout({
       "Digital marketing",
     ],
     areaServed: { "@type": "Country", name: "Nigeria" },
+    sameAs: ["https://www.instagram.com/wearecredom"],
     address: {
       "@type": "PostalAddress",
       streetAddress: "Victoria Island",
