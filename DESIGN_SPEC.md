@@ -85,7 +85,7 @@ Ink color on light backgrounds; `#FAF7F2` on dark. Dot/bar stay gold in both.
 ## 3. Pages
 
 ### 3.1 HOME
-1. **Hero** — ink bg (`linear-gradient(105deg,#201D1B 0%,#201D1B 42%,#2E2A25 100%)`). A right-side panel (44% width, `#2A2621`, left border `#3A342E`) is the **hero image placeholder** (label "Hero Image"). Content (max-width 760): gold eyebrow "Integrated Brand Experience Agency"; H1 "Attention / Is Earned."; gold subhead (Rokkitt 600) "Experience Makes It Last."; body paragraph; two buttons — **Schedule a Chat** (gold) and **Explore Services** (outline `1px #4A443D`, white text).
+1. **Hero** — **white** bg (`#FFFFFF`, bottom border `#E4DDD2`). A right-side panel (44% width, `#F0EBE3`, left border `#E4DDD2`) is the **hero image placeholder** (label "Hero Image"). Content (max-width 760): gold-deep eyebrow "Integrated Brand Experience Agency"; ink H1 "Attention / Is Earned."; gold-deep subhead (Rokkitt 600) "Experience Makes It Last."; body paragraph (`#4A443D`); two buttons — **Schedule a Chat** (gold) and **Explore Services** (outline `1px` ink, ink text).
 2. **Statement** — max-width 1000, Rokkitt 600 ~clamp(30,4.6vw,58): "We create moments people don't just attend; **they remember.**" (last two words gold).
 3. **Services preview** — bg `#F0EBE3`. Header row: eyebrow "What We Do" + H2 "Full-spectrum capability." + "All services →" link (gold underline). Grid of **6 cards** (`auto-fit minmax(300px,1fr)`, gap 18, min-height 220, padding `38px 34px`, radius 3), each with a numbered label (Rokkitt 700), H3, and one-line description. Card colors & titles in order:
    - 01 Brand Experience Strategy — **gold** bg, ink text
@@ -95,24 +95,26 @@ Ink color on light backgrounds; `#FAF7F2` on dark. Dot/bar stay gold in both.
    - 05 Out-of-Home (OOH) — **teal** bg, cream text
    - 06 Digital Marketing — **ink 2** bg, cream text, gold number
 4. **"Most Marketing Is Ignored"** — **gold** bg, cream text, padding `clamp(80,11vw,140)`. Two-column (`auto-fit minmax(320px,1fr)`, gap 50, center-aligned): left H2 (Rokkitt 800, clamp(48,7vw,96), white) "Most / Marketing / Is Ignored."; right two paragraphs (2nd bold).
-5. **How We Work (4D1M)** — header: eyebrow "Our Process — 4D1M", H2 "How We Work", intro paragraph. Then **5 rows** (`gap:2px`), each a `grid-template-columns:200px 1fr` band: label (Rokkitt 700 30px) + description. First 4 rows ink bg / cream; **Measure** row gold bg / ink. Labels: Discover, Design, Develop, Deliver, Measure (copy in reference).
-6. **Clients** — ink bg. Centered eyebrow "Brands We've Served" (gold) + centered wrapping row of names (Rokkitt 600, clamp(20,2.4vw,30), `#8A8079`): Midea, Visa, MTN, Coca-Cola, Guinness, Reckitt, Diageo, Spotify, Terra.
-7. **CTA band** — `#F0EBE3`, centered. H2 "Let's make something they'll remember." + Schedule a Chat button.
+5. **How We Work (4D1M)** — header: eyebrow "Our Process — 4D1M", H2 "How We Work", intro paragraph. Then **5 rows** (`gap:14px`), each a `grid-template-columns:200px 1fr` card (radius 3): colored palette dot (10px — gold, magenta, teal, brown) + label (Rokkitt 700 30px) + description. First 4 rows **white** bg with `1px #E4DDD2` border; **Measure** row gold bg / ink with an ink dot.
+6. **Companies We Served** — bg `#F0EBE3`. Eyebrow "Companies We Served" + H2 "Work that moved people." Two case-study cards (`auto-fit minmax(320px,1fr)`, gap 20, radius 4, padding clamp(40,4vw,56)): **The Midea Pro Shop** (ink bg — category eyebrow gold, gold takeaway line) and **Terra** (gold bg — category eyebrow brown, brown takeaway line). Each card: category eyebrow, H3 client name, body paragraph, bold takeaway.
+7. **Clients** — **white** bg, top border `#E4DDD2`. Centered gold-deep eyebrow "Brands We've Served" + centered wrapping row of names (Rokkitt 600, clamp(24,2.8vw,36), ink): AltDrive, AltBank, Midea.
+8. **CTA band** — `#F0EBE3`, centered. H2 "Let's make something they'll remember." + Schedule a Chat button.
 
 ### 3.2 ABOUT
 1. **Hero** — eyebrow "About CREDOM"; H1 stacked "Bold. / Strategic. / Immersive." (Rokkitt 800, clamp(56,10vw,128)); two-column intro paragraphs (max-width 960).
 2. **Belief quote** — Rokkitt **italic** 600, gold, clamp(30,4.6vw,58), max-width 960: "We believe the most powerful brand experiences are not merely seen or attended, they are felt."
-3. **Vision / Mission** — full-bleed 2-column split (`auto-fit minmax(320px,1fr)`): **Vision** ink bg, gold H2, cream body; **Mission** gold bg, ink H2 + two paragraphs. Copy in reference.
-4. **What We Stand For** — header (eyebrow "Our Principles", H2, intro). Grid of **5 cards** (`auto-fit minmax(300px,1fr)`, gap 18, padding `36px 32px`, radius 3), numbered:
+3. **Vision / Mission** — full-bleed 2-column split (`auto-fit minmax(320px,1fr)`): **Vision** **teal** bg, white H2 + body; **Mission** gold bg, ink H2 + two paragraphs. Copy in reference.
+4. **Why Choose Us** — white bg, bottom border `#E4DDD2`. Eyebrow "Why Us" + H2 "Why choose us?" + two-column paragraphs (max-width 1000; "We hand you a system… integrators by design…" / "deep roots across FMCG, fintech, telecoms, banking…") + italic gold pull-quote (Rokkitt 600, clamp(24,3vw,36)): "Our end-to-end project management ensures nothing falls through the gaps — memorable for your audience, effortless for you."
+5. **What We Stand For** — header (eyebrow "Our Principles", H2, intro). Grid of **5 cards** (`auto-fit minmax(300px,1fr)`, gap 18, padding `36px 32px`, radius 3), numbered:
    - 01 People-Centricity — magenta
    - 02 Reliability & Detail — brown
    - 03 Innovation — gold (ink text)
    - 04 Excellence — teal
    - 05 Teamwork — white bg, ink text, `1px #E4DDD2` border
-5. **Meet the Force** — ink bg. Eyebrow + H2 "The people behind the moments." Two team members (`auto-fit minmax(320px,1fr)`, gap 36), each: an **offset photo placeholder** (a colored block 200×230 behind a 220×250 photo slot, radius 2 — gold behind member 1, brown behind member 2) then name (Rokkitt 700 32px) + role (gold, 16px) + bio.
+6. **Meet the Force** — **`#F0EBE3`** bg, ink text. Eyebrow + H2 "The people behind the moments." Two team members (`auto-fit minmax(320px,1fr)`, gap 36), each: an **offset photo placeholder** (a colored block 200×230 behind a 220×250 white photo slot with `#E4DDD2` border, radius 2 — gold behind member 1, brown behind member 2) then name (Rokkitt 700 32px) + role (gold-deep, 16px) + bio (`#6E665F`).
    - **Pelumi Adese** — Business Lead / COO (bio in reference)
    - **Fetuga S.O** — Project Manager (bio in reference)
-6. **CTA band** — H2 "Ready to be felt, not just seen?" + Schedule a Chat.
+7. **CTA band** — H2 "Ready to be felt, not just seen?" + Schedule a Chat.
 
 ### 3.3 SERVICES
 1. **Header** — eyebrow "Our Services" + big statement: "Our capabilities span the full spectrum of experiential marketing." (ink, roman) + italic gold continuation "Every service works independently or as part of a fully integrated campaign strategy."
@@ -127,11 +129,12 @@ Ink color on light backgrounds; `#FAF7F2` on dark. Dot/bar stay gold in both.
 3. **CTA band** — H2 "One channel or all of them." + Schedule a Chat.
 
 ### 3.4 CONTACT
-1. **Hero** — ink bg. Eyebrow "Let's Talk"; H1 "From Insight / To Impact." (clamp(52,9vw,120)); intro paragraph.
+1. **Hero** — **white** bg, bottom border `#E4DDD2`. Gold-deep eyebrow "Let's Talk"; ink H1 "From Insight / To Impact." (clamp(52,9vw,120)); intro paragraph (`#4A443D`).
 2. **Body** — 2-column (`auto-fit minmax(320px,1fr)`, gap 60, align start):
    - **Left — form.** Fields: Full Name (required), Email (required, type email), Company/Organization (optional), "What are you interested in?" (select — the 6 services + "An integrated campaign" + "Not sure yet"), "Tell us about your project" (textarea, 5 rows). Inputs: white bg, `1px #DDD4C7` border, radius 2, padding `14px 16px`, 15px. Labels: 13px Mulish 700. Submit: **Schedule a Chat** (gold, `16px 38px`).
      - On submit → success panel appears (bg `#F0EBE3`, left border `4px #18827B`): "Thank you. Your message is ready to send…"
-   - **Right — sidebar** (`#F0EBE3`, radius 4, padding clamp(36,4vw,48)): H2 "Reach us directly"; **Email** `hello@credomlimited.com`; **Studio** address; divider; italic gold tagline.
+   - **Right — sidebar** (`#F0EBE3`, radius 4, padding clamp(36,4vw,48)): H2 "Reach us directly"; **Email** `hello@credomlimited.com`; **Location** — Victoria Island, Lagos, Nigeria; divider; italic gold tagline.
+3. **Join Our Team (careers)** — bg `#F0EBE3`, anchor `#join-our-team`. Eyebrow "Careers" + H2 "Want to join our team as an usher or a field agent?" + intro paragraph. White card (max-width 860, `1px #E4DDD2` border, radius 4) holding the application form: Full Name, Age (number, 16–99), Phone/WhatsApp, Email, Location (City/Area), Role (select — Usher / Field Agent / Either / Both), Experience (optional textarea, 3 rows). Submit: **Apply to Join** (gold). Submissions go to the shared FormBold endpoint tagged `formType: "Team Application (Usher / Field Agent)"`.
 
 ---
 

@@ -53,21 +53,20 @@
     <sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
     <div>
 
-      <!-- HERO -->
-      <section style="position:relative; background:#201D1B; color:#FAF7F2; overflow:hidden;">
-        <div style="position:absolute; inset:0; background:linear-gradient(105deg,#201D1B 0%,#201D1B 42%,#2E2A25 100%); opacity:1;"></div>
-        <div style="position:absolute; top:0; right:0; width:44%; height:100%; background:#2A2621; display:flex; align-items:center; justify-content:center; border-left:1px solid #3A342E;">
-          <span style="font-family:'Mulish'; font-size:12px; letter-spacing:0.22em; text-transform:uppercase; color:#6B625A;">Hero Image</span>
+      <!-- HERO (white) -->
+      <section style="position:relative; background:#FFFFFF; color:#201D1B; overflow:hidden; border-bottom:1px solid #E4DDD2;">
+        <div style="position:absolute; top:0; right:0; width:44%; height:100%; background:#F0EBE3; display:flex; align-items:center; justify-content:center; border-left:1px solid #E4DDD2;">
+          <span style="font-family:'Mulish'; font-size:12px; letter-spacing:0.22em; text-transform:uppercase; color:#6E665F;">Hero Image</span>
         </div>
         <div style="position:relative; max-width:1240px; margin:0 auto; padding:clamp(80px,12vw,150px) 40px clamp(80px,11vw,140px);">
           <div style="max-width:760px;">
-            <span style="display:inline-block; font-size:13px; font-weight:700; letter-spacing:0.24em; text-transform:uppercase; color:#D89A2E; margin-bottom:26px;">Integrated Brand Experience Agency</span>
-            <h1 style="font-family:'Rokkitt'; font-weight:800; font-size:clamp(52px,8.5vw,110px); line-height:0.92; letter-spacing:-0.01em; margin:0 0 24px; color:#FAF7F2;">Attention<br>Is Earned.</h1>
-            <p style="font-family:'Rokkitt'; font-weight:600; font-size:clamp(22px,3vw,32px); color:#D89A2E; margin:0 0 28px;">Experience Makes It Last.</p>
-            <p style="font-size:18px; line-height:1.7; color:#C9C0B6; max-width:560px; margin:0 0 40px;">CREDOM transforms ideas into immersive activations, strategic experiences, and memorable brand moments designed to capture attention and leave lasting impact.</p>
+            <span style="display:inline-block; font-size:13px; font-weight:700; letter-spacing:0.24em; text-transform:uppercase; color:#B87D1E; margin-bottom:26px;">Integrated Brand Experience Agency</span>
+            <h1 style="font-family:'Rokkitt'; font-weight:800; font-size:clamp(52px,8.5vw,110px); line-height:0.92; letter-spacing:-0.01em; margin:0 0 24px; color:#201D1B;">Attention<br>Is Earned.</h1>
+            <p style="font-family:'Rokkitt'; font-weight:600; font-size:clamp(22px,3vw,32px); color:#B87D1E; margin:0 0 28px;">Experience Makes It Last.</p>
+            <p style="font-size:18px; line-height:1.7; color:#4A443D; max-width:560px; margin:0 0 40px;">CREDOM transforms ideas into immersive activations, strategic experiences, and memorable brand moments designed to capture attention and leave lasting impact.</p>
             <div style="display:flex; gap:16px; flex-wrap:wrap;">
               <a href="#" onClick="{{ goContact }}" style="font-size:15px; font-weight:700; color:#201D1B; background:#D89A2E; padding:16px 34px; border-radius:2px;">Schedule a Chat</a>
-              <a href="#" onClick="{{ goServices }}" style="font-size:15px; font-weight:700; color:#FAF7F2; border:1px solid #4A443D; padding:16px 34px; border-radius:2px;">Explore Services</a>
+              <a href="#" onClick="{{ goServices }}" style="font-size:15px; font-weight:700; color:#201D1B; border:1px solid #201D1B; padding:16px 34px; border-radius:2px;">Explore Services</a>
             </div>
           </div>
         </div>
@@ -117,29 +116,47 @@
           <h2 style="font-family:'Rokkitt'; font-weight:700; font-size:clamp(38px,5vw,64px); line-height:1; letter-spacing:-0.01em; margin:0 0 20px; color:#201D1B;">How We Work</h2>
           <p style="font-size:18px; line-height:1.7; color:#6E665F; margin:0;">Great experiences don't happen by chance. Every campaign follows an intentional yet flexible process that takes ideas from insight to full-spectrum results.</p>
         </div>
-        <div style="display:flex; flex-direction:column; gap:2px;">
-          <div style="background:#201D1B; color:#FAF7F2; padding:30px 38px; display:grid; grid-template-columns:200px 1fr; gap:24px; align-items:center;"><h3 style="font-family:'Rokkitt'; font-weight:700; font-size:30px; margin:0;">Discover</h3><p style="font-size:16px; line-height:1.65; margin:0; color:#C9C0B6;">We dive deep into your brand, audience, objectives, and media environment. Before any concept is sketched, we understand what success looks and feels like.</p></div>
-          <div style="background:#201D1B; color:#FAF7F2; padding:30px 38px; display:grid; grid-template-columns:200px 1fr; gap:24px; align-items:center;"><h3 style="font-family:'Rokkitt'; font-weight:700; font-size:30px; margin:0;">Design</h3><p style="font-size:16px; line-height:1.65; margin:0; color:#C9C0B6;">We develop bold, insight-led concepts and immersive integrated experience strategies that connect your brand story across all channels.</p></div>
-          <div style="background:#201D1B; color:#FAF7F2; padding:30px 38px; display:grid; grid-template-columns:200px 1fr; gap:24px; align-items:center;"><h3 style="font-family:'Rokkitt'; font-weight:700; font-size:30px; margin:0;">Develop</h3><p style="font-size:16px; line-height:1.65; margin:0; color:#C9C0B6;">We plan every detail from logistics and production to media scheduling and site selection, ensuring every channel is deployed with precision.</p></div>
-          <div style="background:#201D1B; color:#FAF7F2; padding:30px 38px; display:grid; grid-template-columns:200px 1fr; gap:24px; align-items:center;"><h3 style="font-family:'Rokkitt'; font-weight:700; font-size:30px; margin:0;">Deliver</h3><p style="font-size:16px; line-height:1.65; margin:0; color:#C9C0B6;">We execute every element end-to-end, bringing the campaign to life with the same standard of precision and excellence across every touchpoint.</p></div>
-          <div style="background:#D89A2E; color:#201D1B; padding:30px 38px; display:grid; grid-template-columns:200px 1fr; gap:24px; align-items:center;"><h3 style="font-family:'Rokkitt'; font-weight:700; font-size:30px; margin:0;">Measure</h3><p style="font-size:16px; line-height:1.65; margin:0; opacity:0.85;">We evaluate performance across every channel, quantifying reach, engagement and commercial impact to optimise for future growth.</p></div>
+        <div style="display:flex; flex-direction:column; gap:14px;">
+          <div style="background:#FFFFFF; color:#201D1B; border:1px solid #E4DDD2; border-radius:3px; padding:30px 38px; display:grid; grid-template-columns:200px 1fr; gap:24px; align-items:center;"><div style="display:flex; align-items:center; gap:14px;"><span style="width:10px; height:10px; border-radius:50%; background:#D89A2E; flex-shrink:0;"></span><h3 style="font-family:'Rokkitt'; font-weight:700; font-size:30px; margin:0;">Discover</h3></div><p style="font-size:16px; line-height:1.65; margin:0; color:#6E665F;">We dive deep into your brand, audience, objectives, and media environment. Before any concept is sketched, we understand what success looks and feels like.</p></div>
+          <div style="background:#FFFFFF; color:#201D1B; border:1px solid #E4DDD2; border-radius:3px; padding:30px 38px; display:grid; grid-template-columns:200px 1fr; gap:24px; align-items:center;"><div style="display:flex; align-items:center; gap:14px;"><span style="width:10px; height:10px; border-radius:50%; background:#C50E8B; flex-shrink:0;"></span><h3 style="font-family:'Rokkitt'; font-weight:700; font-size:30px; margin:0;">Design</h3></div><p style="font-size:16px; line-height:1.65; margin:0; color:#6E665F;">We develop bold, insight-led concepts and immersive integrated experience strategies that connect your brand story across all channels.</p></div>
+          <div style="background:#FFFFFF; color:#201D1B; border:1px solid #E4DDD2; border-radius:3px; padding:30px 38px; display:grid; grid-template-columns:200px 1fr; gap:24px; align-items:center;"><div style="display:flex; align-items:center; gap:14px;"><span style="width:10px; height:10px; border-radius:50%; background:#18827B; flex-shrink:0;"></span><h3 style="font-family:'Rokkitt'; font-weight:700; font-size:30px; margin:0;">Develop</h3></div><p style="font-size:16px; line-height:1.65; margin:0; color:#6E665F;">We plan every detail from logistics and production to media scheduling and site selection, ensuring every channel is deployed with precision.</p></div>
+          <div style="background:#FFFFFF; color:#201D1B; border:1px solid #E4DDD2; border-radius:3px; padding:30px 38px; display:grid; grid-template-columns:200px 1fr; gap:24px; align-items:center;"><div style="display:flex; align-items:center; gap:14px;"><span style="width:10px; height:10px; border-radius:50%; background:#5A2A17; flex-shrink:0;"></span><h3 style="font-family:'Rokkitt'; font-weight:700; font-size:30px; margin:0;">Deliver</h3></div><p style="font-size:16px; line-height:1.65; margin:0; color:#6E665F;">We execute every element end-to-end, bringing the campaign to life with the same standard of precision and excellence across every touchpoint.</p></div>
+          <div style="background:#D89A2E; color:#201D1B; border:1px solid #D89A2E; border-radius:3px; padding:30px 38px; display:grid; grid-template-columns:200px 1fr; gap:24px; align-items:center;"><div style="display:flex; align-items:center; gap:14px;"><span style="width:10px; height:10px; border-radius:50%; background:#201D1B; flex-shrink:0;"></span><h3 style="font-family:'Rokkitt'; font-weight:700; font-size:30px; margin:0;">Measure</h3></div><p style="font-size:16px; line-height:1.65; margin:0; opacity:0.85;">We evaluate performance across every channel, quantifying reach, engagement and commercial impact to optimise for future growth.</p></div>
         </div>
       </section>
 
-      <!-- CLIENTS -->
-      <section style="background:#201D1B; color:#FAF7F2; padding:clamp(70px,8vw,100px) 0;">
+      <!-- COMPANIES WE SERVED (case studies) -->
+      <section style="background:#F0EBE3; padding:clamp(80px,10vw,120px) 0;">
         <div style="max-width:1240px; margin:0 auto; padding:0 40px;">
-          <span style="display:block; font-size:13px; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:#D89A2E; margin-bottom:38px; text-align:center;">Brands We've Served</span>
-          <div style="display:flex; flex-wrap:wrap; gap:14px 48px; justify-content:center; align-items:center;">
-            <span style="font-family:'Rokkitt'; font-weight:600; font-size:clamp(20px,2.4vw,30px); color:#8A8079;">Midea</span>
-            <span style="font-family:'Rokkitt'; font-weight:600; font-size:clamp(20px,2.4vw,30px); color:#8A8079;">Visa</span>
-            <span style="font-family:'Rokkitt'; font-weight:600; font-size:clamp(20px,2.4vw,30px); color:#8A8079;">MTN</span>
-            <span style="font-family:'Rokkitt'; font-weight:600; font-size:clamp(20px,2.4vw,30px); color:#8A8079;">Coca-Cola</span>
-            <span style="font-family:'Rokkitt'; font-weight:600; font-size:clamp(20px,2.4vw,30px); color:#8A8079;">Guinness</span>
-            <span style="font-family:'Rokkitt'; font-weight:600; font-size:clamp(20px,2.4vw,30px); color:#8A8079;">Reckitt</span>
-            <span style="font-family:'Rokkitt'; font-weight:600; font-size:clamp(20px,2.4vw,30px); color:#8A8079;">Diageo</span>
-            <span style="font-family:'Rokkitt'; font-weight:600; font-size:clamp(20px,2.4vw,30px); color:#8A8079;">Spotify</span>
-            <span style="font-family:'Rokkitt'; font-weight:600; font-size:clamp(20px,2.4vw,30px); color:#8A8079;">Terra</span>
+          <div style="margin-bottom:52px; max-width:720px;">
+            <span style="display:block; font-size:13px; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:#B87D1E; margin-bottom:14px;">Companies We Served</span>
+            <h2 style="font-family:'Rokkitt'; font-weight:700; font-size:clamp(38px,5vw,64px); line-height:1; letter-spacing:-0.01em; margin:0; color:#201D1B;">Work that moved people.</h2>
+          </div>
+          <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:20px;">
+            <div style="background:#201D1B; color:#FAF7F2; border-radius:4px; padding:clamp(40px,4vw,56px); display:flex; flex-direction:column; gap:18px;">
+              <span style="font-size:12px; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:#D89A2E;">Grand Launch &amp; Partners' Conference &mdash; Abuja</span>
+              <h3 style="font-family:'Rokkitt'; font-weight:700; font-size:clamp(26px,2.8vw,36px); line-height:1.1; margin:0;">The Midea Pro Shop</h3>
+              <p style="font-size:16px; line-height:1.7; margin:0; color:#C9C0B6;">A dual-format activation that turned a product launch into a full brand moment. From the high-energy grand opening of The Midea Pro Shop to a polished partners' conference held the same evening, we built two distinct experiences under one strategic vision &mdash; driving footfall, deepening trade relationships, and solidifying Midea's market authority in Abuja.</p>
+              <p style="font-size:15px; font-weight:700; margin:0; color:#D89A2E;">Experiential excellence and commercial impact aren't a trade-off &mdash; they're the brief.</p>
+            </div>
+            <div style="background:#D89A2E; color:#201D1B; border-radius:4px; padding:clamp(40px,4vw,56px); display:flex; flex-direction:column; gap:18px;">
+              <span style="font-size:12px; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:#5A2A17;">August Meeting Activation &mdash; Eastern States</span>
+              <h3 style="font-family:'Rokkitt'; font-weight:700; font-size:clamp(26px,2.8vw,36px); line-height:1.1; margin:0;">Terra</h3>
+              <p style="font-size:16px; line-height:1.7; margin:0; opacity:0.88;">The August Meeting is a significant cultural tradition among Igbo women, who travel back to their hometowns for gatherings organised by women's associations, town unions, and church groups. We activated the Terra brand across 6 locations in Anambra, Enugu, and Imo State &mdash; brand talks, dry sampling, and grassroots ambassador engagement that drove on-ground sales across local communities.</p>
+              <p style="font-size:15px; font-weight:700; margin:0; color:#5A2A17;">High-reach, high-touch &mdash; right in the heart of the conversation.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CLIENTS (white) -->
+      <section style="background:#FFFFFF; color:#201D1B; padding:clamp(70px,8vw,100px) 0; border-top:1px solid #E4DDD2;">
+        <div style="max-width:1240px; margin:0 auto; padding:0 40px;">
+          <span style="display:block; font-size:13px; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:#B87D1E; margin-bottom:38px; text-align:center;">Brands We've Served</span>
+          <div style="display:flex; flex-wrap:wrap; gap:14px 64px; justify-content:center; align-items:center;">
+            <span style="font-family:'Rokkitt'; font-weight:600; font-size:clamp(24px,2.8vw,36px); color:#201D1B;">AltDrive</span>
+            <span style="font-family:'Rokkitt'; font-weight:600; font-size:clamp(24px,2.8vw,36px); color:#201D1B;">AltBank</span>
+            <span style="font-family:'Rokkitt'; font-weight:600; font-size:clamp(24px,2.8vw,36px); color:#201D1B;">Midea</span>
           </div>
         </div>
       </section>
@@ -176,14 +193,29 @@
 
       <!-- VISION / MISSION -->
       <section style="display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr));">
-        <div style="background:#201D1B; color:#FAF7F2; padding:clamp(56px,7vw,90px) clamp(40px,5vw,70px);">
-          <h2 style="font-family:'Rokkitt'; font-weight:700; font-size:clamp(34px,4vw,48px); color:#D89A2E; margin:0 0 22px;">Vision</h2>
-          <p style="font-size:20px; line-height:1.65; color:#E7DFD5; max-width:420px; margin:0;">To redefine brand impact in Africa through immersive experiences.</p>
+        <div style="background:#18827B; color:#FAF7F2; padding:clamp(56px,7vw,90px) clamp(40px,5vw,70px);">
+          <h2 style="font-family:'Rokkitt'; font-weight:700; font-size:clamp(34px,4vw,48px); color:#FFFFFF; margin:0 0 22px;">Vision</h2>
+          <p style="font-size:20px; line-height:1.65; color:#FFFFFF; opacity:0.92; max-width:420px; margin:0;">To redefine brand impact in Africa through immersive experiences.</p>
         </div>
         <div style="background:#D89A2E; color:#201D1B; padding:clamp(56px,7vw,90px) clamp(40px,5vw,70px);">
           <h2 style="font-family:'Rokkitt'; font-weight:700; font-size:clamp(34px,4vw,48px); margin:0 0 22px;">Mission</h2>
           <p style="font-size:18px; line-height:1.7; margin:0 0 16px; max-width:460px;">Design and deliver integrated brand experiences that forge deep connections that drive engagement and generate measurable growth.</p>
           <p style="font-size:18px; line-height:1.7; margin:0; max-width:460px;">Lead with creative excellence and strategic precision across every market that transcends Africa.</p>
+        </div>
+      </section>
+
+      <!-- WHY CHOOSE US -->
+      <section style="background:#FFFFFF; border-bottom:1px solid #E4DDD2;">
+        <div style="max-width:1240px; margin:0 auto; padding:clamp(80px,10vw,120px) 40px;">
+          <div style="margin-bottom:44px; max-width:680px;">
+            <span style="display:block; font-size:13px; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:#B87D1E; margin-bottom:14px;">Why Us</span>
+            <h2 style="font-family:'Rokkitt'; font-weight:700; font-size:clamp(38px,5vw,64px); line-height:1; letter-spacing:-0.01em; margin:0; color:#201D1B;">Why choose us?</h2>
+          </div>
+          <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:40px; max-width:1000px;">
+            <p style="font-size:17px; line-height:1.75; color:#4A443D; margin:0;">We hand you a system. Choosing CREDOM means partnering with a team that operates across every dimension of your brand's presence, with the strategic range and executional depth to make each one count. We are integrators by design &mdash; bringing together the broad reach of traditional media and OOH with the depth and intimacy of experiential marketing, all governed by one strategic vision.</p>
+            <p style="font-size:17px; line-height:1.75; color:#4A443D; margin:0;">With deep roots across FMCG, fintech, telecoms, banking, and lifestyle sectors, we arrive at every brief with relevant context and a proven playbook, not guesswork. We don't just plan your campaigns &mdash; we craft every visual and spatial element, and every audience interaction, to draw people deeper into your brand world.</p>
+          </div>
+          <p style="font-family:'Rokkitt'; font-style:italic; font-weight:600; font-size:clamp(24px,3vw,36px); line-height:1.3; letter-spacing:-0.01em; color:#D89A2E; max-width:960px; margin:44px 0 0;">Our end-to-end project management ensures nothing falls through the gaps &mdash; memorable for your audience, effortless for you.</p>
         </div>
       </section>
 
@@ -203,27 +235,27 @@
         </div>
       </section>
 
-      <!-- MEET THE FORCE -->
-      <section style="background:#201D1B; color:#FAF7F2; padding:clamp(80px,10vw,120px) 0;">
+      <!-- MEET THE FORCE (light) -->
+      <section style="background:#F0EBE3; color:#201D1B; padding:clamp(80px,10vw,120px) 0;">
         <div style="max-width:1240px; margin:0 auto; padding:0 40px;">
-          <span style="display:block; font-size:13px; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:#D89A2E; margin-bottom:14px;">Meet the Force</span>
-          <h2 style="font-family:'Rokkitt'; font-weight:700; font-size:clamp(38px,5vw,64px); line-height:1; letter-spacing:-0.01em; margin:0 0 52px; color:#FAF7F2;">The people behind the moments.</h2>
+          <span style="display:block; font-size:13px; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:#B87D1E; margin-bottom:14px;">Meet the Force</span>
+          <h2 style="font-family:'Rokkitt'; font-weight:700; font-size:clamp(38px,5vw,64px); line-height:1; letter-spacing:-0.01em; margin:0 0 52px; color:#201D1B;">The people behind the moments.</h2>
           <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:36px;">
             <div>
               <div style="position:relative; margin-bottom:28px;">
                 <div style="position:absolute; left:-14px; top:14px; width:200px; height:230px; background:#D89A2E; border-radius:2px;"></div>
-                <div style="position:relative; width:220px; height:250px; background:#2E2A25; border:1px solid #3A342E; display:flex; align-items:center; justify-content:center; border-radius:2px;"><span style="font-size:12px; letter-spacing:0.18em; text-transform:uppercase; color:#6B625A;">Photo</span></div>
+                <div style="position:relative; width:220px; height:250px; background:#FFFFFF; border:1px solid #E4DDD2; display:flex; align-items:center; justify-content:center; border-radius:2px;"><span style="font-size:12px; letter-spacing:0.18em; text-transform:uppercase; color:#6E665F;">Photo</span></div>
               </div>
-              <h3 style="font-family:'Rokkitt'; font-weight:700; font-size:32px; margin:0 0 4px;">Pelumi Adese <span style="font-size:16px; color:#D89A2E; font-weight:600;">Business Lead / COO</span></h3>
-              <p style="font-size:15px; line-height:1.75; color:#B7AEA4; margin:16px 0 0;">An experiential marketing and brand experience professional with over a decade of experience translating business strategy into immersive, high-impact brand engagements across Nigeria, the UK, and the wider African market. Her work bridges strategy and creativity to deliver experiences that resonate deeply &mdash; spanning FMCG, fintech, banking, and lifestyle, with brands including Midea, Visa, Reckitt Benckiser and Total.</p>
+              <h3 style="font-family:'Rokkitt'; font-weight:700; font-size:32px; margin:0 0 4px;">Pelumi Adese <span style="font-size:16px; color:#B87D1E; font-weight:600;">Business Lead / COO</span></h3>
+              <p style="font-size:15px; line-height:1.75; color:#6E665F; margin:16px 0 0;">An experiential marketing and brand experience professional with over a decade of experience translating business strategy into immersive, high-impact brand engagements across Nigeria, the UK, and the wider African market. Her work bridges strategy and creativity to deliver experiences that resonate deeply &mdash; spanning FMCG, fintech, banking, and lifestyle, with brands including Midea, Visa, Reckitt Benckiser and Total.</p>
             </div>
             <div>
               <div style="position:relative; margin-bottom:28px;">
                 <div style="position:absolute; left:-14px; top:14px; width:200px; height:230px; background:#5A2A17; border-radius:2px;"></div>
-                <div style="position:relative; width:220px; height:250px; background:#2E2A25; border:1px solid #3A342E; display:flex; align-items:center; justify-content:center; border-radius:2px;"><span style="font-size:12px; letter-spacing:0.18em; text-transform:uppercase; color:#6B625A;">Photo</span></div>
+                <div style="position:relative; width:220px; height:250px; background:#FFFFFF; border:1px solid #E4DDD2; display:flex; align-items:center; justify-content:center; border-radius:2px;"><span style="font-size:12px; letter-spacing:0.18em; text-transform:uppercase; color:#6E665F;">Photo</span></div>
               </div>
-              <h3 style="font-family:'Rokkitt'; font-weight:700; font-size:32px; margin:0 0 4px;">Fetuga S.O <span style="font-size:16px; color:#D89A2E; font-weight:600;">Project Manager</span></h3>
-              <p style="font-size:15px; line-height:1.75; color:#B7AEA4; margin:16px 0 0;">A results-driven Project Manager with a proven track record across brand strategy, experiential marketing, and end-to-end delivery. He brings a rare combination of strategic clarity and operational precision, leading cross-functional teams under pressure. His portfolio spans iconic brands including British American Tobacco, MTN, Procter &amp; Gamble, Guinness, Coca-Cola, Diageo and Spotify.</p>
+              <h3 style="font-family:'Rokkitt'; font-weight:700; font-size:32px; margin:0 0 4px;">Fetuga S.O <span style="font-size:16px; color:#B87D1E; font-weight:600;">Project Manager</span></h3>
+              <p style="font-size:15px; line-height:1.75; color:#6E665F; margin:16px 0 0;">A results-driven Project Manager with a proven track record across brand strategy, experiential marketing, and end-to-end delivery. He brings a rare combination of strategic clarity and operational precision, leading cross-functional teams under pressure. His portfolio spans iconic brands including British American Tobacco, MTN, Procter &amp; Gamble, Guinness, Coca-Cola, Diageo and Spotify.</p>
             </div>
           </div>
         </div>
@@ -298,11 +330,11 @@
     <sc-if value="{{ isContact }}" hint-placeholder-val="{{ true }}">
     <div>
 
-      <section style="background:#201D1B; color:#FAF7F2; padding:clamp(70px,9vw,120px) 0 clamp(60px,8vw,100px);">
+      <section style="background:#FFFFFF; color:#201D1B; padding:clamp(70px,9vw,120px) 0 clamp(60px,8vw,100px); border-bottom:1px solid #E4DDD2;">
         <div style="max-width:1240px; margin:0 auto; padding:0 40px;">
-          <span style="display:block; font-size:13px; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:#D89A2E; margin-bottom:24px;">Let's Talk</span>
-          <h1 style="font-family:'Rokkitt'; font-weight:800; font-size:clamp(52px,9vw,120px); line-height:0.9; letter-spacing:-0.015em; margin:0 0 26px; color:#FAF7F2;">From Insight<br>To Impact.</h1>
-          <p style="font-size:19px; line-height:1.7; color:#C9C0B6; max-width:560px; margin:0;">Tell us about the moment you want to create. We'll bring the strategy, creativity, and seamless execution to make it happen.</p>
+          <span style="display:block; font-size:13px; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:#B87D1E; margin-bottom:24px;">Let's Talk</span>
+          <h1 style="font-family:'Rokkitt'; font-weight:800; font-size:clamp(52px,9vw,120px); line-height:0.9; letter-spacing:-0.015em; margin:0 0 26px; color:#201D1B;">From Insight<br>To Impact.</h1>
+          <p style="font-size:19px; line-height:1.7; color:#4A443D; max-width:560px; margin:0;">Tell us about the moment you want to create. We'll bring the strategy, creativity, and seamless execution to make it happen.</p>
         </div>
       </section>
 
@@ -333,7 +365,7 @@
             <a href="mailto:hello@credomlimited.com" style="font-size:17px; color:#201D1B; font-weight:600;">hello@credomlimited.com</a>
           </div>
           <div style="margin-bottom:28px;">
-            <span style="display:block; font-size:12px; font-weight:700; letter-spacing:0.18em; text-transform:uppercase; color:#B87D1E; margin-bottom:8px;">Studio</span>
+            <span style="display:block; font-size:12px; font-weight:700; letter-spacing:0.18em; text-transform:uppercase; color:#B87D1E; margin-bottom:8px;">Location</span>
             <p style="font-size:16px; line-height:1.7; color:#4A443D; margin:0;">Victoria Island,<br>Lagos, Nigeria.</p>
           </div>
           <div style="padding-top:26px; border-top:1px solid #DDD4C7;">
@@ -341,6 +373,38 @@
           </div>
         </div>
 
+      </section>
+
+      <!-- JOIN OUR TEAM (careers) -->
+      <section style="background:#F0EBE3; padding:clamp(70px,9vw,110px) 0;">
+        <div style="max-width:1240px; margin:0 auto; padding:0 40px;">
+          <div style="max-width:720px; margin-bottom:44px;">
+            <span style="display:block; font-size:13px; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:#B87D1E; margin-bottom:14px;">Careers</span>
+            <h2 style="font-family:'Rokkitt'; font-weight:700; font-size:clamp(32px,4.4vw,54px); line-height:1.05; letter-spacing:-0.01em; margin:0 0 18px; color:#201D1B;">Want to join our team as an usher or a field agent?</h2>
+            <p style="font-size:17px; line-height:1.7; color:#6E665F; margin:0;">We're always looking for dependable, energetic people to bring brand experiences to life on the ground. Tell us about yourself and we'll reach out when the next campaign kicks off.</p>
+          </div>
+          <div style="background:#FFFFFF; border:1px solid #E4DDD2; border-radius:4px; padding:clamp(36px,4vw,48px); max-width:860px;">
+            <sc-if value="{{ careerSent }}" hint-placeholder-val="{{ false }}">
+              <div style="background:#F0EBE3; border-left:4px solid #18827B; padding:24px 28px; border-radius:3px; margin-bottom:28px;"><p style="margin:0; font-size:16px; line-height:1.6; color:#201D1B;"><strong>Thank you.</strong> Your application is ready to send from your email app. We'll be in touch ahead of the next activation.</p></div>
+            </sc-if>
+            <form ref="{{ careersRef }}" onSubmit="{{ onCareersSubmit }}">
+              <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:22px; margin-bottom:22px;">
+                <label style="display:block;"><span style="display:block; font-size:13px; font-weight:700; letter-spacing:0.05em; color:#201D1B; margin-bottom:9px;">Full Name</span><input name="name" type="text" required placeholder="Your name" style="width:100%; padding:14px 16px; border:1px solid #DDD4C7; border-radius:2px; font-size:15px; background:#FFFFFF; color:#201D1B; outline:none;"></label>
+                <label style="display:block;"><span style="display:block; font-size:13px; font-weight:700; letter-spacing:0.05em; color:#201D1B; margin-bottom:9px;">Age</span><input name="age" type="number" required placeholder="18+" style="width:100%; padding:14px 16px; border:1px solid #DDD4C7; border-radius:2px; font-size:15px; background:#FFFFFF; color:#201D1B; outline:none;"></label>
+              </div>
+              <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:22px; margin-bottom:22px;">
+                <label style="display:block;"><span style="display:block; font-size:13px; font-weight:700; letter-spacing:0.05em; color:#201D1B; margin-bottom:9px;">Phone / WhatsApp</span><input name="phone" type="tel" required placeholder="+234..." style="width:100%; padding:14px 16px; border:1px solid #DDD4C7; border-radius:2px; font-size:15px; background:#FFFFFF; color:#201D1B; outline:none;"></label>
+                <label style="display:block;"><span style="display:block; font-size:13px; font-weight:700; letter-spacing:0.05em; color:#201D1B; margin-bottom:9px;">Email</span><input name="email" type="email" required placeholder="you@email.com" style="width:100%; padding:14px 16px; border:1px solid #DDD4C7; border-radius:2px; font-size:15px; background:#FFFFFF; color:#201D1B; outline:none;"></label>
+              </div>
+              <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:22px; margin-bottom:22px;">
+                <label style="display:block;"><span style="display:block; font-size:13px; font-weight:700; letter-spacing:0.05em; color:#201D1B; margin-bottom:9px;">Location (City / Area)</span><input name="location" type="text" required placeholder="e.g. Lekki, Lagos" style="width:100%; padding:14px 16px; border:1px solid #DDD4C7; border-radius:2px; font-size:15px; background:#FFFFFF; color:#201D1B; outline:none;"></label>
+                <label style="display:block;"><span style="display:block; font-size:13px; font-weight:700; letter-spacing:0.05em; color:#201D1B; margin-bottom:9px;">Role</span><select name="role" style="width:100%; padding:14px 16px; border:1px solid #DDD4C7; border-radius:2px; font-size:15px; background:#FFFFFF; color:#201D1B; outline:none;"><option>Usher</option><option>Field Agent</option><option>Either / Both</option></select></label>
+              </div>
+              <label style="display:block; margin-bottom:28px;"><span style="display:block; font-size:13px; font-weight:700; letter-spacing:0.05em; color:#201D1B; margin-bottom:9px;">Experience (optional)</span><textarea name="experience" rows="3" placeholder="Tell us about any events or activations you've worked on" style="width:100%; padding:14px 16px; border:1px solid #DDD4C7; border-radius:2px; font-size:15px; background:#FFFFFF; color:#201D1B; outline:none; resize:vertical; line-height:1.6;"></textarea></label>
+              <button type="submit" style="font-size:16px; font-weight:700; color:#201D1B; background:#D89A2E; padding:16px 38px; border:none; border-radius:2px; cursor:pointer;">Apply to Join</button>
+            </form>
+          </div>
+        </div>
       </section>
 
     </div>
@@ -388,13 +452,14 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
-  state = { page: 'home', sent: false };
+  state = { page: 'home', sent: false, careerSent: false };
   constructor(props) {
     super(props);
     this.formRef = React.createRef();
+    this.careersRef = React.createRef();
   }
   go(p) {
-    this.setState({ page: p, sent: false });
+    this.setState({ page: p, sent: false, careerSent: false });
     if (typeof window !== 'undefined') window.scrollTo({ top: 0, behavior: 'smooth' });
   }
   submit(e) {
@@ -413,14 +478,31 @@ class Component extends DCLogic {
       '\nInterested in: ' + service + '\n\n' + message
     );
     if (typeof window !== 'undefined') {
-      window.location.href = 'mailto:ifeoluwaadese@gmail.com?subject=' + subject + '&body=' + body;
+      window.location.href = 'mailto:hello@credomlimited.com?subject=' + subject + '&body=' + body;
     }
     this.setState({ sent: true });
+  }
+  submitCareers(e) {
+    e.preventDefault();
+    const f = this.careersRef.current;
+    if (!f) return;
+    const d = new FormData(f);
+    const subject = encodeURIComponent('Team Application — ' + ((d.get('name') || '').toString() || 'New applicant'));
+    const body = encodeURIComponent(
+      'Name: ' + (d.get('name') || '') + '\nAge: ' + (d.get('age') || '') +
+      '\nPhone: ' + (d.get('phone') || '') + '\nEmail: ' + (d.get('email') || '') +
+      '\nLocation: ' + (d.get('location') || '') + '\nRole: ' + (d.get('role') || '') +
+      '\n\nExperience:\n' + (d.get('experience') || '')
+    );
+    if (typeof window !== 'undefined') {
+      window.location.href = 'mailto:hello@credomlimited.com?subject=' + subject + '&body=' + body;
+    }
+    this.setState({ careerSent: true });
   }
   renderVals() {
     const p = this.state.page;
     return {
-      page: p, sent: this.state.sent,
+      page: p, sent: this.state.sent, careerSent: this.state.careerSent,
       isHome: p === 'home', isAbout: p === 'about', isServices: p === 'services', isContact: p === 'contact',
       goHome: () => this.go('home'),
       goAbout: () => this.go('about'),
@@ -428,6 +510,8 @@ class Component extends DCLogic {
       goContact: () => this.go('contact'),
       formRef: this.formRef,
       onSubmit: (e) => this.submit(e),
+      careersRef: this.careersRef,
+      onCareersSubmit: (e) => this.submitCareers(e),
     };
   }
 }
