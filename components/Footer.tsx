@@ -10,7 +10,7 @@ const exploreLinks = [
 
 function ColumnHeading({ children }: { children: React.ReactNode }) {
   return (
-    <span className="mb-[18px] block font-body text-xs font-bold uppercase tracking-eyebrow text-gold">
+    <span className="mb-[18px] block font-body text-xs font-bold uppercase tracking-eyebrow text-gold-deep">
       {children}
     </span>
   );
@@ -18,12 +18,12 @@ function ColumnHeading({ children }: { children: React.ReactNode }) {
 
 export default function Footer() {
   return (
-    <footer className="bg-ink pb-10 pt-[70px] text-on-dark">
+    <footer className="border-t border-line bg-paper pb-10 pt-[70px] text-body-ink">
       <div className="mx-auto max-w-content px-10">
-        <div className="grid grid-cols-[repeat(auto-fit,minmax(220px,1fr))] gap-11 border-b border-ink-line pb-[54px]">
+        <div className="grid grid-cols-[repeat(auto-fit,minmax(220px,1fr))] gap-11 border-b border-line pb-[54px]">
           {/* Brand */}
           <div>
-            <Logo size={24} variant="dark" />
+            <Logo size={24} />
           </div>
 
           {/* Explore */}
@@ -34,7 +34,7 @@ export default function Footer() {
                 <Link
                   key={href}
                   href={href}
-                  className="text-[15px] text-on-dark transition-colors hover:text-paper"
+                  className="text-[15px] text-body-ink transition-colors hover:text-gold-deep"
                 >
                   {label}
                 </Link>
@@ -45,7 +45,7 @@ export default function Footer() {
           {/* Visit */}
           <div>
             <ColumnHeading>Visit</ColumnHeading>
-            <p className="m-0 text-[15px] leading-[1.7] text-on-dark">
+            <p className="m-0 text-[15px] leading-[1.7] text-body-ink">
               Victoria Island,
               <br />
               Lagos, Nigeria.
@@ -58,7 +58,7 @@ export default function Footer() {
             <div className="flex flex-col gap-3">
               <a
                 href="mailto:hello@credomlimited.com"
-                className="text-[15px] text-on-dark transition-colors hover:text-paper"
+                className="text-[15px] text-body-ink transition-colors hover:text-gold-deep"
               >
                 hello@credomlimited.com
               </a>
@@ -66,19 +66,19 @@ export default function Footer() {
                 href="https://www.instagram.com/wearecredom"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[15px] text-on-dark transition-colors hover:text-paper"
+                className="text-[15px] text-body-ink transition-colors hover:text-gold-deep"
               >
                 Instagram — @wearecredom
               </a>
               <Link
                 href="/contact#join-our-team"
-                className="text-[15px] text-on-dark transition-colors hover:text-paper"
+                className="text-[15px] text-body-ink transition-colors hover:text-gold-deep"
               >
                 Join the team
               </Link>
               <Link
                 href="/contact"
-                className="text-[15px] font-bold text-gold transition-opacity hover:opacity-90"
+                className="text-[15px] font-bold text-gold-deep transition-opacity hover:opacity-90"
               >
                 Schedule a Chat &rarr;
               </Link>
@@ -87,10 +87,10 @@ export default function Footer() {
         </div>
 
         <div className="flex flex-wrap justify-between gap-4 pt-[26px]">
-          <span className="text-[13px] text-muted-dark-2">
+          <span className="text-[13px] text-body-muted">
             &copy; 2026 CREDOM Limited. All rights reserved.
           </span>
-          <span className="text-[13px] text-muted-dark-2">
+          <span className="text-[13px] text-body-muted">
             Redefining brand impact in Africa.
           </span>
         </div>
