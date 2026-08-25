@@ -2,9 +2,9 @@ import Link from "next/link";
 import Container from "@/components/Container";
 import Eyebrow from "@/components/Eyebrow";
 import Button from "@/components/Button";
+import Image from "next/image";
 import ServiceCard from "@/components/ServiceCard";
 import CtaBand from "@/components/CtaBand";
-import ImagePlaceholder from "@/components/ImagePlaceholder";
 import { services } from "@/lib/services";
 import {
   processSteps,
@@ -26,13 +26,20 @@ export default function HomePage() {
     <>
       {/* HERO */}
       <section className="relative overflow-hidden border-b border-line bg-white text-ink">
-        <ImagePlaceholder
-          label="Hero Image"
-          labelTracking="0.22em"
-          className="absolute right-0 top-0 h-full w-[44%] border-l border-line bg-paper-2"
-        />
+        <div className="absolute right-0 top-0 h-full w-[44%] border-l border-line bg-paper-2 max-sm:hidden">
+          <Image
+            src="/images/hero-attention.jpg"
+            alt="A man in sunglasses in front of a glowing sign at a live brand event"
+            fill
+            priority
+            sizes="44vw"
+            className="object-cover"
+            style={{ objectPosition: "62% center" }}
+          />
+        </div>
         <div className="relative mx-auto max-w-content px-10 pb-[clamp(80px,11vw,140px)] pt-[clamp(80px,12vw,150px)]">
-          <div className="max-w-[760px]">
+          {/* Cap the column so text never runs under the photo panel (56vw − left offset − gap). */}
+          <div className="max-w-[760px] sm:max-w-[min(760px,56vw-84px)]">
             <Eyebrow className="mb-[26px] tracking-eyebrow-wide">
               Integrated Brand Experience Agency
             </Eyebrow>

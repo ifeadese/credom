@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Container from "@/components/Container";
 import Eyebrow from "@/components/Eyebrow";
 import CtaBand from "@/components/CtaBand";
-import ImagePlaceholder from "@/components/ImagePlaceholder";
 import {
   principles,
   principleThemeClasses,
@@ -164,9 +164,12 @@ export default function AboutPage() {
                       backdropClasses[member.backdrop]
                     }`}
                   />
-                  <ImagePlaceholder
-                    label="Photo"
-                    className="relative h-[250px] w-[220px] rounded-[2px] border border-line bg-white"
+                  <Image
+                    src={member.photo}
+                    alt={`Portrait of ${member.name}`}
+                    width={220}
+                    height={250}
+                    className="relative h-[250px] w-[220px] rounded-[2px] border border-line object-cover object-top"
                   />
                 </div>
                 <h3 className="m-0 mb-1 font-display text-[32px] font-bold">

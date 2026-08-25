@@ -179,20 +179,24 @@ export type TeamMember = {
   name: string;
   role: string;
   bio: string;
-  /** Color of the offset block behind the photo placeholder. */
+  /** Color of the offset block behind the photo. */
   backdrop: "gold" | "brown";
+  /** Headshot under public/, extracted from the company profile. */
+  photo: string;
 };
 
 export const team: TeamMember[] = [
   {
     name: "Pelumi Adese",
     role: "Business Lead / COO",
+    photo: "/images/team-pelumi-adese.jpg",
     bio: "An experiential marketing and brand experience professional with over a decade of experience translating business strategy into immersive, high-impact brand engagements across Nigeria, the UK, and the wider African market. Her work bridges strategy and creativity to deliver experiences that resonate deeply — spanning FMCG, fintech, banking, and lifestyle, with brands including Midea, Visa, Reckitt Benckiser and Total.",
     backdrop: "gold",
   },
   {
     name: "Fetuga S.O",
     role: "Project Manager",
+    photo: "/images/team-fetuga-shore.jpg",
     bio: "A results-driven Project Manager with a proven track record across brand strategy, experiential marketing, and end-to-end delivery. He brings a rare combination of strategic clarity and operational precision, leading cross-functional teams under pressure. His portfolio spans iconic brands including British American Tobacco, MTN, Procter & Gamble, Guinness, Coca-Cola, Diageo and Spotify.",
     backdrop: "brown",
   },
