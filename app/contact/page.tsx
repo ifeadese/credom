@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Container from "@/components/Container";
 import Eyebrow from "@/components/Eyebrow";
 import ContactForm from "@/components/ContactForm";
+import CareersForm from "@/components/CareersForm";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -22,17 +23,15 @@ export default function ContactPage() {
   return (
     <>
       {/* HERO */}
-      <section className="bg-ink pb-[clamp(60px,8vw,100px)] pt-[clamp(70px,9vw,120px)] text-paper">
+      <section className="border-b border-line bg-white pb-[clamp(60px,8vw,100px)] pt-[clamp(70px,9vw,120px)] text-ink">
         <Container>
-          <Eyebrow tone="gold" className="mb-6">
-            Let&apos;s Talk
-          </Eyebrow>
-          <h1 className="m-0 mb-[26px] font-display text-[clamp(52px,9vw,120px)] font-extrabold leading-[0.9] tracking-[-0.015em] text-paper">
+          <Eyebrow className="mb-6">Let&apos;s Talk</Eyebrow>
+          <h1 className="m-0 mb-[26px] font-display text-[clamp(52px,9vw,120px)] font-extrabold leading-[0.9] tracking-[-0.015em] text-ink">
             From Insight
             <br />
             To Impact.
           </h1>
-          <p className="m-0 max-w-[560px] text-[19px] leading-[1.7] text-on-dark">
+          <p className="m-0 max-w-[560px] text-[19px] leading-[1.7] text-body-ink">
             Tell us about the moment you want to create. We&apos;ll bring the
             strategy, creativity, and seamless execution to make it happen.
           </p>
@@ -59,7 +58,7 @@ export default function ContactPage() {
             </a>
           </div>
           <div className="mb-7">
-            <SidebarLabel>Studio</SidebarLabel>
+            <SidebarLabel>Location</SidebarLabel>
             <p className="m-0 text-[16px] leading-[1.7] text-body-ink">
               Victoria Island,
               <br />
@@ -72,6 +71,27 @@ export default function ContactPage() {
             </p>
           </div>
         </aside>
+      </section>
+
+      {/* JOIN OUR TEAM */}
+      <section id="join-our-team" className="bg-paper-2 py-[clamp(70px,9vw,110px)]">
+        <Container>
+          <div className="mb-11 max-w-[720px]">
+            <Eyebrow className="mb-[14px]">Careers</Eyebrow>
+            <h2 className="m-0 mb-[18px] font-display text-[clamp(32px,4.4vw,54px)] font-bold leading-[1.05] tracking-[-0.01em] text-ink">
+              Want to join our team as an usher or a field agent?
+            </h2>
+            <p className="m-0 text-[17px] leading-[1.7] text-body-muted">
+              We&apos;re always looking for dependable, energetic people to
+              bring brand experiences to life on the ground. Tell us about
+              yourself and we&apos;ll reach out when the next campaign kicks
+              off.
+            </p>
+          </div>
+          <div className="max-w-[860px] rounded-block border border-line bg-white p-[clamp(36px,4vw,48px)]">
+            <CareersForm />
+          </div>
+        </Container>
       </section>
     </>
   );

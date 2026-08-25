@@ -68,6 +68,12 @@ export default function Footer() {
                 hello@credomlimited.com
               </a>
               <Link
+                href="/contact#join-our-team"
+                className="text-[15px] text-on-dark transition-colors hover:text-paper"
+              >
+                Join the team
+              </Link>
+              <Link
                 href="/contact"
                 className="text-[15px] font-bold text-gold transition-opacity hover:opacity-90"
               >
