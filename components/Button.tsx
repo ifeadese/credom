@@ -8,7 +8,7 @@ const base =
 
 const variants: Record<Variant, string> = {
   gold: "bg-gold text-ink",
-  outline: "border border-ink-outline text-paper",
+  outline: "border border-ink text-ink",
 };
 
 const sizes: Record<Size, string> = {

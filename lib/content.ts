@@ -34,17 +34,66 @@ export const processSteps: ProcessStep[] = [
   },
 ];
 
-export const clients = [
-  "Midea",
-  "Visa",
-  "MTN",
-  "Coca-Cola",
-  "Guinness",
-  "Reckitt",
-  "Diageo",
-  "Spotify",
-  "Terra",
+export const clients = ["AltDrive", "AltBank", "Midea"];
+
+/** Home — Companies We Served case-study cards. */
+export type CaseStudyTheme = "ink" | "gold";
+
+export type CaseStudy = {
+  client: string;
+  category: string;
+  description: string;
+  takeaway: string;
+  theme: CaseStudyTheme;
+};
+
+export const caseStudyThemeClasses: Record<
+  CaseStudyTheme,
+  { card: string; category: string; body: string; takeaway: string }
+> = {
+  ink: {
+    card: "bg-ink text-paper",
+    category: "text-gold",
+    body: "text-on-dark",
+    takeaway: "text-gold",
+  },
+  gold: {
+    card: "bg-gold text-ink",
+    category: "text-brown",
+    body: "opacity-[0.88]",
+    takeaway: "text-brown",
+  },
+};
+
+export const caseStudies: CaseStudy[] = [
+  {
+    client: "The Midea Pro Shop",
+    category: "Grand Launch & Partners' Conference — Abuja",
+    description:
+      "A dual-format activation that turned a product launch into a full brand moment. From the high-energy grand opening of The Midea Pro Shop to a polished partners' conference held the same evening, we built two distinct experiences under one strategic vision — driving footfall, deepening trade relationships, and solidifying Midea's market authority in Abuja.",
+    takeaway:
+      "Experiential excellence and commercial impact aren't a trade-off — they're the brief.",
+    theme: "ink",
+  },
+  {
+    client: "Terra",
+    category: "August Meeting Activation — Eastern States",
+    description:
+      "The August Meeting is a significant cultural tradition among Igbo women, who travel back to their hometowns for gatherings organised by women's associations, town unions, and church groups. We activated the Terra brand across 6 locations in Anambra, Enugu, and Imo State — brand talks, dry sampling, and grassroots ambassador engagement that drove on-ground sales across local communities.",
+    takeaway: "High-reach, high-touch — right in the heart of the conversation.",
+    theme: "gold",
+  },
 ];
+
+/** About — Why Choose Us narrative. */
+export const whyChooseUs = {
+  paragraphs: [
+    "We hand you a system. Choosing CREDOM means partnering with a team that operates across every dimension of your brand's presence, with the strategic range and executional depth to make each one count. We are integrators by design — bringing together the broad reach of traditional media and OOH with the depth and intimacy of experiential marketing, all governed by one strategic vision.",
+    "With deep roots across FMCG, fintech, telecoms, banking, and lifestyle sectors, we arrive at every brief with relevant context and a proven playbook, not guesswork. We don't just plan your campaigns — we craft every visual and spatial element, and every audience interaction, to draw people deeper into your brand world.",
+  ],
+  quote:
+    "Our end-to-end project management ensures nothing falls through the gaps — memorable for your audience, effortless for you.",
+};
 
 /** About — What We Stand For principle cards. */
 export type PrincipleTheme = "magenta" | "brown" | "gold" | "teal" | "white";
@@ -193,3 +242,45 @@ export const formBoldFieldNames = {
 
 export const contactSuccessMessage =
   "Your message has been sent. We'll be in touch shortly to schedule your chat.";
+
+/** Contact — Join Our Team (usher / field agent) application form. */
+export const careersRoles = ["Usher", "Field Agent", "Either / Both"];
+
+export interface CareersFormData {
+  name: string;
+  age: string;
+  phone: string;
+  email: string;
+  location: string;
+  role: string;
+  experience: string;
+}
+
+export const careersInitialData: CareersFormData = {
+  name: "",
+  age: "",
+  phone: "",
+  email: "",
+  location: "",
+  role: careersRoles[0],
+  experience: "",
+};
+
+/**
+ * FormBold field names for careers applications. The `formType` constant lets
+ * the shared FormBold inbox distinguish applications from contact enquiries.
+ */
+export const careersFieldNames = {
+  name: "name",
+  age: "age",
+  phone: "phone",
+  email: "email",
+  location: "location",
+  role: "role",
+  experience: "experience",
+} as const satisfies Record<keyof CareersFormData, string>;
+
+export const careersFormType = "Team Application (Usher / Field Agent)";
+
+export const careersSuccessMessage =
+  "Your application has been received. We'll reach out ahead of the next activation.";

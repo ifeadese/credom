@@ -3,7 +3,12 @@ import Container from "@/components/Container";
 import Eyebrow from "@/components/Eyebrow";
 import CtaBand from "@/components/CtaBand";
 import ImagePlaceholder from "@/components/ImagePlaceholder";
-import { principles, principleThemeClasses, team } from "@/lib/content";
+import {
+  principles,
+  principleThemeClasses,
+  team,
+  whyChooseUs,
+} from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "About",
@@ -58,11 +63,11 @@ export default function AboutPage() {
 
       {/* VISION / MISSION */}
       <section className="grid grid-cols-[repeat(auto-fit,minmax(320px,1fr))]">
-        <div className="bg-ink px-[clamp(40px,5vw,70px)] py-[clamp(56px,7vw,90px)] text-paper">
-          <h2 className="m-0 mb-[22px] font-display text-[clamp(34px,4vw,48px)] font-bold text-gold">
+        <div className="bg-teal px-[clamp(40px,5vw,70px)] py-[clamp(56px,7vw,90px)] text-paper">
+          <h2 className="m-0 mb-[22px] font-display text-[clamp(34px,4vw,48px)] font-bold text-white">
             Vision
           </h2>
-          <p className="m-0 max-w-[420px] text-[20px] leading-[1.65] text-on-dark-2">
+          <p className="m-0 max-w-[420px] text-[20px] leading-[1.65] text-white opacity-[0.92]">
             To redefine brand impact in Africa through immersive experiences.
           </p>
         </div>
@@ -77,6 +82,31 @@ export default function AboutPage() {
           <p className="m-0 max-w-[460px] text-[18px] leading-[1.7]">
             Lead with creative excellence and strategic precision across every
             market that transcends Africa.
+          </p>
+        </div>
+      </section>
+
+      {/* WHY CHOOSE US */}
+      <section className="border-b border-line bg-white">
+        <div className="mx-auto max-w-content px-10 py-[clamp(80px,10vw,120px)]">
+          <div className="mb-11 max-w-[680px]">
+            <Eyebrow className="mb-[14px]">Why Us</Eyebrow>
+            <h2 className="m-0 font-display text-[clamp(38px,5vw,64px)] font-bold leading-none tracking-[-0.01em] text-ink">
+              Why choose us?
+            </h2>
+          </div>
+          <div className="grid max-w-[1000px] grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-10">
+            {whyChooseUs.paragraphs.map((paragraph) => (
+              <p
+                key={paragraph.slice(0, 24)}
+                className="m-0 text-[17px] leading-[1.75] text-body-ink"
+              >
+                {paragraph}
+              </p>
+            ))}
+          </div>
+          <p className="m-0 mt-11 max-w-[960px] font-display text-[clamp(24px,3vw,36px)] font-semibold italic leading-[1.3] tracking-[-0.01em] text-gold">
+            {whyChooseUs.quote}
           </p>
         </div>
       </section>
@@ -119,12 +149,10 @@ export default function AboutPage() {
       </section>
 
       {/* MEET THE FORCE */}
-      <section className="bg-ink py-[clamp(80px,10vw,120px)] text-paper">
+      <section className="bg-paper-2 py-[clamp(80px,10vw,120px)] text-ink">
         <Container>
-          <Eyebrow tone="gold" className="mb-[14px]">
-            Meet the Force
-          </Eyebrow>
-          <h2 className="m-0 mb-[52px] font-display text-[clamp(38px,5vw,64px)] font-bold leading-none tracking-[-0.01em] text-paper">
+          <Eyebrow className="mb-[14px]">Meet the Force</Eyebrow>
+          <h2 className="m-0 mb-[52px] font-display text-[clamp(38px,5vw,64px)] font-bold leading-none tracking-[-0.01em] text-ink">
             The people behind the moments.
           </h2>
           <div className="grid grid-cols-[repeat(auto-fit,minmax(320px,1fr))] gap-9">
@@ -138,16 +166,16 @@ export default function AboutPage() {
                   />
                   <ImagePlaceholder
                     label="Photo"
-                    className="relative h-[250px] w-[220px] rounded-[2px] border border-ink-line bg-ink-hero"
+                    className="relative h-[250px] w-[220px] rounded-[2px] border border-line bg-white"
                   />
                 </div>
                 <h3 className="m-0 mb-1 font-display text-[32px] font-bold">
                   {member.name}{" "}
-                  <span className="text-[16px] font-semibold text-gold">
+                  <span className="text-[16px] font-semibold text-gold-deep">
                     {member.role}
                   </span>
                 </h3>
-                <p className="m-0 mt-4 text-[15px] leading-[1.75] text-bio-muted">
+                <p className="m-0 mt-4 text-[15px] leading-[1.75] text-body-muted">
                   {member.bio}
                 </p>
               </div>
