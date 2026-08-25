@@ -18,7 +18,7 @@ const mulish = Mulish({
   display: "swap",
 });
 
-const siteUrl = "https://credomlimited.com";
+const siteUrl = "https://www.credomlimited.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

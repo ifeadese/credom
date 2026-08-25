@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-const baseUrl = "https://credomlimited.com";
+const baseUrl = "https://www.credomlimited.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const routes = ["", "/about", "/services", "/contact"];

@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://credomlimited.com/sitemap.xml",
+    sitemap: "https://www.credomlimited.com/sitemap.xml",
   };
 }
