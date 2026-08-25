@@ -53,7 +53,7 @@ See **DESIGN_SPEC.md** for every measurement, hex value, and line of copy.
 ## Notes for production
 - **Imagery:** the design uses labelled placeholders (hero, team photos). Real photography/logo must be supplied by the client and dropped into those slots.
 - **Public email** shown on the site is `hello@credomlimited.com`. The **contact form** routes to `ifeoluwaadese@gmail.com`.
-- **Contact address:** 3 Jakande Crescent, Victoria Island, Lagos, Nigeria.
+- **Contact address:** Victoria Island, Lagos, Nigeria.
 - Keep the editorial, high-whitespace character of the brand — do not compress the generous vertical rhythm.
 
 ---

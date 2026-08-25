@@ -75,7 +75,7 @@ export default function RootLayout({
       "Integrated brand experience agency in Lagos, Nigeria — strategy, activation, corporate events, traditional media, out-of-home, and digital.",
     address: {
       "@type": "PostalAddress",
-      streetAddress: "3 Jakande Crescent, Victoria Island",
+      streetAddress: "Victoria Island",
       addressLocality: "Lagos",
       addressCountry: "NG",
     },

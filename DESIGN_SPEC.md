@@ -75,7 +75,7 @@ Ink color on light backgrounds; `#FAF7F2` on dark. Dot/bar stay gold in both.
 - 4-column grid (`auto-fit, minmax(220px,1fr)`, gap 44px), bottom border divider:
   1. Logo (white) + tagline in Rokkitt 500 19px, muted `#8A8079`.
   2. **Explore** — Home / About / Services / Contact links.
-  3. **Visit** — 3 Jakande Crescent, Victoria Island, Lagos, Nigeria.
+  3. **Visit** — Victoria Island, Lagos, Nigeria.
   4. **Connect** — `hello@credomlimited.com` + "Schedule a Chat →" (gold).
 - Column headings: eyebrow style, gold.
 - Bottom row: `© 2026 CREDOM Limited. All rights reserved.` and `Redefining brand impact in Africa.` in `#6B625A`.

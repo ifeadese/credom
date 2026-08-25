@@ -51,8 +51,6 @@ export default function Footer() {
           <div>
             <ColumnHeading>Visit</ColumnHeading>
             <p className="m-0 text-[15px] leading-[1.7] text-on-dark">
-              3 Jakande Crescent,
-              <br />
               Victoria Island,
               <br />
               Lagos, Nigeria.

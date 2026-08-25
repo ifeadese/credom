@@ -61,8 +61,6 @@ export default function ContactPage() {
           <div className="mb-7">
             <SidebarLabel>Studio</SidebarLabel>
             <p className="m-0 text-[16px] leading-[1.7] text-body-ink">
-              3 Jakande Crescent,
-              <br />
               Victoria Island,
               <br />
               Lagos, Nigeria.
