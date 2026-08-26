@@ -6,6 +6,7 @@ const exploreLinks = [
   { href: "/about", label: "About" },
   { href: "/services", label: "Services" },
   { href: "/contact", label: "Contact" },
+  { href: "/contact#join-our-team", label: "Careers" },
 ];
 
 function ColumnHeading({ children }: { children: React.ReactNode }) {
@@ -70,12 +71,6 @@ export default function Footer() {
               >
                 Instagram — @wearecredom
               </a>
-              <Link
-                href="/contact#join-our-team"
-                className="text-[15px] text-body-ink transition-colors hover:text-gold-deep"
-              >
-                Join the team
-              </Link>
               <Link
                 href="/contact"
                 className="text-[15px] font-bold text-gold-deep transition-opacity hover:opacity-90"

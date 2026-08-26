@@ -9,13 +9,16 @@ const links = [
   { href: "/about", label: "About" },
   { href: "/services", label: "Services" },
   { href: "/contact", label: "Contact" },
+  { href: "/contact#join-our-team", label: "Careers" },
 ];
 
 export default function Nav() {
   const pathname = usePathname();
 
+  // Sticky from sm up only: on phones the links wrap to three rows and a
+  // pinned header would cover half the viewport.
   return (
-    <nav className="sticky top-0 z-50 border-b border-line bg-paper/90 backdrop-blur-[10px]">
+    <nav className="top-0 z-50 border-b border-line bg-paper/90 backdrop-blur-[10px] sm:sticky">
       <div className="mx-auto flex max-w-content flex-wrap items-center justify-between gap-6 px-10 py-[18px]">
         <Logo asLink size={23} />
 

@@ -109,7 +109,8 @@ export default function RootLayout({
             __html: JSON.stringify(organizationSchema),
           }}
         />
-        <div className="flex min-h-screen flex-col overflow-x-hidden bg-paper">
+        {/* overflow-x-clip, not -hidden: `hidden` makes this a scroll container and breaks the nav's sticky. */}
+        <div className="flex min-h-screen flex-col overflow-x-clip bg-paper">
           <Nav />
           <main className="flex-1">{children}</main>
           <Footer />
