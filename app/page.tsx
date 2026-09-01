@@ -167,15 +167,59 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* COMPANIES WE SERVED */}
-      <section className="bg-paper-2 py-[clamp(80px,10vw,120px)]">
-        <Container>
-          <div className="mb-[52px] max-w-[720px]">
-            <Eyebrow className="mb-[14px]">Companies We Served</Eyebrow>
+      {/* COMPANIES WE SERVED — the client roster and the case studies are one section */}
+      <section className="flex flex-col bg-paper-2 pb-[clamp(80px,10vw,120px)] md:pt-[clamp(80px,10vw,120px)]">
+        <Container className="mt-16 md:mt-0">
+          <div className="max-w-[720px]">
+            <Eyebrow className="mb-[14px] hidden md:block">
+              Companies We Served
+            </Eyebrow>
             <h2 className="m-0 font-display text-[clamp(38px,5vw,64px)] font-bold leading-none tracking-[-0.01em] text-ink">
               Work that moved people.
             </h2>
           </div>
+        </Container>
+
+        {/*
+          Roster: opens the section as a full-bleed white band on mobile (so each logo
+          gets its own row), and reflows into a hairline rail between the headline and
+          the cards from md up, where three logos fit one line.
+        */}
+        <div className="order-first bg-white pb-10 pt-12 md:order-none md:my-11 md:bg-transparent md:py-0">
+          <Container>
+            <Eyebrow className="text-center md:hidden">
+              Companies We Served
+            </Eyebrow>
+            <div className="mt-[26px] [--logo-h:30px] md:mt-0 md:flex md:items-center md:justify-between md:gap-10 md:border-y md:border-line md:py-[26px] md:[--logo-h:clamp(30px,2.5vw,36px)]">
+              <span className="hidden text-[12px] font-bold uppercase tracking-eyebrow text-body-muted md:block">
+                Brands we&apos;ve served
+              </span>
+              <div className="flex flex-col md:flex-row md:items-center md:gap-14">
+                {clients.map((client, i) => (
+                  <div
+                    key={client.name}
+                    className={`flex items-center justify-center py-4 md:py-0 ${
+                      i < clients.length - 1
+                        ? "border-b border-line md:border-b-0"
+                        : ""
+                    }`}
+                  >
+                    <Image
+                      src={client.logo}
+                      alt={client.name}
+                      width={client.width}
+                      height={client.height}
+                      className="w-auto"
+                      style={{ height: `calc(var(--logo-h) * ${client.scale})` }}
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </Container>
+        </div>
+
+        <Container className="mt-10 md:mt-0">
           <div className="grid grid-cols-[repeat(auto-fit,minmax(320px,1fr))] gap-5">
             {caseStudies.map((study) => {
               const t = caseStudyThemeClasses[study.theme];
@@ -201,25 +245,6 @@ export default function HomePage() {
                 </article>
               );
             })}
-          </div>
-        </Container>
-      </section>
-
-      {/* CLIENTS */}
-      <section className="border-t border-line bg-white py-[clamp(70px,8vw,100px)] text-ink">
-        <Container>
-          <Eyebrow className="mb-[38px] text-center">
-            Brands We&apos;ve Served
-          </Eyebrow>
-          <div className="flex flex-wrap items-center justify-center gap-x-16 gap-y-[14px]">
-            {clients.map((name) => (
-              <span
-                key={name}
-                className="font-display text-[clamp(24px,2.8vw,36px)] font-semibold text-ink"
-              >
-                {name}
-              </span>
-            ))}
           </div>
         </Container>
       </section>
