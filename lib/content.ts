@@ -34,7 +34,16 @@ export const processSteps: ProcessStep[] = [
   },
 ];
 
-export const clients = ["AltDrive", "AltBank", "Midea"];
+/**
+ * Client logos for the roster. `scale` optically balances the marks against each
+ * other — a plain height match makes AltBank's three-line lockup read too small.
+ * Rendered as `calc(var(--logo-h) * scale)`.
+ */
+export const clients = [
+  { name: "AltDrive", logo: "/images/clients/altdrive.png", width: 800, height: 191, scale: 1 },
+  { name: "AltBank", logo: "/images/clients/altbank.svg", width: 716, height: 240, scale: 1.25 },
+  { name: "Midea", logo: "/images/clients/midea.png", width: 800, height: 308, scale: 1.08 },
+];
 
 /** Home — Companies We Served case-study cards. */
 export type CaseStudyTheme = "ink" | "gold";

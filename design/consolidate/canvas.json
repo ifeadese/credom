@@ -1,0 +1,43 @@
+{
+  "artboards": [
+    { "file": "Main.dc.html", "title": "Option A — Roster leads · Desktop 1440", "x": 0, "y": 0, "w": 1440, "h": 1030 },
+    { "file": "OptionAMobile.dc.html", "title": "Option A — Roster leads · Mobile 390", "x": 1600, "y": 0, "w": 390, "h": 1965 },
+
+    { "file": "OptionB.dc.html", "title": "Option B — Credential rail · Desktop 1440", "x": 0, "y": 2165, "w": 1440, "h": 1000 },
+    { "file": "OptionBMobile.dc.html", "title": "Option B — Credential rail · Mobile 390", "x": 1600, "y": 2165, "w": 390, "h": 1820 },
+
+    { "file": "OptionC.dc.html", "title": "Option C — One roster, two depths · Desktop 1440", "x": 0, "y": 4185, "w": 1440, "h": 1190 },
+    { "file": "OptionCMobile.dc.html", "title": "Option C — One roster, two depths · Mobile 390", "x": 1600, "y": 4185, "w": 390, "h": 2335 }
+  ],
+  "annotations": [
+    {
+      "id": "note-brief",
+      "x": -440,
+      "y": -300,
+      "w": 360,
+      "text": "The problem being solved\n\nToday these are two sections stacked: \"Companies We Served\" (two case-study cards) and \"Brands We've Served\" (three logos). Two eyebrows say nearly the same thing, and the logo strip floats as a thin band with its own headline.\n\nOnly Midea appears in both. Terra has a case study but no logo; AltDrive and AltBank have logos but no case study. So the strip is doing real work — it is the only place two of the three clients appear at all.\n\nEvery option collapses this to ONE eyebrow and ONE headline. They differ in where the roster sits relative to the claim."
+    },
+    {
+      "id": "note-a",
+      "x": -440,
+      "y": 40,
+      "w": 360,
+      "text": "Option A — Roster leads\n\nThe section opens with the three logos on a white band, the headline answers them, the cards prove it. Reading order: brands you recognise → the claim → the evidence.\n\nWhy: gives the logos real presence instead of a footnote, and the single eyebrow now labels both halves. Needs no new copy and no new assets, so it can ship as-is.\n\nTradeoff: with only three logos the band can read sparse, and the headline arrives lower than it does today.\n\nMobile: the row becomes a stacked client list with hairline dividers so each logo keeps a readable size. That costs roughly 330px before the headline — the main thing to weigh."
+    },
+    {
+      "id": "note-b",
+      "x": -440,
+      "y": 2205,
+      "w": 360,
+      "text": "Option B — Credential rail\n\nHeadline first, then a hairline rail carrying the roster, then the cards. The rail reads as structure between claim and evidence rather than as a second section.\n\nWhy: the smallest change from what ships today — one background, no new copy, no new assets — and it still kills the duplicate eyebrow. Lowest risk of the three.\n\nTradeoff: the logos stay visually minor, so AltDrive and AltBank get little credit for being clients.\n\nMobile: the rail goes full-bleed with tighter side padding so all three logos still fit one row."
+    },
+    {
+      "id": "note-c",
+      "x": -440,
+      "y": 4225,
+      "w": 360,
+      "text": "Option C — One roster, two depths\n\nThe strip disappears entirely. Every client becomes a card in one grid: two full case studies, two compact brand tiles. Midea's logo sits on a white plate inside its ink card.\n\nWhy: the richest consolidation — one system, every client with a home, and it keeps working as the roster grows.\n\nTradeoff: it needs material that does not exist yet. Two lines of copy for AltDrive and AltBank, plus a Terra logo. Both are marked in brackets and as a dashed placeholder so nothing is invented.\n\nMobile: the grid collapses to one stack; the compact tiles stay short so they do not compete with the case studies."
+    }
+  ],
+  "launch": { "view": "canvas" }
+}
