@@ -134,7 +134,6 @@ Ink color on light backgrounds; `#FAF7F2` on dark. Dot/bar stay gold in both.
    - **Left — form.** Fields: Full Name (required), Email (required, type email), Company/Organization (optional), "What are you interested in?" (select — the 6 services + "An integrated campaign" + "Not sure yet"), "Tell us about your project" (textarea, 5 rows). Inputs: white bg, `1px #DDD4C7` border, radius 2, padding `14px 16px`, 15px. Labels: 13px Mulish 700. Submit: **Schedule a Chat** (gold, `16px 38px`).
      - On submit → success panel appears (bg `#F0EBE3`, left border `4px #18827B`): "Thank you. Your message is ready to send…"
    - **Right — sidebar** (`#F0EBE3`, radius 4, padding clamp(36,4vw,48)): H2 "Reach us directly"; **Email** `hello@credomlimited.com`; **Location** — Victoria Island, Lagos, Nigeria; divider; italic gold tagline.
-3. **Join Our Team (careers)** — bg `#F0EBE3`, anchor `#join-our-team`. Eyebrow "Careers" + H2 "Want to join our team as an usher or a field agent?" + intro paragraph. White card (max-width 860, `1px #E4DDD2` border, radius 4) holding the application form: Full Name, Age (number, 16–99), Phone/WhatsApp, Email, Location (City/Area), Role (select — Usher / Field Agent / Either / Both), Experience (optional textarea, 3 rows). Submit: **Apply to Join** (gold). Submissions go to the shared FormBold endpoint tagged `formType: "Team Application (Usher / Field Agent)"`.
 
 ---
 

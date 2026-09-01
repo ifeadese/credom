@@ -6,7 +6,6 @@ const exploreLinks = [
   { href: "/about", label: "About" },
   { href: "/services", label: "Services" },
   { href: "/contact", label: "Contact" },
-  { href: "/contact#join-our-team", label: "Careers" },
 ];
 
 function ColumnHeading({ children }: { children: React.ReactNode }) {

@@ -9,7 +9,6 @@ const links = [
   { href: "/about", label: "About" },
   { href: "/services", label: "Services" },
   { href: "/contact", label: "Contact" },
-  { href: "/contact#join-our-team", label: "Careers" },
 ];
 
 export default function Nav() {
