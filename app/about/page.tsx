@@ -155,32 +155,37 @@ export default function AboutPage() {
           <h2 className="m-0 mb-[52px] font-display text-[clamp(38px,5vw,64px)] font-bold leading-none tracking-[-0.01em] text-ink">
             The people behind the moments.
           </h2>
-          <div className="grid grid-cols-[repeat(auto-fit,minmax(320px,1fr))] gap-9">
+          <div className="flex flex-col gap-[clamp(56px,8vw,96px)]">
             {team.map((member) => (
-              <div key={member.name}>
-                <div className="relative mb-7">
+              <div
+                key={member.name}
+                className="grid grid-cols-1 items-center gap-[clamp(36px,6vw,72px)] md:grid-cols-[360px_minmax(0,1fr)]"
+              >
+                <div className="relative w-full max-w-[360px] pb-[20px] pl-[20px]">
                   <div
-                    className={`absolute left-[-14px] top-[14px] h-[230px] w-[200px] rounded-[2px] ${
+                    className={`absolute bottom-0 left-0 h-[calc(100%-20px)] w-[calc(100%-20px)] rounded-[2px] ${
                       backdropClasses[member.backdrop]
                     }`}
                   />
                   <Image
                     src={member.photo}
                     alt={`Portrait of ${member.name}`}
-                    width={220}
-                    height={250}
-                    className="relative h-[250px] w-[220px] rounded-[2px] border border-line object-cover object-top"
+                    width={360}
+                    height={424}
+                    className="relative aspect-[312/367] w-full rounded-[2px] border border-line object-cover object-top"
                   />
                 </div>
-                <h3 className="m-0 mb-1 font-display text-[32px] font-bold">
-                  {member.name}{" "}
-                  <span className="text-[16px] font-semibold text-gold-deep">
+                <div className="max-w-[620px]">
+                  <span className="mb-[14px] block text-[14px] font-bold uppercase tracking-[0.2em] text-gold-deep">
                     {member.role}
                   </span>
-                </h3>
-                <p className="m-0 mt-4 text-[15px] leading-[1.75] text-body-muted">
-                  {member.bio}
-                </p>
+                  <h3 className="m-0 font-display text-[clamp(40px,5.4vw,68px)] font-bold leading-[1.02] tracking-[-0.01em]">
+                    {member.name}
+                  </h3>
+                  <p className="m-0 mt-6 text-[clamp(16px,1.5vw,19px)] leading-[1.8] text-body-muted">
+                    {member.bio}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
