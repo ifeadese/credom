@@ -190,10 +190,7 @@ export default function HomePage() {
             <Eyebrow className="text-center md:hidden">
               Companies We Served
             </Eyebrow>
-            <div className="mt-[26px] [--logo-h:30px] md:mt-0 md:flex md:items-center md:justify-between md:gap-10 md:border-y md:border-line md:py-[26px] md:[--logo-h:clamp(30px,2.5vw,36px)]">
-              <span className="hidden text-[12px] font-bold uppercase tracking-eyebrow text-body-muted md:block">
-                Brands we&apos;ve served
-              </span>
+            <div className="mt-[26px] [--logo-h:30px] md:mt-0 md:flex md:items-center md:justify-start md:gap-10 md:border-y md:border-line md:py-[26px] md:[--logo-h:clamp(30px,2.5vw,36px)]">
               <div className="flex flex-col md:flex-row md:items-center md:gap-14">
                 {clients.map((client, i) => (
                   <div
