@@ -45,7 +45,7 @@ export const clients = [
   { name: "Midea", logo: "/images/clients/midea.png", width: 800, height: 308, scale: 1.08 },
 ];
 
-/** Home — Companies We Served case-study cards. */
+/** Home — Businesses We've Served case-study cards. */
 export type CaseStudyTheme = "ink" | "gold";
 
 export type CaseStudy = {
