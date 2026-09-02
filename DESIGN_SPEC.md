@@ -111,9 +111,8 @@ Ink color on light backgrounds; `#FAF7F2` on dark. Dot/bar stay gold in both.
    - 03 Innovation — gold (ink text)
    - 04 Excellence — teal
    - 05 Teamwork — white bg, ink text, `1px #E4DDD2` border
-6. **Meet the Force** — **`#F0EBE3`** bg, ink text. Eyebrow + H2 "The people behind the moments." Two team members (`auto-fit minmax(320px,1fr)`, gap 36), each: an **offset photo placeholder** (a colored block 200×230 behind a 220×250 white photo slot with `#E4DDD2` border, radius 2 — gold behind member 1, brown behind member 2) then name (Rokkitt 700 32px) + role (gold-deep, 16px) + bio (`#6E665F`).
+6. **Meet the Force** — **`#F0EBE3`** bg, ink text. Eyebrow + H2 "The people behind the moments." Team members stacked (gap `clamp(56,8vw,96)`), each laid out as a **two-column feature** (`360px / 1fr`, stacking to one column under `md`, gap `clamp(36,6vw,72)`, vertically centered): left = an **offset photo** (photo up to 360px wide at the headshot’s native 312:367 ratio, `#E4DDD2` border, radius 2, with a colored block offset 20px down-left behind it — gold for the COO); right = role (gold-deep, 14px, uppercase, `0.2em` tracking) + name (Rokkitt 700, `clamp(40,5.4vw,68)`) + bio (`#6E665F`, `clamp(16,1.5vw,19)`, max-width 620).
    - **Pelumi Adese** — Business Lead / COO (bio in reference)
-   - **Fetuga S.O** — Project Manager (bio in reference)
 7. **CTA band** — H2 "Ready to be felt, not just seen?" + Schedule a Chat.
 
 ### 3.3 SERVICES
