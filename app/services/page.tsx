@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Eyebrow from "@/components/Eyebrow";
-import CtaBand from "@/components/CtaBand";
 import { services, serviceThemeClasses } from "@/lib/services";
 
 export const metadata: Metadata = {
@@ -64,9 +63,6 @@ export default function ServicesPage() {
           );
         })}
       </section>
-
-      {/* CTA */}
-      <CtaBand heading="One channel or all of them." />
     </>
   );
 }

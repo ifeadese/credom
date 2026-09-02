@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Container from "@/components/Container";
 import Eyebrow from "@/components/Eyebrow";
-import CtaBand from "@/components/CtaBand";
 import {
   principles,
   principleThemeClasses,
@@ -148,13 +147,9 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* MEET THE FORCE */}
+      {/* TEAM */}
       <section className="bg-paper-2 py-[clamp(80px,10vw,120px)] text-ink">
         <Container>
-          <Eyebrow className="mb-[14px]">Meet the Force</Eyebrow>
-          <h2 className="m-0 mb-[52px] font-display text-[clamp(38px,5vw,64px)] font-bold leading-none tracking-[-0.01em] text-ink">
-            The people behind the moments.
-          </h2>
           <div className="flex flex-col gap-[clamp(56px,8vw,96px)]">
             {team.map((member) => (
               <div
@@ -176,12 +171,13 @@ export default function AboutPage() {
                   />
                 </div>
                 <div className="max-w-[620px]">
+                  {/* Doubles as the section's opener now that the "Meet the Force" headline is gone. */}
                   <span className="mb-[14px] block text-[14px] font-bold uppercase tracking-[0.2em] text-gold-deep">
-                    {member.role}
+                    Meet the {member.role}
                   </span>
-                  <h3 className="m-0 font-display text-[clamp(40px,5.4vw,68px)] font-bold leading-[1.02] tracking-[-0.01em]">
+                  <h2 className="m-0 font-display text-[clamp(40px,5.4vw,68px)] font-bold leading-[1.02] tracking-[-0.01em]">
                     {member.name}
-                  </h3>
+                  </h2>
                   <p className="m-0 mt-6 text-[clamp(16px,1.5vw,19px)] leading-[1.8] text-body-muted">
                     {member.bio}
                   </p>
@@ -191,9 +187,6 @@ export default function AboutPage() {
           </div>
         </Container>
       </section>
-
-      {/* CTA */}
-      <CtaBand heading="Ready to be felt, not just seen?" />
     </>
   );
 }

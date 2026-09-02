@@ -18,7 +18,7 @@ Open `design/credom-website-preview.html` alongside this document.
 | Teal | `#18827B` | Teal section/card bg (OOH, values) |
 | Magenta | `#C50E8B` | Magenta section/card bg (Corporate Events, values) |
 | Paper | `#FAF7F2` | Default page background (warm off-white) |
-| Paper 2 | `#F0EBE3` | Alternate section bg, form sidebar, CTA bands |
+| Paper 2 | `#F0EBE3` | Alternate section bg, form sidebar, home CTA band |
 | Line | `#E4DDD2` | Borders / dividers on light |
 | Line (form) | `#DDD4C7` | Input borders |
 | Body text | `#35302B` | Default body copy |
@@ -71,14 +71,11 @@ Ink color on light backgrounds; `#FAF7F2` on dark. Dot/bar stay gold in both.
 - **Active link:** 2px gold underline bar under the current page's link.
 
 ### Footer
-- Bg `#201D1B`, text `#C9C0B6`, padding `70px 0 40px`.
-- 4-column grid (`auto-fit, minmax(220px,1fr)`, gap 44px), bottom border divider:
-  1. Logo (white) + tagline in Rokkitt 500 19px, muted `#8A8079`.
-  2. **Explore** — Home / About / Services / Contact links.
-  3. **Visit** — Victoria Island, Lagos, Nigeria.
-  4. **Connect** — `hello@credomlimited.com` + "Schedule a Chat →" (gold).
-- Column headings: eyebrow style, gold.
-- Bottom row: `© 2026 CREDOM Limited. All rights reserved.` and `Redefining brand impact in Africa.` in `#6B625A`.
+- Bg `#201D1B`, text `#C9C0B6`, padding `32px 0`, top hairline `#E4DDD2`.
+- One row, space-between and vertically centred; below 480px it becomes a centred column (copyright above the icons, text centred):
+  - Left: `© 2026 CREDOM Limited. All rights reserved.` in `#6B625A`.
+  - Right: two 40×40 outlined icon links (mail → `hello@credomlimited.com`, Instagram → `@wearecredom`; 18px glyph in `currentColor`, `#E4DDD2` border, 2px radius, gold border + glyph on hover), each carrying its own `aria-label`.
+- No logo, address, or nav links — the header nav is the only site navigation.
 
 ---
 
@@ -111,9 +108,8 @@ Ink color on light backgrounds; `#FAF7F2` on dark. Dot/bar stay gold in both.
    - 03 Innovation — gold (ink text)
    - 04 Excellence — teal
    - 05 Teamwork — white bg, ink text, `1px #E4DDD2` border
-6. **Meet the Force** — **`#F0EBE3`** bg, ink text. Eyebrow + H2 "The people behind the moments." Team members stacked (gap `clamp(56,8vw,96)`), each laid out as a **two-column feature** (`360px / 1fr`, stacking to one column under `md`, gap `clamp(36,6vw,72)`, vertically centered): left = an **offset photo** (photo up to 360px wide at the headshot’s native 312:367 ratio, `#E4DDD2` border, radius 2, with a colored block offset 20px down-left behind it — gold for the COO); right = role (gold-deep, 14px, uppercase, `0.2em` tracking) + name (Rokkitt 700, `clamp(40,5.4vw,68)`) + bio (`#6E665F`, `clamp(16,1.5vw,19)`, max-width 620).
+6. **Team** — **`#F0EBE3`** bg, ink text. No eyebrow or section headline — the member name is the section heading. Team members stacked (gap `clamp(56,8vw,96)`), each laid out as a **two-column feature** (`360px / 1fr`, stacking to one column under `md`, gap `clamp(36,6vw,72)`, vertically centered): left = an **offset photo** (photo up to 360px wide at the headshot’s native 312:367 ratio, `#E4DDD2` border, radius 2, with a colored block offset 20px down-left behind it — gold for the COO); right = an eyebrow reading "Meet the <role>" (gold-deep, 14px, uppercase, `0.2em` tracking), which opens the section now that the headline is gone + name (Rokkitt 700, `clamp(40,5.4vw,68)`) + bio (`#6E665F`, `clamp(16,1.5vw,19)`, max-width 620).
    - **Pelumi Adese** — Business Lead / COO (bio in reference)
-7. **CTA band** — H2 "Ready to be felt, not just seen?" + Schedule a Chat.
 
 ### 3.3 SERVICES
 1. **Header** — eyebrow "Our Services" + big statement: "Our capabilities span the full spectrum of experiential marketing." (ink, roman) + italic gold continuation "Every service works independently or as part of a fully integrated campaign strategy."
@@ -125,7 +121,6 @@ Ink color on light backgrounds; `#FAF7F2` on dark. Dot/bar stay gold in both.
    - 05 Out-of-Home (OOH) Marketing — teal / cream
    - 06 Digital Marketing — ink 2 / cream
    (Full bullet lists in the reference HTML.)
-3. **CTA band** — H2 "One channel or all of them." + Schedule a Chat.
 
 ### 3.4 CONTACT
 1. **Hero** — **white** bg, bottom border `#E4DDD2`. Gold-deep eyebrow "Let's Talk"; ink H1 "From Insight / To Impact." (clamp(52,9vw,120)); intro paragraph (`#4A443D`).

@@ -183,7 +183,7 @@ export const principles: Principle[] = [
   },
 ];
 
-/** About — Meet the Force team members. */
+/** About — team members. */
 export type TeamMember = {
   name: string;
   role: string;

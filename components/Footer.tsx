@@ -1,92 +1,66 @@
-import Link from "next/link";
-import Logo from "./Logo";
+/**
+ * Footer contact icons: 18px, drawn in currentColor so they inherit the
+ * enclosing link's hover transition. The links are icon-only, so each one
+ * carries its own aria-label -- these SVGs stay decorative.
+ */
+const iconProps = {
+  viewBox: "0 0 24 24",
+  fill: "none",
+  stroke: "currentColor",
+  strokeWidth: 1.6,
+  strokeLinecap: "round",
+  strokeLinejoin: "round",
+  "aria-hidden": true,
+  className: "h-[18px] w-[18px]",
+} as const;
 
-const exploreLinks = [
-  { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
-  { href: "/services", label: "Services" },
-  { href: "/contact", label: "Contact" },
-];
-
-function ColumnHeading({ children }: { children: React.ReactNode }) {
+function MailIcon() {
   return (
-    <span className="mb-[18px] block font-body text-xs font-bold uppercase tracking-eyebrow text-gold-deep">
-      {children}
-    </span>
+    <svg {...iconProps}>
+      <rect x="2.5" y="4.75" width="19" height="14.5" rx="2.5" />
+      <path d="m3.5 7 7.6 5.3a1.6 1.6 0 0 0 1.8 0L20.5 7" />
+    </svg>
   );
 }
 
+function InstagramIcon() {
+  return (
+    <svg {...iconProps}>
+      <rect x="3" y="3" width="18" height="18" rx="5" />
+      <circle cx="12" cy="12" r="4" />
+      <circle cx="17.3" cy="6.7" r="1.1" fill="currentColor" stroke="none" />
+    </svg>
+  );
+}
+
+/** Outlined square that holds one icon-only link. */
+const iconLinkClasses =
+  "inline-flex h-10 w-10 items-center justify-center rounded-btn border border-line text-body-ink transition-colors hover:border-gold-deep hover:text-gold-deep";
+
 export default function Footer() {
   return (
-    <footer className="border-t border-line bg-paper pb-10 pt-[70px] text-body-ink">
-      <div className="mx-auto max-w-content px-10">
-        <div className="grid grid-cols-[repeat(auto-fit,minmax(220px,1fr))] gap-11 border-b border-line pb-[54px]">
-          {/* Brand */}
-          <div>
-            <Logo size={24} />
-          </div>
-
-          {/* Explore */}
-          <div>
-            <ColumnHeading>Explore</ColumnHeading>
-            <div className="flex flex-col gap-3">
-              {exploreLinks.map(({ href, label }) => (
-                <Link
-                  key={href}
-                  href={href}
-                  className="text-[15px] text-body-ink transition-colors hover:text-gold-deep"
-                >
-                  {label}
-                </Link>
-              ))}
-            </div>
-          </div>
-
-          {/* Visit */}
-          <div>
-            <ColumnHeading>Visit</ColumnHeading>
-            <p className="m-0 text-[15px] leading-[1.7] text-body-ink">
-              Victoria Island,
-              <br />
-              Lagos, Nigeria.
-            </p>
-          </div>
-
-          {/* Connect */}
-          <div>
-            <ColumnHeading>Connect</ColumnHeading>
-            <div className="flex flex-col gap-3">
-              <a
-                href="mailto:hello@credomlimited.com"
-                className="text-[15px] text-body-ink transition-colors hover:text-gold-deep"
-              >
-                hello@credomlimited.com
-              </a>
-              <a
-                href="https://www.instagram.com/wearecredom"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[15px] text-body-ink transition-colors hover:text-gold-deep"
-              >
-                Instagram — @wearecredom
-              </a>
-              <Link
-                href="/contact"
-                className="text-[15px] font-bold text-gold-deep transition-opacity hover:opacity-90"
-              >
-                Schedule a Chat &rarr;
-              </Link>
-            </div>
-          </div>
-        </div>
-
-        <div className="flex flex-wrap justify-between gap-4 pt-[26px]">
-          <span className="text-[13px] text-body-muted">
-            &copy; 2026 CREDOM Limited. All rights reserved.
-          </span>
-          <span className="text-[13px] text-body-muted">
-            Redefining brand impact in Africa.
-          </span>
+    <footer className="border-t border-line bg-paper py-8 text-body-ink">
+      <div className="mx-auto flex max-w-content flex-col items-center gap-4 px-10 text-center min-[480px]:flex-row min-[480px]:justify-between min-[480px]:text-left">
+        <span className="text-[13px] text-body-muted">
+          &copy; 2026 CREDOM Limited. All rights reserved.
+        </span>
+        <div className="flex gap-3">
+          <a
+            href="mailto:hello@credomlimited.com"
+            aria-label="Email hello@credomlimited.com"
+            className={iconLinkClasses}
+          >
+            <MailIcon />
+          </a>
+          <a
+            href="https://www.instagram.com/wearecredom"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="CREDOM on Instagram — @wearecredom"
+            className={iconLinkClasses}
+          >
+            <InstagramIcon />
+          </a>
         </div>
       </div>
     </footer>
