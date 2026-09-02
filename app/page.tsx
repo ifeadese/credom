@@ -167,12 +167,12 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* COMPANIES WE SERVED — the client roster and the case studies are one section */}
+      {/* BUSINESSES WE'VE SERVED — the client roster and the case studies are one section */}
       <section className="flex flex-col bg-paper-2 pb-[clamp(80px,10vw,120px)] md:pt-[clamp(80px,10vw,120px)]">
         <Container className="mt-16 md:mt-0">
           <div className="max-w-[720px]">
             <Eyebrow className="mb-[14px] hidden md:block">
-              Companies We Served
+              Businesses we&apos;ve served
             </Eyebrow>
             <h2 className="m-0 font-display text-[clamp(38px,5vw,64px)] font-bold leading-none tracking-[-0.01em] text-ink">
               Work that moved people.
@@ -188,7 +188,7 @@ export default function HomePage() {
         <div className="order-first bg-white pb-10 pt-12 md:order-none md:my-11 md:bg-transparent md:py-0">
           <Container>
             <Eyebrow className="text-center md:hidden">
-              Companies We Served
+              Businesses we&apos;ve served
             </Eyebrow>
             <div className="mt-[26px] [--logo-h:30px] md:mt-0 md:flex md:items-center md:justify-start md:gap-10 md:border-y md:border-line md:py-[26px] md:[--logo-h:clamp(30px,2.5vw,36px)]">
               <div className="flex flex-col md:flex-row md:items-center md:gap-14">
