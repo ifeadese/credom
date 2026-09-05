@@ -190,7 +190,7 @@ export type TeamMember = {
   bio: string;
   /** Color of the offset block behind the photo. */
   backdrop: "gold" | "brown";
-  /** Headshot under public/, extracted from the company profile. */
+  /** Headshot under public/. */
   photo: string;
 };
 
