@@ -170,11 +170,11 @@ export default function HomePage() {
       {/* BUSINESSES WE'VE SERVED — the client roster and the case studies are one section */}
       <section className="flex flex-col bg-paper-2 pb-[clamp(80px,10vw,120px)] md:pt-[clamp(80px,10vw,120px)]">
         {/*
-          Roster opens the section: a full-bleed white band on mobile (so each logo
+          Roster opens the section: stacked one logo per row on mobile (so each logo
           gets its own row) that reflows into a hairline rail from md up, where three
           logos fit one line. The headline and the case-study cards follow beneath it.
         */}
-        <div className="bg-white pb-10 pt-12 md:bg-transparent md:py-0">
+        <div className="pb-10 pt-12 md:py-0">
           <Container>
             <Eyebrow className="text-center md:mb-[14px] md:text-left">
               Businesses we&apos;ve served
