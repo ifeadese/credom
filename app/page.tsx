@@ -228,6 +228,7 @@ export default function HomePage() {
           hairline rail from md up where three logos fit one line.
         */}
         <Container className="mt-12 md:mt-14">
+          <Eyebrow className="mb-[14px]">Businesses we&apos;ve served</Eyebrow>
           <div className="[--logo-h:30px] md:flex md:items-center md:justify-start md:gap-10 md:border-y md:border-line md:py-[26px] md:[--logo-h:clamp(30px,2.5vw,36px)]">
             <div className="flex flex-col md:flex-row md:items-center md:gap-14">
               {clients.map((client, i) => (
