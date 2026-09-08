@@ -177,7 +177,7 @@ export default function HomePage() {
         <div className="pb-10 pt-12 md:py-0">
           <Container>
             <Eyebrow className="text-center md:mb-[14px] md:text-left">
-              Businesses we&apos;ve served
+              What we&apos;ve done
             </Eyebrow>
             <div className="mt-[26px] [--logo-h:30px] md:mt-0 md:flex md:items-center md:justify-start md:gap-10 md:border-y md:border-line md:py-[26px] md:[--logo-h:clamp(30px,2.5vw,36px)]">
               <div className="flex flex-col md:flex-row md:items-center md:gap-14">
