@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" role="img" aria-label="Image placeholder">
+  <defs>
+    <pattern id="stripes" width="28" height="28" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="28" height="28" fill="#3A342E"/>
+      <rect width="8" height="28" fill="#443D36"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="900" fill="url(#stripes)"/>
+  <rect x="24" y="24" width="1152" height="852" fill="none" stroke="#D89A2E" stroke-width="3" stroke-dasharray="14 12" opacity="0.8"/>
+  <g fill="none" stroke="#D89A2E" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" transform="translate(600 400)">
+    <rect x="-90" y="-70" width="180" height="140" rx="12"/>
+    <circle cx="-38" cy="-24" r="16"/>
+    <path d="M-90 40 L-30 -10 L20 30 L50 5 L90 45"/>
+  </g>
+  <text x="600" y="560" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="22" font-weight="700" letter-spacing="6" fill="#D89A2E">IMAGE PLACEHOLDER</text>
+  <text x="600" y="600" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="18" fill="#C9C0B6">AltDrive EV Experience 2.0 — Lagos</text>
+</svg>

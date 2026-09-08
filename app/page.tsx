@@ -223,22 +223,38 @@ export default function HomePage() {
               return (
                 <article
                   key={study.client}
-                  className={`flex flex-col gap-[18px] rounded-block p-[clamp(40px,4vw,56px)] ${t.card}`}
+                  className={`grid overflow-hidden rounded-block md:grid-cols-[minmax(280px,2fr)_3fr] ${t.card}`}
                 >
-                  <span
-                    className={`text-[12px] font-bold uppercase tracking-eyebrow ${t.category}`}
-                  >
-                    {study.category}
-                  </span>
-                  <h3 className="m-0 font-display text-[clamp(26px,2.8vw,36px)] font-bold leading-[1.1]">
-                    {study.client}
-                  </h3>
-                  <p className={`m-0 text-[16px] leading-[1.7] ${t.body}`}>
-                    {study.description}
-                  </p>
-                  <p className={`m-0 text-[15px] font-bold ${t.takeaway}`}>
-                    {study.takeaway}
-                  </p>
+                  <div className="relative aspect-[4/3] md:aspect-auto md:min-h-full">
+                    <Image
+                      src={study.image.src}
+                      alt={study.image.alt}
+                      fill
+                      sizes="(min-width: 768px) 40vw, 100vw"
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="flex flex-col gap-[18px] p-[clamp(40px,4vw,56px)]">
+                    <span
+                      className={`text-[12px] font-bold uppercase tracking-eyebrow ${t.category}`}
+                    >
+                      {study.category}
+                    </span>
+                    <h3 className="m-0 font-display text-[clamp(26px,2.8vw,36px)] font-bold leading-[1.1]">
+                      {study.client}
+                    </h3>
+                    <p className={`m-0 text-[16px] leading-[1.7] ${t.body}`}>
+                      {study.description}
+                    </p>
+                    <p className={`m-0 text-[15px] font-bold ${t.takeaway}`}>
+                      {study.takeaway}
+                    </p>
+                    <div className="mt-2">
+                      <Button href={study.href} variant={t.button}>
+                        Read more
+                      </Button>
+                    </div>
+                  </div>
                 </article>
               );
             })}

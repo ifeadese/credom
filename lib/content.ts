@@ -54,23 +54,35 @@ export type CaseStudy = {
   description: string;
   takeaway: string;
   theme: CaseStudyTheme;
+  /** Card image (public path). Swap the placeholder for a real event photo. */
+  image: { src: string; alt: string };
+  /** "Read more" destination. */
+  href: string;
 };
 
 export const caseStudyThemeClasses: Record<
   CaseStudyTheme,
-  { card: string; category: string; body: string; takeaway: string }
+  {
+    card: string;
+    category: string;
+    body: string;
+    takeaway: string;
+    button: "gold" | "outline";
+  }
 > = {
   ink: {
     card: "bg-ink text-paper",
     category: "text-gold",
     body: "text-on-dark",
     takeaway: "text-gold",
+    button: "gold",
   },
   gold: {
     card: "bg-gold text-ink",
     category: "text-brown",
     body: "opacity-[0.88]",
     takeaway: "text-brown",
+    button: "outline",
   },
 };
 
@@ -83,6 +95,11 @@ export const caseStudies: CaseStudy[] = [
     takeaway:
       "When people can touch the future, they believe in it — and they buy into it.",
     theme: "ink",
+    image: {
+      src: "/images/case-studies/altdrive-ev-experience.svg",
+      alt: "AltDrive EV Experience 2.0 in Lagos",
+    },
+    href: "#",
   },
 ];
 
