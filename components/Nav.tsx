@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 import Logo from "./Logo";
 
 const links = [
@@ -13,39 +14,121 @@ const links = [
 
 export default function Nav() {
   const pathname = usePathname();
+  const [open, setOpen] = useState(false);
 
-  // Sticky from sm up only: on phones the links wrap to three rows and a
-  // pinned header would cover half the viewport.
+  // Close the drawer whenever the route changes.
+  useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
+
+  // Escape closes the drawer.
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpen(false);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [open]);
+
+  const isActive = (href: string) =>
+    href === "/" ? pathname === "/" : pathname.startsWith(href);
+
   return (
-    <nav className="top-0 z-50 border-b border-line bg-paper/90 backdrop-blur-[10px] sm:sticky">
-      <div className="mx-auto flex max-w-content flex-wrap items-center justify-between gap-6 px-10 py-[18px]">
-        <Logo asLink size={23} />
+    <nav className="sticky top-0 z-50 border-b border-line bg-paper/90 backdrop-blur-[10px]">
+      <div className="relative mx-auto max-w-content">
+        {/* Bar */}
+        <div className="flex items-center justify-between gap-4 px-5 py-[14px] md:gap-6 md:px-10 md:py-[18px]">
+          <Logo asLink size={23} />
 
-        <div className="flex flex-wrap items-center gap-x-[34px] gap-y-3">
-          {links.map(({ href, label }) => {
-            const active =
-              href === "/" ? pathname === "/" : pathname.startsWith(href);
-            return (
-              <Link
-                key={href}
-                href={href}
-                aria-current={active ? "page" : undefined}
-                className="relative py-[6px] font-body text-sm font-semibold tracking-[0.04em] text-ink transition-colors hover:text-gold-deep"
-              >
-                {label}
-                {active && (
-                  <span className="absolute inset-x-0 -bottom-[2px] h-[2px] bg-gold" />
-                )}
-              </Link>
-            );
-          })}
+          {/* Desktop links */}
+          <div className="hidden items-center gap-x-[34px] md:flex">
+            {links.map(({ href, label }) => {
+              const active = isActive(href);
+              return (
+                <Link
+                  key={href}
+                  href={href}
+                  aria-current={active ? "page" : undefined}
+                  className="relative py-[6px] font-body text-sm font-semibold tracking-[0.04em] text-ink transition-colors hover:text-gold-deep"
+                >
+                  {label}
+                  {active && (
+                    <span className="absolute inset-x-0 -bottom-[2px] h-[2px] bg-gold" />
+                  )}
+                </Link>
+              );
+            })}
 
-          <Link
-            href="/contact"
-            className="rounded-btn bg-gold px-[22px] py-[11px] font-body text-sm font-bold tracking-[0.02em] text-ink transition-opacity hover:opacity-90"
-          >
-            Schedule a Chat
-          </Link>
+            <Link
+              href="/contact"
+              className="rounded-btn bg-gold px-[22px] py-[11px] font-body text-sm font-bold tracking-[0.02em] text-ink transition-opacity hover:opacity-90"
+            >
+              Schedule a Chat
+            </Link>
+          </div>
+
+          {/* Mobile: CTA pill + hamburger */}
+          <div className="flex items-center gap-3 md:hidden">
+            <Link
+              href="/contact"
+              className="rounded-btn bg-gold px-[14px] py-[9px] font-body text-[13px] font-bold tracking-[0.02em] text-ink transition-opacity hover:opacity-90"
+            >
+              Schedule a Chat
+            </Link>
+
+            <button
+              type="button"
+              onClick={() => setOpen((v) => !v)}
+              aria-label={open ? "Close menu" : "Open menu"}
+              aria-expanded={open}
+              aria-controls="mobile-nav"
+              className="relative z-50 flex h-10 w-10 cursor-pointer flex-col items-end justify-center gap-[7px] rounded-full"
+            >
+              <span
+                className={`block h-[2px] origin-center rounded-full bg-ink transition-all duration-300 ease-in-out ${
+                  open ? "w-7 translate-y-[4.5px] rotate-45" : "w-9"
+                }`}
+              />
+              <span
+                className={`block h-[2px] origin-center rounded-full bg-ink transition-all duration-300 ease-in-out ${
+                  open ? "w-7 -translate-y-[4.5px] -rotate-45" : "w-7"
+                }`}
+              />
+            </button>
+          </div>
+        </div>
+
+        {/* Mobile drawer: expands beneath the bar and overlays the page */}
+        <div
+          id="mobile-nav"
+          className={`absolute inset-x-0 top-full grid border-b border-line bg-paper/95 shadow-[0_12px_32px_rgba(32,29,27,0.10)] backdrop-blur-[10px] transition-[grid-template-rows] duration-300 ease-in-out md:hidden ${
+            open ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+          }`}
+          aria-hidden={!open}
+        >
+          <div className="overflow-hidden">
+            <div className="px-5 pb-5 pt-1">
+              <div className="flex flex-col gap-3 border-t border-gold/40 pt-4">
+                {links.map(({ href, label }) => {
+                  const active = isActive(href);
+                  return (
+                    <Link
+                      key={href}
+                      href={href}
+                      tabIndex={open ? 0 : -1}
+                      aria-current={active ? "page" : undefined}
+                      className={`rounded-xl px-3 py-2 text-left font-body text-base transition-colors hover:bg-gold/10 ${
+                        active ? "font-bold text-ink" : "font-medium text-ink"
+                      }`}
+                    >
+                      {label}
+                    </Link>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </nav>
