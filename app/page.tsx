@@ -167,53 +167,18 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* BUSINESSES WE'VE SERVED — the client roster and the case studies are one section */}
-      <section className="flex flex-col bg-paper-2 pb-[clamp(80px,10vw,120px)] md:pt-[clamp(80px,10vw,120px)]">
-        {/*
-          Roster opens the section: stacked one logo per row on mobile (so each logo
-          gets its own row) that reflows into a hairline rail from md up, where three
-          logos fit one line. The headline and the case-study cards follow beneath it.
-        */}
-        <div className="pb-10 pt-12 md:py-0">
-          <Container>
-            <Eyebrow className="text-center md:mb-[14px] md:text-left">
-              What we&apos;ve done
-            </Eyebrow>
-            <div className="mt-[26px] [--logo-h:30px] md:mt-0 md:flex md:items-center md:justify-start md:gap-10 md:border-y md:border-line md:py-[26px] md:[--logo-h:clamp(30px,2.5vw,36px)]">
-              <div className="flex flex-col md:flex-row md:items-center md:gap-14">
-                {clients.map((client, i) => (
-                  <div
-                    key={client.name}
-                    className={`flex items-center justify-center py-4 md:py-0 ${
-                      i < clients.length - 1
-                        ? "border-b border-line md:border-b-0"
-                        : ""
-                    }`}
-                  >
-                    <Image
-                      src={client.logo}
-                      alt={client.name}
-                      width={client.width}
-                      height={client.height}
-                      className="w-auto"
-                      style={{ height: `calc(var(--logo-h) * ${client.scale})` }}
-                    />
-                  </div>
-                ))}
-              </div>
-            </div>
-          </Container>
-        </div>
-
-        <Container className="mt-12 md:mt-14">
+      {/* WHAT WE'VE DONE — headline, the case study, then the client roster as a closing rail */}
+      <section className="flex flex-col bg-paper-2 pb-[clamp(80px,10vw,120px)] pt-12 md:pt-[clamp(80px,10vw,120px)]">
+        <Container>
           <div className="max-w-[720px]">
+            <Eyebrow className="mb-[14px]">What we&apos;ve done</Eyebrow>
             <h2 className="m-0 font-display text-[clamp(38px,5vw,64px)] font-bold leading-none tracking-[-0.01em] text-ink">
               Work that moved people.
             </h2>
           </div>
         </Container>
 
-        <Container className="mt-10 md:mt-12">
+        <Container className="mt-10 md:mt-[52px]">
           <div className="grid grid-cols-[repeat(auto-fit,minmax(320px,1fr))] gap-5">
             {caseStudies.map((study) => {
               const t = caseStudyThemeClasses[study.theme];
@@ -255,6 +220,36 @@ export default function HomePage() {
                 </article>
               );
             })}
+          </div>
+        </Container>
+
+        {/*
+          Roster closes the section: one logo per row on mobile, reflowing into a
+          hairline rail from md up where three logos fit one line.
+        */}
+        <Container className="mt-12 md:mt-14">
+          <div className="[--logo-h:30px] md:flex md:items-center md:justify-start md:gap-10 md:border-y md:border-line md:py-[26px] md:[--logo-h:clamp(30px,2.5vw,36px)]">
+            <div className="flex flex-col md:flex-row md:items-center md:gap-14">
+              {clients.map((client, i) => (
+                <div
+                  key={client.name}
+                  className={`flex items-center justify-center py-4 md:py-0 ${
+                    i < clients.length - 1
+                      ? "border-b border-line md:border-b-0"
+                      : ""
+                  }`}
+                >
+                  <Image
+                    src={client.logo}
+                    alt={client.name}
+                    width={client.width}
+                    height={client.height}
+                    className="w-auto"
+                    style={{ height: `calc(var(--logo-h) * ${client.scale})` }}
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </Container>
       </section>
