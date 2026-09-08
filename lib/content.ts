@@ -51,46 +51,58 @@ export type CaseStudyTheme = "ink" | "gold";
 export type CaseStudy = {
   client: string;
   category: string;
-  description: string;
+  /** Body copy, one entry per paragraph. */
+  description: string[];
   takeaway: string;
   theme: CaseStudyTheme;
+  /** Card image (public path). Swap the placeholder for a real event photo. */
+  image: { src: string; alt: string };
+  /** "Read more" destination. */
+  href: string;
 };
 
 export const caseStudyThemeClasses: Record<
   CaseStudyTheme,
-  { card: string; category: string; body: string; takeaway: string }
+  {
+    card: string;
+    category: string;
+    body: string;
+    takeaway: string;
+    button: "gold" | "outline";
+  }
 > = {
   ink: {
     card: "bg-ink text-paper",
     category: "text-gold",
     body: "text-on-dark",
     takeaway: "text-gold",
+    button: "gold",
   },
   gold: {
     card: "bg-gold text-ink",
     category: "text-brown",
     body: "opacity-[0.88]",
     takeaway: "text-brown",
+    button: "outline",
   },
 };
 
 export const caseStudies: CaseStudy[] = [
   {
-    client: "The Midea Pro Shop",
-    category: "Grand Launch & Partners' Conference — Abuja",
-    description:
-      "A dual-format activation that turned a product launch into a full brand moment. From the high-energy grand opening of The Midea Pro Shop to a polished partners' conference held the same evening, we built two distinct experiences under one strategic vision — driving footfall, deepening trade relationships, and solidifying Midea's market authority in Abuja.",
+    client: "FUTURE IN MOTION",
+    category: "AltDrive EV Experience 2.0 - Lagos",
+    description: [
+      "Future in Motion was an invitation to step into what comes next. We turned the idea of electric mobility into a physical world where technology, movement and lifestyle came together.",
+      "From exploring vehicles to discovery, interaction and movement designed to spark curiosity. Every space, touchpoint and experience invited guests to see the future differently, before getting behind the wheel and putting the future into motion.",
+    ],
     takeaway:
-      "Experiential excellence and commercial impact aren't a trade-off — they're the brief.",
+      "It was more than an EV showcase. It was a glimpse of tomorrow, brought to life today.",
     theme: "ink",
-  },
-  {
-    client: "Terra",
-    category: "August Meeting Activation — Eastern States",
-    description:
-      "The August Meeting is a significant cultural tradition among Igbo women, who travel back to their hometowns for gatherings organised by women's associations, town unions, and church groups. We activated the Terra brand across 6 locations in Anambra, Enugu, and Imo State — brand talks, dry sampling, and grassroots ambassador engagement that drove on-ground sales across local communities.",
-    takeaway: "High-reach, high-touch — right in the heart of the conversation.",
-    theme: "gold",
+    image: {
+      src: "/images/case-studies/altdrive-ev-experience.svg",
+      alt: "AltDrive EV Experience 2.0 in Lagos",
+    },
+    href: "#",
   },
 ];
 

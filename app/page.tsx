@@ -167,81 +167,95 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* BUSINESSES WE'VE SERVED — the client roster and the case studies are one section */}
-      <section className="flex flex-col bg-paper-2 pb-[clamp(80px,10vw,120px)] md:pt-[clamp(80px,10vw,120px)]">
-        <Container className="mt-16 md:mt-0">
+      {/* WHAT WE'VE DONE — headline, the case study, then the client roster as a closing rail */}
+      <section className="flex flex-col bg-paper-2 pb-[clamp(80px,10vw,120px)] pt-12 md:pt-[clamp(80px,10vw,120px)]">
+        <Container>
           <div className="max-w-[720px]">
-            <Eyebrow className="mb-[14px] hidden md:block">
-              Businesses we&apos;ve served
-            </Eyebrow>
+            <Eyebrow className="mb-[14px]">What we&apos;ve done</Eyebrow>
             <h2 className="m-0 font-display text-[clamp(38px,5vw,64px)] font-bold leading-none tracking-[-0.01em] text-ink">
               Work that moved people.
             </h2>
           </div>
         </Container>
 
-        {/*
-          Roster: opens the section as a full-bleed white band on mobile (so each logo
-          gets its own row), and reflows into a hairline rail between the headline and
-          the cards from md up, where three logos fit one line.
-        */}
-        <div className="order-first bg-white pb-10 pt-12 md:order-none md:my-11 md:bg-transparent md:py-0">
-          <Container>
-            <Eyebrow className="text-center md:hidden">
-              Businesses we&apos;ve served
-            </Eyebrow>
-            <div className="mt-[26px] [--logo-h:30px] md:mt-0 md:flex md:items-center md:justify-start md:gap-10 md:border-y md:border-line md:py-[26px] md:[--logo-h:clamp(30px,2.5vw,36px)]">
-              <div className="flex flex-col md:flex-row md:items-center md:gap-14">
-                {clients.map((client, i) => (
-                  <div
-                    key={client.name}
-                    className={`flex items-center justify-center py-4 md:py-0 ${
-                      i < clients.length - 1
-                        ? "border-b border-line md:border-b-0"
-                        : ""
-                    }`}
-                  >
-                    <Image
-                      src={client.logo}
-                      alt={client.name}
-                      width={client.width}
-                      height={client.height}
-                      className="w-auto"
-                      style={{ height: `calc(var(--logo-h) * ${client.scale})` }}
-                    />
-                  </div>
-                ))}
-              </div>
-            </div>
-          </Container>
-        </div>
-
-        <Container className="mt-10 md:mt-0">
+        <Container className="mt-10 md:mt-[52px]">
           <div className="grid grid-cols-[repeat(auto-fit,minmax(320px,1fr))] gap-5">
             {caseStudies.map((study) => {
               const t = caseStudyThemeClasses[study.theme];
               return (
                 <article
                   key={study.client}
-                  className={`flex flex-col gap-[18px] rounded-block p-[clamp(40px,4vw,56px)] ${t.card}`}
+                  className={`grid overflow-hidden rounded-block md:grid-cols-[minmax(280px,2fr)_3fr] ${t.card}`}
                 >
-                  <span
-                    className={`text-[12px] font-bold uppercase tracking-eyebrow ${t.category}`}
-                  >
-                    {study.category}
-                  </span>
-                  <h3 className="m-0 font-display text-[clamp(26px,2.8vw,36px)] font-bold leading-[1.1]">
-                    {study.client}
-                  </h3>
-                  <p className={`m-0 text-[16px] leading-[1.7] ${t.body}`}>
-                    {study.description}
-                  </p>
-                  <p className={`m-0 text-[15px] font-bold ${t.takeaway}`}>
-                    {study.takeaway}
-                  </p>
+                  <div className="relative aspect-[4/3] md:aspect-auto md:min-h-full">
+                    <Image
+                      src={study.image.src}
+                      alt={study.image.alt}
+                      fill
+                      sizes="(min-width: 768px) 40vw, 100vw"
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="flex flex-col gap-[18px] p-[clamp(40px,4vw,56px)]">
+                    <span
+                      className={`text-[12px] font-bold uppercase tracking-eyebrow ${t.category}`}
+                    >
+                      {study.category}
+                    </span>
+                    <h3 className="m-0 font-display text-[clamp(26px,2.8vw,36px)] font-bold leading-[1.1]">
+                      {study.client}
+                    </h3>
+                    {study.description.map((paragraph) => (
+                      <p
+                        key={paragraph}
+                        className={`m-0 text-[16px] leading-[1.7] ${t.body}`}
+                      >
+                        {paragraph}
+                      </p>
+                    ))}
+                    <p className={`m-0 text-[15px] font-bold ${t.takeaway}`}>
+                      {study.takeaway}
+                    </p>
+                    <div className="mt-2">
+                      <Button href={study.href} variant={t.button}>
+                        Read more
+                      </Button>
+                    </div>
+                  </div>
                 </article>
               );
             })}
+          </div>
+        </Container>
+
+        {/*
+          Roster closes the section: one logo per row on mobile, reflowing into a
+          hairline rail from md up where three logos fit one line.
+        */}
+        <Container className="mt-12 md:mt-14">
+          <Eyebrow className="mb-[14px]">Businesses we&apos;ve served</Eyebrow>
+          <div className="[--logo-h:30px] md:flex md:items-center md:justify-start md:gap-10 md:border-y md:border-line md:py-[26px] md:[--logo-h:clamp(30px,2.5vw,36px)]">
+            <div className="flex flex-col md:flex-row md:items-center md:gap-14">
+              {clients.map((client, i) => (
+                <div
+                  key={client.name}
+                  className={`flex items-center justify-center py-4 md:py-0 ${
+                    i < clients.length - 1
+                      ? "border-b border-line md:border-b-0"
+                      : ""
+                  }`}
+                >
+                  <Image
+                    src={client.logo}
+                    alt={client.name}
+                    width={client.width}
+                    height={client.height}
+                    className="w-auto"
+                    style={{ height: `calc(var(--logo-h) * ${client.scale})` }}
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </Container>
       </section>

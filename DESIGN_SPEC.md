@@ -29,7 +29,7 @@ Open `design/credom-website-preview.html` alongside this document.
 
 ### Typography
 - **Display / headings:** `Rokkitt` (slab serif). Weights 400–900. Used for all H1/H2/H3, eyebrow-adjacent big statements, pull-quotes (italic), and process/step labels.
-- **Body / UI:** `Mulish` (humanist sans). Weights 300–800. Used for paragraphs, nav, buttons, form fields, and the **logo wordmark** (weight 800).
+- **Body / UI:** `Mulish` (humanist sans). Weights 300–800. Used for paragraphs, nav, buttons, form fields, (the logo is SVG artwork, not live text).
 - Load: `https://fonts.googleapis.com/css2?family=Rokkitt:wght@400;500;600;700;800;900&family=Mulish:wght@300;400;500;600;700;800&display=swap`
 
 **Type scale (fluid — all use `clamp()`):**
@@ -54,15 +54,7 @@ Open `design/credom-website-preview.html` alongside this document.
 - No shadows in the system; separation comes from color blocks and whitespace.
 
 ### Logo
-Wordmark `CRED` + `O` + `M` in **Mulish 800, 23–24px, letter-spacing 0.04em**. The "O" is replaced by a stacked mark:
-- a gold (`#D89A2E`) filled circle, **15×15px**, `border-radius:50%`
-- a gold bar beneath it, **17×3px**, `border-radius:2px`, `margin-top:2px`
-- the circle+bar column sits inline with `margin:0 2px`.
-Ink color on light backgrounds; `#FAF7F2` on dark. Dot/bar stay gold in both.
-
----
-
-## 2. Global Chrome
+Official CREDOM wordmark as inline SVG (`components/Logo.tsx`), traced from the company profile cover: `CRED` + gold `O` dot + `M`, with a short bar under the dot. Letterforms and the bar take the current text color (ink on light, paper on dark); the dot is always gold `#D89A2E`. Artwork ratio 135.2 : 23.95, rendered at 23–24px tall in the nav.
 
 ### Nav (sticky)
 - `position:sticky; top:0; z-index:50`, bg `rgba(250,247,242,0.9)` + `backdrop-filter:blur(10px)`, bottom border `1px #E4DDD2`.
@@ -93,7 +85,7 @@ Ink color on light backgrounds; `#FAF7F2` on dark. Dot/bar stay gold in both.
    - 06 Digital Marketing — **ink 2** bg, cream text, gold number
 4. **"Most Marketing Is Ignored"** — **gold** bg, cream text, padding `clamp(80,11vw,140)`. Two-column (`auto-fit minmax(320px,1fr)`, gap 50, center-aligned): left H2 (Rokkitt 800, clamp(48,7vw,96), white) "Most / Marketing / Is Ignored."; right two paragraphs (2nd bold).
 5. **How We Work (4D1M)** — header: eyebrow "Our Process — 4D1M", H2 "How We Work", intro paragraph. Then **5 rows** (`gap:14px`), each a `grid-template-columns:200px 1fr` card (radius 3): colored palette dot (10px — gold, magenta, teal, brown) + label (Rokkitt 700 30px) + description. First 4 rows **white** bg with `1px #E4DDD2` border; **Measure** row gold bg / ink with an ink dot.
-6. **Businesses We’ve Served** — bg `#F0EBE3`. Eyebrow "Businesses we’ve served" + H2 "Work that moved people." Two case-study cards (`auto-fit minmax(320px,1fr)`, gap 20, radius 4, padding clamp(40,4vw,56)): **The Midea Pro Shop** (ink bg — category eyebrow gold, gold takeaway line) and **Terra** (gold bg — category eyebrow brown, brown takeaway line). Each card: category eyebrow, H3 client name, body paragraph, bold takeaway.
+6. **Businesses We’ve Served** — bg `#F0EBE3`. Order: eyebrow "What we’ve done" + H2 "Work that moved people.", then one case-study card, then eyebrow "Businesses we’ve served" + the client logo rail as a closing band (hairline rail on md+, one logo per row on mobile). Card (`auto-fit minmax(320px,1fr)`, gap 20, radius 4, padding clamp(40,4vw,56)): **FUTURE IN MOTION** — AltDrive EV Experience 2.0, Lagos (ink bg — category eyebrow gold, gold takeaway line). Card is a two-column grid on md+ (image `minmax(280px,2fr)` / text `3fr`, stacked on mobile with a 4:3 image): placeholder image (`public/images/case-studies/`), then category eyebrow, H3 title, body paragraph, bold takeaway, and a gold "Read more" button.
 7. **Clients** — **white** bg, top border `#E4DDD2`. Centered gold-deep eyebrow "Brands We've Served" + centered wrapping row of names (Rokkitt 600, clamp(24,2.8vw,36), ink): AltDrive, AltBank, Midea.
 8. **CTA band** — `#F0EBE3`, centered. H2 "Let's make something they'll remember." + Schedule a Chat button.
 
@@ -143,7 +135,7 @@ Ink color on light backgrounds; `#FAF7F2` on dark. Dot/bar stay gold in both.
 
 ## 5. Assets
 - **Fonts:** Rokkitt + Mulish (Google Fonts).
-- **Images:** none shipped — placeholders mark the hero image and two team photos. Client to supply real assets + final logo file.
+- **Images:** none shipped — placeholders mark the hero image and two team photos. Client to supply real assets.
 - **Icons:** none required; the design uses numbered labels instead of icons by choice.
 
 ## 6. Source reference files
