@@ -76,21 +76,13 @@ export const caseStudyThemeClasses: Record<
 
 export const caseStudies: CaseStudy[] = [
   {
-    client: "The Midea Pro Shop",
-    category: "Grand Launch & Partners' Conference — Abuja",
+    client: "FUTURE IN MOTION",
+    category: "AltDrive EV Experience 2.0 - Lagos",
     description:
-      "A dual-format activation that turned a product launch into a full brand moment. From the high-energy grand opening of The Midea Pro Shop to a polished partners' conference held the same evening, we built two distinct experiences under one strategic vision — driving footfall, deepening trade relationships, and solidifying Midea's market authority in Abuja.",
+      "An immersive electric-mobility showcase that put AltDrive's vision on the road in Lagos. We designed a hands-on brand experience — live vehicle demos, guided test drives, and interactive touchpoints — that turned curiosity about EVs into real conviction, giving prospects, partners, and press a tangible feel for the future of driving.",
     takeaway:
-      "Experiential excellence and commercial impact aren't a trade-off — they're the brief.",
+      "When people can touch the future, they believe in it — and they buy into it.",
     theme: "ink",
-  },
-  {
-    client: "Terra",
-    category: "August Meeting Activation — Eastern States",
-    description:
-      "The August Meeting is a significant cultural tradition among Igbo women, who travel back to their hometowns for gatherings organised by women's associations, town unions, and church groups. We activated the Terra brand across 6 locations in Anambra, Enugu, and Imo State — brand talks, dry sampling, and grassroots ambassador engagement that drove on-ground sales across local communities.",
-    takeaway: "High-reach, high-touch — right in the heart of the conversation.",
-    theme: "gold",
   },
 ];
 
