@@ -29,7 +29,7 @@ Open `design/credom-website-preview.html` alongside this document.
 
 ### Typography
 - **Display / headings:** `Rokkitt` (slab serif). Weights 400–900. Used for all H1/H2/H3, eyebrow-adjacent big statements, pull-quotes (italic), and process/step labels.
-- **Body / UI:** `Mulish` (humanist sans). Weights 300–800. Used for paragraphs, nav, buttons, form fields, and the **logo wordmark** (weight 800).
+- **Body / UI:** `Mulish` (humanist sans). Weights 300–800. Used for paragraphs, nav, buttons, form fields, (the logo is SVG artwork, not live text).
 - Load: `https://fonts.googleapis.com/css2?family=Rokkitt:wght@400;500;600;700;800;900&family=Mulish:wght@300;400;500;600;700;800&display=swap`
 
 **Type scale (fluid — all use `clamp()`):**
@@ -54,15 +54,7 @@ Open `design/credom-website-preview.html` alongside this document.
 - No shadows in the system; separation comes from color blocks and whitespace.
 
 ### Logo
-Wordmark `CRED` + `O` + `M` in **Mulish 800, 23–24px, letter-spacing 0.04em**. The "O" is replaced by a stacked mark:
-- a gold (`#D89A2E`) filled circle, **15×15px**, `border-radius:50%`
-- a gold bar beneath it, **17×3px**, `border-radius:2px`, `margin-top:2px`
-- the circle+bar column sits inline with `margin:0 2px`.
-Ink color on light backgrounds; `#FAF7F2` on dark. Dot/bar stay gold in both.
-
----
-
-## 2. Global Chrome
+Official CREDOM wordmark as inline SVG (`components/Logo.tsx`), traced from the company profile cover: `CRED` + gold `O` dot + `M`, with a short bar under the dot. Letterforms and the bar take the current text color (ink on light, paper on dark); the dot is always gold `#D89A2E`. Artwork ratio 135.2 : 23.95, rendered at 23–24px tall in the nav.
 
 ### Nav (sticky)
 - `position:sticky; top:0; z-index:50`, bg `rgba(250,247,242,0.9)` + `backdrop-filter:blur(10px)`, bottom border `1px #E4DDD2`.
@@ -143,7 +135,7 @@ Ink color on light backgrounds; `#FAF7F2` on dark. Dot/bar stay gold in both.
 
 ## 5. Assets
 - **Fonts:** Rokkitt + Mulish (Google Fonts).
-- **Images:** none shipped — placeholders mark the hero image and two team photos. Client to supply real assets + final logo file.
+- **Images:** none shipped — placeholders mark the hero image and two team photos. Client to supply real assets.
 - **Icons:** none required; the design uses numbered labels instead of icons by choice.
 
 ## 6. Source reference files

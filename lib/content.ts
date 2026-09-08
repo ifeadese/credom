@@ -51,7 +51,8 @@ export type CaseStudyTheme = "ink" | "gold";
 export type CaseStudy = {
   client: string;
   category: string;
-  description: string;
+  /** Body copy, one entry per paragraph. */
+  description: string[];
   takeaway: string;
   theme: CaseStudyTheme;
   /** Card image (public path). Swap the placeholder for a real event photo. */
@@ -90,10 +91,12 @@ export const caseStudies: CaseStudy[] = [
   {
     client: "FUTURE IN MOTION",
     category: "AltDrive EV Experience 2.0 - Lagos",
-    description:
-      "An immersive electric-mobility showcase that put AltDrive's vision on the road in Lagos. We designed a hands-on brand experience — live vehicle demos, guided test drives, and interactive touchpoints — that turned curiosity about EVs into real conviction, giving prospects, partners, and press a tangible feel for the future of driving.",
+    description: [
+      "Future in Motion was an invitation to step into what comes next. We turned the idea of electric mobility into a physical world where technology, movement and lifestyle came together.",
+      "From exploring vehicles to discovery, interaction and movement designed to spark curiosity. Every space, touchpoint and experience invited guests to see the future differently, before getting behind the wheel and putting the future into motion.",
+    ],
     takeaway:
-      "When people can touch the future, they believe in it — and they buy into it.",
+      "It was more than an EV showcase. It was a glimpse of tomorrow, brought to life today.",
     theme: "ink",
     image: {
       src: "/images/case-studies/altdrive-ev-experience.svg",

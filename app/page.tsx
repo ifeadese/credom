@@ -205,9 +205,14 @@ export default function HomePage() {
                     <h3 className="m-0 font-display text-[clamp(26px,2.8vw,36px)] font-bold leading-[1.1]">
                       {study.client}
                     </h3>
-                    <p className={`m-0 text-[16px] leading-[1.7] ${t.body}`}>
-                      {study.description}
-                    </p>
+                    {study.description.map((paragraph) => (
+                      <p
+                        key={paragraph}
+                        className={`m-0 text-[16px] leading-[1.7] ${t.body}`}
+                      >
+                        {paragraph}
+                      </p>
+                    ))}
                     <p className={`m-0 text-[15px] font-bold ${t.takeaway}`}>
                       {study.takeaway}
                     </p>
