@@ -47,7 +47,11 @@ export default function Logo({
 
   if (asLink) {
     return (
-      <Link href="/" aria-label="CREDOM — home" className="inline-flex items-center">
+      <Link
+        href="/"
+        aria-label="CREDOM — home"
+        className="inline-flex min-w-0 shrink items-center"
+      >
         {mark}
       </Link>
     );
