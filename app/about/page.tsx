@@ -29,26 +29,28 @@ export default function AboutPage() {
   return (
     <>
       {/* HERO — staggered headline stays pinned while the intro scrolls */}
-      <section className="mx-auto max-w-content px-10 pb-[clamp(56px,6vw,90px)] pt-[clamp(72px,9vw,120px)]">
-        {/* Columns are minmax(0, …) so the headline can never widen its track; the type scale + indents are sized so "Immersive." stays inside it at every width */}
-        <div className="grid grid-cols-1 items-start gap-9 md:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] md:gap-20">
-          <h1 className="m-0 font-display text-[clamp(56px,6.6vw,104px)] font-extrabold leading-[0.84] tracking-[-0.035em] text-ink md:sticky md:top-[120px]">
-            <span className="block">Bold.</span>
-            <span className="block text-gold md:ml-[6%]">Strategic.</span>
-            <span className="block md:ml-[12%]">Immersive.</span>
-          </h1>
-          <div className="flex max-w-[620px] flex-col gap-[22px]">
-            <Eyebrow>About CREDOM</Eyebrow>
-            {aboutIntro.map((paragraph) => (
-              <p
-                key={paragraph.slice(0, 24)}
-                className="m-0 text-[17px] leading-[1.75] text-body-ink"
-              >
-                {paragraph}
-              </p>
-            ))}
+      <section className="pb-[clamp(56px,6vw,90px)] pt-[clamp(72px,9vw,120px)]">
+        <Container>
+          {/* Columns are minmax(0, …) so the headline can never widen its track; the type scale + indents are sized so "Immersive." stays inside it at every width */}
+          <div className="grid grid-cols-1 items-start gap-9 md:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] md:gap-20">
+            <h1 className="m-0 font-display text-[clamp(56px,6.6vw,104px)] font-extrabold leading-[0.84] tracking-[-0.035em] text-ink md:sticky md:top-[120px]">
+              <span className="block">Bold.</span>
+              <span className="block text-gold md:ml-[6%]">Strategic.</span>
+              <span className="block md:ml-[12%]">Immersive.</span>
+            </h1>
+            <div className="flex max-w-[620px] flex-col gap-[22px]">
+              <Eyebrow>About CREDOM</Eyebrow>
+              {aboutIntro.map((paragraph) => (
+                <p
+                  key={paragraph.slice(0, 24)}
+                  className="m-0 text-[17px] leading-[1.75] text-body-ink"
+                >
+                  {paragraph}
+                </p>
+              ))}
+            </div>
           </div>
-        </div>
+        </Container>
       </section>
 
       {/* BELIEF QUOTE */}
@@ -63,8 +65,9 @@ export default function AboutPage() {
       </section>
 
       {/* VISION / MISSION */}
-      <section className="grid grid-cols-[repeat(auto-fit,minmax(min(320px,100%),1fr))]">
-        <div className="flex min-h-[440px] flex-col justify-between gap-7 bg-teal px-[clamp(20px,5vw,70px)] py-[clamp(56px,7vw,90px)] text-paper">
+      {/* Full-bleed pair: the outer padding of each panel is the viewport→column distance (`edge`), the inner is the plain gutter; below 800px they stack and both collapse to the gutter */}
+      <section className="grid grid-cols-[repeat(auto-fit,minmax(min(400px,100%),1fr))]">
+        <div className="flex min-h-[440px] flex-col justify-between gap-7 bg-teal py-[clamp(56px,7vw,90px)] pl-edge pr-gutter text-paper">
           <Eyebrow className="!text-paper opacity-85">Vision</Eyebrow>
           <div>
             <h2 className="m-0 max-w-[480px] font-display text-[clamp(38px,4vw,56px)] font-bold leading-[0.98] text-white">
@@ -75,7 +78,7 @@ export default function AboutPage() {
             </p>
           </div>
         </div>
-        <div className="flex min-h-[440px] flex-col justify-between gap-7 bg-gold px-[clamp(20px,5vw,70px)] py-[clamp(56px,7vw,90px)] text-ink">
+        <div className="flex min-h-[440px] flex-col justify-between gap-7 bg-gold py-[clamp(56px,7vw,90px)] pl-gutter pr-edge text-ink">
           <Eyebrow className="!text-brown">Mission</Eyebrow>
           <div>
             <h2 className="m-0 max-w-[480px] font-display text-[clamp(38px,4vw,56px)] font-bold leading-[0.98]">
@@ -95,7 +98,7 @@ export default function AboutPage() {
 
       {/* WHY CHOOSE US */}
       <section className="border-b border-line bg-white">
-        <div className="mx-auto max-w-content px-10 py-[clamp(72px,10vw,120px)]">
+        <Container className="py-[clamp(72px,10vw,120px)]">
           <div className="grid grid-cols-1 items-start gap-8 md:grid-cols-[0.8fr_1.2fr] md:gap-20">
             <h2 className="m-0 font-display text-[clamp(68px,8.9vw,128px)] font-extrabold leading-[0.8] tracking-[-0.035em] text-ink md:sticky md:top-[120px]">
               Why
@@ -119,47 +122,49 @@ export default function AboutPage() {
               </p>
             </div>
           </div>
-        </div>
+        </Container>
       </section>
 
       {/* WHAT WE STAND FOR */}
-      <section className="mx-auto max-w-content px-10 py-[clamp(72px,10vw,120px)]">
-        <div className="flex flex-wrap items-end justify-between gap-6">
-          <div>
-            <Eyebrow className="mb-[18px]">Our Principles</Eyebrow>
-            <h2 className="m-0 font-display text-[clamp(56px,7.2vw,104px)] font-extrabold leading-[0.86] tracking-[-0.03em] text-ink">
-              Built on belief.
-              <br />
-              Driven by <span className="text-gold">principle.</span>
-            </h2>
+      <section className="py-[clamp(72px,10vw,120px)]">
+        <Container>
+          <div className="flex flex-wrap items-end justify-between gap-6">
+            <div>
+              <Eyebrow className="mb-[18px]">Our Principles</Eyebrow>
+              <h2 className="m-0 font-display text-[clamp(56px,7.2vw,104px)] font-extrabold leading-[0.86] tracking-[-0.03em] text-ink">
+                Built on belief.
+                <br />
+                Driven by <span className="text-gold">principle.</span>
+              </h2>
+            </div>
+            <span className="text-[12px] font-bold uppercase tracking-[0.15em] text-body-muted">
+              05 Principles
+            </span>
           </div>
-          <span className="text-[12px] font-bold uppercase tracking-[0.15em] text-body-muted">
-            05 Principles
-          </span>
-        </div>
-        <div className="mt-10 grid grid-cols-1 gap-[14px] md:mt-16 md:grid-cols-6">
-          {principles.map((p, i) => {
-            const t = principleThemeClasses[p.theme];
-            return (
-              <div
-                key={p.number}
-                className={`flex flex-col justify-between gap-6 rounded-card p-[26px] md:min-h-[340px] md:p-8 ${t.card} ${principleSpanClasses[i]}`}
-              >
-                <span className={`block font-display text-[22px] font-bold ${t.number}`}>
-                  {p.number}
-                </span>
-                <div>
-                  <h3 className="m-0 font-display text-[28px] font-bold leading-[0.96] md:text-[34px]">
-                    {p.title}
-                  </h3>
-                  <p className={`m-0 mt-3 max-w-[340px] text-[15px] leading-[1.6] ${t.body}`}>
-                    {p.description}
-                  </p>
+          <div className="mt-10 grid grid-cols-1 gap-[14px] md:mt-16 md:grid-cols-6">
+            {principles.map((p, i) => {
+              const t = principleThemeClasses[p.theme];
+              return (
+                <div
+                  key={p.number}
+                  className={`flex flex-col justify-between gap-6 rounded-card p-6 md:min-h-[340px] md:p-8 ${t.card} ${principleSpanClasses[i]}`}
+                >
+                  <span className={`block font-display text-[22px] font-bold ${t.number}`}>
+                    {p.number}
+                  </span>
+                  <div>
+                    <h3 className="m-0 font-display text-[28px] font-bold leading-[0.96] md:text-[34px]">
+                      {p.title}
+                    </h3>
+                    <p className={`m-0 mt-3 max-w-[340px] text-[15px] leading-[1.6] ${t.body}`}>
+                      {p.description}
+                    </p>
+                  </div>
                 </div>
-              </div>
-            );
-          })}
-        </div>
+              );
+            })}
+          </div>
+        </Container>
       </section>
 
       {/* TEAM */}

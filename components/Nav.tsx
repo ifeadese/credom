@@ -22,6 +22,11 @@ const GLASS_AFTER = 24;
  * with a 300ms transition. Over the Home hero the bar is transparent on ink, so
  * its text is paper; everywhere else, and whenever it is glass or the drawer is
  * open, it is ink. Pages other than Home get a spacer so content starts below it.
+ *
+ * Horizontal alignment: the bar sits inside the 16px viewport inset and is capped
+ * at 1240px − 32px, so its footprint equals the content column's. Its inner
+ * padding is 16–20px on phones (a glass pill needs that much) and 24px from lg,
+ * which puts the logo exactly on the 40px page gutter.
  */
 export default function Nav() {
   const pathname = usePathname();
@@ -65,14 +70,14 @@ export default function Nav() {
     <>
       <nav className="fixed inset-x-0 top-2 z-50 px-4">
         <div
-          className={`relative mx-auto max-w-content overflow-hidden rounded-2xl transition-all duration-300 ${
+          className={`relative mx-auto max-w-[1208px] overflow-hidden rounded-2xl transition-all duration-300 ${
             glass
               ? "bg-paper/80 shadow-[0_1px_3px_0_rgba(0,0,0,0.1),0_1px_2px_-1px_rgba(0,0,0,0.1)] backdrop-blur-md"
               : "bg-transparent"
           }`}
         >
           {/* Bar */}
-          <div className="flex items-center justify-between gap-3 px-4 py-[14px] min-[400px]:px-5 md:gap-6 md:px-8 md:py-[16px]">
+          <div className="flex items-center justify-between gap-3 px-4 py-[14px] min-[400px]:px-5 md:gap-6 md:py-[16px] lg:px-6">
             {/* Logo scales fluidly between 14px and 17px tall */}
             <Logo
               asLink

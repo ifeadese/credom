@@ -49,6 +49,12 @@ const config: Config = {
       maxWidth: {
         content: "1240px",
       },
+      spacing: {
+        // Page gutter (20px phone → 32px tablet → 40px desktop); set in globals.css
+        gutter: "var(--gutter)",
+        // Viewport edge → content-column text edge; lets full-bleed panels align to the column
+        edge: "var(--edge)",
+      },
       letterSpacing: {
         eyebrow: "0.2em",
         "eyebrow-wide": "0.24em",

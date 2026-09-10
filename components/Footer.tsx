@@ -37,10 +37,12 @@ function InstagramIcon() {
 const iconLinkClasses =
   "inline-flex h-10 w-10 items-center justify-center rounded-btn border border-line text-body-ink transition-colors hover:border-gold-deep hover:text-gold-deep";
 
+import Container from "./Container";
+
 export default function Footer() {
   return (
     <footer className="border-t border-line bg-paper py-8 text-body-ink">
-      <div className="mx-auto flex max-w-content flex-col items-center gap-4 px-10 text-center min-[480px]:flex-row min-[480px]:justify-between min-[480px]:text-left">
+      <Container className="flex flex-col items-center gap-4 text-center min-[480px]:flex-row min-[480px]:justify-between min-[480px]:text-left">
         <span className="text-[13px] text-body-muted">
           &copy; 2026 CREDOM Limited. All rights reserved.
         </span>
@@ -62,7 +64,7 @@ export default function Footer() {
             <InstagramIcon />
           </a>
         </div>
-      </div>
+      </Container>
     </footer>
   );
 }
