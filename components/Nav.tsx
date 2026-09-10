@@ -12,26 +12,30 @@ const links = [
   { href: "/contact", label: "Contact" },
 ];
 
-/** Scroll distance after which the bar turns to glass. */
-const GLASS_AFTER = 24;
+/** Scroll distance after which the bar pins to the viewport and turns to glass. */
+const PIN_AFTER = 24;
 
 /**
- * Fixed header that floats over the page (selahnotes.app pattern): an 8px inset
- * from the top, transparent while the page is at rest, and — once the visitor
- * scrolls — a rounded glass bar (paper at 80%, 12px backdrop blur, soft shadow)
- * with a 300ms transition. Over the Home hero the bar is transparent on ink, so
- * its text is paper; everywhere else, and whenever it is glass or the drawer is
- * open, it is ink. Pages other than Home get a spacer so content starts below it.
+ * Full-width header in the lighthouseottawa.com pattern — an edge-to-edge bar
+ * flush with the top of the page, never a floating pill. At rest it is
+ * `position:absolute` at the top of the document, transparent, and simply
+ * scrolls away with the page. Once the visitor has scrolled past 24px it
+ * becomes `position:fixed`, slides back in from above (400ms `nav-pin`), and
+ * reads as glass: paper at 88%, 12px backdrop blur, a hairline bottom rule, and
+ * slightly tighter vertical padding. No radius, no inset, no shadow.
  *
- * Horizontal alignment: the bar sits inside the 16px viewport inset and is capped
- * at 1240px − 32px, so its footprint equals the content column's. Its inner
- * padding is 16–20px on phones (a glass pill needs that much) and 24px from lg,
- * which puts the logo exactly on the 40px page gutter.
+ * Over the Home hero the bar is transparent on ink, so its text is paper;
+ * everywhere else, and whenever it is pinned or the drawer is open, it is ink.
+ * Pages other than Home get a spacer so content starts below it.
+ *
+ * Horizontal alignment: the bar spans the viewport and its row is the same
+ * 1240px column with the responsive page gutter as `Container`, so the logo sits
+ * exactly on the content column's text edge.
  */
 export default function Nav() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+  const [pinned, setPinned] = useState(false);
 
   // Close the drawer whenever the route changes.
   useEffect(() => {
@@ -48,9 +52,9 @@ export default function Nav() {
     return () => window.removeEventListener("keydown", onKey);
   }, [open]);
 
-  // Glass state follows scroll position.
+  // Pinned (fixed + glass) state follows scroll position.
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > GLASS_AFTER);
+    const onScroll = () => setPinned(window.scrollY > PIN_AFTER);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -60,7 +64,7 @@ export default function Nav() {
     href === "/" ? pathname === "/" : pathname.startsWith(href);
 
   const overHero = pathname === "/";
-  const glass = scrolled || open;
+  const glass = pinned || open;
   // Paper text only while transparent over the ink hero.
   const onDark = overHero && !glass;
   const textColor = onDark ? "text-paper" : "text-ink";
@@ -68,16 +72,24 @@ export default function Nav() {
 
   return (
     <>
-      <nav className="fixed inset-x-0 top-2 z-50 px-4">
-        <div
-          className={`relative mx-auto max-w-[1208px] overflow-hidden rounded-2xl transition-all duration-300 ${
-            glass
-              ? "bg-paper/80 shadow-[0_1px_3px_0_rgba(0,0,0,0.1),0_1px_2px_-1px_rgba(0,0,0,0.1)] backdrop-blur-md"
-              : "bg-transparent"
-          }`}
-        >
+      <nav
+        className={`inset-x-0 top-0 z-50 border-b transition-[background-color,border-color] duration-300 ${
+          pinned
+            ? "fixed animate-[nav-pin_0.4s_cubic-bezier(0.16,1,0.3,1)]"
+            : "absolute"
+        } ${
+          glass
+            ? "border-line bg-paper/[.88] backdrop-blur-md"
+            : "border-transparent bg-transparent"
+        }`}
+      >
+        <div className="mx-auto w-full max-w-content px-gutter">
           {/* Bar */}
-          <div className="flex items-center justify-between gap-3 px-4 py-[14px] min-[400px]:px-5 md:gap-6 md:py-[16px] lg:px-6">
+          <div
+            className={`flex items-center justify-between gap-3 transition-[padding] duration-300 md:gap-6 ${
+              pinned ? "py-[10px] md:py-3" : "py-[14px] md:py-4"
+            }`}
+          >
             {/* Logo scales fluidly between 14px and 17px tall */}
             <Logo
               asLink
@@ -144,7 +156,7 @@ export default function Nav() {
             </div>
           </div>
 
-          {/* Mobile drawer: expands inside the glass bar */}
+          {/* Mobile drawer: expands inside the bar */}
           <div
             id="mobile-nav"
             className={`grid transition-[grid-template-rows] duration-300 ease-in-out md:hidden ${
@@ -153,7 +165,7 @@ export default function Nav() {
             aria-hidden={!open}
           >
             <div className="overflow-hidden">
-              <div className="px-5 pb-5 pt-1">
+              <div className="pb-5 pt-1">
                 <div className="flex flex-col gap-3 border-t border-gold/40 pt-4">
                   {links.map(({ href, label }) => {
                     const active = isActive(href);

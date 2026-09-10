@@ -57,13 +57,13 @@ Open `design/credom-website-preview.html` alongside this document.
 ### Logo
 Official CREDOM wordmark as inline SVG (`components/Logo.tsx`), traced from the company profile cover: `CRED` + gold `O` dot + `M`, with a short bar under the dot. Letterforms and the bar take the current text color (ink on light, paper on dark); the dot is always gold `#D89A2E`. Artwork ratio 135.2 : 23.95, rendered at 17px tall in the nav (14px on the narrowest phones).
 
-### Nav (fixed, glass on scroll)
-- Pattern lifted from selahnotes.app: `position:fixed; top:8px; z-index:50`, 16px side padding. Inner container: max-width 1208 (= 1240 − 2×16, so the bar's footprint equals the content column's), `border-radius:16px`, `transition: all 300ms`.
-  - **At rest (scrollY ≤ 24):** transparent. Over the Home hero the text and logo letterforms are **paper**; on every other page they are **ink**.
-  - **Scrolled (or drawer open):** paper at 80% (`rgba(250,247,242,.8)`), `backdrop-filter: blur(12px)`, shadow `0 1px 3px rgba(0,0,0,.1), 0 1px 2px -1px rgba(0,0,0,.1)`; text turns ink.
-- Bar: padding `16px 24px` from 1024px (16px inset + 24px = the 40px gutter, so the logo sits on the column's text edge), `14px 16–20px` below. Left: logo (links Home, 14–17px tall fluid). Right: Home · About · Services · Contact (DM Sans 600, 14px, hover gold) + **Schedule a Chat** (gold, ink text, radius 2px). Active link: 2px gold underline.
-- Mobile (< md): compact gold CTA + two-bar hamburger (bars paper over the hero, ink otherwise); the drawer expands **inside** the rounded glass container (grid-rows 0fr → 1fr, 300ms), gold top rule, stacked links; Escape and route change close it.
-- Home's hero runs under the bar (its own top padding clears it); every other page renders a 76px spacer under the fixed nav.
+### Nav (full-width, pins on scroll)
+- Pattern lifted from lighthouseottawa.com: an edge-to-edge bar flush with the top of the page — no inset, no radius, no shadow, never a floating pill. The row inside is the same 1240px column + page gutter as `Container`, so the logo sits on the content column's text edge.
+  - **At rest (scrollY ≤ 24):** `position:absolute; top:0` (it scrolls away with the page), transparent, transparent bottom rule, padding `14px` vertical (`16px` from md). Over the Home hero the text and logo letterforms are **paper**; on every other page they are **ink**.
+  - **Pinned (scrollY > 24):** `position:fixed; top:0; z-index:50`, slides back in from above (`nav-pin`: translateY(-100%) → 0, 400ms, cubic-bezier(.16,1,.3,1)). Glass: paper at 88% (`rgba(250,247,242,.88)`), `backdrop-filter: blur(12px)`, 1px bottom hairline `#E4DDD2`, vertical padding tightens to `10px` (`12px` from md); text turns ink. Background, border and padding transition over 300ms. The drawer being open also applies the glass treatment.
+- Left: logo (links Home, 14–17px tall fluid). Right: Home · About · Services · Contact (DM Sans 600, 14px, hover gold) + **Schedule a Chat** (gold, ink text, radius 2px). Active link: 2px gold underline.
+- Mobile (< md): compact gold CTA + two-bar hamburger (bars paper over the hero, ink otherwise); the drawer expands **inside** the bar (grid-rows 0fr → 1fr, 300ms), gold top rule, stacked links; Escape and route change close it.
+- Home's hero runs under the bar (its own top padding clears it); every other page renders a 76px spacer under it.
 
 ### Footer
 - Bg `#201D1B`, text `#C9C0B6`, padding `32px 0`, top hairline `#E4DDD2`.
