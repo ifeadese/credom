@@ -39,7 +39,7 @@ export default function SchedulePage() {
       </section>
 
       {/* BODY — the Calendly widget runs edge to edge; its own details panel carries the description */}
-      <section className="bg-white py-[clamp(40px,5vw,64px)]">
+      <section className="bg-white">
         <ScheduleEmbed url={calendlyUrl} />
       </section>
 
