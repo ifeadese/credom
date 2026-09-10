@@ -29,8 +29,8 @@ Open `design/credom-website-preview.html` alongside this document.
 
 ### Typography
 - **Display / headings:** `Rokkitt` (slab serif). Weights 400–900. Used for all H1/H2/H3, eyebrow-adjacent big statements, pull-quotes (italic), and process/step labels.
-- **Body / UI:** `Mulish` (humanist sans). Weights 300–800. Used for paragraphs, nav, buttons, form fields, (the logo is SVG artwork, not live text).
-- Load: `https://fonts.googleapis.com/css2?family=Rokkitt:wght@400;500;600;700;800;900&family=Mulish:wght@300;400;500;600;700;800&display=swap`
+- **Body / UI:** `DM Sans` (geometric, low-contrast sans — the UI/UX Pro Max "Premium Sans" pick for modern agencies; replaced Mulish in Sept 2026). Weights 400–700. Used for paragraphs, nav, buttons, form fields (the logo is SVG artwork, not live text).
+- Load: `https://fonts.googleapis.com/css2?family=Rokkitt:wght@400;500;600;700;800;900&family=DM+Sans:wght@400;500;600;700&display=swap`
 
 **Type scale (fluid — all use `clamp()`):**
 | Role | Size | Weight / style | Notes |
@@ -41,10 +41,10 @@ Open `design/credom-website-preview.html` alongside this document.
 | Big statement / pull-quote | `clamp(28px, 4.2–4.6vw, 52–58px)` | Rokkitt 600 (quotes italic) | line-height 1.12–1.16 |
 | Card / block H3 | 24–38px | Rokkitt 700 | |
 | Process step label | 30px | Rokkitt 700 | |
-| Body | 15–20px | Mulish 400–600 | line-height 1.6–1.75 |
-| Eyebrow label | 13px | Mulish 700, `letter-spacing:0.2–0.24em`, `text-transform:uppercase` | gold/gold-deep |
-| Nav link | 14px | Mulish 600 | letter-spacing 0.04em |
-| Button | 15–16px | Mulish 700 | |
+| Body | 15–20px | DM Sans 400–600 | line-height 1.6–1.75 |
+| Eyebrow label | 13px | DM Sans 700, `letter-spacing:0.2–0.24em`, `text-transform:uppercase` | gold/gold-deep |
+| Nav link | 14px | DM Sans 600 | letter-spacing 0.04em |
+| Button | 15–16px | DM Sans 700 | |
 
 ### Spacing & shape
 - Content max-width: **1240px**, centered, horizontal padding **40px**.
@@ -60,7 +60,7 @@ Official CREDOM wordmark as inline SVG (`components/Logo.tsx`), traced from the 
 - Pattern lifted from selahnotes.app: `position:fixed; top:8px; z-index:50`, 16px side padding. Inner container: max-width 1240, `border-radius:16px`, `transition: all 300ms`.
   - **At rest (scrollY ≤ 24):** transparent. Over the Home hero the text and logo letterforms are **paper**; on every other page they are **ink**.
   - **Scrolled (or drawer open):** paper at 80% (`rgba(250,247,242,.8)`), `backdrop-filter: blur(12px)`, shadow `0 1px 3px rgba(0,0,0,.1), 0 1px 2px -1px rgba(0,0,0,.1)`; text turns ink.
-- Bar: padding `16px 32px` (desktop), `14px 16–20px` (mobile). Left: logo (links Home, 14–17px tall fluid). Right: Home · About · Services · Contact (Mulish 600, 14px, hover gold) + **Schedule a Chat** (gold, ink text, radius 2px). Active link: 2px gold underline.
+- Bar: padding `16px 32px` (desktop), `14px 16–20px` (mobile). Left: logo (links Home, 14–17px tall fluid). Right: Home · About · Services · Contact (DM Sans 600, 14px, hover gold) + **Schedule a Chat** (gold, ink text, radius 2px). Active link: 2px gold underline.
 - Mobile (< md): compact gold CTA + two-bar hamburger (bars paper over the hero, ink otherwise); the drawer expands **inside** the rounded glass container (grid-rows 0fr → 1fr, 300ms), gold top rule, stacked links; Escape and route change close it.
 - Home's hero runs under the bar (its own top padding clears it); every other page renders a 76px spacer under the fixed nav.
 
