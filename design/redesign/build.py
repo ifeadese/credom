@@ -46,7 +46,6 @@ CSS = r"""
 
     /* NAV */
     .nav { position: sticky; top: 0; z-index: 50; background: rgba(250,247,242,0.92); backdrop-filter: blur(10px); border-bottom: 1px solid #E4DDD2; color: #201D1B; }
-    .nav.nav-dark { background: rgba(32,29,27,0.88); border-bottom-color: #3A342E; color: #FAF7F2; }
     .nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 18px 40px; max-width: 1240px; margin: 0 auto; }
     .nav-links { display: flex; align-items: center; gap: 34px; }
     .nav-links a { position: relative; font-size: 14px; font-weight: 600; letter-spacing: 0.04em; color: inherit; padding: 6px 0; }
@@ -61,31 +60,32 @@ CSS = r"""
     .drawer { display: none; }
 
     /* FOOTER */
-    .footer { background: #201D1B; color: #C9C0B6; padding: 72px 0 32px; }
+    .footer { background: #FAF7F2; color: #4A443D; padding: 32px 0; border-top: 1px solid #E4DDD2; }
+    .footer-row { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+    .footer-row span { font-size: 13px; color: #6E665F; }
     .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 40px; padding-bottom: 48px; border-bottom: 1px solid #3A342E; }
     .footer h4 { font-family: 'Mulish', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #D89A2E; margin-bottom: 18px; }
     .footer ul { display: flex; flex-direction: column; gap: 0; }
     .footer a { color: #E7DFD5; font-size: 15px; display: inline-flex; align-items: center; min-height: 44px; } .footer a:hover { color: #D89A2E; }
     .footer-bottom { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding-top: 28px; font-size: 13px; color: #8A8079; }
     .icons { display: flex; gap: 12px; }
-    .icon-btn { display: inline-flex; width: 44px; height: 44px; align-items: center; justify-content: center; border: 1px solid #3A342E; border-radius: 2px; color: #E7DFD5; }
-    .icon-btn:hover { border-color: #D89A2E; color: #D89A2E; }
+    .icon-btn { display: inline-flex; width: 44px; height: 44px; align-items: center; justify-content: center; border: 1px solid #E4DDD2; border-radius: 2px; color: #4A443D; }
+    .icon-btn:hover { border-color: #B87D1E; color: #B87D1E; }
     .icon-btn svg { width: 18px; height: 18px; }
 
     /* HOME HERO */
-    .hero { position: relative; overflow: hidden; background: #201D1B; color: #FAF7F2; min-height: 820px; display: flex; align-items: flex-end; }
-    .hero-photo { position: absolute; top: 0; right: 0; width: 52%; height: 100%; }
+    .hero { position: relative; overflow: hidden; background: #FFFFFF; color: #201D1B; border-bottom: 1px solid #E4DDD2; }
+    .hero-photo { position: absolute; top: 0; right: 0; width: 44%; height: 100%; border-left: 1px solid #E4DDD2; background: #F0EBE3; }
     .hero-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 62% center; }
-    .hero-photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, #201D1B 0%, rgba(32,29,27,0.55) 38%, rgba(32,29,27,0.15) 70%, rgba(32,29,27,0.35) 100%), linear-gradient(180deg, rgba(32,29,27,0.2) 0%, rgba(32,29,27,0) 40%, rgba(32,29,27,0.85) 100%); }
-    .hero-ring { position: absolute; width: 640px; height: 640px; right: 8%; top: 12%; border: 1px solid rgba(216,154,46,0.35); border-radius: 50%; pointer-events: none; }
-    .hero-inner { position: relative; z-index: 2; padding-top: 140px; padding-bottom: 88px; width: 100%; }
-    .hero h1 { font-size: 120px; line-height: 0.88; letter-spacing: -0.03em; max-width: 1000px; margin-top: 28px; }
-    .hero h1 em { font-style: normal; color: #D89A2E; }
-    .hero-bottom { display: flex; justify-content: space-between; align-items: flex-end; gap: 40px; margin-top: 56px; }
-    .hero-bottom .lede { max-width: 520px; }
-    .hero-cta { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 30px; }
-    .scroll-cue { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #8A8079; font-weight: 700; display: flex; flex-direction: column; gap: 8px; align-items: flex-start; }
-    .scroll-cue svg { width: 22px; height: 22px; color: #D89A2E; }
+    .hero-inner { position: relative; z-index: 2; padding-top: 150px; padding-bottom: 140px; max-width: 760px; }
+    .hero h1 { font-size: 118px; line-height: 0.9; letter-spacing: -0.015em; margin-top: 26px; }
+    .hero .sub { font-family: 'Rokkitt', Georgia, serif; font-weight: 600; font-size: 34px; color: #B87D1E; margin-top: 22px; }
+    .hero .lede { max-width: 560px; margin-top: 26px; }
+    .hero-cta { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 40px; }
+    .hero-mobile-photo { display: none; }
+    .statement-open { background: #FAF7F2; padding: 130px 0; }
+    .statement-open p { font-family: 'Rokkitt', Georgia, serif; font-weight: 700; font-size: 84px; line-height: 0.96; letter-spacing: -0.02em; color: #201D1B; max-width: 1100px; }
+    .statement-open p span { color: #D89A2E; }
 
     /* INTRO */
     .intro-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 80px; align-items: end; }
@@ -113,10 +113,10 @@ CSS = r"""
     /* PROCESS */
     .process-head h2 { font-size: 112px; line-height: 0.85; letter-spacing: -0.03em; }
     .process-head h2 span { color: #D89A2E; }
-    .steps { border-top: 1px solid #3A342E; margin-top: 72px; }
-    .step { display: grid; grid-template-columns: 110px 260px 1fr; gap: 30px; padding: 40px 0; border-bottom: 1px solid #3A342E; align-items: start; }
+    .steps { border-top: 1px solid #E4DDD2; margin-top: 64px; }
+    .step { display: grid; grid-template-columns: 110px 260px 1fr; gap: 30px; padding: 40px 0; border-bottom: 1px solid #E4DDD2; align-items: start; }
     .step h3 { font-size: 40px; font-weight: 700; line-height: 1; }
-    .step p { color: #C9C0B6; max-width: 620px; font-size: 16px; line-height: 1.7; }
+    .step p { color: #6E665F; max-width: 620px; font-size: 16px; line-height: 1.7; }
     .step .dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 12px; vertical-align: middle; position: relative; top: -3px; }
     .step.measure { background: #D89A2E; color: #201D1B; margin: 0 -28px; padding: 40px 28px; border-radius: 3px; border-bottom: 0; }
     .step.measure p { color: #3F2A12; } .step.measure .index { color: #5A2A17; }
@@ -132,15 +132,20 @@ CSS = r"""
     .case-copy .take { font-weight: 700; color: #B87D1E; }
     .case-meta { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 26px; }
     .case-link { display: inline-flex; align-items: center; gap: 8px; margin-top: 26px; font-weight: 700; color: #201D1B; border-bottom: 2px solid #D89A2E; padding-bottom: 2px; }
+    .case-card { display: grid; grid-template-columns: minmax(280px, 2fr) 3fr; border-radius: 4px; overflow: hidden; background: #201D1B; color: #FAF7F2; }
+    .case-card .ph { aspect-ratio: auto; min-height: 100%; border-radius: 0; border: 0; background: repeating-linear-gradient(45deg, #2B2724 0 10px, #332E29 10px 24px); color: #8A8079; }
+    .case-card .body { display: flex; flex-direction: column; gap: 18px; padding: 56px; }
+    .case-card h3 { font-size: 36px; font-weight: 700; line-height: 1.1; }
+    .case-card p { font-size: 16px; line-height: 1.7; color: #C9C0B6; }
+    .case-card .take { color: #D89A2E; font-weight: 700; font-size: 15px; }
     .rail { display: flex; align-items: center; gap: 56px; padding: 30px 0; border-top: 1px solid #E4DDD2; border-bottom: 1px solid #E4DDD2; margin-top: 18px; }
     .rail img { height: 32px; width: auto; }
     .rail .alt { height: 40px; } .rail .midea { height: 34px; }
 
     /* CTA BAND */
-    .cta-band { background: #5A2A17; color: #FAF7F2; padding: 120px 0; text-align: center; }
-    .cta-band h2 { font-size: 96px; line-height: 0.9; letter-spacing: -0.025em; max-width: 900px; margin: 0 auto 36px; }
+    .cta-band { background: #FFFFFF; border-top: 1px solid #E4DDD2; color: #201D1B; padding: 120px 0; text-align: center; }
+    .cta-band h2 { font-size: 88px; line-height: 0.94; letter-spacing: -0.02em; max-width: 900px; margin: 0 auto 32px; }
     .cta-band h2 span { color: #D89A2E; }
-    .cta-band p { color: #E4D8CE; font-size: 18px; max-width: 520px; margin: 0 auto 36px; }
 
     /* ABOUT */
     .about-hero { padding: 120px 0 90px; }
@@ -150,19 +155,19 @@ CSS = r"""
     .stagger span:nth-child(2) { color: #D89A2E; margin-left: 8%; }
     .stagger span:nth-child(3) { margin-left: 16%; }
     .about-copy { display: flex; flex-direction: column; gap: 22px; max-width: 620px; font-size: 17px; line-height: 1.75; color: #4A443D; }
-    .quote-band { background: #201D1B; color: #D89A2E; padding: 110px 0; }
+    .quote-band { background: #F0EBE3; color: #D89A2E; padding: 110px 0; }
     .quote-band blockquote { margin: 0; font-family: 'Rokkitt', Georgia, serif; font-style: italic; font-weight: 600; font-size: 58px; line-height: 1.12; max-width: 1040px; letter-spacing: -0.01em; }
     .quote-band .rule-gold { border-top: 1px solid #D89A2E; margin-bottom: 40px; width: 96px; }
     .vm { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .vm-card { padding: 90px 70px; min-height: 440px; display: flex; flex-direction: column; justify-content: space-between; gap: 40px; }
     .vm-card h3 { font-size: 56px; line-height: 0.98; font-weight: 700; max-width: 480px; }
     .vm-card p { font-size: 18px; line-height: 1.7; max-width: 480px; }
-    .why { background: #5A2A17; color: #FAF7F2; }
+    .why { background: #FFFFFF; color: #201D1B; border-bottom: 1px solid #E4DDD2; }
     .why-grid { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 80px; align-items: start; }
     .why h2 { font-size: 128px; line-height: 0.8; letter-spacing: -0.035em; position: sticky; top: 120px; }
     .why h2 span { color: #D89A2E; }
-    .why-copy { display: flex; flex-direction: column; gap: 22px; color: #E4D8CE; font-size: 17px; line-height: 1.75; max-width: 620px; }
-    .why-high { margin-top: 24px; font-family: 'Rokkitt', Georgia, serif; font-weight: 600; font-size: 34px; line-height: 1.12; color: #E2B654; border-top: 1px solid rgba(226,182,84,0.4); padding-top: 30px; }
+    .why-copy { display: flex; flex-direction: column; gap: 22px; color: #4A443D; font-size: 17px; line-height: 1.75; max-width: 620px; }
+    .why-high { margin-top: 24px; font-family: 'Rokkitt', Georgia, serif; font-style: italic; font-weight: 600; font-size: 34px; line-height: 1.2; color: #B87D1E; border-top: 1px solid #E4DDD2; padding-top: 30px; }
     .values-head h2 { font-size: 104px; line-height: 0.86; letter-spacing: -0.03em; }
     .values-head h2 span { color: #D89A2E; }
     .bento { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 14px; margin-top: 64px; }
@@ -171,16 +176,16 @@ CSS = r"""
     .value p { font-size: 15px; line-height: 1.6; max-width: 340px; opacity: 0.9; }
     .value .num { opacity: 0.7; }
     .span2 { grid-column: span 2; } .span3 { grid-column: span 3; }
-    .team-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 72px; margin-top: 72px; }
-    .person { display: flex; flex-direction: column; gap: 0; }
+    .team { background: #F0EBE3; }
+    .person { display: grid; grid-template-columns: 360px minmax(0, 1fr); gap: 72px; align-items: center; }
     .photo-wrap { position: relative; width: 100%; max-width: 360px; padding: 0 0 20px 20px; }
     .photo-back { position: absolute; left: 0; bottom: 0; width: calc(100% - 20px); height: calc(100% - 20px); border-radius: 2px; }
-    .photo { position: relative; aspect-ratio: 312 / 367; width: 100%; object-fit: cover; object-position: top; border-radius: 2px; border: 1px solid #3A342E; }
+    .photo { position: relative; aspect-ratio: 312 / 367; width: 100%; object-fit: cover; object-position: top; border-radius: 2px; border: 1px solid #E4DDD2; }
     .photo-ph { position: relative; aspect-ratio: 312 / 367; width: 100%; border-radius: 2px; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 8px; }
     .photo-ph .initials { font-family: 'Rokkitt', Georgia, serif; font-size: 96px; font-weight: 800; line-height: 1; color: #D89A2E; }
-    .person h3 { font-size: 44px; font-weight: 700; line-height: 1; margin-top: 32px; }
-    .person .role { font-size: 13px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #D89A2E; margin: 12px 0 20px; }
-    .person p { color: #C9C0B6; font-size: 16px; line-height: 1.75; max-width: 520px; }
+    .person h2 { font-size: 68px; font-weight: 700; line-height: 1.02; }
+    .person .role { display: block; font-size: 14px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: #B87D1E; margin-bottom: 14px; }
+    .person p { color: #6E665F; font-size: 18px; line-height: 1.8; max-width: 620px; margin-top: 18px; }
     .person p + p { margin-top: 14px; }
 
     /* SERVICES PAGE */
@@ -201,11 +206,11 @@ CSS = r"""
     .block .num { display: block; }
 
     /* CONTACT */
-    .contact-hero { background: #201D1B; color: #FAF7F2; padding: 120px 0 100px; position: relative; overflow: hidden; }
+    .contact-hero { background: #FFFFFF; color: #201D1B; border-bottom: 1px solid #E4DDD2; padding: 120px 0 100px; position: relative; overflow: hidden; }
     .contact-hero h1 { font-size: 150px; line-height: 0.8; letter-spacing: -0.035em; margin-top: 26px; }
     .contact-hero h1 span { color: #D89A2E; }
     .contact-hero .lede { max-width: 560px; margin-top: 34px; }
-    .contact-hero .mark { position: absolute; right: -1vw; bottom: -0.2em; font-family: 'Rokkitt', Georgia, serif; font-weight: 900; font-size: 380px; line-height: 0.8; color: rgba(250,247,242,0.035); letter-spacing: -0.04em; user-select: none; pointer-events: none; }
+    .contact-hero .mark { position: absolute; right: -1vw; bottom: -0.2em; font-family: 'Rokkitt', Georgia, serif; font-weight: 900; font-size: 380px; line-height: 0.8; color: rgba(216,154,46,0.09); letter-spacing: -0.04em; user-select: none; pointer-events: none; }
     .contact-body { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 60px; align-items: start; padding-top: 100px; padding-bottom: 120px; }
     .field { display: flex; flex-direction: column; gap: 9px; }
     .field label { font-size: 13px; font-weight: 700; letter-spacing: 0.05em; color: #201D1B; }
@@ -243,17 +248,14 @@ CSS = r"""
       .nav-inner { padding: 14px 20px; }
       .nav-links { display: none; }
       .nav-mobile { display: flex; }
-      .hero { min-height: 0; display: block; }
-      .hero-photo { position: relative; width: 100%; height: 300px; }
-      .hero-photo::after { background: linear-gradient(180deg, rgba(32,29,27,0.15) 0%, rgba(32,29,27,0) 40%, #201D1B 100%); }
-      .hero-ring { display: none; }
-      .hero-inner { padding-top: 12px; padding-bottom: 64px; }
-      .hero h1 { font-size: 50px; line-height: 0.92; margin-top: 18px; }
-      .hero-bottom { flex-direction: column; align-items: flex-start; gap: 28px; margin-top: 28px; }
+      .hero-photo { display: none; }
+      .hero-mobile-photo { display: block; aspect-ratio: 4 / 3; width: 100%; object-fit: cover; object-position: 62% center; border-top: 1px solid #E4DDD2; }
+      .hero-inner { padding-top: 64px; padding-bottom: 56px; max-width: none; }
+      .hero h1 { font-size: 60px; line-height: 0.92; margin-top: 20px; }
+      .hero .sub { font-size: 24px; }
       .hero-cta .btn { width: 100%; }
-      .scroll-cue { display: none; }
-      .intro-grid { grid-template-columns: minmax(0, 1fr); gap: 32px; }
-      .intro h2 { font-size: 60px; }
+      .statement-open { padding: 72px 0; }
+      .statement-open p { font-size: 42px; }
       .statement { padding: 80px 0; }
       .statement .mark { font-size: 170px; right: -6vw; bottom: -0.3em; }
       .statement-grid { grid-template-columns: minmax(0, 1fr); gap: 32px; }
@@ -272,11 +274,12 @@ CSS = r"""
       .rail > div { display: flex; justify-content: center; padding: 18px 0; border-bottom: 1px solid #E4DDD2; }
       .rail > div:first-child { border-top: 1px solid #E4DDD2; }
       .cta-band { padding: 80px 0; }
-      .cta-band h2 { font-size: 54px; }
-      .footer { padding: 56px 0 28px; }
-      .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 36px 24px; }
-      .footer-grid > div:first-child { grid-column: span 2; }
-      .footer-bottom { flex-direction: column; align-items: flex-start; }
+      .cta-band h2 { font-size: 48px; }
+      .footer-row { flex-direction: column; text-align: center; }
+      .case-card { grid-template-columns: minmax(0, 1fr); }
+      .case-card .ph { aspect-ratio: 4 / 3; min-height: 0; }
+      .case-card .body { padding: 36px 24px; }
+      .case-card h3 { font-size: 28px; }
       .about-hero { padding: 72px 0 56px; }
       .about-grid { grid-template-columns: minmax(0, 1fr); gap: 36px; }
       .stagger { font-size: 64px; position: static; }
@@ -293,8 +296,9 @@ CSS = r"""
       .span2, .span3 { grid-column: auto; }
       .value { min-height: 0; padding: 26px; gap: 22px; }
       .value h3 { font-size: 28px; }
-      .team-grid { grid-template-columns: minmax(0, 1fr); gap: 56px; margin-top: 44px; }
-      .person h3 { font-size: 36px; }
+      .person { grid-template-columns: minmax(0, 1fr); gap: 36px; }
+      .person h2 { font-size: 40px; }
+      .person p { font-size: 16px; }
       .svc-head { padding: 72px 0 48px; }
       .blocks { padding-bottom: 72px; }
       .block { grid-template-columns: minmax(0, 1fr); padding: 32px 24px; gap: 26px; }
@@ -309,12 +313,11 @@ CSS = r"""
       .work-hero h1 { font-size: 66px; }
     }
     /* Mobile drawer (open state) */
-    .menu-open .drawer { display: block; position: absolute; left: 0; right: 0; top: 100%; min-height: calc(100vh - 72px); background: #201D1B; border-bottom: 1px solid #3A342E; padding: 8px 20px 24px; box-shadow: 0 12px 32px rgba(0,0,0,0.25); z-index: 60; }
-    .menu-open .drawer ul { display: flex; flex-direction: column; gap: 2px; border-top: 1px solid rgba(216,154,46,0.4); padding-top: 12px; }
-    .menu-open .drawer a { display: flex; align-items: center; justify-content: space-between; min-height: 52px; padding: 12px 12px; font-family: 'Rokkitt', Georgia, serif; font-size: 28px; font-weight: 700; color: #FAF7F2; border-radius: 3px; }
-    .menu-open .drawer a.active { color: #D89A2E; }
-    .menu-open .drawer .drawer-foot { display: flex; flex-direction: column; gap: 14px; margin-top: 18px; padding-top: 18px; border-top: 1px solid #3A342E; color: #8A8079; font-size: 13px; }
-    .menu-open .drawer .drawer-foot a { min-height: 0; padding: 0; font-family: 'Mulish', sans-serif; font-size: 15px; font-weight: 600; color: #E7DFD5; display: inline; }
+    .menu-open .drawer { display: block; position: absolute; left: 0; right: 0; top: 100%; background: #FAF7F2; border-bottom: 1px solid #E4DDD2; padding: 4px 20px 20px; box-shadow: 0 12px 32px rgba(32,29,27,0.10); z-index: 60; }
+    .menu-open .drawer ul { display: flex; flex-direction: column; gap: 4px; border-top: 1px solid rgba(216,154,46,0.4); padding-top: 12px; }
+    .menu-open .drawer a { display: flex; align-items: center; justify-content: space-between; min-height: 52px; padding: 10px 12px; font-size: 18px; font-weight: 600; color: #201D1B; border-radius: 12px; }
+    .menu-open .drawer a.active { font-weight: 800; }
+    .menu-open .drawer a:hover { background: rgba(216,154,46,0.10); }
     .menu-open .burger span:first-child { width: 28px; transform: translateY(4.5px) rotate(45deg); }
     .menu-open .burger span:last-child { width: 28px; transform: translateY(-4.5px) rotate(-45deg); }
 """
@@ -326,12 +329,12 @@ MAIL = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width=
 IG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor" stroke="none"></circle></svg>'
 PHONE = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"></path></svg>'
 
-PAGES = [("Home", "Main"), ("About", "About"), ("Services", "Services"), ("Work", "Work"), ("Contact", "Contact")]
+PAGES = [("Home", "Main"), ("About", "About"), ("Services", "Services"), ("Contact", "Contact")]
 
 def nav(active, dark=False):
     links = "".join(f'<a href="#" class="{"active" if n == active else ""}">{n}</a>' for n, _ in PAGES)
     drawer_links = "".join(f'<li><a href="#" class="{"active" if n == active else ""}">{n}{ARROW}</a></li>' for n, _ in PAGES)
-    cls = "nav nav-dark" if dark else "nav"
+    cls = "nav"
     return f'''
 <header class="{cls}" style="position: sticky;">
   <div class="nav-inner">
@@ -341,34 +344,24 @@ def nav(active, dark=False):
   </div>
   <div class="drawer">
     <ul>{drawer_links}</ul>
-    <div class="drawer-foot"><a href="#">hello@credomlimited.com</a><a href="#">+234 807 777 2827</a><span>Victoria Island · Lagos · Nigeria</span></div>
   </div>
 </header>'''
 
 def footer():
     return f'''
 <footer class="footer">
-  <div class="wrap">
-    <div class="footer-grid">
-      <div>
-        {logo(26, "#FAF7F2")}
-        <p style="margin-top:20px;max-width:320px;font-family:'Rokkitt',Georgia,serif;font-style:italic;font-weight:600;font-size:20px;line-height:1.35;color:#D89A2E;">We create moments people don't just attend; they remember.</p>
-      </div>
-      <div><h4>Explore</h4><ul><li><a href="#">Home</a></li><li><a href="#">About</a></li><li><a href="#">Services</a></li><li><a href="#">Work</a></li><li><a href="#">Contact</a></li></ul></div>
-      <div><h4>Contact</h4><ul><li><a href="#">hello@credomlimited.com</a></li><li><a href="#">+234 807 777 2827</a></li><li><span style="font-size:15px;color:#C9C0B6;line-height:1.5;display:block;">Victoria Island,<br>Lagos State, Nigeria.</span></li></ul></div>
-      <div><h4>Follow</h4><div class="icons"><a class="icon-btn" href="#" aria-label="Email">{MAIL}</a><a class="icon-btn" href="#" aria-label="Instagram @wearecredom">{IG}</a></div><p style="margin-top:14px;font-size:14px;color:#8A8079;">@wearecredom</p></div>
-    </div>
-    <div class="footer-bottom"><span>© 2026 CREDOM Limited. All rights reserved.</span><span>Integrated Brand Experience Agency · Lagos, Nigeria</span></div>
+  <div class="wrap footer-row">
+    <span>© 2026 CREDOM Limited. All rights reserved.</span>
+    <div class="icons"><a class="icon-btn" href="#" aria-label="Email hello@credomlimited.com">{MAIL}</a><a class="icon-btn" href="#" aria-label="CREDOM on Instagram — @wearecredom">{IG}</a></div>
   </div>
 </footer>'''
 
-def cta_band(h, sub, btn="Schedule a Chat"):
+def cta_band(h):
     return f'''
 <section class="cta-band">
   <div class="wrap">
     <h2>{h}</h2>
-    <p>{sub}</p>
-    <a href="#" class="btn btn-lg">{btn}</a>
+    <a href="#" class="btn btn-lg">Schedule a Chat</a>
   </div>
 </section>'''
 
@@ -465,40 +458,42 @@ def rail():
 
 # ------------------------------------------------------------------ PAGES
 def home():
-    cards = "".join(f'''
-      <div class="card" style="background:{bg};color:{fg};"><span class="num" style="color:{nc};">{n}</span><div><h3>{PREVIEW_TITLES[i]}</h3><p>{SHORT[i]}</p></div></div>'''
+    cards = "".join(f"""
+      <div class="card" style="background:{bg};color:{fg};"><span class="num" style="color:{nc};">{n}</span><div><h3>{PREVIEW_TITLES[i]}</h3><p>{SHORT[i]}</p></div></div>"""
       for i, (n, t, d, b, bg, fg, nc) in enumerate(SERVICES))
     steps = ""
     for n, name, dot, desc in STEPS:
         if name == "Measure":
             steps += f'<article class="step measure"><span class="index">{n}</span><h3><span class="dot" style="background:#201D1B;"></span>{name}</h3><p>{desc}</p></article>'
         else:
-            steps += f'<article class="step"><span class="index" style="color:#D89A2E;">{n}</span><h3><span class="dot" style="background:{dot};"></span>{name}</h3><p>{desc}</p></article>'
-    return nav("Home", dark=True) + f'''
+            steps += f'<article class="step"><span class="index" style="color:#B87D1E;">{n}</span><h3><span class="dot" style="background:{dot};"></span>{name}</h3><p>{desc}</p></article>'
+    c = CASES[0]
+    return nav("Home") + f"""
 <section class="hero">
   <div class="hero-photo"><img src="hero.jpg" alt="A guest in sunglasses in front of a glowing sign at a live brand event"></div>
-  <div class="hero-ring"></div>
-  <div class="wrap hero-inner">
-    <span class="eyebrow gold">Integrated Brand Experience Agency</span>
-    <h1>We create moments people don't just attend; <em>they remember.</em></h1>
-    <div class="hero-bottom">
-      <div>
-        <p class="lede">CREDOM transforms ideas into immersive activations, strategic experiences, and memorable brand moments designed to capture attention and leave lasting impact.</p>
-        <div class="hero-cta"><a href="#" class="btn">Schedule a Chat</a><a href="#" class="btn btn-outline">See our work</a></div>
-      </div>
-      <div class="scroll-cue">Explore CREDOM {DOWN}</div>
+  <div class="wrap">
+    <div class="hero-inner">
+      <span class="eyebrow">Integrated Brand Experience Agency</span>
+      <h1>Attention<br>Is Earned.</h1>
+      <p class="sub">Experience Makes It Last.</p>
+      <p class="lede">CREDOM transforms ideas into immersive activations, strategic experiences, and memorable brand moments designed to capture attention and leave lasting impact.</p>
+      <div class="hero-cta"><a href="#" class="btn">Schedule a Chat</a><a href="#" class="btn btn-outline">Explore Services</a></div>
     </div>
   </div>
+  <img class="hero-mobile-photo" src="hero.jpg" alt="">
 </section>
 
-<section class="section intro" style="background:#FAF7F2;">
-  <div class="wrap intro-grid">
-    <h2>Attention<br>Is <span>Earned.</span><br>Experience<br>Makes It Last.</h2>
-    <div class="intro-copy">
-      <p class="lede">From live activations to premium corporate experiences, we combine creativity, strategy, and seamless execution to help brands connect with people in meaningful ways.</p>
-      <p class="lede" style="font-weight:700;color:#201D1B;">The strongest brand moments aren't simply communicated. They're experienced.</p>
-      <a href="#" class="case-link" style="align-self:flex-start;margin-top:6px;">About CREDOM {ARROW}</a>
+<section class="statement-open">
+  <div class="wrap"><p>We create moments people don't just attend; <span>they remember.</span></p></div>
+</section>
+
+<section class="section" style="background:#F0EBE3;">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="eyebrow" style="margin-bottom:14px;">What We Do</span><h2 class="h-section">Full-spectrum capability.</h2></div>
+      <a href="#" class="case-link" style="margin:0 0 6px;">All services {ARROW}</a>
     </div>
+    <div class="grid-3">{cards}</div>
   </div>
 </section>
 
@@ -513,42 +508,40 @@ def home():
   </div>
 </section>
 
-<section class="section" style="background:#F0EBE3;">
-  <div class="wrap">
-    <div class="head">
-      <div><span class="eyebrow" style="margin-bottom:14px;">What We Do</span><h2 class="h-section">Full-spectrum capability.</h2></div>
-      <a href="#" class="case-link" style="margin:0 0 6px;">All services {ARROW}</a>
-    </div>
-    <div class="grid-3">{cards}</div>
-  </div>
-</section>
-
-<section class="section on-dark" style="background:#201D1B;color:#FAF7F2;">
+<section class="section" style="background:#FFFFFF;">
   <div class="wrap">
     <div class="head process-head" style="margin-bottom:0;">
-      <div><span class="eyebrow" style="margin-bottom:18px;">How We Work / 4D1M</span><h2>From Insight<br>To <span>Impact.</span></h2></div>
-      <span class="index">03 / 07</span>
+      <div><span class="eyebrow" style="margin-bottom:18px;">Our Process — 4D1M</span><h2>From Insight<br>To <span>Impact.</span></h2><p class="lede" style="max-width:720px;margin-top:24px;">Great experiences don't happen by chance. Every campaign follows an intentional yet flexible process that takes ideas from insight to full-spectrum results.</p></div>
     </div>
     <div class="steps">{steps}</div>
   </div>
 </section>
 
-<section class="section" style="background:#FAF7F2;">
+<section class="section" style="background:#F0EBE3;">
   <div class="wrap">
     <div class="head">
-      <div><span class="eyebrow" style="margin-bottom:14px;">Selected Work</span><h2 class="h-section">Work that moved people.</h2></div>
-      <a href="#" class="case-link" style="margin:0 0 6px;">All case studies {ARROW}</a>
+      <div><span class="eyebrow" style="margin-bottom:14px;">What we've done</span><h2 class="h-section">Work that moved people.</h2></div>
     </div>
-    {case_html(CASES[0])}{case_html(CASES[1])}
+    <article class="case-card">
+      <div class="ph">{c[6]}</div>
+      <div class="body">
+        <span class="eyebrow gold">{c[2]} - Lagos</span>
+        <h3>{c[1]}</h3>
+        <p>{c[3][0]}</p>
+        <p>{c[3][1]}</p>
+        <p class="take">{c[4]}</p>
+        <div><a href="#" class="btn">Read more</a></div>
+      </div>
+    </article>
     <span class="eyebrow" style="margin-top:56px;">Businesses we've served</span>
     {rail()}
   </div>
 </section>
-''' + cta_band("Let's make something they'll <span>remember.</span>", "Tell us about the moment you want to create. We'll bring the strategy, creativity, and seamless execution.") + footer()
+""" + cta_band("Let's make something they'll <span>remember.</span>") + footer()
 
 def about():
     values = "".join(f'<article class="value {sp}" style="background:{bg};color:{fg};{"border:1px solid #E4DDD2;" if bg == "#FFFFFF" else ""}"><span class="num" style="color:{"#D89A2E" if bg in ("#FFFFFF","#5A2A17","#201D1B") else fg};">{n}</span><div><h3>{t}</h3><p style="margin-top:12px;">{d}</p></div></article>' for n, t, d, bg, fg, sp in VALUES)
-    return nav("About") + f'''
+    return nav("About") + f"""
 <section class="about-hero">
   <div class="wrap about-grid">
     <h1 class="stagger"><span>Bold.</span><span>Strategic.</span><span>Immersive.</span></h1>
@@ -577,11 +570,11 @@ def about():
   </article>
 </section>
 
-<section class="section why on-dark">
+<section class="section why">
   <div class="wrap why-grid">
     <h2>Why<br>choose<br><span>us?</span></h2>
     <div class="why-copy">
-      <span class="eyebrow">Why CREDOM</span>
+      <span class="eyebrow">Why Us</span>
       <p>We hand you a system. Choosing CREDOM means partnering with a team that operates across every dimension of your brand's presence, with the strategic range and executional depth to make each one count.</p>
       <p>We are integrators by design. We bring together the broad reach of traditional media and OOH with the depth and intimacy of experiential marketing, all governed by one strategic vision.</p>
       <p>With deep roots across FMCG, fintech, telecoms, banking, and lifestyle sectors, we arrive at every brief with relevant context and a proven playbook, not guesswork.</p>
@@ -591,42 +584,31 @@ def about():
   </div>
 </section>
 
-<section class="section" style="background:#F0EBE3;">
+<section class="section" style="background:#FAF7F2;">
   <div class="wrap">
     <div class="head values-head" style="margin-bottom:0;">
-      <div><span class="eyebrow" style="margin-bottom:18px;">What We Stand For</span><h2>Built on belief.<br>Driven by <span>principle.</span></h2></div>
+      <div><span class="eyebrow" style="margin-bottom:18px;">Our Principles</span><h2>Built on belief.<br>Driven by <span>principle.</span></h2></div>
       <span class="index">05 Principles</span>
     </div>
     <div class="bento">{values}</div>
   </div>
 </section>
 
-<section class="section on-dark" style="background:#201D1B;color:#FAF7F2;">
+<section class="section team">
   <div class="wrap">
-    <div class="head" style="margin-bottom:0;">
-      <div><span class="eyebrow" style="margin-bottom:18px;">Meet the Force</span><h2 class="h-display">The people<br>behind the <span style="color:#D89A2E;">moments.</span></h2></div>
-    </div>
-    <div class="team-grid">
-      <article class="person">
-        <div class="photo-wrap"><div class="photo-back" style="background:#D89A2E;"></div><img class="photo" src="pelumi.jpg" alt="Portrait of Pelumi Adese"></div>
-        <h3>Pelumi Adese</h3>
-        <span class="role">Business Lead / COO</span>
+    <article class="person">
+      <div class="photo-wrap"><div class="photo-back" style="background:#D89A2E;"></div><img class="photo" src="pelumi.jpg" alt="Portrait of Pelumi Adese"></div>
+      <div>
+        <span class="role">Meet the Business Lead / COO</span>
+        <h2>Pelumi Adese</h2>
         <p>Pelumi Adese is an experiential marketing and brand experience professional with over a decade of experience translating business strategy into immersive, high-impact brand engagements.</p>
         <p>Having worked across both agency and client-side environments in Nigeria, the United Kingdom, and the wider African market, she brings a rare dual perspective, aligning commercial objectives with culturally intentional execution.</p>
         <p>Her portfolio spans FMCG, fintech, technology, banking, and lifestyle sectors, with work including Midea, Visa Nigeria, Reckitt Benckiser, Total Nigeria, Renmoney, Eyowo, Kwiksell, Useforms, Usepass, Nutzy, Voices for Change, Carnaby London, and Switchee in the UK.</p>
-      </article>
-      <article class="person">
-        <div class="photo-wrap"><div class="photo-back" style="background:#5A2A17;"></div><div class="photo-ph ph" style="aspect-ratio:312/367;"><span class="initials">FS</span><span>[Portrait — Fetuga S.O.]</span></div></div>
-        <h3>Fetuga S.O. (Shoré)</h3>
-        <span class="role">Project Manager</span>
-        <p>Fetuga S.O. (Shoré) is a results-driven Project Manager with a proven track record across brand strategy, experiential marketing, and end-to-end project delivery.</p>
-        <p>Shoré is recognised for his ability to translate brand vision into compelling, well-executed experiences, leading cross-functional teams with confidence and maintaining structure under pressure in fast-paced, high-stakes environments.</p>
-        <p>His portfolio spans activations and campaigns for British American Tobacco, MTN, Procter &amp; Gamble, Guinness, Nigerian Breweries, Coca-Cola, Diageo, Lafarge, and Spotify.</p>
-      </article>
-    </div>
+      </div>
+    </article>
   </div>
 </section>
-''' + cta_band("Let's make <span>magic.</span>", "Bring us the brief. We'll bring the system that makes it land.") + footer()
+""" + footer()
 
 def services():
     index = "".join(f'<a href="#svc-{n}"><b>{n}</b>{t}</a>' for n, t, *_ in SERVICES)
@@ -643,39 +625,15 @@ def services():
   </div>
 </section>
 <section class="wrap blocks">{blocks}</section>
-<section class="section on-dark" style="background:#201D1B;color:#FAF7F2;padding:96px 0;">
-  <div class="wrap grid-2" style="align-items:center;">
-    <div><span class="eyebrow" style="margin-bottom:18px;">One strategic vision</span><h2 class="h-section">Integrated by design.</h2></div>
-    <p class="lede">We bring together the broad reach of traditional media and OOH with the depth and intimacy of experiential marketing, all governed by one strategic vision.</p>
-  </div>
-</section>
-''' + cta_band("Not sure where to <span>start?</span>", "Tell us the objective. We'll map the channels, the moments, and the measures.", "Schedule a Chat") + footer()
+''' + footer()
 
-def work():
-    cases = "".join(case_html(c, link=False) for c in CASES)
-    return nav("Work") + f'''
-<section class="work-hero">
-  <div class="wrap">
-    <span class="eyebrow gold">Selected Work</span>
-    <h1>Companies<br>We <span>Served.</span></h1>
-    <p class="lede">From a two-format launch in Abuja to a six-location cultural activation in the East, every project is built under one strategic vision and delivered end-to-end.</p>
-  </div>
-</section>
-<section class="section" style="background:#FAF7F2;padding-top:40px;">
-  <div class="wrap">
-    {cases}
-    <span class="eyebrow" style="margin-top:64px;">Businesses we've served</span>
-    {rail()}
-  </div>
-</section>
-''' + cta_band("Your brand could be <span>next.</span>", "Tell us about the moment you want to create.") + footer()
 
 def contact():
     return nav("Contact") + f'''
 <section class="contact-hero">
   <div class="mark" aria-hidden="true">MAGIC</div>
   <div class="wrap" style="position:relative;">
-    <span class="eyebrow gold">Let's Talk</span>
+    <span class="eyebrow">Let's Talk</span>
     <h1>Let's Make<br><span>MAGIC.</span></h1>
     <p class="lede">Tell us about the moment you want to create. We'll bring the strategy, creativity, and seamless execution to make it happen.</p>
   </div>
@@ -686,10 +644,7 @@ def contact():
       <div class="field"><label>Full Name</label><div class="input">Your name</div></div>
       <div class="field"><label>Email</label><div class="input">you@company.com</div></div>
     </div>
-    <div class="form-row">
-      <div class="field"><label>Company / Organisation</label><div class="input">Optional</div></div>
-      <div class="field"><label>Phone</label><div class="input">Optional</div></div>
-    </div>
+    <div class="field"><label>Company / Organization</label><div class="input">Optional</div></div>
     <div class="field"><label>What are you interested in?</label><div class="input">Brand Experience Strategy {CHEV}</div></div>
     <div class="field"><label>Tell us about your project</label><div class="input area">What moment do you want to create?</div></div>
     <button class="btn btn-lg" type="button">Schedule a Chat</button>
@@ -699,7 +654,6 @@ def contact():
     <div><span class="lbl">Email</span><a href="#">hello@credomlimited.com</a></div>
     <div><span class="lbl">Phone</span><a href="#">+234 807 777 2827</a></div>
     <div><span class="lbl">Location</span><p class="addr">Victoria Island,<br>Lagos State, Nigeria.</p></div>
-    <div><span class="lbl">Instagram</span><a href="#">@wearecredom</a></div>
     <p class="tagline">We create moments people don't just attend; they remember.</p>
   </aside>
 </section>
@@ -734,7 +688,6 @@ builds = {
   "Main": home(), "HomeMobile": home(), "MenuMobile": home(),
   "About": about(), "AboutMobile": about(),
   "Services": services(), "ServicesMobile": services(),
-  "Work": work(), "WorkMobile": work(),
   "Contact": contact(), "ContactMobile": contact(),
 }
 os.makedirs("preview", exist_ok=True)

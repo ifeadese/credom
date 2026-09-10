@@ -43,7 +43,6 @@
 
     /* NAV */
     .nav { position: sticky; top: 0; z-index: 50; background: rgba(250,247,242,0.92); backdrop-filter: blur(10px); border-bottom: 1px solid #E4DDD2; color: #201D1B; }
-    .nav.nav-dark { background: rgba(32,29,27,0.88); border-bottom-color: #3A342E; color: #FAF7F2; }
     .nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 18px 40px; max-width: 1240px; margin: 0 auto; }
     .nav-links { display: flex; align-items: center; gap: 34px; }
     .nav-links a { position: relative; font-size: 14px; font-weight: 600; letter-spacing: 0.04em; color: inherit; padding: 6px 0; }
@@ -58,31 +57,32 @@
     .drawer { display: none; }
 
     /* FOOTER */
-    .footer { background: #201D1B; color: #C9C0B6; padding: 72px 0 32px; }
+    .footer { background: #FAF7F2; color: #4A443D; padding: 32px 0; border-top: 1px solid #E4DDD2; }
+    .footer-row { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+    .footer-row span { font-size: 13px; color: #6E665F; }
     .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 40px; padding-bottom: 48px; border-bottom: 1px solid #3A342E; }
     .footer h4 { font-family: 'Mulish', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #D89A2E; margin-bottom: 18px; }
     .footer ul { display: flex; flex-direction: column; gap: 0; }
     .footer a { color: #E7DFD5; font-size: 15px; display: inline-flex; align-items: center; min-height: 44px; } .footer a:hover { color: #D89A2E; }
     .footer-bottom { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding-top: 28px; font-size: 13px; color: #8A8079; }
     .icons { display: flex; gap: 12px; }
-    .icon-btn { display: inline-flex; width: 44px; height: 44px; align-items: center; justify-content: center; border: 1px solid #3A342E; border-radius: 2px; color: #E7DFD5; }
-    .icon-btn:hover { border-color: #D89A2E; color: #D89A2E; }
+    .icon-btn { display: inline-flex; width: 44px; height: 44px; align-items: center; justify-content: center; border: 1px solid #E4DDD2; border-radius: 2px; color: #4A443D; }
+    .icon-btn:hover { border-color: #B87D1E; color: #B87D1E; }
     .icon-btn svg { width: 18px; height: 18px; }
 
     /* HOME HERO */
-    .hero { position: relative; overflow: hidden; background: #201D1B; color: #FAF7F2; min-height: 820px; display: flex; align-items: flex-end; }
-    .hero-photo { position: absolute; top: 0; right: 0; width: 52%; height: 100%; }
+    .hero { position: relative; overflow: hidden; background: #FFFFFF; color: #201D1B; border-bottom: 1px solid #E4DDD2; }
+    .hero-photo { position: absolute; top: 0; right: 0; width: 44%; height: 100%; border-left: 1px solid #E4DDD2; background: #F0EBE3; }
     .hero-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 62% center; }
-    .hero-photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, #201D1B 0%, rgba(32,29,27,0.55) 38%, rgba(32,29,27,0.15) 70%, rgba(32,29,27,0.35) 100%), linear-gradient(180deg, rgba(32,29,27,0.2) 0%, rgba(32,29,27,0) 40%, rgba(32,29,27,0.85) 100%); }
-    .hero-ring { position: absolute; width: 640px; height: 640px; right: 8%; top: 12%; border: 1px solid rgba(216,154,46,0.35); border-radius: 50%; pointer-events: none; }
-    .hero-inner { position: relative; z-index: 2; padding-top: 140px; padding-bottom: 88px; width: 100%; }
-    .hero h1 { font-size: 120px; line-height: 0.88; letter-spacing: -0.03em; max-width: 1000px; margin-top: 28px; }
-    .hero h1 em { font-style: normal; color: #D89A2E; }
-    .hero-bottom { display: flex; justify-content: space-between; align-items: flex-end; gap: 40px; margin-top: 56px; }
-    .hero-bottom .lede { max-width: 520px; }
-    .hero-cta { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 30px; }
-    .scroll-cue { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #8A8079; font-weight: 700; display: flex; flex-direction: column; gap: 8px; align-items: flex-start; }
-    .scroll-cue svg { width: 22px; height: 22px; color: #D89A2E; }
+    .hero-inner { position: relative; z-index: 2; padding-top: 150px; padding-bottom: 140px; max-width: 760px; }
+    .hero h1 { font-size: 118px; line-height: 0.9; letter-spacing: -0.015em; margin-top: 26px; }
+    .hero .sub { font-family: 'Rokkitt', Georgia, serif; font-weight: 600; font-size: 34px; color: #B87D1E; margin-top: 22px; }
+    .hero .lede { max-width: 560px; margin-top: 26px; }
+    .hero-cta { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 40px; }
+    .hero-mobile-photo { display: none; }
+    .statement-open { background: #FAF7F2; padding: 130px 0; }
+    .statement-open p { font-family: 'Rokkitt', Georgia, serif; font-weight: 700; font-size: 84px; line-height: 0.96; letter-spacing: -0.02em; color: #201D1B; max-width: 1100px; }
+    .statement-open p span { color: #D89A2E; }
 
     /* INTRO */
     .intro-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 80px; align-items: end; }
@@ -110,10 +110,10 @@
     /* PROCESS */
     .process-head h2 { font-size: 112px; line-height: 0.85; letter-spacing: -0.03em; }
     .process-head h2 span { color: #D89A2E; }
-    .steps { border-top: 1px solid #3A342E; margin-top: 72px; }
-    .step { display: grid; grid-template-columns: 110px 260px 1fr; gap: 30px; padding: 40px 0; border-bottom: 1px solid #3A342E; align-items: start; }
+    .steps { border-top: 1px solid #E4DDD2; margin-top: 64px; }
+    .step { display: grid; grid-template-columns: 110px 260px 1fr; gap: 30px; padding: 40px 0; border-bottom: 1px solid #E4DDD2; align-items: start; }
     .step h3 { font-size: 40px; font-weight: 700; line-height: 1; }
-    .step p { color: #C9C0B6; max-width: 620px; font-size: 16px; line-height: 1.7; }
+    .step p { color: #6E665F; max-width: 620px; font-size: 16px; line-height: 1.7; }
     .step .dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 12px; vertical-align: middle; position: relative; top: -3px; }
     .step.measure { background: #D89A2E; color: #201D1B; margin: 0 -28px; padding: 40px 28px; border-radius: 3px; border-bottom: 0; }
     .step.measure p { color: #3F2A12; } .step.measure .index { color: #5A2A17; }
@@ -129,15 +129,20 @@
     .case-copy .take { font-weight: 700; color: #B87D1E; }
     .case-meta { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 26px; }
     .case-link { display: inline-flex; align-items: center; gap: 8px; margin-top: 26px; font-weight: 700; color: #201D1B; border-bottom: 2px solid #D89A2E; padding-bottom: 2px; }
+    .case-card { display: grid; grid-template-columns: minmax(280px, 2fr) 3fr; border-radius: 4px; overflow: hidden; background: #201D1B; color: #FAF7F2; }
+    .case-card .ph { aspect-ratio: auto; min-height: 100%; border-radius: 0; border: 0; background: repeating-linear-gradient(45deg, #2B2724 0 10px, #332E29 10px 24px); color: #8A8079; }
+    .case-card .body { display: flex; flex-direction: column; gap: 18px; padding: 56px; }
+    .case-card h3 { font-size: 36px; font-weight: 700; line-height: 1.1; }
+    .case-card p { font-size: 16px; line-height: 1.7; color: #C9C0B6; }
+    .case-card .take { color: #D89A2E; font-weight: 700; font-size: 15px; }
     .rail { display: flex; align-items: center; gap: 56px; padding: 30px 0; border-top: 1px solid #E4DDD2; border-bottom: 1px solid #E4DDD2; margin-top: 18px; }
     .rail img { height: 32px; width: auto; }
     .rail .alt { height: 40px; } .rail .midea { height: 34px; }
 
     /* CTA BAND */
-    .cta-band { background: #5A2A17; color: #FAF7F2; padding: 120px 0; text-align: center; }
-    .cta-band h2 { font-size: 96px; line-height: 0.9; letter-spacing: -0.025em; max-width: 900px; margin: 0 auto 36px; }
+    .cta-band { background: #FFFFFF; border-top: 1px solid #E4DDD2; color: #201D1B; padding: 120px 0; text-align: center; }
+    .cta-band h2 { font-size: 88px; line-height: 0.94; letter-spacing: -0.02em; max-width: 900px; margin: 0 auto 32px; }
     .cta-band h2 span { color: #D89A2E; }
-    .cta-band p { color: #E4D8CE; font-size: 18px; max-width: 520px; margin: 0 auto 36px; }
 
     /* ABOUT */
     .about-hero { padding: 120px 0 90px; }
@@ -147,19 +152,19 @@
     .stagger span:nth-child(2) { color: #D89A2E; margin-left: 8%; }
     .stagger span:nth-child(3) { margin-left: 16%; }
     .about-copy { display: flex; flex-direction: column; gap: 22px; max-width: 620px; font-size: 17px; line-height: 1.75; color: #4A443D; }
-    .quote-band { background: #201D1B; color: #D89A2E; padding: 110px 0; }
+    .quote-band { background: #F0EBE3; color: #D89A2E; padding: 110px 0; }
     .quote-band blockquote { margin: 0; font-family: 'Rokkitt', Georgia, serif; font-style: italic; font-weight: 600; font-size: 58px; line-height: 1.12; max-width: 1040px; letter-spacing: -0.01em; }
     .quote-band .rule-gold { border-top: 1px solid #D89A2E; margin-bottom: 40px; width: 96px; }
     .vm { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .vm-card { padding: 90px 70px; min-height: 440px; display: flex; flex-direction: column; justify-content: space-between; gap: 40px; }
     .vm-card h3 { font-size: 56px; line-height: 0.98; font-weight: 700; max-width: 480px; }
     .vm-card p { font-size: 18px; line-height: 1.7; max-width: 480px; }
-    .why { background: #5A2A17; color: #FAF7F2; }
+    .why { background: #FFFFFF; color: #201D1B; border-bottom: 1px solid #E4DDD2; }
     .why-grid { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 80px; align-items: start; }
     .why h2 { font-size: 128px; line-height: 0.8; letter-spacing: -0.035em; position: sticky; top: 120px; }
     .why h2 span { color: #D89A2E; }
-    .why-copy { display: flex; flex-direction: column; gap: 22px; color: #E4D8CE; font-size: 17px; line-height: 1.75; max-width: 620px; }
-    .why-high { margin-top: 24px; font-family: 'Rokkitt', Georgia, serif; font-weight: 600; font-size: 34px; line-height: 1.12; color: #E2B654; border-top: 1px solid rgba(226,182,84,0.4); padding-top: 30px; }
+    .why-copy { display: flex; flex-direction: column; gap: 22px; color: #4A443D; font-size: 17px; line-height: 1.75; max-width: 620px; }
+    .why-high { margin-top: 24px; font-family: 'Rokkitt', Georgia, serif; font-style: italic; font-weight: 600; font-size: 34px; line-height: 1.2; color: #B87D1E; border-top: 1px solid #E4DDD2; padding-top: 30px; }
     .values-head h2 { font-size: 104px; line-height: 0.86; letter-spacing: -0.03em; }
     .values-head h2 span { color: #D89A2E; }
     .bento { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 14px; margin-top: 64px; }
@@ -168,16 +173,16 @@
     .value p { font-size: 15px; line-height: 1.6; max-width: 340px; opacity: 0.9; }
     .value .num { opacity: 0.7; }
     .span2 { grid-column: span 2; } .span3 { grid-column: span 3; }
-    .team-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 72px; margin-top: 72px; }
-    .person { display: flex; flex-direction: column; gap: 0; }
+    .team { background: #F0EBE3; }
+    .person { display: grid; grid-template-columns: 360px minmax(0, 1fr); gap: 72px; align-items: center; }
     .photo-wrap { position: relative; width: 100%; max-width: 360px; padding: 0 0 20px 20px; }
     .photo-back { position: absolute; left: 0; bottom: 0; width: calc(100% - 20px); height: calc(100% - 20px); border-radius: 2px; }
-    .photo { position: relative; aspect-ratio: 312 / 367; width: 100%; object-fit: cover; object-position: top; border-radius: 2px; border: 1px solid #3A342E; }
+    .photo { position: relative; aspect-ratio: 312 / 367; width: 100%; object-fit: cover; object-position: top; border-radius: 2px; border: 1px solid #E4DDD2; }
     .photo-ph { position: relative; aspect-ratio: 312 / 367; width: 100%; border-radius: 2px; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 8px; }
     .photo-ph .initials { font-family: 'Rokkitt', Georgia, serif; font-size: 96px; font-weight: 800; line-height: 1; color: #D89A2E; }
-    .person h3 { font-size: 44px; font-weight: 700; line-height: 1; margin-top: 32px; }
-    .person .role { font-size: 13px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #D89A2E; margin: 12px 0 20px; }
-    .person p { color: #C9C0B6; font-size: 16px; line-height: 1.75; max-width: 520px; }
+    .person h2 { font-size: 68px; font-weight: 700; line-height: 1.02; }
+    .person .role { display: block; font-size: 14px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: #B87D1E; margin-bottom: 14px; }
+    .person p { color: #6E665F; font-size: 18px; line-height: 1.8; max-width: 620px; margin-top: 18px; }
     .person p + p { margin-top: 14px; }
 
     /* SERVICES PAGE */
@@ -198,11 +203,11 @@
     .block .num { display: block; }
 
     /* CONTACT */
-    .contact-hero { background: #201D1B; color: #FAF7F2; padding: 120px 0 100px; position: relative; overflow: hidden; }
+    .contact-hero { background: #FFFFFF; color: #201D1B; border-bottom: 1px solid #E4DDD2; padding: 120px 0 100px; position: relative; overflow: hidden; }
     .contact-hero h1 { font-size: 150px; line-height: 0.8; letter-spacing: -0.035em; margin-top: 26px; }
     .contact-hero h1 span { color: #D89A2E; }
     .contact-hero .lede { max-width: 560px; margin-top: 34px; }
-    .contact-hero .mark { position: absolute; right: -1vw; bottom: -0.2em; font-family: 'Rokkitt', Georgia, serif; font-weight: 900; font-size: 380px; line-height: 0.8; color: rgba(250,247,242,0.035); letter-spacing: -0.04em; user-select: none; pointer-events: none; }
+    .contact-hero .mark { position: absolute; right: -1vw; bottom: -0.2em; font-family: 'Rokkitt', Georgia, serif; font-weight: 900; font-size: 380px; line-height: 0.8; color: rgba(216,154,46,0.09); letter-spacing: -0.04em; user-select: none; pointer-events: none; }
     .contact-body { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 60px; align-items: start; padding-top: 100px; padding-bottom: 120px; }
     .field { display: flex; flex-direction: column; gap: 9px; }
     .field label { font-size: 13px; font-weight: 700; letter-spacing: 0.05em; color: #201D1B; }
@@ -240,17 +245,14 @@
       .nav-inner { padding: 14px 20px; }
       .nav-links { display: none; }
       .nav-mobile { display: flex; }
-      .hero { min-height: 0; display: block; }
-      .hero-photo { position: relative; width: 100%; height: 300px; }
-      .hero-photo::after { background: linear-gradient(180deg, rgba(32,29,27,0.15) 0%, rgba(32,29,27,0) 40%, #201D1B 100%); }
-      .hero-ring { display: none; }
-      .hero-inner { padding-top: 12px; padding-bottom: 64px; }
-      .hero h1 { font-size: 50px; line-height: 0.92; margin-top: 18px; }
-      .hero-bottom { flex-direction: column; align-items: flex-start; gap: 28px; margin-top: 28px; }
+      .hero-photo { display: none; }
+      .hero-mobile-photo { display: block; aspect-ratio: 4 / 3; width: 100%; object-fit: cover; object-position: 62% center; border-top: 1px solid #E4DDD2; }
+      .hero-inner { padding-top: 64px; padding-bottom: 56px; max-width: none; }
+      .hero h1 { font-size: 60px; line-height: 0.92; margin-top: 20px; }
+      .hero .sub { font-size: 24px; }
       .hero-cta .btn { width: 100%; }
-      .scroll-cue { display: none; }
-      .intro-grid { grid-template-columns: minmax(0, 1fr); gap: 32px; }
-      .intro h2 { font-size: 60px; }
+      .statement-open { padding: 72px 0; }
+      .statement-open p { font-size: 42px; }
       .statement { padding: 80px 0; }
       .statement .mark { font-size: 170px; right: -6vw; bottom: -0.3em; }
       .statement-grid { grid-template-columns: minmax(0, 1fr); gap: 32px; }
@@ -269,11 +271,12 @@
       .rail > div { display: flex; justify-content: center; padding: 18px 0; border-bottom: 1px solid #E4DDD2; }
       .rail > div:first-child { border-top: 1px solid #E4DDD2; }
       .cta-band { padding: 80px 0; }
-      .cta-band h2 { font-size: 54px; }
-      .footer { padding: 56px 0 28px; }
-      .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 36px 24px; }
-      .footer-grid > div:first-child { grid-column: span 2; }
-      .footer-bottom { flex-direction: column; align-items: flex-start; }
+      .cta-band h2 { font-size: 48px; }
+      .footer-row { flex-direction: column; text-align: center; }
+      .case-card { grid-template-columns: minmax(0, 1fr); }
+      .case-card .ph { aspect-ratio: 4 / 3; min-height: 0; }
+      .case-card .body { padding: 36px 24px; }
+      .case-card h3 { font-size: 28px; }
       .about-hero { padding: 72px 0 56px; }
       .about-grid { grid-template-columns: minmax(0, 1fr); gap: 36px; }
       .stagger { font-size: 64px; position: static; }
@@ -290,8 +293,9 @@
       .span2, .span3 { grid-column: auto; }
       .value { min-height: 0; padding: 26px; gap: 22px; }
       .value h3 { font-size: 28px; }
-      .team-grid { grid-template-columns: minmax(0, 1fr); gap: 56px; margin-top: 44px; }
-      .person h3 { font-size: 36px; }
+      .person { grid-template-columns: minmax(0, 1fr); gap: 36px; }
+      .person h2 { font-size: 40px; }
+      .person p { font-size: 16px; }
       .svc-head { padding: 72px 0 48px; }
       .blocks { padding-bottom: 72px; }
       .block { grid-template-columns: minmax(0, 1fr); padding: 32px 24px; gap: 26px; }
@@ -306,12 +310,11 @@
       .work-hero h1 { font-size: 66px; }
     }
     /* Mobile drawer (open state) */
-    .menu-open .drawer { display: block; position: absolute; left: 0; right: 0; top: 100%; min-height: calc(100vh - 72px); background: #201D1B; border-bottom: 1px solid #3A342E; padding: 8px 20px 24px; box-shadow: 0 12px 32px rgba(0,0,0,0.25); z-index: 60; }
-    .menu-open .drawer ul { display: flex; flex-direction: column; gap: 2px; border-top: 1px solid rgba(216,154,46,0.4); padding-top: 12px; }
-    .menu-open .drawer a { display: flex; align-items: center; justify-content: space-between; min-height: 52px; padding: 12px 12px; font-family: 'Rokkitt', Georgia, serif; font-size: 28px; font-weight: 700; color: #FAF7F2; border-radius: 3px; }
-    .menu-open .drawer a.active { color: #D89A2E; }
-    .menu-open .drawer .drawer-foot { display: flex; flex-direction: column; gap: 14px; margin-top: 18px; padding-top: 18px; border-top: 1px solid #3A342E; color: #8A8079; font-size: 13px; }
-    .menu-open .drawer .drawer-foot a { min-height: 0; padding: 0; font-family: 'Mulish', sans-serif; font-size: 15px; font-weight: 600; color: #E7DFD5; display: inline; }
+    .menu-open .drawer { display: block; position: absolute; left: 0; right: 0; top: 100%; background: #FAF7F2; border-bottom: 1px solid #E4DDD2; padding: 4px 20px 20px; box-shadow: 0 12px 32px rgba(32,29,27,0.10); z-index: 60; }
+    .menu-open .drawer ul { display: flex; flex-direction: column; gap: 4px; border-top: 1px solid rgba(216,154,46,0.4); padding-top: 12px; }
+    .menu-open .drawer a { display: flex; align-items: center; justify-content: space-between; min-height: 52px; padding: 10px 12px; font-size: 18px; font-weight: 600; color: #201D1B; border-radius: 12px; }
+    .menu-open .drawer a.active { font-weight: 800; }
+    .menu-open .drawer a:hover { background: rgba(216,154,46,0.10); }
     .menu-open .burger span:first-child { width: 28px; transform: translateY(4.5px) rotate(45deg); }
     .menu-open .burger span:last-child { width: 28px; transform: translateY(-4.5px) rotate(-45deg); }
   </style>
@@ -320,12 +323,11 @@
 <header class="nav" style="position: sticky;">
   <div class="nav-inner">
     <a href="#" aria-label="CREDOM home" style="display:inline-flex;align-items:center;"><svg aria-label="CREDOM" viewBox="406.8 60.4 135.2 23.95" height="24" width="135" style="display:block;color:currentColor;"><path fill="currentColor" d="M 429.359 68.875 L 424.383 68.875 C 424.293 68.23 424.105 67.66 423.824 67.16 C 423.543 66.652 423.184 66.219 422.746 65.863 C 422.305 65.508 421.797 65.234 421.223 65.047 C 420.656 64.855 420.039 64.762 419.371 64.762 C 418.168 64.762 417.117 65.059 416.223 65.66 C 415.328 66.25 414.637 67.113 414.145 68.25 C 413.652 69.379 413.406 70.75 413.406 72.363 C 413.406 74.023 413.652 75.418 414.145 76.547 C 414.645 77.676 415.34 78.527 416.234 79.102 C 417.129 79.68 418.164 79.965 419.336 79.965 C 419.996 79.965 420.605 79.879 421.168 79.703 C 421.734 79.531 422.238 79.277 422.676 78.941 C 423.117 78.602 423.48 78.188 423.77 77.703 C 424.062 77.219 424.27 76.668 424.383 76.047 L 429.359 76.066 C 429.23 77.137 428.91 78.168 428.395 79.16 C 427.887 80.145 427.199 81.027 426.336 81.809 C 425.48 82.578 424.457 83.191 423.27 83.648 C 422.086 84.094 420.75 84.316 419.258 84.316 C 417.18 84.316 415.324 83.848 413.688 82.91 C 412.059 81.969 410.773 80.609 409.824 78.828 C 408.887 77.051 408.418 74.895 408.418 72.363 C 408.418 69.824 408.895 67.668 409.848 65.887 C 410.801 64.105 412.098 62.75 413.734 61.816 C 415.371 60.879 417.211 60.41 419.258 60.41 C 420.605 60.41 421.855 60.598 423.008 60.977 C 424.168 61.355 425.191 61.91 426.086 62.637 C 426.98 63.355 427.707 64.238 428.27 65.285 C 428.836 66.328 429.199 67.527 429.359 68.875 Z M 430.547 84 Z M 432.566 84 L 432.566 60.727 L 441.75 60.727 C 443.508 60.727 445.008 61.043 446.25 61.672 C 447.5 62.293 448.449 63.176 449.102 64.316 C 449.762 65.453 450.09 66.793 450.09 68.328 C 450.09 69.875 449.758 71.203 449.09 72.316 C 448.422 73.426 447.457 74.273 446.191 74.863 C 444.934 75.453 443.414 75.75 441.625 75.75 L 435.477 75.75 L 435.477 71.797 L 440.828 71.797 C 441.77 71.797 442.547 71.668 443.172 71.41 C 443.793 71.152 444.254 70.766 444.555 70.25 C 444.867 69.734 445.023 69.094 445.023 68.328 C 445.023 67.559 444.867 66.906 444.555 66.375 C 444.254 65.844 443.789 65.441 443.16 65.172 C 442.539 64.891 441.754 64.75 440.805 64.75 L 437.488 64.75 L 437.488 84 Z M 445.137 73.41 L 450.922 84 L 445.488 84 L 439.828 73.41 Z M 451.227 84 Z M 453.246 84 L 453.246 60.727 L 468.93 60.727 L 468.93 64.785 L 458.168 64.785 L 458.168 70.328 L 468.121 70.328 L 468.121 74.387 L 458.168 74.387 L 458.168 79.941 L 468.977 79.941 L 468.977 84 Z M 470.5 84 Z M 480.773 84 L 472.523 84 L 472.523 60.727 L 480.84 60.727 C 483.18 60.727 485.195 61.191 486.887 62.125 C 488.574 63.051 489.875 64.379 490.781 66.113 C 491.699 67.848 492.156 69.926 492.156 72.34 C 492.156 74.766 491.699 76.848 490.781 78.59 C 489.875 80.332 488.566 81.672 486.863 82.602 C 485.164 83.535 483.137 84 480.773 84 Z M 477.441 79.785 L 480.566 79.785 C 482.023 79.785 483.246 79.527 484.238 79.012 C 485.238 78.488 485.988 77.684 486.488 76.59 C 486.996 75.492 487.25 74.074 487.25 72.34 C 487.25 70.621 486.996 69.215 486.488 68.125 C 485.988 67.035 485.242 66.23 484.25 65.715 C 483.258 65.199 482.031 64.941 480.578 64.941 L 477.441 64.941 Z M 514.719 84 Z M 516.742 60.727 L 522.809 60.727 L 529.219 76.363 L 529.492 76.363 L 535.902 60.727 L 541.969 60.727 L 541.969 84 L 537.195 84 L 537.195 68.852 L 537.004 68.852 L 530.98 83.887 L 527.73 83.887 L 521.707 68.797 L 521.516 68.797 L 521.516 84 L 516.742 84 Z M 516.742 60.727"></path><path fill="#D89A2E" d="M 512 70 C 512 74.969 507.969 79 503 79 C 498.031 79 494 74.969 494 70 C 494 65.031 498.031 61 503 61 C 507.969 61 512 65.031 512 70 Z M 512 70"></path><path fill="currentColor" d="M 495 80.5 C 494.172 80.5 493.5 81.172 493.5 82 C 493.5 82.828 494.172 83.5 495 83.5 Z M 510.5 83.5 C 511.328 83.5 512 82.828 512 82 C 512 81.172 511.328 80.5 510.5 80.5 Z M 495 82 L 495 83.5 L 510.5 83.5 L 510.5 80.5 L 495 80.5 Z M 495 82"></path></svg></a>
-    <nav class="nav-links" aria-label="Primary"><a href="#" class="">Home</a><a href="#" class="">About</a><a href="#" class="active">Services</a><a href="#" class="">Work</a><a href="#" class="">Contact</a><a href="#" class="btn">Schedule a Chat</a></nav>
+    <nav class="nav-links" aria-label="Primary"><a href="#" class="">Home</a><a href="#" class="">About</a><a href="#" class="active">Services</a><a href="#" class="">Contact</a><a href="#" class="btn">Schedule a Chat</a></nav>
     <div class="nav-mobile"><a href="#" class="btn">Schedule a Chat</a><button class="burger" type="button" aria-label="Open menu"><span></span><span></span></button></div>
   </div>
   <div class="drawer">
-    <ul><li><a href="#" class="">Home<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:16px;height:16px;"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></a></li><li><a href="#" class="">About<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:16px;height:16px;"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></a></li><li><a href="#" class="active">Services<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:16px;height:16px;"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></a></li><li><a href="#" class="">Work<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:16px;height:16px;"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></a></li><li><a href="#" class="">Contact<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:16px;height:16px;"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></a></li></ul>
-    <div class="drawer-foot"><a href="#">hello@credomlimited.com</a><a href="#">+234 807 777 2827</a><span>Victoria Island · Lagos · Nigeria</span></div>
+    <ul><li><a href="#" class="">Home<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:16px;height:16px;"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></a></li><li><a href="#" class="">About<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:16px;height:16px;"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></a></li><li><a href="#" class="active">Services<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:16px;height:16px;"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></a></li><li><a href="#" class="">Contact<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:16px;height:16px;"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></a></li></ul>
   </div>
 </header>
 <section class="svc-head">
@@ -336,32 +338,11 @@
   </div>
 </section>
 <section class="wrap blocks"><article class="block" id="svc-01" style="background:#D89A2E;color:#201D1B;"><div><span class="num" style="color:rgba(32,29,27,0.55);">01</span><h3>Brand Experience Strategy</h3><p>We set the strategic foundation before a single activation is planned or a single media space is booked.</p></div><ul><li>Brand and campaign strategy</li><li>Brand exhibitions and pop-ups</li><li>Brand experience design and storytelling</li><li>Go-to-market activation planning</li></ul></article><article class="block" id="svc-02" style="background:#201D1B;color:#FAF7F2;"><div><span class="num" style="color:#D89A2E;">02</span><h3>Experiential Marketing &amp; Activation</h3><p>We put your brand directly in front of your audience through live, real-world experiences that drive genuine trial, loyalty, and advocacy.</p></div><ul><li>Market and retail activations</li><li>Product sampling and consumer engagement</li><li>Roadshows and multi-location deployment</li><li>PR stunts and high-impact campaigns</li></ul></article><article class="block" id="svc-03" style="background:#C50E8B;color:#FAF7F2;"><div><span class="num" style="color:rgba(250,247,242,0.6);">03</span><h3>Corporate Events &amp; Experiences</h3><p>We produce polished, professionally managed events, sponsored experiences, and brand-owned platforms that reflect your brand's ambition, credibility, and long-term equity.</p></div><ul><li>Proprietary event creation</li><li>Brand sponsorship strategy and execution</li><li>Sponsor experience design</li><li>Product launches</li><li>Conferences and summits</li><li>Award ceremonies and gala dinners</li><li>Cultural festivals</li></ul></article><article class="block" id="svc-04" style="background:#5A2A17;color:#FAF7F2;"><div><span class="num" style="color:#D89A2E;">04</span><h3>Traditional Media</h3><p>We plan, place, and manage traditional media campaigns that extend your brand messaging and maximise reach at every stage of the consumer journey.</p></div><ul><li>Television and radio campaign planning and buying</li><li>Print media strategy and placement</li><li>Media schedule development and audience targeting</li><li>Integrated campaign management</li></ul></article><article class="block" id="svc-05" style="background:#18827B;color:#FAF7F2;"><div><span class="num" style="color:rgba(250,247,242,0.6);">05</span><h3>Out-of-Home (OOH) Marketing</h3><p>We design and deploy OOH campaigns that make your brand unmissable in the environments where your audience lives, works, and moves.</p></div><ul><li>Billboard and large-format outdoor advertising</li><li>Transit and commuter media placements</li><li>Street furniture, mall, and point-of-sale OOH</li><li>Digital OOH and programmatic outdoor</li><li>OOH strategy, site selection, and media buying</li></ul></article><article class="block" id="svc-06" style="background:#2B2724;color:#FAF7F2;"><div><span class="num" style="color:#D89A2E;">06</span><h3>Digital Marketing</h3><p>We build and manage digital marketing campaigns that help your brand stay visible, relevant, and competitive across the platforms where your audience spends their time.</p></div><ul><li>Social media marketing</li><li>Display marketing</li><li>Performance tracking and reporting</li><li>Email marketing and CRM campaigns</li><li>Influencer and creator marketing</li><li>Paid digital advertising</li><li>Content marketing and creative production</li></ul></article></section>
-<section class="section on-dark" style="background:#201D1B;color:#FAF7F2;padding:96px 0;">
-  <div class="wrap grid-2" style="align-items:center;">
-    <div><span class="eyebrow" style="margin-bottom:18px;">One strategic vision</span><h2 class="h-section">Integrated by design.</h2></div>
-    <p class="lede">We bring together the broad reach of traditional media and OOH with the depth and intimacy of experiential marketing, all governed by one strategic vision.</p>
-  </div>
-</section>
 
-<section class="cta-band">
-  <div class="wrap">
-    <h2>Not sure where to <span>start?</span></h2>
-    <p>Tell us the objective. We'll map the channels, the moments, and the measures.</p>
-    <a href="#" class="btn btn-lg">Schedule a Chat</a>
-  </div>
-</section>
 <footer class="footer">
-  <div class="wrap">
-    <div class="footer-grid">
-      <div>
-        <svg aria-label="CREDOM" viewBox="406.8 60.4 135.2 23.95" height="26" width="147" style="display:block;color:#FAF7F2;"><path fill="currentColor" d="M 429.359 68.875 L 424.383 68.875 C 424.293 68.23 424.105 67.66 423.824 67.16 C 423.543 66.652 423.184 66.219 422.746 65.863 C 422.305 65.508 421.797 65.234 421.223 65.047 C 420.656 64.855 420.039 64.762 419.371 64.762 C 418.168 64.762 417.117 65.059 416.223 65.66 C 415.328 66.25 414.637 67.113 414.145 68.25 C 413.652 69.379 413.406 70.75 413.406 72.363 C 413.406 74.023 413.652 75.418 414.145 76.547 C 414.645 77.676 415.34 78.527 416.234 79.102 C 417.129 79.68 418.164 79.965 419.336 79.965 C 419.996 79.965 420.605 79.879 421.168 79.703 C 421.734 79.531 422.238 79.277 422.676 78.941 C 423.117 78.602 423.48 78.188 423.77 77.703 C 424.062 77.219 424.27 76.668 424.383 76.047 L 429.359 76.066 C 429.23 77.137 428.91 78.168 428.395 79.16 C 427.887 80.145 427.199 81.027 426.336 81.809 C 425.48 82.578 424.457 83.191 423.27 83.648 C 422.086 84.094 420.75 84.316 419.258 84.316 C 417.18 84.316 415.324 83.848 413.688 82.91 C 412.059 81.969 410.773 80.609 409.824 78.828 C 408.887 77.051 408.418 74.895 408.418 72.363 C 408.418 69.824 408.895 67.668 409.848 65.887 C 410.801 64.105 412.098 62.75 413.734 61.816 C 415.371 60.879 417.211 60.41 419.258 60.41 C 420.605 60.41 421.855 60.598 423.008 60.977 C 424.168 61.355 425.191 61.91 426.086 62.637 C 426.98 63.355 427.707 64.238 428.27 65.285 C 428.836 66.328 429.199 67.527 429.359 68.875 Z M 430.547 84 Z M 432.566 84 L 432.566 60.727 L 441.75 60.727 C 443.508 60.727 445.008 61.043 446.25 61.672 C 447.5 62.293 448.449 63.176 449.102 64.316 C 449.762 65.453 450.09 66.793 450.09 68.328 C 450.09 69.875 449.758 71.203 449.09 72.316 C 448.422 73.426 447.457 74.273 446.191 74.863 C 444.934 75.453 443.414 75.75 441.625 75.75 L 435.477 75.75 L 435.477 71.797 L 440.828 71.797 C 441.77 71.797 442.547 71.668 443.172 71.41 C 443.793 71.152 444.254 70.766 444.555 70.25 C 444.867 69.734 445.023 69.094 445.023 68.328 C 445.023 67.559 444.867 66.906 444.555 66.375 C 444.254 65.844 443.789 65.441 443.16 65.172 C 442.539 64.891 441.754 64.75 440.805 64.75 L 437.488 64.75 L 437.488 84 Z M 445.137 73.41 L 450.922 84 L 445.488 84 L 439.828 73.41 Z M 451.227 84 Z M 453.246 84 L 453.246 60.727 L 468.93 60.727 L 468.93 64.785 L 458.168 64.785 L 458.168 70.328 L 468.121 70.328 L 468.121 74.387 L 458.168 74.387 L 458.168 79.941 L 468.977 79.941 L 468.977 84 Z M 470.5 84 Z M 480.773 84 L 472.523 84 L 472.523 60.727 L 480.84 60.727 C 483.18 60.727 485.195 61.191 486.887 62.125 C 488.574 63.051 489.875 64.379 490.781 66.113 C 491.699 67.848 492.156 69.926 492.156 72.34 C 492.156 74.766 491.699 76.848 490.781 78.59 C 489.875 80.332 488.566 81.672 486.863 82.602 C 485.164 83.535 483.137 84 480.773 84 Z M 477.441 79.785 L 480.566 79.785 C 482.023 79.785 483.246 79.527 484.238 79.012 C 485.238 78.488 485.988 77.684 486.488 76.59 C 486.996 75.492 487.25 74.074 487.25 72.34 C 487.25 70.621 486.996 69.215 486.488 68.125 C 485.988 67.035 485.242 66.23 484.25 65.715 C 483.258 65.199 482.031 64.941 480.578 64.941 L 477.441 64.941 Z M 514.719 84 Z M 516.742 60.727 L 522.809 60.727 L 529.219 76.363 L 529.492 76.363 L 535.902 60.727 L 541.969 60.727 L 541.969 84 L 537.195 84 L 537.195 68.852 L 537.004 68.852 L 530.98 83.887 L 527.73 83.887 L 521.707 68.797 L 521.516 68.797 L 521.516 84 L 516.742 84 Z M 516.742 60.727"></path><path fill="#D89A2E" d="M 512 70 C 512 74.969 507.969 79 503 79 C 498.031 79 494 74.969 494 70 C 494 65.031 498.031 61 503 61 C 507.969 61 512 65.031 512 70 Z M 512 70"></path><path fill="currentColor" d="M 495 80.5 C 494.172 80.5 493.5 81.172 493.5 82 C 493.5 82.828 494.172 83.5 495 83.5 Z M 510.5 83.5 C 511.328 83.5 512 82.828 512 82 C 512 81.172 511.328 80.5 510.5 80.5 Z M 495 82 L 495 83.5 L 510.5 83.5 L 510.5 80.5 L 495 80.5 Z M 495 82"></path></svg>
-        <p style="margin-top:20px;max-width:320px;font-family:'Rokkitt',Georgia,serif;font-style:italic;font-weight:600;font-size:20px;line-height:1.35;color:#D89A2E;">We create moments people don't just attend; they remember.</p>
-      </div>
-      <div><h4>Explore</h4><ul><li><a href="#">Home</a></li><li><a href="#">About</a></li><li><a href="#">Services</a></li><li><a href="#">Work</a></li><li><a href="#">Contact</a></li></ul></div>
-      <div><h4>Contact</h4><ul><li><a href="#">hello@credomlimited.com</a></li><li><a href="#">+234 807 777 2827</a></li><li><span style="font-size:15px;color:#C9C0B6;line-height:1.5;display:block;">Victoria Island,<br>Lagos State, Nigeria.</span></li></ul></div>
-      <div><h4>Follow</h4><div class="icons"><a class="icon-btn" href="#" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="4.75" width="19" height="14.5" rx="2.5"></rect><path d="m3.5 7 7.6 5.3a1.6 1.6 0 0 0 1.8 0L20.5 7"></path></svg></a><a class="icon-btn" href="#" aria-label="Instagram @wearecredom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor" stroke="none"></circle></svg></a></div><p style="margin-top:14px;font-size:14px;color:#8A8079;">@wearecredom</p></div>
-    </div>
-    <div class="footer-bottom"><span>© 2026 CREDOM Limited. All rights reserved.</span><span>Integrated Brand Experience Agency · Lagos, Nigeria</span></div>
+  <div class="wrap footer-row">
+    <span>© 2026 CREDOM Limited. All rights reserved.</span>
+    <div class="icons"><a class="icon-btn" href="#" aria-label="Email hello@credomlimited.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="4.75" width="19" height="14.5" rx="2.5"></rect><path d="m3.5 7 7.6 5.3a1.6 1.6 0 0 0 1.8 0L20.5 7"></path></svg></a><a class="icon-btn" href="#" aria-label="CREDOM on Instagram — @wearecredom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor" stroke="none"></circle></svg></a></div>
   </div>
 </footer>
 </div>

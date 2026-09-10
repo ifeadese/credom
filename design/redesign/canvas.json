@@ -6,7 +6,7 @@
       "x": 0,
       "y": 0,
       "w": 1440,
-      "h": 7225
+      "h": 6159
     },
     {
       "file": "HomeMobile.dc.html",
@@ -14,7 +14,7 @@
       "x": 1560,
       "y": 0,
       "w": 390,
-      "h": 9470
+      "h": 7366
     },
     {
       "file": "MenuMobile.dc.html",
@@ -28,116 +28,100 @@
       "file": "About.dc.html",
       "title": "About \u00b7 Desktop 1440",
       "x": 0,
-      "y": 9630,
+      "y": 7526,
       "w": 1440,
-      "h": 6293
+      "h": 4853
     },
     {
       "file": "AboutMobile.dc.html",
       "title": "About \u00b7 Mobile 390",
       "x": 1560,
-      "y": 9630,
+      "y": 7526,
       "w": 390,
-      "h": 8828
+      "h": 6596
     },
     {
       "file": "Services.dc.html",
       "title": "Services \u00b7 Desktop 1440",
       "x": 0,
-      "y": 18618,
+      "y": 14282,
       "w": 1440,
-      "h": 4232
+      "h": 2974
     },
     {
       "file": "ServicesMobile.dc.html",
       "title": "Services \u00b7 Mobile 390",
       "x": 1560,
-      "y": 18618,
+      "y": 14282,
       "w": 390,
-      "h": 6019
-    },
-    {
-      "file": "Work.dc.html",
-      "title": "Work \u00b7 Desktop 1440",
-      "x": 0,
-      "y": 24797,
-      "w": 1440,
-      "h": 3614
-    },
-    {
-      "file": "WorkMobile.dc.html",
-      "title": "Work \u00b7 Mobile 390",
-      "x": 1560,
-      "y": 24797,
-      "w": 390,
-      "h": 5112
+      "h": 4497
     },
     {
       "file": "Contact.dc.html",
       "title": "Contact \u00b7 Desktop 1440",
       "x": 0,
-      "y": 30069,
+      "y": 18939,
       "w": 1440,
-      "h": 1992
+      "h": 1652
     },
     {
       "file": "ContactMobile.dc.html",
       "title": "Contact \u00b7 Mobile 390",
       "x": 1560,
-      "y": 30069,
+      "y": 18939,
       "w": 390,
-      "h": 2893
+      "h": 2078
     }
   ],
   "annotations": [
     {
       "id": "note-brief",
       "x": -560,
-      "y": -760,
+      "y": -900,
       "w": 460,
-      "text": "CREDOM site redesign \u2014 what this canvas is\n\nFive pages (Home, About, Services, Work, Contact), each at desktop 1440 and phone 390, plus the open mobile menu.\n\nDirection: chaptered editorial. Pelumi's 8 September HTML draft set the tone \u2014 oversized display type, alternating dark and light chapters, gold accents, numbered sections, hairline lists. This canvas keeps that structure but builds it in the brand system already shipped: Rokkitt + Mulish, the official wordmark, and the palette (ink, gold, brown, teal, magenta, paper).\n\nUI/UX Pro Max (uupm.cc) guidance applied for a marketing agency: storytelling-driven page order, bold expressive typography, brand colours as chapter colours, case studies never hidden (Work is now its own page and on Home), 44px+ tap targets, labels above every field.\n\nSmall copy fixes made against the draft: 'drive deep' \u2192 'dive deep', 'Branding experience design' \u2192 'Brand experience design', and a duplicated 'every element' removed from Deliver. Everything else is verbatim."
+      "text": "CREDOM site redesign \u2014 what this canvas is\n\nFour pages (Home, About, Services, Contact), each at desktop 1440 and phone 390, plus the open mobile menu.\n\nDirection: white-dominant editorial. The theme, page set and section order follow decisions already made in the repo's merge history (PRs #1\u2013#10): predominantly white surfaces with the multi-colour card system, no dark bands. What is new is the typographic scale and rhythm from Pelumi's 8 September draft \u2014 oversized Rokkitt display type, numbered hairline lists, gold accent words \u2014 plus her newer copy where it does not reintroduce anything that was removed on purpose.\n\nUI/UX Pro Max (uupm.cc) rules applied for a marketing agency: storytelling page order, bold expressive type, brand colours as section colours, case study kept visible on Home, 44px+ tap targets, labels above every field.\n\nSmall copy fixes made against the draft: 'drive deep' \u2192 'dive deep', 'Branding experience design' \u2192 'Brand experience design', and a duplicated 'every element' removed from Deliver."
+    },
+    {
+      "id": "note-history",
+      "x": -560,
+      "y": -330,
+      "w": 460,
+      "text": "Deliberately NOT reintroduced (removed earlier by Pelumi's direction)\n\n\u2022 Fetuga S.O. / Project Manager profile \u2014 removed in PR #4. The About team section stays a single feature for the Business Lead / COO.\n\u2022 'Meet the Force' eyebrow and 'The people behind the moments.' headline \u2014 removed in PR #6. The role eyebrow ('Meet the Business Lead / COO') opens the section.\n\u2022 Closing 'Schedule a Chat' bands on About and Services \u2014 removed in PR #6. Only Home keeps one.\n\u2022 Footer nav links, logo, tagline and address \u2014 removed in PR #6 (tagline first in Aug). Footer stays one row: copyright plus mail and Instagram icons.\n\u2022 Midea Pro Shop and Terra case studies \u2014 replaced by AltDrive 'Future in Motion' and removed in PR #9. Only the AltDrive card appears; no Work page.\n\u2022 Careers section and nav link \u2014 removed in PR #3.\n\u2022 Street address \u2014 removed in Aug; only 'Victoria Island, Lagos, Nigeria'.\n\u2022 Large dark surfaces \u2014 re-themed white in PR #1.\n\nPelumi's 8 Sept draft contains all of these, so worth confirming with her whether any should come back."
     },
     {
       "id": "note-home",
       "x": -560,
-      "y": 0,
+      "y": 180,
       "w": 460,
-      "text": "Home\n\nNew vs the live site:\n\u2022 Dark hero on the real 'Attention Is Earned' photo, with Pelumi's new headline as the H1; the old H1 becomes the cream intro chapter.\n\u2022 'Most Marketing Is Ignored' is a full gold chapter with a CREDOM watermark.\n\u2022 4D1M as a numbered hairline list on ink; Measure highlighted in gold.\n\u2022 Two case studies on Home (AltDrive, Midea) plus the logo rail; 'All case studies' leads to the new Work page.\n\u2022 Brown closing CTA band and a fuller footer (nav, email, phone, address, Instagram).\n\nMobile: the photo becomes a 300px band above the headline, buttons go full width, process rows and cases stack, logos stack one per row."
+      "text": "Home\n\nSame section order as the live site; what changes is scale and rhythm:\n\u2022 Hero keeps the white split with the 'Attention Is Earned' photo; the H1 goes up to 118px.\n\u2022 The statement 'We create moments people don't just attend; they remember.' becomes an 84px display block instead of a paragraph.\n\u2022 'Most Marketing Is Ignored' gets a faint CREDOM watermark and 128px type.\n\u2022 4D1M becomes a numbered hairline list under the draft's 'From Insight To Impact.' heading, with the draft's fuller step copy; Measure stays the gold row.\n\u2022 'What we've done' keeps the single AltDrive card and the logo rail beneath it, exactly as shipped after PR #9.\n\nMobile: the hero photo sits as a 4:3 band under the hero text instead of being hidden; buttons go full width; process rows stack; logos stack one per row with hairlines."
     },
     {
       "id": "note-about",
       "x": -560,
-      "y": 9630,
+      "y": 7706,
       "w": 460,
-      "text": "About\n\nStaggered 'Bold. Strategic. Immersive.' stays sticky beside the four intro paragraphs from Pelumi's draft. The belief quote gets its own ink chapter. Vision (teal) and Mission (gold) carry the headline statements from the draft. Why choose us moves to a brown chapter. Values become a bento grid (2-2-2 / 3-3). Team is back to two people: Pelumi (real photo) and Fetuga S.O. \u2014 his portrait is still needed and is shown as a placeholder."
+      "text": "About\n\n'Bold. Strategic. Immersive.' is staggered and sticky beside the four intro paragraphs from Pelumi's draft. The belief quote gets a paper-2 band at 58px italic. Vision (teal) and Mission (gold) carry the draft's headline statements. 'Why choose us?' stays white with the headline at display scale and the draft's four paragraphs plus the italic gold line. Values become a bento grid (2-2-2 / 3-3). The team section is the single COO feature from PR #4/#6, with the draft's three-paragraph bio."
     },
     {
       "id": "note-services",
       "x": -560,
-      "y": 18618,
+      "y": 14462,
       "w": 460,
-      "text": "Services\n\nSame six colour blocks as today, now with the full capability lists from Pelumi's draft (seven items each for Corporate Events and Digital). New: a numbered jump index under the intro so visitors go straight to a service, and an 'Integrated by design' chapter before the CTA."
-    },
-    {
-      "id": "note-work",
-      "x": -560,
-      "y": 24797,
-      "w": 460,
-      "text": "Work (new page)\n\nThree case studies: AltDrive Future in Motion (Lagos), The Midea Pro Shop (Abuja), Terra August Meeting (Eastern States). Every photo slot is a marked placeholder \u2014 real event photography is the single biggest upgrade available. The client rail keeps AltDrive, AltBank and Midea, the three logos already on the live site (Pelumi's earlier brands-served list); the AltDrive case study is the one shipping today. Her September draft names only Midea and Terra. A results strip (activations delivered, cities reached) can be added once real numbers exist; none were invented."
+      "text": "Services\n\nSame six colour blocks as today, now with the full capability lists from Pelumi's draft (seven items each for Corporate Events and Digital). New: a numbered jump index under the intro so visitors go straight to a service. No closing CTA band, per PR #6."
     },
     {
       "id": "note-contact",
       "x": -560,
-      "y": 30069,
+      "y": 19119,
       "w": 460,
-      "text": "Contact\n\n'Let's Make MAGIC.' hero from Pelumi's draft. The form keeps today's fields and adds an optional Phone; submit still goes to FormBold. The sidebar adds the phone number from the draft (+234 807 777 2827) and Instagram. Mobile: single column, full-width button, 52px inputs."
+      "text": "Contact\n\nWhite hero with the draft's 'Let's Make MAGIC.' headline and a faint watermark. The form keeps today's five fields; submit still goes to FormBold. The sidebar keeps Email and Location and adds the phone number from the draft (+234 807 777 2827) \u2014 the one new contact detail. Mobile: single column, full-width button, 52px inputs."
     },
     {
       "id": "note-behaviour",
       "x": 2030,
       "y": 1000,
       "w": 420,
-      "text": "Behaviour to build (not visible in static frames)\n\n\u2022 Nav is sticky: ink with blur over dark heroes, paper over light. Active page underlined in gold.\n\u2022 Reveals are not drawn in the frames. One reveal only: sections fade and rise 12px on first scroll into view, disabled under prefers-reduced-motion. No opacity gating that can get stuck (a past bug).\n\u2022 Mobile menu: drawer under the bar; Escape and route change close it.\n\u2022 Form: inline errors under fields, focus moves to the first error, success panel replaces the form.\n\u2022 'Read the case study' can open a detail page or expand in place; decide once photos arrive."
+      "text": "Behaviour to build (not visible in static frames)\n\n\u2022 Nav is sticky on paper with blur; active page underlined in gold. Mobile drawer as shipped in PR #8: Escape and route change close it.\n\u2022 Reveals are not drawn in the frames. One reveal only: sections fade and rise 12px on first scroll into view, disabled under prefers-reduced-motion. No opacity gating that can get stuck (a past bug).\n\u2022 Form: inline errors under fields, focus moves to the first error, success panel replaces the form.\n\u2022 'Read more' on the case card can open a detail page or expand in place; decide once the AltDrive photo arrives."
     }
   ],
   "launch": {
