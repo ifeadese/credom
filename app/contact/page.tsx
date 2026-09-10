@@ -62,12 +62,6 @@ export default function ContactPage() {
               </a>
             </div>
             <div className="mb-7">
-              <SidebarLabel>Phone</SidebarLabel>
-              <a href={contactDetails.phoneHref} className={sidebarLinkClass}>
-                {contactDetails.phone}
-              </a>
-            </div>
-            <div className="mb-7">
               <SidebarLabel>Prefer to pick a time?</SidebarLabel>
               <Link href="/schedule" className={sidebarLinkClass}>
                 Schedule a 30-minute chat &rarr;

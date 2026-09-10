@@ -1,5 +1,5 @@
 /**
- * Footer contact icons: 18px, drawn in currentColor so they inherit the
+ * Footer social icons: 18px, drawn in currentColor so they inherit the
  * enclosing link's hover transition. The links are icon-only, so each one
  * carries its own aria-label -- these SVGs stay decorative.
  */
@@ -14,11 +14,14 @@ const iconProps = {
   className: "h-[18px] w-[18px]",
 } as const;
 
-function MailIcon() {
+function LinkedInIcon() {
   return (
     <svg {...iconProps}>
-      <rect x="2.5" y="4.75" width="19" height="14.5" rx="2.5" />
-      <path d="m3.5 7 7.6 5.3a1.6 1.6 0 0 0 1.8 0L20.5 7" />
+      <rect x="3" y="3" width="18" height="18" rx="2.5" />
+      <path d="M7.5 10.5v6.5" />
+      <circle cx="7.5" cy="7.4" r="0.9" fill="currentColor" stroke="none" />
+      <path d="M11.5 17v-6.5" />
+      <path d="M11.5 13.2c0-1.6 1.1-2.8 2.6-2.8s2.4 1.1 2.4 2.8V17" />
     </svg>
   );
 }
@@ -48,11 +51,13 @@ export default function Footer() {
         </span>
         <div className="flex gap-3">
           <a
-            href="mailto:hello@credomlimited.com"
-            aria-label="Email hello@credomlimited.com"
+            href="https://www.linkedin.com/company/credomlimited"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="CREDOM on LinkedIn"
             className={iconLinkClasses}
           >
-            <MailIcon />
+            <LinkedInIcon />
           </a>
           <a
             href="https://www.instagram.com/wearecredom"

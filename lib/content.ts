@@ -238,8 +238,6 @@ export const team: TeamMember[] = [
 /** Contact — "Reach us directly" sidebar details. */
 export const contactDetails = {
   email: "hello@credomlimited.com",
-  phone: "+234 807 777 2827",
-  phoneHref: "tel:+2348077772827",
   location: ["Victoria Island,", "Lagos, Nigeria."],
 };
 

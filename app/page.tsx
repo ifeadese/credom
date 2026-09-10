@@ -5,6 +5,7 @@ import Eyebrow from "@/components/Eyebrow";
 import Button from "@/components/Button";
 import ServiceCard from "@/components/ServiceCard";
 import CtaBand from "@/components/CtaBand";
+import Reveal from "@/components/Reveal";
 import { services } from "@/lib/services";
 import {
   processSteps,
@@ -148,26 +149,28 @@ export default function HomePage() {
         </Container>
       </section>
 
-      {/* MOST MARKETING IS IGNORED */}
-      <section className="relative overflow-hidden bg-gold py-[clamp(80px,10vw,140px)] text-ink">
+      {/* MOST MARKETING IS IGNORED — statement band per the owner's reference page: gold ground, black serif heading at regular weight, 28vw watermark, fade-up reveal */}
+      <section className="relative flex min-h-[75vh] items-center overflow-hidden bg-gold py-[clamp(80px,10vw,140px)] text-ink">
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute -bottom-[0.3em] -right-[6vw] select-none font-display text-[clamp(170px,29vw,420px)] font-black leading-[0.8] tracking-[-0.04em] text-ink/[0.07] sm:-bottom-[0.15em] sm:-right-[2vw]"
+          className="pointer-events-none absolute -right-[5vw] bottom-[2vw] select-none font-display text-[28vw] font-normal leading-[0.7] text-ink/[0.08]"
         >
           CREDOM
         </div>
         <Container className="relative grid grid-cols-1 items-center gap-8 md:grid-cols-[1.1fr_0.9fr] md:gap-[60px]">
-          <h2 className="m-0 font-display text-[clamp(68px,8.9vw,128px)] font-extrabold leading-[0.82] tracking-[-0.035em] text-ink">
-            <span className="mb-[30px] block font-body text-[12px] font-bold uppercase tracking-[0.18em] text-brown">
-              Why experiences matter
-            </span>
-            Most
-            <br />
-            Marketing
-            <br />
-            Is <span className="text-brown">Ignored.</span>
-          </h2>
-          <div className="flex max-w-[460px] flex-col gap-5 text-[17px] leading-[1.7] md:text-[19px]">
+          <Reveal>
+            <h2 className="m-0 max-w-[1100px] font-display text-[clamp(65px,10vw,150px)] font-normal leading-[0.78] tracking-[-0.06em] text-ink">
+              <span className="mb-[35px] block font-body text-[12px] font-bold uppercase leading-[1.5] tracking-[0.15em]">
+                Why experiences matter
+              </span>
+              Most
+              <br />
+              Marketing
+              <br />
+              Is <span>Ignored.</span>
+            </h2>
+          </Reveal>
+          <Reveal delay={150} className="flex max-w-[460px] flex-col gap-5 text-[17px] leading-[1.7] md:text-[19px]">
             <p className="m-0 text-on-gold">
               Consumers scroll past ads. Skip commercials. Forget campaigns.
             </p>
@@ -176,7 +179,7 @@ export default function HomePage() {
               memory. Brands that win today don&apos;t just market to people.
               They involve them.
             </p>
-          </div>
+          </Reveal>
         </Container>
       </section>
 
