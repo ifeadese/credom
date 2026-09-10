@@ -1,0 +1,146 @@
+{
+  "artboards": [
+    {
+      "file": "Main.dc.html",
+      "title": "Home \u00b7 Desktop 1440",
+      "x": 0,
+      "y": 0,
+      "w": 1440,
+      "h": 7225
+    },
+    {
+      "file": "HomeMobile.dc.html",
+      "title": "Home \u00b7 Mobile 390",
+      "x": 1560,
+      "y": 0,
+      "w": 390,
+      "h": 9470
+    },
+    {
+      "file": "MenuMobile.dc.html",
+      "title": "Home \u00b7 Mobile menu open",
+      "x": 2030,
+      "y": 0,
+      "w": 390,
+      "h": 844
+    },
+    {
+      "file": "About.dc.html",
+      "title": "About \u00b7 Desktop 1440",
+      "x": 0,
+      "y": 9630,
+      "w": 1440,
+      "h": 6293
+    },
+    {
+      "file": "AboutMobile.dc.html",
+      "title": "About \u00b7 Mobile 390",
+      "x": 1560,
+      "y": 9630,
+      "w": 390,
+      "h": 8828
+    },
+    {
+      "file": "Services.dc.html",
+      "title": "Services \u00b7 Desktop 1440",
+      "x": 0,
+      "y": 18618,
+      "w": 1440,
+      "h": 4232
+    },
+    {
+      "file": "ServicesMobile.dc.html",
+      "title": "Services \u00b7 Mobile 390",
+      "x": 1560,
+      "y": 18618,
+      "w": 390,
+      "h": 6019
+    },
+    {
+      "file": "Work.dc.html",
+      "title": "Work \u00b7 Desktop 1440",
+      "x": 0,
+      "y": 24797,
+      "w": 1440,
+      "h": 3614
+    },
+    {
+      "file": "WorkMobile.dc.html",
+      "title": "Work \u00b7 Mobile 390",
+      "x": 1560,
+      "y": 24797,
+      "w": 390,
+      "h": 5112
+    },
+    {
+      "file": "Contact.dc.html",
+      "title": "Contact \u00b7 Desktop 1440",
+      "x": 0,
+      "y": 30069,
+      "w": 1440,
+      "h": 1992
+    },
+    {
+      "file": "ContactMobile.dc.html",
+      "title": "Contact \u00b7 Mobile 390",
+      "x": 1560,
+      "y": 30069,
+      "w": 390,
+      "h": 2893
+    }
+  ],
+  "annotations": [
+    {
+      "id": "note-brief",
+      "x": -560,
+      "y": -760,
+      "w": 460,
+      "text": "CREDOM site redesign \u2014 what this canvas is\n\nFive pages (Home, About, Services, Work, Contact), each at desktop 1440 and phone 390, plus the open mobile menu.\n\nDirection: chaptered editorial. Pelumi's 8 September HTML draft set the tone \u2014 oversized display type, alternating dark and light chapters, gold accents, numbered sections, hairline lists. This canvas keeps that structure but builds it in the brand system already shipped: Rokkitt + Mulish, the official wordmark, and the palette (ink, gold, brown, teal, magenta, paper).\n\nUI/UX Pro Max (uupm.cc) guidance applied for a marketing agency: storytelling-driven page order, bold expressive typography, brand colours as chapter colours, case studies never hidden (Work is now its own page and on Home), 44px+ tap targets, labels above every field.\n\nSmall copy fixes made against the draft: 'drive deep' \u2192 'dive deep', 'Branding experience design' \u2192 'Brand experience design', and a duplicated 'every element' removed from Deliver. Everything else is verbatim."
+    },
+    {
+      "id": "note-home",
+      "x": -560,
+      "y": 0,
+      "w": 460,
+      "text": "Home\n\nNew vs the live site:\n\u2022 Dark hero on the real 'Attention Is Earned' photo, with Pelumi's new headline as the H1; the old H1 becomes the cream intro chapter.\n\u2022 'Most Marketing Is Ignored' is a full gold chapter with a CREDOM watermark.\n\u2022 4D1M as a numbered hairline list on ink; Measure highlighted in gold.\n\u2022 Two case studies on Home (AltDrive, Midea) plus the logo rail; 'All case studies' leads to the new Work page.\n\u2022 Brown closing CTA band and a fuller footer (nav, email, phone, address, Instagram).\n\nMobile: the photo becomes a 300px band above the headline, buttons go full width, process rows and cases stack, logos stack one per row."
+    },
+    {
+      "id": "note-about",
+      "x": -560,
+      "y": 9630,
+      "w": 460,
+      "text": "About\n\nStaggered 'Bold. Strategic. Immersive.' stays sticky beside the four intro paragraphs from Pelumi's draft. The belief quote gets its own ink chapter. Vision (teal) and Mission (gold) carry the headline statements from the draft. Why choose us moves to a brown chapter. Values become a bento grid (2-2-2 / 3-3). Team is back to two people: Pelumi (real photo) and Fetuga S.O. \u2014 his portrait is still needed and is shown as a placeholder."
+    },
+    {
+      "id": "note-services",
+      "x": -560,
+      "y": 18618,
+      "w": 460,
+      "text": "Services\n\nSame six colour blocks as today, now with the full capability lists from Pelumi's draft (seven items each for Corporate Events and Digital). New: a numbered jump index under the intro so visitors go straight to a service, and an 'Integrated by design' chapter before the CTA."
+    },
+    {
+      "id": "note-work",
+      "x": -560,
+      "y": 24797,
+      "w": 460,
+      "text": "Work (new page)\n\nThree case studies: AltDrive Future in Motion (Lagos), The Midea Pro Shop (Abuja), Terra August Meeting (Eastern States). Every photo slot is a marked placeholder \u2014 real event photography is the single biggest upgrade available. The client rail keeps AltDrive, AltBank and Midea, the three logos already on the live site (Pelumi's earlier brands-served list); the AltDrive case study is the one shipping today. Her September draft names only Midea and Terra. A results strip (activations delivered, cities reached) can be added once real numbers exist; none were invented."
+    },
+    {
+      "id": "note-contact",
+      "x": -560,
+      "y": 30069,
+      "w": 460,
+      "text": "Contact\n\n'Let's Make MAGIC.' hero from Pelumi's draft. The form keeps today's fields and adds an optional Phone; submit still goes to FormBold. The sidebar adds the phone number from the draft (+234 807 777 2827) and Instagram. Mobile: single column, full-width button, 52px inputs."
+    },
+    {
+      "id": "note-behaviour",
+      "x": 2030,
+      "y": 1000,
+      "w": 420,
+      "text": "Behaviour to build (not visible in static frames)\n\n\u2022 Nav is sticky: ink with blur over dark heroes, paper over light. Active page underlined in gold.\n\u2022 Reveals are not drawn in the frames. One reveal only: sections fade and rise 12px on first scroll into view, disabled under prefers-reduced-motion. No opacity gating that can get stuck (a past bug).\n\u2022 Mobile menu: drawer under the bar; Escape and route change close it.\n\u2022 Form: inline errors under fields, focus moves to the first error, success panel replaces the form.\n\u2022 'Read the case study' can open a detail page or expand in place; decide once photos arrive."
+    }
+  ],
+  "launch": {
+    "view": "canvas"
+  }
+}
