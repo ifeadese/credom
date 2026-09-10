@@ -31,20 +31,20 @@ export default function HomePage() {
     <>
       {/* HERO — ink surface; the photo is a 4:3 band above the copy on phones and a fading right-hand panel from sm up */}
       <section className="relative overflow-hidden bg-ink text-paper">
-        <div className="relative aspect-[4/3] w-full sm:absolute sm:inset-y-0 sm:right-0 sm:aspect-auto sm:w-[60%]">
+        <div className="relative aspect-[4/3] w-full sm:absolute sm:inset-y-0 sm:right-0 sm:aspect-auto sm:w-[76%]">
           <Image
             src={heroImage.src}
             alt={heroImage.alt}
             fill
             priority
-            sizes="(min-width: 640px) 60vw, 100vw"
+            sizes="(min-width: 640px) 76vw, 100vw"
             className="object-cover"
             style={{ objectPosition: "62% center" }}
           />
           {/* Fade the photo into the ink ground: downwards on phones; a wide elliptical falloff (curved, gradual edge) plus a bottom fade on wider screens */}
           <div
             aria-hidden="true"
-            className="absolute inset-0 bg-[linear-gradient(180deg,rgba(32,29,27,0.78)_0%,rgba(32,29,27,0)_38%,#201D1B_100%)] sm:bg-[radial-gradient(ellipse_70%_110%_at_78%_45%,rgba(32,29,27,0)_0%,rgba(32,29,27,0.2)_45%,rgba(32,29,27,0.75)_75%,#201D1B_100%),linear-gradient(180deg,rgba(32,29,27,0.15)_0%,rgba(32,29,27,0)_35%,rgba(32,29,27,0.85)_100%)]"
+            className="absolute inset-0 bg-[linear-gradient(180deg,rgba(32,29,27,0.78)_0%,rgba(32,29,27,0)_38%,#201D1B_100%)] sm:bg-[radial-gradient(ellipse_88%_140%_at_84%_45%,rgba(32,29,27,0)_0%,rgba(32,29,27,0.12)_35%,rgba(32,29,27,0.5)_62%,rgba(32,29,27,0.82)_84%,rgba(32,29,27,0.93)_100%),linear-gradient(180deg,rgba(32,29,27,0.12)_0%,rgba(32,29,27,0)_35%,rgba(32,29,27,0.85)_100%)]"
           />
         </div>
         <div
