@@ -79,9 +79,9 @@ CSS = r"""
 
     /* HOME HERO */
     .hero { position: relative; overflow: hidden; background: #201D1B; color: #FAF7F2; min-height: 820px; display: flex; align-items: flex-end; }
-    .hero-photo { position: absolute; top: 0; right: 0; width: 72%; height: 100%; }
-    .hero-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 62% center; }
-    .hero-photo::after { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse 72% 78% at 90% 50%, rgba(32,29,27,0) 0%, rgba(32,29,27,0.2) 40%, rgba(32,29,27,0.65) 66%, rgba(32,29,27,0.9) 86%, rgba(32,29,27,0.97) 100%), linear-gradient(180deg, rgba(32,29,27,0.1) 0%, rgba(32,29,27,0) 40%, rgba(32,29,27,0.7) 100%); }
+    .hero-photo { position: absolute; inset: 0; width: 100%; height: 100%; }
+    .hero-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 70% center; }
+    .hero-photo::after { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse 56% 82% at 80% 50%, rgba(32,29,27,0) 0%, rgba(32,29,27,0.2) 40%, rgba(32,29,27,0.65) 66%, rgba(32,29,27,0.9) 86%, #201D1B 100%), linear-gradient(180deg, rgba(32,29,27,0.1) 0%, rgba(32,29,27,0) 40%, rgba(32,29,27,0.7) 100%); }
     .hero-ring { position: absolute; width: 640px; height: 640px; right: 8%; top: 12%; border: 1px solid rgba(216,154,46,0.25); border-radius: 50%; pointer-events: none; }
     .hero-ring::after { content: ""; position: absolute; inset: 95px; border: 1px solid rgba(216,154,46,0.1); border-radius: 50%; }
     .hero-lines { position: absolute; inset: 0; transform: scale(1.4); pointer-events: none; background-image: linear-gradient(130deg, transparent 30%, rgba(255,255,255,0.12) 30.12%, transparent 30.4%), linear-gradient(50deg, transparent 55%, rgba(255,255,255,0.08) 55.12%, transparent 55.4%); }
