@@ -35,8 +35,7 @@
   }
 
   ::selection {
-    background: #d89a2e;
-    color: #201d1b;
+    @apply bg-gold text-ink;
   }
 
   /* Visible, accessible focus states for keyboard users */
@@ -45,7 +44,7 @@
   input:focus-visible,
   select:focus-visible,
   textarea:focus-visible {
-    outline: 2px solid #d89a2e;
+    outline: 2px solid theme(colors.gold);
     outline-offset: 2px;
   }
 }

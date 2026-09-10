@@ -61,7 +61,7 @@ Official CREDOM wordmark as inline SVG (`components/Logo.tsx`), traced from the 
 - Pattern lifted from lighthouseottawa.com: an edge-to-edge bar flush with the top of the page — no inset, no radius, no shadow, never a floating pill. The row inside is the same 1240px column + page gutter as `Container`, so the logo sits on the content column's text edge.
   - **At rest (scrollY ≤ 24):** `position:absolute; top:0` (it scrolls away with the page), transparent, transparent bottom rule, padding `14px` vertical (`16px` from md). Over the Home hero the text and logo letterforms are **paper**; on every other page they are **ink**.
   - **Pinned (scrollY > 24):** `position:fixed; top:0; z-index:50`, slides back in from above (`nav-pin`: translateY(-100%) → 0, 400ms, cubic-bezier(.16,1,.3,1)). Glass: paper at 88% (`rgba(250,247,242,.88)`), `backdrop-filter: blur(12px)`, 1px bottom hairline `#E4DDD2`, vertical padding tightens to `10px` (`12px` from md); text turns ink. Background, border and padding transition over 300ms. The drawer being open also applies the glass treatment.
-- Left: logo (links Home, 14–17px tall fluid). Right: Home · About · Services · Contact (DM Sans 600, 14px, hover gold) + **Schedule a Chat** (gold, ink text, radius 2px). Active link: 2px gold underline.
+- Left: logo (links Home, 14–17px tall fluid). Right: Home · About · Services · Contact (DM Sans 600, 14px, hover gold) + **Schedule a Chat** (gold, ink text, radius 2px, links `/schedule`). Active link: 2px gold underline.
 - Mobile (< md): compact gold CTA + two-bar hamburger (bars paper over the hero, ink otherwise); the drawer expands **inside** the bar (grid-rows 0fr → 1fr, 300ms), gold top rule, stacked links; Escape and route change close it.
 - Home's hero runs under the bar (its own top padding clears it); every other page renders a 76px spacer under it.
 
@@ -100,10 +100,15 @@ Official CREDOM wordmark as inline SVG (`components/Logo.tsx`), traced from the 
 
 ### 3.4 CONTACT
 1. **Hero** — white, bottom hairline. Eyebrow "Let's Talk"; H1 "Let's Make / **MAGIC.**" (`clamp(76px,10.4vw,150px)`, line 0.8, MAGIC gold); intro paragraph. Faint "MAGIC" watermark (Rokkitt 900, gold at 9%) bottom-right, clipped by the section.
-2. **Body** — unchanged form. Sidebar: Email, **Phone** (`+234 807 777 2827`, `tel:` link), Location, then the italic tagline in gold-deep. Details live in `lib/content.ts` `contactDetails`.
+2. **Body** — unchanged form (submit button "Send Message"). Sidebar: Email, **Phone** (`+234 807 777 2827`, `tel:` link), **"Prefer to pick a time?"** → "Schedule a 30-minute chat →" linking `/schedule`, Location, then the italic tagline in gold-deep. Details live in `lib/content.ts` `contactDetails`.
+
+### 3.5 SCHEDULE (`/schedule`)
+The destination of every **Schedule a Chat** button (nav pill, Home hero, Home CTA band, Contact sidebar link). Not in the nav link row — the gold pill is its only entry.
+1. **Hero** — the shared `components/PageHero.tsx` (same markup as Contact): white, bottom hairline, eyebrow "Schedule a Chat"; H1 "Let's talk. / **Pick a time.**" (`clamp(76px,10.4vw,150px)`, line 0.8); intro paragraph (`lib/content.ts` `scheduleIntro`). Faint "CHAT" watermark (Rokkitt 900, gold at 9%) bottom-right.
+2. **Body** — white, no vertical padding, **no Container**: CREDOM's Calendly event as a plain server-rendered **`<iframe>`** (`app/schedule/page.tsx`, URL built by `lib/calendly.ts`) running edge to edge, 720px tall (900px on phones), no border or radius. Event-type details, landing-page chrome and the GDPR banner are all hidden, so **only the calendar + time picker show on the page**; the event description ("What to expect": 01 A quick intro · 02 Your moment · 03 Next steps + email/phone fallback) lives on the Calendly event and appears on Calendly's booking step and confirmation email, not on the page. Colours from `lib/tokens.ts`: primary gold, text ink, background white. Hiding the GDPR banner is deliberate — the site has no cookies or consent UI of its own and the banner would cover the calendar; revisit if a site-wide consent mechanism is added.
 
 ## 4. Interactions & Behavior
-- **Routing:** four pages. Reference uses client-side state switching with smooth `window.scrollTo({top:0})` on change; production should use real routes and scroll-reset on navigation.
+- **Routing:** five pages (Home, About, Services, Contact, Schedule). Reference uses client-side state switching with smooth `window.scrollTo({top:0})` on change; production should use real routes and scroll-reset on navigation.
 - **Active nav** underline reflects current page.
 - **Nav hover:** links may shift toward gold on hover (optional polish; keep subtle).
 - **Contact form:**

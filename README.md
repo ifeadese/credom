@@ -71,15 +71,20 @@ npm run lint
 ```
 
 ### Project structure
-- `app/` — routes: `/` (Home), `/about`, `/services`, `/contact`, plus `sitemap.ts` / `robots.ts`.
-- `components/` — `Logo`, `Nav`, `Footer`, and layout primitives (`Button`, `Eyebrow`, `Container`, `CtaBand`, `ImagePlaceholder`, `ServiceCard`, `ContactForm`).
-- `lib/` — copy/content data (`services.ts`, `content.ts`) so text + color themes live in one place.
-- Design tokens (colors, fonts, radii) live in `tailwind.config.ts`; no hardcoded hex in components.
+- `app/` — routes: `/` (Home), `/about`, `/services`, `/contact`, `/schedule` (Calendly), plus `sitemap.ts` / `robots.ts`.
+- `components/` — `Logo`, `Nav`, `Footer`, and layout primitives (`Button`, `Eyebrow`, `Container`, `CtaBand`, `ImagePlaceholder`, `ServiceCard`, `ContactForm`, `PageHero`).
+- `lib/` — copy/content data (`services.ts`, `content.ts`), the brand palette (`tokens.ts`, the only place hex values live) and integrations (`formbold.ts`, `calendly.ts`).
+- Design tokens live in `tailwind.config.ts`, with colours imported from `lib/tokens.ts`; no hardcoded hex in components.
 
 ### Contact form (FormBold)
 - The form POSTs to `NEXT_PUBLIC_FORMBOLD_ENDPOINT`. Create a form at [formbold.com](https://formbold.com), set delivery to `ifeoluwaadese@gmail.com`, and enable spam protection.
 - Client-side validation requires a name and a valid email; a hidden honeypot field backs up FormBold's spam protection.
 - Set the same env var in Vercel's project settings before deploying.
+
+### Schedule a Chat (Calendly)
+- Every "Schedule a Chat" button links to `/schedule`, which renders CREDOM's Calendly event as a plain server-rendered `<iframe>` (no client JS, no dependency). `lib/calendly.ts` holds the event URL and builds the embed URL: brand colours from `lib/tokens.ts`, event-type / landing-page chrome hidden, so only the calendar and time picker show.
+- Calendly's GDPR cookie banner is hidden on purpose (`hide_gdpr_banner=1`): the site sets no cookies of its own and has no consent UI, and the banner would cover the calendar inside the iframe. Revisit if a site-wide consent mechanism is added.
+- Event copy (description, "What to expect") and invitee questions (company, service interest, project notes, phone) are configured on the Calendly event itself, not in this repo.
 
 ### Deploy (Vercel)
 1. Import the repo into Vercel (framework auto-detected as Next.js).

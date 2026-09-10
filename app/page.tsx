@@ -44,7 +44,7 @@ export default function HomePage() {
           {/* Fade the photo into the ink ground: downwards on phones; a wide elliptical falloff (curved, gradual edge) plus a bottom fade on wider screens */}
           <div
             aria-hidden="true"
-            className="absolute inset-0 bg-[linear-gradient(180deg,rgba(32,29,27,0.78)_0%,rgba(32,29,27,0)_38%,#201D1B_100%)] sm:bg-[radial-gradient(ellipse_56%_82%_at_80%_50%,rgba(32,29,27,0)_0%,rgba(32,29,27,0.2)_40%,rgba(32,29,27,0.65)_66%,rgba(32,29,27,0.9)_86%,#201D1B_100%),linear-gradient(180deg,rgba(32,29,27,0.1)_0%,rgba(32,29,27,0)_40%,rgba(32,29,27,0.7)_100%)]"
+            className="absolute inset-0 bg-[linear-gradient(180deg,rgba(32,29,27,0.78)_0%,rgba(32,29,27,0)_38%,theme(colors.ink)_100%)] sm:bg-[radial-gradient(ellipse_56%_82%_at_80%_50%,rgba(32,29,27,0)_0%,rgba(32,29,27,0.2)_40%,rgba(32,29,27,0.65)_66%,rgba(32,29,27,0.9)_86%,theme(colors.ink)_100%),linear-gradient(180deg,rgba(32,29,27,0.1)_0%,rgba(32,29,27,0)_40%,rgba(32,29,27,0.7)_100%)]"
           />
         </div>
         {/* Hairline geometry from the original hero: two diagonal rules across the whole section and a gold ring on the right */}
@@ -73,7 +73,7 @@ export default function HomePage() {
           <div className="mt-7 sm:mt-14">
             <div>
               <div className="flex flex-wrap gap-[14px] max-sm:flex-col">
-                <Button href="/contact" className="max-sm:w-full">
+                <Button href="/schedule" className="max-sm:w-full">
                   Schedule a Chat
                 </Button>
                 <Button
@@ -168,7 +168,7 @@ export default function HomePage() {
             Is <span className="text-brown">Ignored.</span>
           </h2>
           <div className="flex max-w-[460px] flex-col gap-5 text-[17px] leading-[1.7] md:text-[19px]">
-            <p className="m-0 text-[#3F2A12]">
+            <p className="m-0 text-on-gold">
               Consumers scroll past ads. Skip commercials. Forget campaigns.
             </p>
             <p className="m-0 font-bold text-ink">
@@ -210,7 +210,7 @@ export default function HomePage() {
                     <span className="h-[10px] w-[10px] shrink-0 rounded-full bg-ink" />
                     {step.label}
                   </h3>
-                  <p className="m-0 max-w-[620px] text-[16px] leading-[1.7] text-[#3F2A12]">
+                  <p className="m-0 max-w-[620px] text-[16px] leading-[1.7] text-on-gold">
                     {step.description}
                   </p>
                 </article>
