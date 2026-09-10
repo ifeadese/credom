@@ -30,11 +30,12 @@ export default function AboutPage() {
     <>
       {/* HERO — staggered headline stays pinned while the intro scrolls */}
       <section className="mx-auto max-w-content px-10 pb-[clamp(56px,6vw,90px)] pt-[clamp(72px,9vw,120px)]">
-        <div className="grid grid-cols-1 items-start gap-9 md:grid-cols-[0.95fr_1.05fr] md:gap-20">
-          <h1 className="m-0 font-display text-[clamp(64px,8.6vw,124px)] font-extrabold leading-[0.84] tracking-[-0.035em] text-ink md:sticky md:top-[120px]">
+        {/* Columns are minmax(0, …) so the headline can never widen its track; the type scale + indents are sized so "Immersive." stays inside it at every width */}
+        <div className="grid grid-cols-1 items-start gap-9 md:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] md:gap-20">
+          <h1 className="m-0 font-display text-[clamp(56px,6.6vw,104px)] font-extrabold leading-[0.84] tracking-[-0.035em] text-ink md:sticky md:top-[120px]">
             <span className="block">Bold.</span>
-            <span className="block text-gold md:ml-[8%]">Strategic.</span>
-            <span className="block md:ml-[16%]">Immersive.</span>
+            <span className="block text-gold md:ml-[6%]">Strategic.</span>
+            <span className="block md:ml-[12%]">Immersive.</span>
           </h1>
           <div className="flex max-w-[620px] flex-col gap-[22px]">
             <Eyebrow>About CREDOM</Eyebrow>

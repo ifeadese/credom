@@ -85,7 +85,7 @@ Official CREDOM wordmark as inline SVG (`components/Logo.tsx`), traced from the 
 7. **CTA band** — white bg with top hairline (was `#F0EBE3`); H2 `clamp(48px,6.1vw,88px)` "Let's make something they'll **remember.**" (gold) + Schedule a Chat.
 
 ### 3.2 ABOUT
-1. **Hero** — two columns (`.95fr 1.05fr`): H1 "Bold. / Strategic. / Immersive." (Rokkitt 800, `clamp(64px,8.6vw,124px)`, line 0.84) staggered (2nd line gold, indented 8%; 3rd 16%), `sticky top:120px` on `md+`; right: eyebrow "About CREDOM" + the four intro paragraphs (`lib/content.ts` `aboutIntro`).
+1. **Hero** — two columns (`.95fr 1.05fr`): H1 "Bold. / Strategic. / Immersive." (Rokkitt 800, `clamp(56px,6.6vw,104px)`, line 0.84) staggered (2nd line gold, indented 6%; 3rd 12%) — columns are `minmax(0,…)` and the scale is chosen so the widest line never crosses into the copy column, `sticky top:120px` on `md+`; right: eyebrow "About CREDOM" + the four intro paragraphs (`lib/content.ts` `aboutIntro`).
 2. **Belief quote** — `#F0EBE3` band: 96px gold rule, then the quote in Rokkitt 600 italic gold, `clamp(32px,4vw,58px)`.
 3. **Vision / Mission** — full-bleed split, `min-height:440px`, eyebrow at top, statement at bottom: **Vision** (teal) "Redefine brand impact in Africa." + copy; **Mission** (gold, brown eyebrow) "Connection that drives growth." + two paragraphs.
 4. **Why choose us** — white, bottom hairline. Two columns (`.8fr 1.2fr`): H2 "Why / choose / **us?**" (`clamp(68px,8.9vw,128px)`, sticky on `md+`); right: eyebrow "Why Us", four paragraphs, then the italic gold-deep line above a top hairline.
