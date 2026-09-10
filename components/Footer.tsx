@@ -1,5 +1,5 @@
 /**
- * Footer social icons: 18px, drawn in currentColor so they inherit the
+ * Footer contact + social icons: 18px, drawn in currentColor so they inherit the
  * enclosing link's hover transition. The links are icon-only, so each one
  * carries its own aria-label -- these SVGs stay decorative.
  */
@@ -13,6 +13,15 @@ const iconProps = {
   "aria-hidden": true,
   className: "h-[18px] w-[18px]",
 } as const;
+
+function MailIcon() {
+  return (
+    <svg {...iconProps}>
+      <rect x="2.5" y="4.75" width="19" height="14.5" rx="2.5" />
+      <path d="m3.5 7 7.6 5.3a1.6 1.6 0 0 0 1.8 0L20.5 7" />
+    </svg>
+  );
+}
 
 function LinkedInIcon() {
   return (
@@ -50,6 +59,13 @@ export default function Footer() {
           &copy; 2026 CREDOM Limited. All rights reserved.
         </span>
         <div className="flex gap-3">
+          <a
+            href="mailto:hello@credomlimited.com"
+            aria-label="Email hello@credomlimited.com"
+            className={iconLinkClasses}
+          >
+            <MailIcon />
+          </a>
           <a
             href="https://www.linkedin.com/company/credomlimited"
             target="_blank"
