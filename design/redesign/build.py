@@ -491,7 +491,6 @@ def home(glass=False):
       <div>
         <div class="hero-cta" style="margin-top:0;"><a href="#" class="btn">Schedule a Chat</a><a href="#" class="btn btn-outline">Explore Services</a></div>
       </div>
-      <div class="scroll-cue">Explore CREDOM {DOWN}</div>
     </div>
   </div>
 </section>
