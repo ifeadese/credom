@@ -70,24 +70,22 @@ export type CaseStudy = {
 export const caseStudyThemeClasses: Record<
   CaseStudyTheme,
   {
-    card: string;
     category: string;
     body: string;
     takeaway: string;
     button: "gold" | "outline";
   }
 > = {
+  /* Copy sits on the light section background (no card), so both themes use ink-on-paper text. */
   ink: {
-    card: "bg-ink text-paper",
-    category: "text-gold",
-    body: "text-on-dark",
-    takeaway: "text-gold",
+    category: "text-gold-deep",
+    body: "text-body-ink",
+    takeaway: "text-gold-deep",
     button: "gold",
   },
   gold: {
-    card: "bg-gold text-ink",
     category: "text-brown",
-    body: "opacity-[0.88]",
+    body: "text-body-ink",
     takeaway: "text-brown",
     button: "outline",
   },

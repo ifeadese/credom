@@ -133,12 +133,12 @@ CSS = r"""
     .case-copy .take { font-weight: 700; color: #B87D1E; }
     .case-meta { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 26px; }
     .case-link { display: inline-flex; align-items: center; gap: 8px; margin-top: 26px; font-weight: 700; color: #201D1B; border-bottom: 2px solid #D89A2E; padding-bottom: 2px; }
-    .case-card { display: grid; grid-template-columns: minmax(280px, 2fr) 3fr; border-radius: 4px; overflow: hidden; background: #201D1B; color: #FAF7F2; }
-    .case-card .ph { aspect-ratio: auto; min-height: 100%; border-radius: 0; border: 0; background: repeating-linear-gradient(45deg, #2B2724 0 10px, #332E29 10px 24px); color: #8A8079; }
-    .case-card .body { display: flex; flex-direction: column; gap: 18px; padding: 56px; }
+    .case-card { display: grid; grid-template-columns: minmax(280px, 2fr) 3fr; gap: 56px; align-items: center; color: #201D1B; }
+    .case-card .ph { aspect-ratio: 4 / 3; border-radius: 4px; }
+    .case-card .body { display: flex; flex-direction: column; gap: 18px; }
     .case-card h3 { font-size: 36px; font-weight: 700; line-height: 1.1; }
-    .case-card p { font-size: 16px; line-height: 1.7; color: #C9C0B6; }
-    .case-card .take { color: #D89A2E; font-weight: 700; font-size: 15px; }
+    .case-card p { font-size: 16px; line-height: 1.7; color: #4A443D; }
+    .case-card .take { color: #B87D1E; font-weight: 700; font-size: 15px; }
     .rail { display: flex; align-items: center; gap: 56px; padding: 30px 0; border-top: 1px solid #E4DDD2; border-bottom: 1px solid #E4DDD2; margin-top: 18px; }
     .rail img { height: 32px; width: auto; }
     .rail .alt { height: 40px; } .rail .midea { height: 34px; }
@@ -280,9 +280,7 @@ CSS = r"""
       .cta-band { padding: 80px 0; }
       .cta-band h2 { font-size: 48px; }
       .footer-row { flex-direction: column; text-align: center; }
-      .case-card { grid-template-columns: minmax(0, 1fr); }
-      .case-card .ph { aspect-ratio: 4 / 3; min-height: 0; }
-      .case-card .body { padding: 36px 24px; }
+      .case-card { grid-template-columns: minmax(0, 1fr); gap: 28px; }
       .case-card h3 { font-size: 28px; }
       .about-hero { padding: 72px 0 56px; }
       .about-grid { grid-template-columns: minmax(0, 1fr); gap: 36px; }
@@ -538,7 +536,7 @@ def home():
     <article class="case-card">
       <div class="ph">{c[6]}</div>
       <div class="body">
-        <span class="eyebrow gold">{c[2]} - Lagos</span>
+        <span class="eyebrow">{c[2]} - Lagos</span>
         <h3>{c[1]}</h3>
         <p>{c[3][0]}</p>
         <p>{c[3][1]}</p>

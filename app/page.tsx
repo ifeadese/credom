@@ -266,9 +266,9 @@ export default function HomePage() {
               return (
                 <article
                   key={study.client}
-                  className={`grid overflow-hidden rounded-block md:grid-cols-[minmax(280px,2fr)_3fr] ${t.card}`}
+                  className="grid items-center gap-8 md:grid-cols-[minmax(280px,2fr)_3fr] md:gap-14"
                 >
-                  <div className="relative aspect-[4/3] md:aspect-auto md:min-h-full">
+                  <div className="relative aspect-[4/3] overflow-hidden rounded-block">
                     <Image
                       src={study.image.src}
                       alt={study.image.alt}
@@ -277,7 +277,8 @@ export default function HomePage() {
                       className="object-cover"
                     />
                   </div>
-                  <div className="flex flex-col gap-[18px] p-[clamp(40px,4vw,56px)]">
+                  {/* Copy sits directly on the section background — no card behind it */}
+                  <div className="flex flex-col gap-[18px] text-ink">
                     <span
                       className={`text-[12px] font-bold uppercase tracking-eyebrow ${t.category}`}
                     >
