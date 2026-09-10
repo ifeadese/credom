@@ -348,7 +348,7 @@ def nav(active, dark=False, glass=False):
 <header class="{cls}">
   <div class="nav-shell">
   <div class="nav-inner">
-    <a href="#" aria-label="CREDOM home" style="display:inline-flex;align-items:center;">{logo(20)}</a>
+    <a href="#" aria-label="CREDOM home" style="display:inline-flex;align-items:center;">{logo(17)}</a>
     <nav class="nav-links" aria-label="Primary">{links}<a href="#" class="btn">Schedule a Chat</a></nav>
     <div class="nav-mobile"><a href="#" class="btn">Schedule a Chat</a><button class="burger" type="button" aria-label="Open menu"><span></span><span></span></button></div>
   </div>
