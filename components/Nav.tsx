@@ -38,8 +38,13 @@ export default function Nav() {
     <nav className="sticky top-0 z-50 border-b border-line bg-paper/90 backdrop-blur-[10px]">
       <div className="relative mx-auto max-w-content">
         {/* Bar */}
-        <div className="flex items-center justify-between gap-4 px-5 py-[14px] md:gap-6 md:px-10 md:py-[18px]">
-          <Logo asLink size={23} />
+        <div className="flex items-center justify-between gap-3 px-4 py-[14px] min-[400px]:px-5 md:gap-6 md:px-10 md:py-[18px]">
+          {/* Logo scales fluidly between 16px and 23px tall on narrow viewports */}
+          <Logo
+            asLink
+            size={23}
+            className="h-[clamp(16px,4.5vw,23px)] w-auto"
+          />
 
           {/* Desktop links */}
           <div className="hidden items-center gap-x-[34px] md:flex">
@@ -62,17 +67,17 @@ export default function Nav() {
 
             <Link
               href="/contact"
-              className="rounded-btn bg-gold px-[22px] py-[11px] font-body text-sm font-bold tracking-[0.02em] text-ink transition-opacity hover:opacity-90"
+              className="shrink-0 whitespace-nowrap rounded-btn bg-gold px-[22px] py-[11px] font-body text-sm font-bold tracking-[0.02em] text-ink transition-opacity hover:opacity-90"
             >
               Schedule a Chat
             </Link>
           </div>
 
           {/* Mobile: CTA pill + hamburger */}
-          <div className="flex items-center gap-3 md:hidden">
+          <div className="flex shrink-0 items-center gap-2 min-[400px]:gap-3 md:hidden">
             <Link
               href="/contact"
-              className="rounded-btn bg-gold px-[14px] py-[9px] font-body text-[13px] font-bold tracking-[0.02em] text-ink transition-opacity hover:opacity-90"
+              className="shrink-0 whitespace-nowrap rounded-btn bg-gold px-3 py-[9px] font-body text-xs font-bold tracking-[0.02em] text-ink transition-opacity hover:opacity-90 min-[400px]:px-[14px] min-[400px]:text-[13px]"
             >
               Schedule a Chat
             </Link>
