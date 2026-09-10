@@ -209,25 +209,25 @@ export default function HomePage() {
               step.highlight ? (
                 <article
                   key={step.label}
-                  className="grid grid-cols-1 gap-[10px] rounded-card bg-gold px-5 py-7 text-ink md:-mx-7 md:grid-cols-[110px_260px_1fr] md:items-start md:gap-[30px] md:px-7 md:py-10"
+                  className="grid grid-cols-1 gap-[10px] rounded-card bg-gold px-5 py-7 text-ink md:-mx-7 md:grid-cols-[110px_260px_1fr] md:items-center md:gap-[30px] md:px-7 md:py-10"
                 >
-                  <span className="text-[12px] font-bold uppercase tracking-[0.15em] text-brown md:mt-[10px]">
+                  <span className="text-[12px] font-bold uppercase tracking-[0.15em] text-brown">
                     {step.number}
                   </span>
                   <h3 className="m-0 flex items-center gap-3 font-display text-[30px] font-bold leading-none md:text-[40px]">
                     <span className="h-[10px] w-[10px] shrink-0 rounded-full bg-ink" />
                     {step.label}
                   </h3>
-                  <p className="m-0 max-w-[620px] text-[16px] leading-[1.7] text-[#3F2A12] md:mt-[6px]">
+                  <p className="m-0 max-w-[620px] text-[16px] leading-[1.7] text-[#3F2A12]">
                     {step.description}
                   </p>
                 </article>
               ) : (
                 <article
                   key={step.label}
-                  className="grid grid-cols-1 gap-[10px] border-b border-line py-7 md:grid-cols-[110px_260px_1fr] md:items-start md:gap-[30px] md:py-10"
+                  className="grid grid-cols-1 gap-[10px] border-b border-line py-7 md:grid-cols-[110px_260px_1fr] md:items-center md:gap-[30px] md:py-10"
                 >
-                  <span className="text-[12px] font-bold uppercase tracking-[0.15em] text-gold-deep md:mt-[10px]">
+                  <span className="text-[12px] font-bold uppercase tracking-[0.15em] text-gold-deep">
                     {step.number}
                   </span>
                   <h3 className="m-0 flex items-center gap-3 font-display text-[30px] font-bold leading-none text-ink md:text-[40px]">
@@ -238,7 +238,7 @@ export default function HomePage() {
                     />
                     {step.label}
                   </h3>
-                  <p className="m-0 max-w-[620px] text-[16px] leading-[1.7] text-body-muted md:mt-[6px]">
+                  <p className="m-0 max-w-[620px] text-[16px] leading-[1.7] text-body-muted">
                     {step.description}
                   </p>
                 </article>
