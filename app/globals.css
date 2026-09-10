@@ -49,3 +49,13 @@
     outline-offset: 2px;
   }
 }
+
+/* Header re-entering from above once the page has scrolled past it (Nav.tsx). */
+@keyframes nav-pin {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
