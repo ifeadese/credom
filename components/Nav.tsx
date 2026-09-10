@@ -73,12 +73,12 @@ export default function Nav() {
         >
           {/* Bar */}
           <div className="flex items-center justify-between gap-3 px-4 py-[14px] min-[400px]:px-5 md:gap-6 md:px-8 md:py-[16px]">
-            {/* Logo scales fluidly between 15px and 20px tall */}
+            {/* Logo scales fluidly between 14px and 17px tall */}
             <Logo
               asLink
-              size={20}
+              size={17}
               variant={onDark ? "dark" : "light"}
-              className="h-[clamp(15px,4vw,20px)] w-auto transition-colors duration-300"
+              className="h-[clamp(14px,3.5vw,17px)] w-auto transition-colors duration-300"
             />
 
             {/* Desktop links */}
