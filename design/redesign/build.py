@@ -79,9 +79,9 @@ CSS = r"""
 
     /* HOME HERO */
     .hero { position: relative; overflow: hidden; background: #201D1B; color: #FAF7F2; min-height: 820px; display: flex; align-items: flex-end; }
-    .hero-photo { position: absolute; top: 0; right: 0; width: 52%; height: 100%; }
+    .hero-photo { position: absolute; top: 0; right: 0; width: 60%; height: 100%; }
     .hero-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 62% center; }
-    .hero-photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, #201D1B 0%, rgba(32,29,27,0.55) 38%, rgba(32,29,27,0.15) 70%, rgba(32,29,27,0.35) 100%), linear-gradient(180deg, rgba(32,29,27,0.2) 0%, rgba(32,29,27,0) 40%, rgba(32,29,27,0.85) 100%); }
+    .hero-photo::after { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse 70% 110% at 78% 45%, rgba(32,29,27,0) 0%, rgba(32,29,27,0.2) 45%, rgba(32,29,27,0.75) 75%, #201D1B 100%), linear-gradient(180deg, rgba(32,29,27,0.15) 0%, rgba(32,29,27,0) 35%, rgba(32,29,27,0.85) 100%); }
     .hero-ring { position: absolute; width: 640px; height: 640px; right: 8%; top: 12%; border: 1px solid rgba(216,154,46,0.35); border-radius: 50%; pointer-events: none; }
     .hero-inner { position: relative; z-index: 2; padding-top: 180px; padding-bottom: 88px; width: 100%; }
     .hero h1 { font-size: 120px; line-height: 0.88; letter-spacing: -0.03em; max-width: 1000px; margin-top: 28px; }
@@ -537,14 +537,11 @@ def home(glass=False):
 
 <section class="section" style="background:#F0EBE3;">
   <div class="wrap">
-    <div class="head">
-      <div><span class="eyebrow" style="margin-bottom:14px;">What we've done</span><h2 class="h-section">Work that moved people.</h2></div>
-    </div>
     <article class="case-card">
       <div class="ph">{c[6]}</div>
       <div class="body">
-        <span class="eyebrow">{c[2]} - Lagos</span>
-        <h3>{c[1]}</h3>
+        <span class="eyebrow">What we've done</span>
+        <h2 class="h-section">{c[2]} - Lagos</h2>
         <p>{c[3][0]}</p>
         <p>{c[3][1]}</p>
         <p class="take">{c[4]}</p>
