@@ -14,7 +14,7 @@ def logo(h=24, color="currentColor"):
 CSS = r"""
     *, *::before, *::after { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-    body { margin: 0; background: #FAF7F2; color: #35302B; font-family: 'Mulish', system-ui, -apple-system, sans-serif; -webkit-font-smoothing: antialiased; line-height: 1.6; font-size: 16px; }
+    body { margin: 0; background: #FAF7F2; color: #35302B; font-family: 'DM Sans', system-ui, -apple-system, sans-serif; -webkit-font-smoothing: antialiased; line-height: 1.6; font-size: 16px; }
     a { color: #B87D1E; text-decoration: none; } a:hover { color: #5A2A17; }
     p { margin: 0; text-wrap: pretty; }
     h1, h2, h3, h4 { margin: 0; font-family: 'Rokkitt', Georgia, serif; font-weight: 800; letter-spacing: -0.01em; text-wrap: balance; }
@@ -26,7 +26,7 @@ CSS = r"""
     .on-dark .eyebrow, .eyebrow.gold { color: #D89A2E; }
     .num { font-family: 'Rokkitt', Georgia, serif; font-size: 22px; font-weight: 700; color: #D89A2E; }
     .index { font-size: 12px; letter-spacing: 0.15em; text-transform: uppercase; color: #6E665F; font-weight: 700; }
-    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 52px; padding: 14px 34px; border-radius: 2px; font-family: 'Mulish', sans-serif; font-weight: 700; font-size: 15px; background: #D89A2E; color: #201D1B; border: 1px solid #D89A2E; cursor: pointer; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 52px; padding: 14px 34px; border-radius: 2px; font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 15px; background: #D89A2E; color: #201D1B; border: 1px solid #D89A2E; cursor: pointer; }
     .btn:hover { color: #201D1B; opacity: 0.9; }
     .btn-outline { background: transparent; border-color: currentColor; color: inherit; }
     .btn-outline:hover { opacity: 0.75; }
@@ -68,7 +68,7 @@ CSS = r"""
     .footer-row { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
     .footer-row span { font-size: 13px; color: #6E665F; }
     .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 40px; padding-bottom: 48px; border-bottom: 1px solid #3A342E; }
-    .footer h4 { font-family: 'Mulish', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #D89A2E; margin-bottom: 18px; }
+    .footer h4 { font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #D89A2E; margin-bottom: 18px; }
     .footer ul { display: flex; flex-direction: column; gap: 0; }
     .footer a { color: #E7DFD5; font-size: 15px; display: inline-flex; align-items: center; min-height: 44px; } .footer a:hover { color: #D89A2E; }
     .footer-bottom { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding-top: 28px; font-size: 13px; color: #8A8079; }
@@ -221,7 +221,7 @@ CSS = r"""
     .contact-body { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 60px; align-items: start; padding-top: 100px; padding-bottom: 120px; }
     .field { display: flex; flex-direction: column; gap: 9px; }
     .field label { font-size: 13px; font-weight: 700; letter-spacing: 0.05em; color: #201D1B; }
-    .input { display: flex; align-items: center; justify-content: space-between; min-height: 52px; width: 100%; background: #FFFFFF; border: 1px solid #DDD4C7; border-radius: 2px; padding: 14px 16px; font-size: 15px; color: #6E665F; font-family: 'Mulish', sans-serif; }
+    .input { display: flex; align-items: center; justify-content: space-between; min-height: 52px; width: 100%; background: #FFFFFF; border: 1px solid #DDD4C7; border-radius: 2px; padding: 14px 16px; font-size: 15px; color: #6E665F; font-family: 'DM Sans', sans-serif; }
     .input.area { min-height: 150px; align-items: flex-start; }
     .input svg { width: 18px; height: 18px; color: #6E665F; }
     .form { display: flex; flex-direction: column; gap: 22px; }
@@ -685,7 +685,7 @@ HEAD = '''<!doctype html>
 <body>
 <x-dc>
 <helmet>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rokkitt:wght@400;500;600;700;800;900&amp;family=Mulish:wght@300;400;500;600;700;800&amp;display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rokkitt:wght@400;500;600;700;800;900&amp;family=DM+Sans:wght@400;500;600;700&amp;display=swap">
   <style>%s  </style>
 </helmet>
 '''
@@ -696,7 +696,7 @@ TAIL = '''
 '''
 PREVIEW_HEAD = '''<!doctype html>
 <html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>%s</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rokkitt:wght@400;500;600;700;800;900&family=Mulish:wght@300;400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rokkitt:wght@400;500;600;700;800;900&family=DM+Sans:wght@400;500;600;700&display=swap">
 <style>%s</style></head><body>
 '''
 
