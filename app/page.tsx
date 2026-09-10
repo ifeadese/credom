@@ -320,7 +320,7 @@ export default function HomePage() {
               {clients.map((client, i) => (
                 <div
                   key={client.name}
-                  className={`flex items-center justify-center py-4 md:py-0 ${
+                  className={`flex items-center justify-start py-4 md:py-0 ${
                     i < clients.length - 1
                       ? "border-b border-line md:border-b-0"
                       : ""
