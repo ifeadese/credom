@@ -56,11 +56,13 @@ Open `design/credom-website-preview.html` alongside this document.
 ### Logo
 Official CREDOM wordmark as inline SVG (`components/Logo.tsx`), traced from the company profile cover: `CRED` + gold `O` dot + `M`, with a short bar under the dot. Letterforms and the bar take the current text color (ink on light, paper on dark); the dot is always gold `#D89A2E`. Artwork ratio 135.2 : 23.95, rendered at 23–24px tall in the nav.
 
-### Nav (sticky)
-- `position:sticky; top:0; z-index:50`, bg `rgba(250,247,242,0.9)` + `backdrop-filter:blur(10px)`, bottom border `1px #E4DDD2`.
-- Inner: max-width 1240, padding `18px 40px`, flex space-between, wraps on narrow.
-- Left: logo (links Home). Right: Home · About · Services · Contact links (Mulish 600, 14px) + **Schedule a Chat** button (gold bg, ink text, `11px 22px`, radius 2px).
-- **Active link:** 2px gold underline bar under the current page's link.
+### Nav (fixed, glass on scroll)
+- Pattern lifted from selahnotes.app: `position:fixed; top:8px; z-index:50`, 16px side padding. Inner container: max-width 1240, `border-radius:16px`, `transition: all 300ms`.
+  - **At rest (scrollY ≤ 24):** transparent. Over the Home hero the text and logo letterforms are **paper**; on every other page they are **ink**.
+  - **Scrolled (or drawer open):** paper at 80% (`rgba(250,247,242,.8)`), `backdrop-filter: blur(12px)`, shadow `0 1px 3px rgba(0,0,0,.1), 0 1px 2px -1px rgba(0,0,0,.1)`; text turns ink.
+- Bar: padding `16px 32px` (desktop), `14px 16–20px` (mobile). Left: logo (links Home, 16–23px tall fluid). Right: Home · About · Services · Contact (Mulish 600, 14px, hover gold) + **Schedule a Chat** (gold, ink text, radius 2px). Active link: 2px gold underline.
+- Mobile (< md): compact gold CTA + two-bar hamburger (bars paper over the hero, ink otherwise); the drawer expands **inside** the rounded glass container (grid-rows 0fr → 1fr, 300ms), gold top rule, stacked links; Escape and route change close it.
+- Home's hero runs under the bar (its own top padding clears it); every other page renders a 76px spacer under the fixed nav.
 
 ### Footer
 - Bg `#201D1B`, text `#C9C0B6`, padding `32px 0`, top hairline `#E4DDD2`.

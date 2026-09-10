@@ -45,8 +45,12 @@ CSS = r"""
     .rule { border: 0; border-top: 1px solid #E4DDD2; margin: 0; }
 
     /* NAV */
-    .nav { position: sticky; top: 0; z-index: 50; background: rgba(250,247,242,0.92); backdrop-filter: blur(10px); border-bottom: 1px solid #E4DDD2; color: #201D1B; }
-    .nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 18px 40px; max-width: 1240px; margin: 0 auto; }
+    .nav { position: absolute; left: 0; right: 0; top: 8px; z-index: 50; padding: 0 16px; color: #201D1B; }
+    .nav-shell { position: relative; max-width: 1240px; margin: 0 auto; border-radius: 16px; background: transparent; transition: all 300ms; }
+    .nav.nav-over { color: #FAF7F2; }
+    .nav.nav-glass .nav-shell { background: rgba(250,247,242,0.8); backdrop-filter: blur(12px); box-shadow: 0 1px 3px 0 rgba(0,0,0,0.1), 0 1px 2px -1px rgba(0,0,0,0.1); }
+    .nav.nav-glass { color: #201D1B; }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 16px 32px; }
     .nav-links { display: flex; align-items: center; gap: 34px; }
     .nav-links a { position: relative; font-size: 14px; font-weight: 600; letter-spacing: 0.04em; color: inherit; padding: 6px 0; }
     .nav-links a:hover { color: #D89A2E; }
@@ -79,7 +83,7 @@ CSS = r"""
     .hero-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 62% center; }
     .hero-photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, #201D1B 0%, rgba(32,29,27,0.55) 38%, rgba(32,29,27,0.15) 70%, rgba(32,29,27,0.35) 100%), linear-gradient(180deg, rgba(32,29,27,0.2) 0%, rgba(32,29,27,0) 40%, rgba(32,29,27,0.85) 100%); }
     .hero-ring { position: absolute; width: 640px; height: 640px; right: 8%; top: 12%; border: 1px solid rgba(216,154,46,0.35); border-radius: 50%; pointer-events: none; }
-    .hero-inner { position: relative; z-index: 2; padding-top: 140px; padding-bottom: 88px; width: 100%; }
+    .hero-inner { position: relative; z-index: 2; padding-top: 180px; padding-bottom: 88px; width: 100%; }
     .hero h1 { font-size: 120px; line-height: 0.88; letter-spacing: -0.03em; max-width: 1000px; margin-top: 28px; }
     .hero h1 em { font-style: normal; color: #D89A2E; }
     .hero-bottom { display: flex; justify-content: space-between; align-items: flex-end; gap: 40px; margin-top: 56px; }
@@ -246,7 +250,7 @@ CSS = r"""
       .lede { font-size: 16px; }
       .grid-2, .grid-3, .form-row { grid-template-columns: minmax(0, 1fr); }
       .grid-2 { gap: 28px; }
-      .nav-inner { padding: 14px 20px; }
+      .nav-inner { padding: 14px 16px; }
       .nav-links { display: none; }
       .nav-mobile { display: flex; }
       .hero { min-height: 0; display: block; }
@@ -254,6 +258,7 @@ CSS = r"""
       .hero-photo::after { background: linear-gradient(180deg, rgba(32,29,27,0.15) 0%, rgba(32,29,27,0) 40%, #201D1B 100%); }
       .hero-ring { display: none; }
       .hero-inner { padding-top: 12px; padding-bottom: 64px; }
+      .hero-photo::after { background: linear-gradient(180deg, rgba(32,29,27,0.78) 0%, rgba(32,29,27,0) 38%, #201D1B 100%); }
       .hero h1 { font-size: 50px; line-height: 0.92; margin-top: 18px; }
       .hero-bottom { flex-direction: column; align-items: flex-start; gap: 28px; margin-top: 28px; }
       .hero-cta .btn { width: 100%; }
@@ -315,7 +320,7 @@ CSS = r"""
       .work-hero h1 { font-size: 66px; }
     }
     /* Mobile drawer (open state) */
-    .menu-open .drawer { display: block; position: absolute; left: 0; right: 0; top: 100%; background: #FAF7F2; border-bottom: 1px solid #E4DDD2; padding: 4px 20px 20px; box-shadow: 0 12px 32px rgba(32,29,27,0.10); z-index: 60; }
+    .menu-open .drawer { display: block; padding: 4px 20px 20px; }
     .menu-open .drawer ul { display: flex; flex-direction: column; gap: 4px; border-top: 1px solid rgba(216,154,46,0.4); padding-top: 12px; }
     .menu-open .drawer a { display: flex; align-items: center; justify-content: space-between; min-height: 52px; padding: 10px 12px; font-size: 18px; font-weight: 600; color: #201D1B; border-radius: 12px; }
     .menu-open .drawer a.active { font-weight: 800; }
@@ -333,12 +338,13 @@ PHONE = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width
 
 PAGES = [("Home", "Main"), ("About", "About"), ("Services", "Services"), ("Contact", "Contact")]
 
-def nav(active, dark=False):
+def nav(active, dark=False, glass=False):
     links = "".join(f'<a href="#" class="{"active" if n == active else ""}">{n}</a>' for n, _ in PAGES)
     drawer_links = "".join(f'<li><a href="#" class="{"active" if n == active else ""}">{n}{ARROW}</a></li>' for n, _ in PAGES)
-    cls = "nav"
+    cls = "nav" + (" nav-over" if dark and not glass else "") + (" nav-glass" if glass else "")
     return f'''
-<header class="{cls}" style="position: sticky;">
+<header class="{cls}">
+  <div class="nav-shell">
   <div class="nav-inner">
     <a href="#" aria-label="CREDOM home" style="display:inline-flex;align-items:center;">{logo(24)}</a>
     <nav class="nav-links" aria-label="Primary">{links}<a href="#" class="btn">Schedule a Chat</a></nav>
@@ -346,6 +352,7 @@ def nav(active, dark=False):
   </div>
   <div class="drawer">
     <ul>{drawer_links}</ul>
+  </div>
   </div>
 </header>'''
 
@@ -459,7 +466,7 @@ def rail():
 </div>'''
 
 # ------------------------------------------------------------------ PAGES
-def home():
+def home(glass=False):
     cards = "".join(f"""
       <div class="card" style="background:{bg};color:{fg};"><span class="num" style="color:{nc};">{n}</span><div><h3>{PREVIEW_TITLES[i]}</h3><p>{SHORT[i]}</p></div></div>"""
       for i, (n, t, d, b, bg, fg, nc) in enumerate(SERVICES))
@@ -470,7 +477,7 @@ def home():
         else:
             steps += f'<article class="step"><span class="index" style="color:#B87D1E;">{n}</span><h3><span class="dot" style="background:{dot};"></span>{name}</h3><p>{desc}</p></article>'
     c = CASES[0]
-    return nav("Home") + f"""
+    return nav("Home", dark=True, glass=glass) + f"""
 <section class="hero">
   <div class="hero-photo"><img src="hero.jpg" alt="A guest in sunglasses in front of a glowing sign at a live brand event"></div>
   <div class="hero-ring"></div>
@@ -552,7 +559,7 @@ def home():
 
 def about():
     values = "".join(f'<article class="value {sp}" style="background:{bg};color:{fg};{"border:1px solid #E4DDD2;" if bg == "#FFFFFF" else ""}"><span class="num" style="color:{"#D89A2E" if bg in ("#FFFFFF","#5A2A17","#201D1B") else fg};">{n}</span><div><h3>{t}</h3><p style="margin-top:12px;">{d}</p></div></article>' for n, t, d, bg, fg, sp in VALUES)
-    return nav("About") + f"""
+    return nav("About") + '<div style="height:76px;"></div>' + f"""
 <section class="about-hero">
   <div class="wrap about-grid">
     <h1 class="stagger"><span>Bold.</span><span>Strategic.</span><span>Immersive.</span></h1>
@@ -627,7 +634,7 @@ def services():
     for n, t, d, bullets, bg, fg, nc in SERVICES:
         lis = "".join(f"<li>{b}</li>" for b in bullets)
         blocks += f'<article class="block" id="svc-{n}" style="background:{bg};color:{fg};"><div><span class="num" style="color:{nc};">{n}</span><h3>{t}</h3><p>{d}</p></div><ul>{lis}</ul></article>'
-    return nav("Services") + f'''
+    return nav("Services") + '<div style="height:76px;"></div>' + f'''
 <section class="svc-head">
   <div class="wrap">
     <span class="eyebrow" style="margin-bottom:26px;">Our Services</span>
@@ -640,7 +647,7 @@ def services():
 
 
 def contact():
-    return nav("Contact") + f'''
+    return nav("Contact") + '<div style="height:76px;"></div>' + f'''
 <section class="contact-hero">
   <div class="mark" aria-hidden="true">MAGIC</div>
   <div class="wrap" style="position:relative;">
@@ -696,7 +703,7 @@ PREVIEW_HEAD = '''<!doctype html>
 '''
 
 builds = {
-  "Main": home(), "HomeMobile": home(), "MenuMobile": home(),
+  "Main": home(), "HomeMobile": home(), "MenuMobile": home(glass=True),
   "About": about(), "AboutMobile": about(),
   "Services": services(), "ServicesMobile": services(),
   "Contact": contact(), "ContactMobile": contact(),

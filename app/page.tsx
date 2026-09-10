@@ -44,7 +44,7 @@ export default function HomePage() {
           {/* Fade the photo into the ink ground: downwards on phones, leftwards on wider screens */}
           <div
             aria-hidden="true"
-            className="absolute inset-0 bg-[linear-gradient(180deg,rgba(32,29,27,0.15)_0%,rgba(32,29,27,0)_40%,#201D1B_100%)] sm:bg-[linear-gradient(90deg,#201D1B_0%,rgba(32,29,27,0.55)_38%,rgba(32,29,27,0.15)_70%,rgba(32,29,27,0.35)_100%),linear-gradient(180deg,rgba(32,29,27,0.2)_0%,rgba(32,29,27,0)_40%,rgba(32,29,27,0.85)_100%)]"
+            className="absolute inset-0 bg-[linear-gradient(180deg,rgba(32,29,27,0.78)_0%,rgba(32,29,27,0)_38%,#201D1B_100%)] sm:bg-[linear-gradient(90deg,#201D1B_0%,rgba(32,29,27,0.55)_38%,rgba(32,29,27,0.15)_70%,rgba(32,29,27,0.35)_100%),linear-gradient(180deg,rgba(32,29,27,0.2)_0%,rgba(32,29,27,0)_40%,rgba(32,29,27,0.85)_100%)]"
           />
         </div>
         <div

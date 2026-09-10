@@ -121,7 +121,7 @@
       "x": 2030,
       "y": 1000,
       "w": 420,
-      "text": "Behaviour to build (not visible in static frames)\n\n\u2022 Nav is sticky on paper with blur; active page underlined in gold. Mobile drawer as shipped in PR #8: Escape and route change close it.\n\u2022 Reveals are not drawn in the frames. One reveal only: sections fade and rise 12px on first scroll into view, disabled under prefers-reduced-motion. No opacity gating that can get stuck (a past bug).\n\u2022 Form: inline errors under fields, focus moves to the first error, success panel replaces the form.\n\u2022 'Read more' on the case card can open a detail page or expand in place; decide once the AltDrive photo arrives."
+      "text": "Behaviour to build (not visible in static frames)\n\n\u2022 Nav floats over the page (selahnotes.app pattern): fixed 8px from the top, transparent at rest \u2014 paper text over the Home hero, ink elsewhere \u2014 and after 24px of scroll it becomes a rounded glass bar (paper 80%, 12px blur, soft shadow, 300ms). The mobile drawer opens inside that glass bar (shown on the 'menu open' frame); Escape and route change close it.\n\u2022 Reveals are not drawn in the frames. One reveal only: sections fade and rise 12px on first scroll into view, disabled under prefers-reduced-motion. No opacity gating that can get stuck (a past bug).\n\u2022 Form: inline errors under fields, focus moves to the first error, success panel replaces the form.\n\u2022 'Read more' on the case card can open a detail page or expand in place; decide once the AltDrive photo arrives."
     }
   ],
   "launch": {
