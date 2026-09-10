@@ -44,7 +44,7 @@ export default function HomePage() {
           {/* Fade the photo into the ink ground: downwards on phones; a wide elliptical falloff (curved, gradual edge) plus a bottom fade on wider screens */}
           <div
             aria-hidden="true"
-            className="absolute inset-0 bg-[linear-gradient(180deg,rgba(32,29,27,0.78)_0%,rgba(32,29,27,0)_38%,#201D1B_100%)] sm:bg-[radial-gradient(ellipse_84%_132%_at_83%_45%,rgba(32,29,27,0)_0%,rgba(32,29,27,0.13)_38%,rgba(32,29,27,0.55)_65%,rgba(32,29,27,0.85)_86%,rgba(32,29,27,0.95)_100%),linear-gradient(180deg,rgba(32,29,27,0.12)_0%,rgba(32,29,27,0)_35%,rgba(32,29,27,0.85)_100%)]"
+            className="absolute inset-0 bg-[linear-gradient(180deg,rgba(32,29,27,0.78)_0%,rgba(32,29,27,0)_38%,#201D1B_100%)] sm:bg-[radial-gradient(ellipse_72%_78%_at_90%_50%,rgba(32,29,27,0)_0%,rgba(32,29,27,0.2)_40%,rgba(32,29,27,0.65)_66%,rgba(32,29,27,0.9)_86%,rgba(32,29,27,0.97)_100%),linear-gradient(180deg,rgba(32,29,27,0.1)_0%,rgba(32,29,27,0)_40%,rgba(32,29,27,0.7)_100%)]"
           />
         </div>
         {/* Hairline geometry from the original hero: two diagonal rules across the whole section and a gold ring on the right */}
@@ -53,16 +53,16 @@ export default function HomePage() {
           className="pointer-events-none absolute inset-0 scale-[1.4] max-sm:hidden"
           style={{
             backgroundImage:
-              "linear-gradient(130deg, transparent 30%, rgba(255,255,255,0.16) 30.12%, transparent 30.4%), linear-gradient(50deg, transparent 55%, rgba(255,255,255,0.1) 55.12%, transparent 55.4%)",
+              "linear-gradient(130deg, transparent 30%, rgba(255,255,255,0.12) 30.12%, transparent 30.4%), linear-gradient(50deg, transparent 55%, rgba(255,255,255,0.08) 55.12%, transparent 55.4%)",
           }}
         />
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute right-[8%] top-[12%] h-[640px] w-[640px] rounded-full border border-gold/60 max-md:hidden"
+          className="pointer-events-none absolute right-[8%] top-[12%] h-[640px] w-[640px] rounded-full border border-gold/50 max-md:hidden"
         />
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute right-[calc(8%+96px)] top-[calc(12%+96px)] h-[448px] w-[448px] rounded-full border border-gold/25 max-md:hidden"
+          className="pointer-events-none absolute right-[calc(8%+96px)] top-[calc(12%+96px)] h-[448px] w-[448px] rounded-full border border-gold/20 max-md:hidden"
         />
         <div className="relative mx-auto flex w-full max-w-content flex-col justify-end px-10 pb-16 pt-4 sm:min-h-[820px] sm:pb-[88px] sm:pt-[140px]">
           <Eyebrow tone="gold">Integrated Brand Experience Agency</Eyebrow>
