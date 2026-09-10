@@ -31,20 +31,20 @@ export default function HomePage() {
     <>
       {/* HERO — ink surface; the photo is a 4:3 band above the copy on phones and a fading right-hand panel from sm up */}
       <section className="relative overflow-hidden bg-ink text-paper">
-        <div className="relative aspect-[4/3] w-full sm:absolute sm:inset-y-0 sm:right-0 sm:aspect-auto sm:w-[72%]">
+        <div className="relative aspect-[4/3] w-full sm:absolute sm:inset-0 sm:aspect-auto sm:w-full">
           <Image
             src={heroImage.src}
             alt={heroImage.alt}
             fill
             priority
-            sizes="(min-width: 640px) 72vw, 100vw"
+            sizes="100vw"
             className="object-cover"
-            style={{ objectPosition: "62% center" }}
+            style={{ objectPosition: "70% center" }}
           />
           {/* Fade the photo into the ink ground: downwards on phones; a wide elliptical falloff (curved, gradual edge) plus a bottom fade on wider screens */}
           <div
             aria-hidden="true"
-            className="absolute inset-0 bg-[linear-gradient(180deg,rgba(32,29,27,0.78)_0%,rgba(32,29,27,0)_38%,#201D1B_100%)] sm:bg-[radial-gradient(ellipse_72%_78%_at_90%_50%,rgba(32,29,27,0)_0%,rgba(32,29,27,0.2)_40%,rgba(32,29,27,0.65)_66%,rgba(32,29,27,0.9)_86%,rgba(32,29,27,0.97)_100%),linear-gradient(180deg,rgba(32,29,27,0.1)_0%,rgba(32,29,27,0)_40%,rgba(32,29,27,0.7)_100%)]"
+            className="absolute inset-0 bg-[linear-gradient(180deg,rgba(32,29,27,0.78)_0%,rgba(32,29,27,0)_38%,#201D1B_100%)] sm:bg-[radial-gradient(ellipse_56%_82%_at_80%_50%,rgba(32,29,27,0)_0%,rgba(32,29,27,0.2)_40%,rgba(32,29,27,0.65)_66%,rgba(32,29,27,0.9)_86%,#201D1B_100%),linear-gradient(180deg,rgba(32,29,27,0.1)_0%,rgba(32,29,27,0)_40%,rgba(32,29,27,0.7)_100%)]"
           />
         </div>
         {/* Hairline geometry from the original hero: two diagonal rules across the whole section and a gold ring on the right */}
