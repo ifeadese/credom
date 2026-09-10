@@ -72,12 +72,7 @@ export default function HomePage() {
           </h1>
           <div className="mt-7 flex flex-col items-start gap-7 sm:mt-14 md:flex-row md:items-end md:justify-between md:gap-10">
             <div>
-              <p className="m-0 max-w-[520px] text-[16px] leading-[1.7] text-on-dark sm:text-[18px]">
-                CREDOM transforms ideas into immersive activations, strategic
-                experiences, and memorable brand moments designed to capture
-                attention and leave lasting impact.
-              </p>
-              <div className="mt-[30px] flex flex-wrap gap-[14px] max-sm:flex-col">
+              <div className="flex flex-wrap gap-[14px] max-sm:flex-col">
                 <Button href="/contact" className="max-sm:w-full">
                   Schedule a Chat
                 </Button>
