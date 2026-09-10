@@ -164,7 +164,7 @@ export default function ContactForm() {
           disabled={isSubmitting}
           className="cursor-pointer rounded-btn border-none bg-gold px-[38px] py-4 text-base font-bold text-ink transition-opacity hover:opacity-90 disabled:opacity-60"
         >
-          {isSubmitting ? "Sending…" : "Schedule a Chat"}
+          {isSubmitting ? "Sending…" : "Send Message"}
         </button>
       </form>
     </div>

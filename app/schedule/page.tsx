@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
-import Container from "@/components/Container";
-import Eyebrow from "@/components/Eyebrow";
-import ScheduleEmbed from "@/components/ScheduleEmbed";
-import { getCalendlyUrl } from "@/lib/calendly";
+import PageHero from "@/components/PageHero";
+import { buildCalendlyEmbedUrl } from "@/lib/calendly";
 import { scheduleIntro } from "@/lib/content";
 
 export const metadata: Metadata = {
@@ -13,36 +11,32 @@ export const metadata: Metadata = {
 };
 
 export default function SchedulePage() {
-  const calendlyUrl = getCalendlyUrl();
-
   return (
     <>
-      {/* HERO */}
-      <section className="relative overflow-hidden border-b border-line bg-white pb-[clamp(60px,8vw,100px)] pt-[clamp(70px,9vw,120px)] text-ink">
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute -bottom-[0.2em] -right-[1vw] select-none font-display text-[clamp(180px,26vw,380px)] font-black leading-[0.8] tracking-[-0.04em] text-gold/[0.09]"
-        >
-          CHAT
-        </div>
-        <Container className="relative">
-          <Eyebrow className="mb-6">Schedule a Chat</Eyebrow>
-          <h1 className="m-0 mb-[26px] font-display text-[clamp(76px,10.4vw,150px)] font-extrabold leading-[0.8] tracking-[-0.035em] text-ink">
+      <PageHero
+        eyebrow="Schedule a Chat"
+        watermark="CHAT"
+        heading={
+          <>
             Let&apos;s talk.
             <br />
             <span className="text-gold">Pick a time.</span>
-          </h1>
-          <p className="m-0 max-w-[560px] text-[19px] leading-[1.7] text-body-ink">
-            {scheduleIntro}
-          </p>
-        </Container>
-      </section>
+          </>
+        }
+        intro={scheduleIntro}
+      />
 
-      {/* BODY — the Calendly widget runs edge to edge; its own details panel carries the description */}
+      {/* BODY — Calendly's calendar + time picker, server-rendered as a plain
+          iframe and run edge to edge. Event details and landing-page chrome
+          are hidden; the event description lives on Calendly and reaches
+          invitees on the booking step and in the confirmation email. */}
       <section className="bg-white">
-        <ScheduleEmbed url={calendlyUrl} />
+        <iframe
+          src={buildCalendlyEmbedUrl()}
+          title="Schedule a Chat"
+          className="h-[900px] w-full bg-white sm:h-[720px]"
+        />
       </section>
-
     </>
   );
 }

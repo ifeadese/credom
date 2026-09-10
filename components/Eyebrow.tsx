@@ -1,6 +1,6 @@
 type EyebrowProps = {
   children: React.ReactNode;
-  /** gold (#D89A2E) on dark bg, gold-deep (#B87D1E) on light bg. */
+  /** `gold` on dark bg, `gold-deep` on light bg (see lib/tokens.ts). */
   tone?: "gold" | "gold-deep";
   className?: string;
 };

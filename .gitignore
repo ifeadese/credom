@@ -27,3 +27,6 @@ yarn-error.log*
 # Seeded design canvas — 2.5MB of embedded editor payload, regenerate from the
 # .dc.html sources with the design skill's seed-canvas.mjs
 design/consolidate/credom-client-section.html
+
+# TypeScript incremental build cache (per-machine)
+tsconfig.tsbuildinfo

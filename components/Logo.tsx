@@ -40,7 +40,7 @@ export default function Logo({
       focusable="false"
     >
       <path fill="currentColor" d={LETTERS} />
-      <path fill="#D89A2E" d={DOT} />
+      <path className="fill-gold" d={DOT} />
       <path fill="currentColor" d={BAR} />
     </svg>
   );

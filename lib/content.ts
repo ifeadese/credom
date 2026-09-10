@@ -286,7 +286,7 @@ export const formBoldFieldNames = {
 } as const satisfies Record<keyof ContactFormData, string>;
 
 export const contactSuccessMessage =
-  "Your message has been sent. We'll be in touch shortly to schedule your chat.";
+  "Your message has been sent. We'll be in touch shortly.";
 
 /** Schedule — /schedule page copy (the destination of every "Schedule a Chat" button). */
 export const scheduleIntro =

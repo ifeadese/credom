@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Container from "@/components/Container";
-import Eyebrow from "@/components/Eyebrow";
+import PageHero from "@/components/PageHero";
 import ContactForm from "@/components/ContactForm";
 import Link from "next/link";
 import { contactDetails } from "@/lib/content";
@@ -26,27 +26,23 @@ const sidebarLinkClass =
 export default function ContactPage() {
   return (
     <>
-      {/* HERO */}
-      <section className="relative overflow-hidden border-b border-line bg-white pb-[clamp(60px,8vw,100px)] pt-[clamp(70px,9vw,120px)] text-ink">
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute -bottom-[0.2em] -right-[1vw] select-none font-display text-[clamp(180px,26vw,380px)] font-black leading-[0.8] tracking-[-0.04em] text-gold/[0.09]"
-        >
-          MAGIC
-        </div>
-        <Container className="relative">
-          <Eyebrow className="mb-6">Let&apos;s Talk</Eyebrow>
-          <h1 className="m-0 mb-[26px] font-display text-[clamp(76px,10.4vw,150px)] font-extrabold leading-[0.8] tracking-[-0.035em] text-ink">
+      <PageHero
+        eyebrow={<>Let&apos;s Talk</>}
+        watermark="MAGIC"
+        heading={
+          <>
             Let&apos;s Make
             <br />
             <span className="text-gold">MAGIC.</span>
-          </h1>
-          <p className="m-0 max-w-[560px] text-[19px] leading-[1.7] text-body-ink">
+          </>
+        }
+        intro={
+          <>
             Tell us about the moment you want to create. We&apos;ll bring the
             strategy, creativity, and seamless execution to make it happen.
-          </p>
-        </Container>
-      </section>
+          </>
+        }
+      />
 
       {/* BODY */}
       <section className="py-[clamp(70px,9vw,110px)]">
