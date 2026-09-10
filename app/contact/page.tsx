@@ -48,7 +48,7 @@ export default function ContactPage() {
       </section>
 
       {/* BODY */}
-      <section className="mx-auto grid max-w-content grid-cols-[repeat(auto-fit,minmax(320px,1fr))] items-start gap-[60px] px-10 py-[clamp(70px,9vw,110px)]">
+      <section className="mx-auto grid max-w-content grid-cols-[repeat(auto-fit,minmax(min(320px,100%),1fr))] items-start gap-[60px] px-10 py-[clamp(70px,9vw,110px)]">
         {/* Form */}
         <ContactForm />
 

@@ -50,7 +50,7 @@ export default function ServicesPage() {
             <div
               key={service.number}
               id={anchorFor(service.number)}
-              className={`grid scroll-mt-24 grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-8 rounded-block p-[clamp(40px,4vw,56px)] ${t.card}`}
+              className={`grid scroll-mt-24 grid-cols-[repeat(auto-fit,minmax(min(280px,100%),1fr))] gap-8 rounded-block p-[clamp(40px,4vw,56px)] ${t.card}`}
             >
               <div>
                 <span

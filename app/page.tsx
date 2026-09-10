@@ -148,7 +148,7 @@ export default function HomePage() {
               All services &rarr;
             </Link>
           </div>
-          <div className="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-[18px]">
+          <div className="grid grid-cols-[repeat(auto-fit,minmax(min(300px,100%),1fr))] gap-[18px]">
             {services.map((service) => (
               <ServiceCard key={service.number} service={service} />
             ))}
@@ -251,7 +251,7 @@ export default function HomePage() {
       {/* WHAT WE'VE DONE — the case study carries the section heading; the client roster closes as a rail */}
       <section className="flex flex-col bg-paper-2 py-[clamp(80px,10vw,120px)]">
         <Container>
-          <div className="grid grid-cols-[repeat(auto-fit,minmax(320px,1fr))] gap-5">
+          <div className="grid grid-cols-[repeat(auto-fit,minmax(min(320px,100%),1fr))] gap-5">
             {caseStudies.map((study) => {
               const t = caseStudyThemeClasses[study.theme];
               return (

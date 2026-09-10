@@ -62,7 +62,7 @@ export default function AboutPage() {
       </section>
 
       {/* VISION / MISSION */}
-      <section className="grid grid-cols-[repeat(auto-fit,minmax(320px,1fr))]">
+      <section className="grid grid-cols-[repeat(auto-fit,minmax(min(320px,100%),1fr))]">
         <div className="flex min-h-[440px] flex-col justify-between gap-7 bg-teal px-[clamp(20px,5vw,70px)] py-[clamp(56px,7vw,90px)] text-paper">
           <Eyebrow className="!text-paper opacity-85">Vision</Eyebrow>
           <div>
