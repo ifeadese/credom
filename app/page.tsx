@@ -31,25 +31,38 @@ export default function HomePage() {
     <>
       {/* HERO — ink surface; the photo is a 4:3 band above the copy on phones and a fading right-hand panel from sm up */}
       <section className="relative overflow-hidden bg-ink text-paper">
-        <div className="relative aspect-[4/3] w-full sm:absolute sm:inset-y-0 sm:right-0 sm:aspect-auto sm:w-[68%]">
+        <div className="relative aspect-[4/3] w-full sm:absolute sm:inset-y-0 sm:right-0 sm:aspect-auto sm:w-[72%]">
           <Image
             src={heroImage.src}
             alt={heroImage.alt}
             fill
             priority
-            sizes="(min-width: 640px) 68vw, 100vw"
+            sizes="(min-width: 640px) 72vw, 100vw"
             className="object-cover"
             style={{ objectPosition: "62% center" }}
           />
           {/* Fade the photo into the ink ground: downwards on phones; a wide elliptical falloff (curved, gradual edge) plus a bottom fade on wider screens */}
           <div
             aria-hidden="true"
-            className="absolute inset-0 bg-[linear-gradient(180deg,rgba(32,29,27,0.78)_0%,rgba(32,29,27,0)_38%,#201D1B_100%)] sm:bg-[radial-gradient(ellipse_78%_125%_at_82%_45%,rgba(32,29,27,0)_0%,rgba(32,29,27,0.15)_40%,rgba(32,29,27,0.6)_68%,rgba(32,29,27,0.88)_88%,rgba(32,29,27,0.96)_100%),linear-gradient(180deg,rgba(32,29,27,0.12)_0%,rgba(32,29,27,0)_35%,rgba(32,29,27,0.85)_100%)]"
+            className="absolute inset-0 bg-[linear-gradient(180deg,rgba(32,29,27,0.78)_0%,rgba(32,29,27,0)_38%,#201D1B_100%)] sm:bg-[radial-gradient(ellipse_84%_132%_at_83%_45%,rgba(32,29,27,0)_0%,rgba(32,29,27,0.13)_38%,rgba(32,29,27,0.55)_65%,rgba(32,29,27,0.85)_86%,rgba(32,29,27,0.95)_100%),linear-gradient(180deg,rgba(32,29,27,0.12)_0%,rgba(32,29,27,0)_35%,rgba(32,29,27,0.85)_100%)]"
           />
         </div>
+        {/* Hairline geometry from the original hero: two diagonal rules across the whole section and a gold ring on the right */}
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute right-[8%] top-[12%] h-[640px] w-[640px] rounded-full border border-gold/35 max-lg:hidden"
+          className="pointer-events-none absolute inset-0 scale-[1.4] max-sm:hidden"
+          style={{
+            backgroundImage:
+              "linear-gradient(130deg, transparent 30%, rgba(255,255,255,0.16) 30.12%, transparent 30.4%), linear-gradient(50deg, transparent 55%, rgba(255,255,255,0.1) 55.12%, transparent 55.4%)",
+          }}
+        />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute right-[8%] top-[12%] h-[640px] w-[640px] rounded-full border border-gold/60 max-md:hidden"
+        />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute right-[calc(8%+96px)] top-[calc(12%+96px)] h-[448px] w-[448px] rounded-full border border-gold/25 max-md:hidden"
         />
         <div className="relative mx-auto flex w-full max-w-content flex-col justify-end px-10 pb-16 pt-4 sm:min-h-[820px] sm:pb-[88px] sm:pt-[140px]">
           <Eyebrow tone="gold">Integrated Brand Experience Agency</Eyebrow>
