@@ -44,7 +44,7 @@ const config: Config = {
       },
       fontFamily: {
         display: ["var(--font-rokkitt)", "Rokkitt", "serif"],
-        body: ["var(--font-mulish)", "Mulish", "system-ui", "sans-serif"],
+        body: ["var(--font-dm-sans)", "DM Sans", "system-ui", "sans-serif"],
       },
       maxWidth: {
         content: "1240px",

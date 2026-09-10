@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Rokkitt, Mulish } from "next/font/google";
+import { Rokkitt, DM_Sans } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
@@ -11,10 +11,11 @@ const rokkitt = Rokkitt({
   display: "swap",
 });
 
-const mulish = Mulish({
+/* Body face: DM Sans — UI/UX Pro Max's "Premium Sans" pairing for modern agencies. */
+const dmSans = DM_Sans({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800"],
-  variable: "--font-mulish",
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-dm-sans",
   display: "swap",
 });
 
@@ -101,7 +102,7 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en" className={`${rokkitt.variable} ${mulish.variable}`}>
+    <html lang="en" className={`${rokkitt.variable} ${dmSans.variable}`}>
       <body>
         <script
           type="application/ld+json"

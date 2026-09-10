@@ -5,7 +5,7 @@ type EyebrowProps = {
   className?: string;
 };
 
-/** Small uppercase brand label (Mulish 700, wide tracking). */
+/** Small uppercase brand label (DM Sans 700, wide tracking). */
 export default function Eyebrow({
   children,
   tone = "gold-deep",

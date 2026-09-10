@@ -1,8 +1,8 @@
 import Link from "next/link";
+import Image from "next/image";
 import Container from "@/components/Container";
 import Eyebrow from "@/components/Eyebrow";
 import Button from "@/components/Button";
-import Image from "next/image";
 import ServiceCard from "@/components/ServiceCard";
 import CtaBand from "@/components/CtaBand";
 import { services } from "@/lib/services";
@@ -21,57 +21,106 @@ const stepDotClasses: Record<string, string> = {
   Deliver: "bg-brown",
 };
 
+const heroImage = {
+  src: "/images/hero-attention.jpg",
+  alt: "A man in sunglasses in front of a glowing sign at a live brand event",
+};
+
 export default function HomePage() {
   return (
     <>
-      {/* HERO */}
-      <section className="relative overflow-hidden border-b border-line bg-white text-ink">
-        <div className="absolute right-0 top-0 h-full w-[44%] border-l border-line bg-paper-2 max-sm:hidden">
+      {/* HERO — ink surface; the photo is a 4:3 band above the copy on phones and a fading right-hand panel from sm up */}
+      <section className="relative overflow-hidden bg-ink text-paper">
+        <div className="relative aspect-[4/3] w-full sm:absolute sm:inset-0 sm:aspect-auto sm:w-full">
           <Image
-            src="/images/hero-attention.jpg"
-            alt="A man in sunglasses in front of a glowing sign at a live brand event"
+            src={heroImage.src}
+            alt={heroImage.alt}
             fill
             priority
-            sizes="44vw"
+            sizes="100vw"
             className="object-cover"
-            style={{ objectPosition: "62% center" }}
+            style={{ objectPosition: "70% center" }}
+          />
+          {/* Fade the photo into the ink ground: downwards on phones; a wide elliptical falloff (curved, gradual edge) plus a bottom fade on wider screens */}
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 bg-[linear-gradient(180deg,rgba(32,29,27,0.78)_0%,rgba(32,29,27,0)_38%,#201D1B_100%)] sm:bg-[radial-gradient(ellipse_56%_82%_at_80%_50%,rgba(32,29,27,0)_0%,rgba(32,29,27,0.2)_40%,rgba(32,29,27,0.65)_66%,rgba(32,29,27,0.9)_86%,#201D1B_100%),linear-gradient(180deg,rgba(32,29,27,0.1)_0%,rgba(32,29,27,0)_40%,rgba(32,29,27,0.7)_100%)]"
           />
         </div>
-        <div className="relative mx-auto max-w-content px-10 pb-[clamp(80px,11vw,140px)] pt-[clamp(80px,12vw,150px)]">
-          {/* Cap the column so text never runs under the photo panel (56vw − left offset − gap). */}
-          <div className="max-w-[760px] sm:max-w-[min(760px,56vw-84px)]">
-            <Eyebrow className="mb-[26px] tracking-eyebrow-wide">
-              Integrated Brand Experience Agency
-            </Eyebrow>
-            <h1 className="m-0 mb-6 font-display text-[clamp(52px,8.5vw,110px)] font-extrabold leading-[0.92] tracking-[-0.01em] text-ink">
-              Attention
-              <br />
-              Is Earned.
-            </h1>
-            <p className="m-0 mb-7 font-display text-[clamp(22px,3vw,32px)] font-semibold text-gold-deep">
-              Experience Makes It Last.
-            </p>
-            <p className="m-0 mb-10 max-w-[560px] text-[18px] leading-[1.7] text-body-ink">
-              CREDOM transforms ideas into immersive activations, strategic
-              experiences, and memorable brand moments designed to capture
-              attention and leave lasting impact.
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <Button href="/contact">Schedule a Chat</Button>
-              <Button href="/services" variant="outline">
-                Explore Services
-              </Button>
+        {/* Hairline geometry from the original hero: two diagonal rules across the whole section and a gold ring on the right */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 scale-[1.4] max-sm:hidden"
+          style={{
+            backgroundImage:
+              "linear-gradient(130deg, transparent 30%, rgba(255,255,255,0.12) 30.12%, transparent 30.4%), linear-gradient(50deg, transparent 55%, rgba(255,255,255,0.08) 55.12%, transparent 55.4%)",
+          }}
+        />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute right-[8%] top-[12%] h-[640px] w-[640px] rounded-full border border-gold/25 max-md:hidden"
+        />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute right-[calc(8%+96px)] top-[calc(12%+96px)] h-[448px] w-[448px] rounded-full border border-gold/10 max-md:hidden"
+        />
+        <div className="relative mx-auto flex w-full max-w-content flex-col justify-end px-10 pb-16 pt-4 sm:min-h-[820px] sm:pb-[88px] sm:pt-[140px]">
+          <Eyebrow tone="gold">Integrated Brand Experience Agency</Eyebrow>
+          <h1 className="m-0 mt-5 max-w-[1000px] font-display text-[clamp(50px,8.3vw,120px)] font-extrabold leading-[0.9] tracking-[-0.03em] text-paper sm:mt-7 sm:leading-[0.88]">
+            We create moments people don&apos;t just attend;{" "}
+            <span className="text-gold">they remember.</span>
+          </h1>
+          <div className="mt-7 sm:mt-14">
+            <div>
+              <div className="flex flex-wrap gap-[14px] max-sm:flex-col">
+                <Button href="/contact" className="max-sm:w-full">
+                  Schedule a Chat
+                </Button>
+                <Button
+                  href="/services"
+                  variant="outline-light"
+                  className="max-sm:w-full"
+                >
+                  Explore Services
+                </Button>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* STATEMENT */}
-      <section className="mx-auto max-w-content px-10 py-[clamp(80px,10vw,130px)]">
-        <p className="m-0 max-w-[1000px] font-display text-[clamp(30px,4.6vw,58px)] font-semibold leading-[1.12] tracking-[-0.01em] text-ink">
-          We create moments people don&apos;t just attend;{" "}
-          <span className="text-gold">they remember.</span>
-        </p>
+      {/* INTRO */}
+      <section className="bg-paper py-[clamp(72px,10vw,120px)]">
+        <Container>
+          <div className="grid grid-cols-1 items-end gap-8 md:grid-cols-[1.15fr_0.85fr] md:gap-20">
+            <h2 className="m-0 font-display text-[clamp(60px,7.2vw,104px)] font-extrabold leading-[0.88] tracking-[-0.03em] text-ink">
+              Attention
+              <br />
+              Is <span className="text-gold">Earned.</span>
+              <br />
+              Experience
+              <br />
+              Makes It Last.
+            </h2>
+            <div className="flex max-w-[480px] flex-col gap-[22px]">
+              <p className="m-0 text-[18px] leading-[1.7] text-body-ink">
+                From live activations to premium corporate experiences, we
+                combine creativity, strategy, and seamless execution to help
+                brands connect with people in meaningful ways.
+              </p>
+              <p className="m-0 text-[18px] font-bold leading-[1.7] text-ink">
+                The strongest brand moments aren&apos;t simply communicated.
+                They&apos;re experienced.
+              </p>
+              <Link
+                href="/about"
+                className="self-start border-b-2 border-gold pb-[2px] text-sm font-bold tracking-[0.02em] text-ink transition-opacity hover:opacity-70"
+              >
+                About CREDOM &rarr;
+              </Link>
+            </div>
+          </div>
+        </Container>
       </section>
 
       {/* SERVICES PREVIEW */}
@@ -91,7 +140,7 @@ export default function HomePage() {
               All services &rarr;
             </Link>
           </div>
-          <div className="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-[18px]">
+          <div className="grid grid-cols-[repeat(auto-fit,minmax(min(300px,100%),1fr))] gap-[18px]">
             {services.map((service) => (
               <ServiceCard key={service.number} service={service} />
             ))}
@@ -100,20 +149,29 @@ export default function HomePage() {
       </section>
 
       {/* MOST MARKETING IS IGNORED */}
-      <section className="overflow-hidden bg-gold py-[clamp(80px,11vw,140px)] text-paper">
-        <div className="mx-auto grid max-w-content grid-cols-[repeat(auto-fit,minmax(320px,1fr))] items-center gap-[50px] px-10">
-          <h2 className="m-0 font-display text-[clamp(48px,7vw,96px)] font-extrabold leading-[0.94] tracking-[-0.01em] text-white">
+      <section className="relative overflow-hidden bg-gold py-[clamp(80px,10vw,140px)] text-ink">
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -bottom-[0.3em] -right-[6vw] select-none font-display text-[clamp(170px,29vw,420px)] font-black leading-[0.8] tracking-[-0.04em] text-ink/[0.07] sm:-bottom-[0.15em] sm:-right-[2vw]"
+        >
+          CREDOM
+        </div>
+        <div className="relative mx-auto grid max-w-content grid-cols-1 items-center gap-8 px-10 md:grid-cols-[1.1fr_0.9fr] md:gap-[60px]">
+          <h2 className="m-0 font-display text-[clamp(68px,8.9vw,128px)] font-extrabold leading-[0.82] tracking-[-0.035em] text-ink">
+            <span className="mb-[30px] block font-body text-[12px] font-bold uppercase tracking-[0.18em] text-brown">
+              Why experiences matter
+            </span>
             Most
             <br />
             Marketing
             <br />
-            Is Ignored.
+            Is <span className="text-brown">Ignored.</span>
           </h2>
-          <div className="max-w-[440px]">
-            <p className="m-0 mb-[22px] text-[19px] leading-[1.7] text-gold-soft">
+          <div className="flex max-w-[460px] flex-col gap-5 text-[17px] leading-[1.7] md:text-[19px]">
+            <p className="m-0 text-[#3F2A12]">
               Consumers scroll past ads. Skip commercials. Forget campaigns.
             </p>
-            <p className="m-0 text-[19px] font-semibold leading-[1.7] text-white">
+            <p className="m-0 font-bold text-ink">
               But experiences? Experiences create emotion, conversation, and
               memory. Brands that win today don&apos;t just market to people.
               They involve them.
@@ -122,72 +180,78 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* HOW WE WORK */}
-      <section className="mx-auto max-w-content px-10 py-[clamp(80px,10vw,120px)]">
-        <div className="mb-[52px] max-w-[720px]">
-          <Eyebrow className="mb-[14px]">Our Process &mdash; 4D1M</Eyebrow>
-          <h2 className="m-0 mb-5 font-display text-[clamp(38px,5vw,64px)] font-bold leading-none tracking-[-0.01em] text-ink">
-            How We Work
-          </h2>
-          <p className="m-0 text-[18px] leading-[1.7] text-body-muted">
-            Great experiences don&apos;t happen by chance. Every campaign
-            follows an intentional yet flexible process that takes ideas from
-            insight to full-spectrum results.
-          </p>
-        </div>
-        <div className="flex flex-col gap-[14px]">
-          {processSteps.map((step) => (
-            <div
-              key={step.label}
-              className={`grid grid-cols-1 items-center gap-2 rounded-card px-[38px] py-[30px] sm:grid-cols-[200px_1fr] sm:gap-6 ${
-                step.highlight
-                  ? "border border-gold bg-gold text-ink"
-                  : "border border-line bg-white text-ink"
-              }`}
-            >
-              <div className="flex items-center gap-[14px]">
-                <span
-                  className={`h-[10px] w-[10px] shrink-0 rounded-full ${
-                    step.highlight ? "bg-ink" : stepDotClasses[step.label] ?? "bg-gold"
-                  }`}
-                />
-                <h3 className="m-0 font-display text-[30px] font-bold">
-                  {step.label}
-                </h3>
-              </div>
-              <p
-                className={`m-0 text-[16px] leading-[1.65] ${
-                  step.highlight ? "opacity-[0.85]" : "text-body-muted"
-                }`}
-              >
-                {step.description}
-              </p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* WHAT WE'VE DONE — headline, the case study, then the client roster as a closing rail */}
-      <section className="flex flex-col bg-paper-2 pb-[clamp(80px,10vw,120px)] pt-12 md:pt-[clamp(80px,10vw,120px)]">
+      {/* HOW WE WORK — 4D1M */}
+      <section className="bg-white py-[clamp(72px,10vw,120px)]">
         <Container>
-          <div className="max-w-[720px]">
-            <Eyebrow className="mb-[14px]">What we&apos;ve done</Eyebrow>
-            <h2 className="m-0 font-display text-[clamp(38px,5vw,64px)] font-bold leading-none tracking-[-0.01em] text-ink">
-              Work that moved people.
+          <div className="max-w-[760px]">
+            <Eyebrow className="mb-[18px]">Our Process &mdash; 4D1M</Eyebrow>
+            <h2 className="m-0 font-display text-[clamp(60px,7.8vw,112px)] font-extrabold leading-[0.85] tracking-[-0.03em] text-ink">
+              From Insight
+              <br />
+              To <span className="text-gold">Impact.</span>
             </h2>
+            <p className="m-0 mt-6 text-[18px] leading-[1.7] text-body-muted">
+              Great experiences don&apos;t happen by chance. Every campaign
+              follows an intentional yet flexible process that takes ideas from
+              insight to full-spectrum results.
+            </p>
+          </div>
+          <div className="mt-11 border-t border-line md:mt-16">
+            {processSteps.map((step) =>
+              step.highlight ? (
+                <article
+                  key={step.label}
+                  className="grid grid-cols-1 gap-[10px] rounded-card bg-gold px-5 py-7 text-ink md:-mx-7 md:grid-cols-[110px_260px_1fr] md:items-center md:gap-[30px] md:px-7 md:py-10"
+                >
+                  <span className="text-[12px] font-bold uppercase tracking-[0.15em] text-brown">
+                    {step.number}
+                  </span>
+                  <h3 className="m-0 flex items-center gap-3 font-display text-[30px] font-bold leading-none md:text-[40px]">
+                    <span className="h-[10px] w-[10px] shrink-0 rounded-full bg-ink" />
+                    {step.label}
+                  </h3>
+                  <p className="m-0 max-w-[620px] text-[16px] leading-[1.7] text-[#3F2A12]">
+                    {step.description}
+                  </p>
+                </article>
+              ) : (
+                <article
+                  key={step.label}
+                  className="grid grid-cols-1 gap-[10px] border-b border-line py-7 md:grid-cols-[110px_260px_1fr] md:items-center md:gap-[30px] md:py-10"
+                >
+                  <span className="text-[12px] font-bold uppercase tracking-[0.15em] text-gold-deep">
+                    {step.number}
+                  </span>
+                  <h3 className="m-0 flex items-center gap-3 font-display text-[30px] font-bold leading-none text-ink md:text-[40px]">
+                    <span
+                      className={`h-[10px] w-[10px] shrink-0 rounded-full ${
+                        stepDotClasses[step.label] ?? "bg-gold"
+                      }`}
+                    />
+                    {step.label}
+                  </h3>
+                  <p className="m-0 max-w-[620px] text-[16px] leading-[1.7] text-body-muted">
+                    {step.description}
+                  </p>
+                </article>
+              )
+            )}
           </div>
         </Container>
+      </section>
 
-        <Container className="mt-10 md:mt-[52px]">
-          <div className="grid grid-cols-[repeat(auto-fit,minmax(320px,1fr))] gap-5">
+      {/* WHAT WE'VE DONE — the case study carries the section heading; the client roster closes as a rail */}
+      <section className="flex flex-col bg-paper-2 py-[clamp(80px,10vw,120px)]">
+        <Container>
+          <div className="grid grid-cols-[repeat(auto-fit,minmax(min(320px,100%),1fr))] gap-5">
             {caseStudies.map((study) => {
               const t = caseStudyThemeClasses[study.theme];
               return (
                 <article
                   key={study.client}
-                  className={`grid overflow-hidden rounded-block md:grid-cols-[minmax(280px,2fr)_3fr] ${t.card}`}
+                  className="grid items-center gap-8 md:grid-cols-[minmax(280px,2fr)_3fr] md:gap-14"
                 >
-                  <div className="relative aspect-[4/3] md:aspect-auto md:min-h-full">
+                  <div className="relative aspect-[4/3] overflow-hidden rounded-block">
                     <Image
                       src={study.image.src}
                       alt={study.image.alt}
@@ -196,15 +260,13 @@ export default function HomePage() {
                       className="object-cover"
                     />
                   </div>
-                  <div className="flex flex-col gap-[18px] p-[clamp(40px,4vw,56px)]">
-                    <span
-                      className={`text-[12px] font-bold uppercase tracking-eyebrow ${t.category}`}
-                    >
+                  {/* Copy sits directly on the section background — no card behind it */}
+                  <div className="flex flex-col gap-[18px] text-ink">
+                    {/* Section heading lives inside the copy column, beside the image */}
+                    <Eyebrow>What we&apos;ve done</Eyebrow>
+                    <h2 className="m-0 font-display text-[clamp(38px,5vw,64px)] font-bold leading-none tracking-[-0.01em] text-ink">
                       {study.category}
-                    </span>
-                    <h3 className="m-0 font-display text-[clamp(26px,2.8vw,36px)] font-bold leading-[1.1]">
-                      {study.client}
-                    </h3>
+                    </h2>
                     {study.description.map((paragraph) => (
                       <p
                         key={paragraph}
@@ -239,7 +301,7 @@ export default function HomePage() {
               {clients.map((client, i) => (
                 <div
                   key={client.name}
-                  className={`flex items-center justify-center py-4 md:py-0 ${
+                  className={`flex items-center justify-start py-4 md:py-0 ${
                     i < clients.length - 1
                       ? "border-b border-line md:border-b-0"
                       : ""
@@ -261,7 +323,14 @@ export default function HomePage() {
       </section>
 
       {/* CTA */}
-      <CtaBand heading="Let's make something they'll remember." />
+      <CtaBand
+        heading={
+          <>
+            Let&apos;s make something they&apos;ll{" "}
+            <span className="text-gold">remember.</span>
+          </>
+        }
+      />
     </>
   );
 }

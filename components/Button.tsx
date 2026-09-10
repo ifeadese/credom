@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-type Variant = "gold" | "outline";
+type Variant = "gold" | "outline" | "outline-light";
 type Size = "md" | "lg";
 
 const base =
@@ -9,6 +9,8 @@ const base =
 const variants: Record<Variant, string> = {
   gold: "bg-gold text-ink",
   outline: "border border-ink text-ink",
+  /** Outline for dark surfaces (paper text on ink). */
+  "outline-light": "border border-paper text-paper",
 };
 
 const sizes: Record<Size, string> = {

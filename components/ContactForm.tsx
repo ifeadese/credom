@@ -74,7 +74,7 @@ export default function ContactForm() {
       )}
 
       <form onSubmit={handleSubmit}>
-        <div className="mb-[22px] grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-[22px]">
+        <div className="mb-[22px] grid grid-cols-[repeat(auto-fit,minmax(min(200px,100%),1fr))] gap-[22px]">
           <div>
             <label htmlFor="contact-name" className={labelTextClass}>
               Full Name
