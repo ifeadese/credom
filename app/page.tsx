@@ -70,7 +70,7 @@ export default function HomePage() {
             We create moments people don&apos;t just attend;{" "}
             <span className="text-gold">they remember.</span>
           </h1>
-          <div className="mt-7 flex flex-col items-start gap-7 sm:mt-14 md:flex-row md:items-end md:justify-between md:gap-10">
+          <div className="mt-7 sm:mt-14">
             <div>
               <div className="flex flex-wrap gap-[14px] max-sm:flex-col">
                 <Button href="/contact" className="max-sm:w-full">
@@ -84,22 +84,6 @@ export default function HomePage() {
                   Explore Services
                 </Button>
               </div>
-            </div>
-            <div className="hidden flex-col items-start gap-2 text-[11px] font-bold uppercase tracking-[0.2em] text-muted-dark md:flex">
-              Explore CREDOM
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth={1.8}
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                aria-hidden="true"
-                className="h-[22px] w-[22px] text-gold"
-              >
-                <path d="M12 5v14" />
-                <path d="m6 13 6 6 6-6" />
-              </svg>
             </div>
           </div>
         </div>
