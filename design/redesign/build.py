@@ -489,8 +489,7 @@ def home(glass=False):
     <h1>We create moments people don't just attend; <em>they remember.</em></h1>
     <div class="hero-bottom">
       <div>
-        <p class="lede">CREDOM transforms ideas into immersive activations, strategic experiences, and memorable brand moments designed to capture attention and leave lasting impact.</p>
-        <div class="hero-cta"><a href="#" class="btn">Schedule a Chat</a><a href="#" class="btn btn-outline">Explore Services</a></div>
+        <div class="hero-cta" style="margin-top:0;"><a href="#" class="btn">Schedule a Chat</a><a href="#" class="btn btn-outline">Explore Services</a></div>
       </div>
       <div class="scroll-cue">Explore CREDOM {DOWN}</div>
     </div>
