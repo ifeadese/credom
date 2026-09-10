@@ -118,7 +118,7 @@ export default function Nav() {
               })}
 
               <Link
-                href="/contact"
+                href="/schedule"
                 className="shrink-0 whitespace-nowrap rounded-btn bg-gold px-[22px] py-[11px] font-body text-sm font-bold tracking-[0.02em] text-ink transition-opacity hover:opacity-90"
               >
                 Schedule a Chat
@@ -128,7 +128,7 @@ export default function Nav() {
             {/* Mobile: CTA pill + hamburger */}
             <div className="flex shrink-0 items-center gap-2 min-[400px]:gap-3 md:hidden">
               <Link
-                href="/contact"
+                href="/schedule"
                 className="shrink-0 whitespace-nowrap rounded-btn bg-gold px-3 py-[9px] font-body text-xs font-bold tracking-[0.02em] text-ink transition-opacity hover:opacity-90 min-[400px]:px-[14px] min-[400px]:text-[13px]"
               >
                 Schedule a Chat

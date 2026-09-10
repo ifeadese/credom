@@ -71,8 +71,8 @@ npm run lint
 ```
 
 ### Project structure
-- `app/` — routes: `/` (Home), `/about`, `/services`, `/contact`, plus `sitemap.ts` / `robots.ts`.
-- `components/` — `Logo`, `Nav`, `Footer`, and layout primitives (`Button`, `Eyebrow`, `Container`, `CtaBand`, `ImagePlaceholder`, `ServiceCard`, `ContactForm`).
+- `app/` — routes: `/` (Home), `/about`, `/services`, `/contact`, `/schedule` (Calendly), plus `sitemap.ts` / `robots.ts`.
+- `components/` — `Logo`, `Nav`, `Footer`, and layout primitives (`Button`, `Eyebrow`, `Container`, `CtaBand`, `ImagePlaceholder`, `ServiceCard`, `ContactForm`, `ScheduleEmbed`).
 - `lib/` — copy/content data (`services.ts`, `content.ts`) so text + color themes live in one place.
 - Design tokens (colors, fonts, radii) live in `tailwind.config.ts`; no hardcoded hex in components.
 
@@ -81,7 +81,12 @@ npm run lint
 - Client-side validation requires a name and a valid email; a hidden honeypot field backs up FormBold's spam protection.
 - Set the same env var in Vercel's project settings before deploying.
 
+### Schedule a Chat (Calendly)
+- Every "Schedule a Chat" button links to `/schedule`, which embeds a Calendly event type inline via `react-calendly`.
+- Set `NEXT_PUBLIC_CALENDLY_URL` to the event's scheduling link (Calendly → Event Types → Share → Copy link). The fallback lives in `lib/calendly.ts`.
+- Invitee questions (company, service interest, project notes) are configured on the Calendly event itself, not in this repo.
+
 ### Deploy (Vercel)
 1. Import the repo into Vercel (framework auto-detected as Next.js).
-2. Add `NEXT_PUBLIC_FORMBOLD_ENDPOINT` under Project → Settings → Environment Variables.
+2. Add `NEXT_PUBLIC_FORMBOLD_ENDPOINT` and `NEXT_PUBLIC_CALENDLY_URL` under Project → Settings → Environment Variables.
 3. Deploy.

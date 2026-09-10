@@ -10,7 +10,7 @@ export default function CtaBand({ heading }: { heading: React.ReactNode }) {
           <h2 className="m-0 mb-8 font-display text-[clamp(48px,6.1vw,88px)] font-extrabold leading-[0.94] tracking-[-0.02em] text-ink">
             {heading}
           </h2>
-          <Button href="/contact" size="lg">
+          <Button href="/schedule" size="lg">
             Schedule a Chat
           </Button>
         </div>

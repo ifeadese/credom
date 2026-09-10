@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Container from "@/components/Container";
 import Eyebrow from "@/components/Eyebrow";
 import ContactForm from "@/components/ContactForm";
+import Link from "next/link";
 import { contactDetails } from "@/lib/content";
 
 export const metadata: Metadata = {
@@ -69,6 +70,12 @@ export default function ContactPage() {
               <a href={contactDetails.phoneHref} className={sidebarLinkClass}>
                 {contactDetails.phone}
               </a>
+            </div>
+            <div className="mb-7">
+              <SidebarLabel>Prefer to pick a time?</SidebarLabel>
+              <Link href="/schedule" className={sidebarLinkClass}>
+                Schedule a 30-minute chat &rarr;
+              </Link>
             </div>
             <div className="mb-7">
               <SidebarLabel>Location</SidebarLabel>

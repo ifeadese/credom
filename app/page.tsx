@@ -73,7 +73,7 @@ export default function HomePage() {
           <div className="mt-7 sm:mt-14">
             <div>
               <div className="flex flex-wrap gap-[14px] max-sm:flex-col">
-                <Button href="/contact" className="max-sm:w-full">
+                <Button href="/schedule" className="max-sm:w-full">
                   Schedule a Chat
                 </Button>
                 <Button

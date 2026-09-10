@@ -287,3 +287,7 @@ export const formBoldFieldNames = {
 
 export const contactSuccessMessage =
   "Your message has been sent. We'll be in touch shortly to schedule your chat.";
+
+/** Schedule — /schedule page copy (the destination of every "Schedule a Chat" button). */
+export const scheduleIntro =
+  "A 30-minute conversation about the moment you want to create: your brand, the audience, the timeline, and what success looks like. Pick a slot that suits you and we'll take it from there.";
