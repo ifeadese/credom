@@ -273,7 +273,7 @@ export default function HomePage() {
                     {/* Section heading lives inside the copy column, beside the image */}
                     <Eyebrow>What we&apos;ve done</Eyebrow>
                     <h2 className="m-0 font-display text-[clamp(38px,5vw,64px)] font-bold leading-none tracking-[-0.01em] text-ink">
-                      Work that moved people.
+                      {study.category}
                     </h2>
                     {study.description.map((paragraph) => (
                       <p
