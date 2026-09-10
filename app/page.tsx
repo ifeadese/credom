@@ -248,18 +248,9 @@ export default function HomePage() {
         </Container>
       </section>
 
-      {/* WHAT WE'VE DONE — headline, the case study, then the client roster as a closing rail */}
-      <section className="flex flex-col bg-paper-2 pb-[clamp(80px,10vw,120px)] pt-12 md:pt-[clamp(80px,10vw,120px)]">
+      {/* WHAT WE'VE DONE — the case study carries the section heading; the client roster closes as a rail */}
+      <section className="flex flex-col bg-paper-2 py-[clamp(80px,10vw,120px)]">
         <Container>
-          <div className="max-w-[720px]">
-            <Eyebrow className="mb-[14px]">What we&apos;ve done</Eyebrow>
-            <h2 className="m-0 font-display text-[clamp(38px,5vw,64px)] font-bold leading-none tracking-[-0.01em] text-ink">
-              Work that moved people.
-            </h2>
-          </div>
-        </Container>
-
-        <Container className="mt-10 md:mt-[52px]">
           <div className="grid grid-cols-[repeat(auto-fit,minmax(320px,1fr))] gap-5">
             {caseStudies.map((study) => {
               const t = caseStudyThemeClasses[study.theme];
@@ -279,11 +270,11 @@ export default function HomePage() {
                   </div>
                   {/* Copy sits directly on the section background — no card behind it */}
                   <div className="flex flex-col gap-[18px] text-ink">
-                    <span
-                      className={`text-[12px] font-bold uppercase tracking-eyebrow ${t.category}`}
-                    >
-                      {study.category}
-                    </span>
+                    {/* Section heading lives inside the copy column, beside the image */}
+                    <Eyebrow>What we&apos;ve done</Eyebrow>
+                    <h2 className="m-0 font-display text-[clamp(38px,5vw,64px)] font-bold leading-none tracking-[-0.01em] text-ink">
+                      Work that moved people.
+                    </h2>
                     {study.description.map((paragraph) => (
                       <p
                         key={paragraph}
