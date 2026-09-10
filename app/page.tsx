@@ -58,11 +58,11 @@ export default function HomePage() {
         />
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute right-[8%] top-[12%] h-[640px] w-[640px] rounded-full border border-gold/50 max-md:hidden"
+          className="pointer-events-none absolute right-[8%] top-[12%] h-[640px] w-[640px] rounded-full border border-gold/25 max-md:hidden"
         />
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute right-[calc(8%+96px)] top-[calc(12%+96px)] h-[448px] w-[448px] rounded-full border border-gold/20 max-md:hidden"
+          className="pointer-events-none absolute right-[calc(8%+96px)] top-[calc(12%+96px)] h-[448px] w-[448px] rounded-full border border-gold/10 max-md:hidden"
         />
         <div className="relative mx-auto flex w-full max-w-content flex-col justify-end px-10 pb-16 pt-4 sm:min-h-[820px] sm:pb-[88px] sm:pt-[140px]">
           <Eyebrow tone="gold">Integrated Brand Experience Agency</Eyebrow>
