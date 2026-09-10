@@ -3,6 +3,29 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    /*
+     * One horizontal gutter for every page-level column (Container, nav, footer,
+     * full-bleed panels). 20px on phones so text blocks are not squeezed, 32px
+     * on tablets, 40px from 1024px up (DESIGN_SPEC §1 "Spacing & shape").
+     */
+    --gutter: 20px;
+    /* Distance from the viewport edge to the content column's text edge. */
+    --edge: max(var(--gutter), calc((100vw - 1240px) / 2 + var(--gutter)));
+  }
+
+  @media (min-width: 640px) {
+    :root {
+      --gutter: 32px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    :root {
+      --gutter: 40px;
+    }
+  }
+
   html {
     scroll-behavior: smooth;
   }

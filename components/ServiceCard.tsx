@@ -6,7 +6,7 @@ export default function ServiceCard({ service }: { service: Service }) {
 
   return (
     <div
-      className={`flex min-h-[220px] flex-col justify-between rounded-card px-[34px] py-[38px] ${t.card}`}
+      className={`flex min-h-[220px] flex-col justify-between rounded-card px-6 py-8 sm:px-[34px] sm:py-[38px] ${t.card}`}
     >
       <span className={`font-display text-[22px] font-bold ${t.number}`}>
         {service.number}

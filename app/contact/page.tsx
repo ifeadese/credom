@@ -48,41 +48,43 @@ export default function ContactPage() {
       </section>
 
       {/* BODY */}
-      <section className="mx-auto grid max-w-content grid-cols-[repeat(auto-fit,minmax(min(320px,100%),1fr))] items-start gap-[60px] px-10 py-[clamp(70px,9vw,110px)]">
-        {/* Form */}
-        <ContactForm />
+      <section className="py-[clamp(70px,9vw,110px)]">
+        <Container className="grid grid-cols-[repeat(auto-fit,minmax(min(320px,100%),1fr))] items-start gap-[60px]">
+          {/* Form */}
+          <ContactForm />
 
-        {/* Sidebar */}
-        <aside className="rounded-block bg-paper-2 p-[clamp(36px,4vw,48px)]">
-          <h2 className="m-0 mb-[30px] font-display text-[30px] font-bold text-ink">
-            Reach us directly
-          </h2>
-          <div className="mb-7">
-            <SidebarLabel>Email</SidebarLabel>
-            <a href={`mailto:${contactDetails.email}`} className={sidebarLinkClass}>
-              {contactDetails.email}
-            </a>
-          </div>
-          <div className="mb-7">
-            <SidebarLabel>Phone</SidebarLabel>
-            <a href={contactDetails.phoneHref} className={sidebarLinkClass}>
-              {contactDetails.phone}
-            </a>
-          </div>
-          <div className="mb-7">
-            <SidebarLabel>Location</SidebarLabel>
-            <p className="m-0 text-[16px] leading-[1.7] text-body-ink">
-              {contactDetails.location[0]}
-              <br />
-              {contactDetails.location[1]}
-            </p>
-          </div>
-          <div className="border-t border-line-form pt-[26px]">
-            <p className="m-0 font-display text-[22px] font-semibold italic leading-[1.4] text-gold-deep">
-              We create moments people don&apos;t just attend; they remember.
-            </p>
-          </div>
-        </aside>
+          {/* Sidebar */}
+          <aside className="rounded-block bg-paper-2 p-[clamp(24px,4vw,48px)]">
+            <h2 className="m-0 mb-[30px] font-display text-[30px] font-bold text-ink">
+              Reach us directly
+            </h2>
+            <div className="mb-7">
+              <SidebarLabel>Email</SidebarLabel>
+              <a href={`mailto:${contactDetails.email}`} className={sidebarLinkClass}>
+                {contactDetails.email}
+              </a>
+            </div>
+            <div className="mb-7">
+              <SidebarLabel>Phone</SidebarLabel>
+              <a href={contactDetails.phoneHref} className={sidebarLinkClass}>
+                {contactDetails.phone}
+              </a>
+            </div>
+            <div className="mb-7">
+              <SidebarLabel>Location</SidebarLabel>
+              <p className="m-0 text-[16px] leading-[1.7] text-body-ink">
+                {contactDetails.location[0]}
+                <br />
+                {contactDetails.location[1]}
+              </p>
+            </div>
+            <div className="border-t border-line-form pt-[26px]">
+              <p className="m-0 font-display text-[22px] font-semibold italic leading-[1.4] text-gold-deep">
+                We create moments people don&apos;t just attend; they remember.
+              </p>
+            </div>
+          </aside>
+        </Container>
       </section>
     </>
   );

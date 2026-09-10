@@ -64,7 +64,7 @@ export default function HomePage() {
           aria-hidden="true"
           className="pointer-events-none absolute right-[calc(8%+96px)] top-[calc(12%+96px)] h-[448px] w-[448px] rounded-full border border-gold/10 max-md:hidden"
         />
-        <div className="relative mx-auto flex w-full max-w-content flex-col justify-end px-10 pb-16 pt-4 sm:min-h-[820px] sm:pb-[88px] sm:pt-[140px]">
+        <Container className="relative flex flex-col justify-end pb-16 pt-4 sm:min-h-[820px] sm:pb-[88px] sm:pt-[140px]">
           <Eyebrow tone="gold">Integrated Brand Experience Agency</Eyebrow>
           <h1 className="m-0 mt-5 max-w-[1000px] font-display text-[clamp(50px,8.3vw,120px)] font-extrabold leading-[0.9] tracking-[-0.03em] text-paper sm:mt-7 sm:leading-[0.88]">
             We create moments people don&apos;t just attend;{" "}
@@ -86,7 +86,7 @@ export default function HomePage() {
               </div>
             </div>
           </div>
-        </div>
+        </Container>
       </section>
 
       {/* INTRO */}
@@ -156,7 +156,7 @@ export default function HomePage() {
         >
           CREDOM
         </div>
-        <div className="relative mx-auto grid max-w-content grid-cols-1 items-center gap-8 px-10 md:grid-cols-[1.1fr_0.9fr] md:gap-[60px]">
+        <Container className="relative grid grid-cols-1 items-center gap-8 md:grid-cols-[1.1fr_0.9fr] md:gap-[60px]">
           <h2 className="m-0 font-display text-[clamp(68px,8.9vw,128px)] font-extrabold leading-[0.82] tracking-[-0.035em] text-ink">
             <span className="mb-[30px] block font-body text-[12px] font-bold uppercase tracking-[0.18em] text-brown">
               Why experiences matter
@@ -177,7 +177,7 @@ export default function HomePage() {
               They involve them.
             </p>
           </div>
-        </div>
+        </Container>
       </section>
 
       {/* HOW WE WORK — 4D1M */}
