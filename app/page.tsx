@@ -284,9 +284,6 @@ export default function HomePage() {
                     >
                       {study.category}
                     </span>
-                    <h3 className="m-0 font-display text-[clamp(26px,2.8vw,36px)] font-bold leading-[1.1]">
-                      {study.client}
-                    </h3>
                     {study.description.map((paragraph) => (
                       <p
                         key={paragraph}
