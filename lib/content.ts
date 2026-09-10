@@ -1,5 +1,6 @@
 /** Home — How We Work (4D1M) process rows. The Measure row is gold-highlighted. */
 export type ProcessStep = {
+  number: string;
   label: string;
   description: string;
   highlight?: boolean;
@@ -7,29 +8,34 @@ export type ProcessStep = {
 
 export const processSteps: ProcessStep[] = [
   {
+    number: "01",
     label: "Discover",
     description:
-      "We dive deep into your brand, audience, objectives, and media environment. Before any concept is sketched, we understand what success looks and feels like.",
+      "We dive deep into your brand, audience, objectives, competitive landscape, and media environment. Before any concept is sketched, we understand what success looks and feels like at every level.",
   },
   {
+    number: "02",
     label: "Design",
     description:
-      "We develop bold, insight-led concepts and immersive integrated experience strategies that connect your brand story across all channels.",
+      "We develop bold, insight-led concepts and immersive integrated experience strategies that connect your brand story across all marketing channels.",
   },
   {
+    number: "03",
     label: "Develop",
     description:
-      "We plan every detail from logistics and production to media scheduling and site selection, ensuring every channel is deployed with precision.",
+      "We plan every detail from logistics, production, and execution frameworks to media scheduling and site selection, ensuring every channel is aligned and deployed with precision.",
   },
   {
+    number: "04",
     label: "Deliver",
     description:
-      "We execute every element end-to-end, bringing the campaign to life with the same standard of precision and excellence across every touchpoint.",
+      "We seamlessly execute every element end-to-end, bringing the campaign to life with the same standard of precision, control, and excellence across every touchpoint.",
   },
   {
+    number: "05",
     label: "Measure",
     description:
-      "We evaluate performance across every channel, quantifying reach, engagement and commercial impact to optimise for future growth.",
+      "We evaluate performance across every channel, quantifying reach, engagement, and commercial impact to optimise for future growth.",
     highlight: true,
   },
 ];
@@ -106,14 +112,24 @@ export const caseStudies: CaseStudy[] = [
   },
 ];
 
+/** About — hero intro paragraphs (from the company's September 2026 draft). */
+export const aboutIntro = [
+  "We are an integrated brand experience agency built to shape how people encounter, understand, and connect with brands across every touchpoint.",
+  "We unify strategy, creativity, and execution to design the full arc of a brand's presence; from immersive live experiences and cultural activations to out-of-home and media channels that extend reach and sustain relevance.",
+  "Every campaign is engineered with an insight-led strategy to resonate, inspire action, and leave a lasting imprint. From high-energy brand activations and corporate events to broadcast media and out-of-home executions, we approach every project with intentionality and a deep understanding of audience behaviour.",
+  "We pair strategic rigour with creative excellence to ensure every brand interaction lands with precision and purpose.",
+];
+
 /** About — Why Choose Us narrative. */
 export const whyChooseUs = {
   paragraphs: [
-    "We hand you a system. Choosing CREDOM means partnering with a team that operates across every dimension of your brand's presence, with the strategic range and executional depth to make each one count. We are integrators by design — bringing together the broad reach of traditional media and OOH with the depth and intimacy of experiential marketing, all governed by one strategic vision.",
-    "With deep roots across FMCG, fintech, telecoms, banking, and lifestyle sectors, we arrive at every brief with relevant context and a proven playbook, not guesswork. We don't just plan your campaigns — we craft every visual and spatial element, and every audience interaction, to draw people deeper into your brand world.",
+    "We hand you a system. Choosing CREDOM means partnering with a team that operates across every dimension of your brand's presence, with the strategic range and executional depth to make each one count.",
+    "We are integrators by design. We bring together the broad reach of traditional media and OOH with the depth and intimacy of experiential marketing, all governed by one strategic vision.",
+    "With deep roots across FMCG, fintech, telecoms, banking, and lifestyle sectors, we arrive at every brief with relevant context and a proven playbook, not guesswork.",
+    "Our creative production capabilities mean we do not just plan your campaigns. We craft every visual and spatial element, and every audience interaction, to draw people deeper into your brand world.",
   ],
   quote:
-    "Our end-to-end project management ensures nothing falls through the gaps — memorable for your audience, effortless for you.",
+    "Our end-to-end project management ensures nothing falls through the gaps, from the first brief to the final impression.",
 };
 
 /** About — What We Stand For principle cards. */
@@ -162,12 +178,12 @@ export const principles: Principle[] = [
     number: "01",
     title: "People-Centricity",
     description:
-      "We design for humans first, brands second. Every experience starts with one question: how do we want people to feel?",
+      "We design for humans first, brands second. Every experience we create starts with one question: how do we want people to feel?",
     theme: "magenta",
   },
   {
     number: "02",
-    title: "Reliability & Detail",
+    title: "Reliability & Attention to Detail",
     description:
       "We do what we say, deliver on our promise, and sweat the small things so the big moments land exactly as they should.",
     theme: "brown",
@@ -176,14 +192,14 @@ export const principles: Principle[] = [
     number: "03",
     title: "Innovation",
     description:
-      "Every brief is an invitation to push further. We challenge the expected and only settle when the idea is genuinely better.",
+      "Every brief is an invitation to push further. We challenge the expected approach and explore what has not been done.",
     theme: "gold",
   },
   {
     number: "04",
     title: "Excellence",
     description:
-      "We hold ourselves to a standard beyond delivery — every touchpoint, visible and invisible, reflects the full measure of our craft.",
+      "Excellence at CREDOM means that every touchpoint, visible and invisible, reflects the full measure of our craft.",
     theme: "teal",
   },
   {
@@ -199,7 +215,8 @@ export const principles: Principle[] = [
 export type TeamMember = {
   name: string;
   role: string;
-  bio: string;
+  /** Bio copy, one entry per paragraph. */
+  bio: string[];
   /** Color of the offset block behind the photo. */
   backdrop: "gold" | "brown";
   /** Headshot under public/. */
@@ -211,10 +228,22 @@ export const team: TeamMember[] = [
     name: "Pelumi Adese",
     role: "Business Lead / COO",
     photo: "/images/team-pelumi-adese.jpg",
-    bio: "An experiential marketing and brand experience professional with over a decade of experience translating business strategy into immersive, high-impact brand engagements across Nigeria, the UK, and the wider African market. Her work bridges strategy and creativity to deliver experiences that resonate deeply — spanning FMCG, fintech, banking, and lifestyle, with brands including Midea, Visa, Reckitt Benckiser and Total.",
+    bio: [
+      "Pelumi Adese is an experiential marketing and brand experience professional with over a decade of experience translating business strategy into immersive, high-impact brand engagements.",
+      "Having worked across both agency and client-side environments in Nigeria, the United Kingdom, and the wider African market, she brings a rare dual perspective, aligning commercial objectives with culturally intentional execution.",
+      "Her portfolio spans FMCG, fintech, technology, banking, and lifestyle sectors, with work including Midea, Visa Nigeria, Reckitt Benckiser, Total Nigeria, Renmoney, Eyowo, Kwiksell, Useforms, Usepass, Nutzy, Voices for Change, Carnaby London, and Switchee in the UK.",
+    ],
     backdrop: "gold",
   },
 ];
+
+/** Contact — "Reach us directly" sidebar details. */
+export const contactDetails = {
+  email: "hello@credomlimited.com",
+  phone: "+234 807 777 2827",
+  phoneHref: "tel:+2348077772827",
+  location: ["Victoria Island,", "Lagos, Nigeria."],
+};
 
 /** Contact — select field options (the 6 services + two catch-alls). */
 export const contactInterests = [

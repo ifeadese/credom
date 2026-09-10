@@ -6,7 +6,7 @@
       "x": 0,
       "y": 0,
       "w": 1440,
-      "h": 6159
+      "h": 6356
     },
     {
       "file": "HomeMobile.dc.html",
@@ -14,7 +14,7 @@
       "x": 1560,
       "y": 0,
       "w": 390,
-      "h": 7366
+      "h": 7656
     },
     {
       "file": "MenuMobile.dc.html",
@@ -28,7 +28,7 @@
       "file": "About.dc.html",
       "title": "About \u00b7 Desktop 1440",
       "x": 0,
-      "y": 7526,
+      "y": 7816,
       "w": 1440,
       "h": 4853
     },
@@ -36,7 +36,7 @@
       "file": "AboutMobile.dc.html",
       "title": "About \u00b7 Mobile 390",
       "x": 1560,
-      "y": 7526,
+      "y": 7816,
       "w": 390,
       "h": 6596
     },
@@ -44,7 +44,7 @@
       "file": "Services.dc.html",
       "title": "Services \u00b7 Desktop 1440",
       "x": 0,
-      "y": 14282,
+      "y": 14572,
       "w": 1440,
       "h": 2974
     },
@@ -52,7 +52,7 @@
       "file": "ServicesMobile.dc.html",
       "title": "Services \u00b7 Mobile 390",
       "x": 1560,
-      "y": 14282,
+      "y": 14572,
       "w": 390,
       "h": 4497
     },
@@ -60,7 +60,7 @@
       "file": "Contact.dc.html",
       "title": "Contact \u00b7 Desktop 1440",
       "x": 0,
-      "y": 18939,
+      "y": 19229,
       "w": 1440,
       "h": 1652
     },
@@ -68,7 +68,7 @@
       "file": "ContactMobile.dc.html",
       "title": "Contact \u00b7 Mobile 390",
       "x": 1560,
-      "y": 18939,
+      "y": 19229,
       "w": 390,
       "h": 2078
     }
@@ -79,40 +79,40 @@
       "x": -560,
       "y": -900,
       "w": 460,
-      "text": "CREDOM site redesign \u2014 what this canvas is\n\nFour pages (Home, About, Services, Contact), each at desktop 1440 and phone 390, plus the open mobile menu.\n\nDirection: white-dominant editorial. The theme, page set and section order follow decisions already made in the repo's merge history (PRs #1\u2013#10): predominantly white surfaces with the multi-colour card system, no dark bands. What is new is the typographic scale and rhythm from Pelumi's 8 September draft \u2014 oversized Rokkitt display type, numbered hairline lists, gold accent words \u2014 plus her newer copy where it does not reintroduce anything that was removed on purpose.\n\nUI/UX Pro Max (uupm.cc) rules applied for a marketing agency: storytelling page order, bold expressive type, brand colours as section colours, case study kept visible on Home, 44px+ tap targets, labels above every field.\n\nSmall copy fixes made against the draft: 'drive deep' \u2192 'dive deep', 'Branding experience design' \u2192 'Brand experience design', and a duplicated 'every element' removed from Deliver."
+      "text": "CREDOM site redesign \u2014 what this canvas is\n\nFour pages (Home, About, Services, Contact), each at desktop 1440 and phone 390, plus the open mobile menu.\n\nDirection: white-dominant editorial. The theme, page set and section order follow decisions already made in the repo's merge history (PRs #1\u2013#10): predominantly white surfaces with the multi-colour card system; the Home hero is the single dark surface, chosen by the owner from the first canvas. What is new is the typographic scale and rhythm from Pelumi's 8 September draft \u2014 oversized Rokkitt display type, numbered hairline lists, gold accent words \u2014 plus her newer copy where it does not reintroduce anything that was removed on purpose.\n\nUI/UX Pro Max (uupm.cc) rules applied for a marketing agency: storytelling page order, bold expressive type, brand colours as section colours, case study kept visible on Home, 44px+ tap targets, labels above every field.\n\nSmall copy fixes made against the draft: 'drive deep' \u2192 'dive deep', 'Branding experience design' \u2192 'Brand experience design', and a duplicated 'every element' removed from Deliver."
     },
     {
       "id": "note-history",
       "x": -560,
       "y": -330,
       "w": 460,
-      "text": "Deliberately NOT reintroduced (removed earlier by Pelumi's direction)\n\n\u2022 Fetuga S.O. / Project Manager profile \u2014 removed in PR #4. The About team section stays a single feature for the Business Lead / COO.\n\u2022 'Meet the Force' eyebrow and 'The people behind the moments.' headline \u2014 removed in PR #6. The role eyebrow ('Meet the Business Lead / COO') opens the section.\n\u2022 Closing 'Schedule a Chat' bands on About and Services \u2014 removed in PR #6. Only Home keeps one.\n\u2022 Footer nav links, logo, tagline and address \u2014 removed in PR #6 (tagline first in Aug). Footer stays one row: copyright plus mail and Instagram icons.\n\u2022 Midea Pro Shop and Terra case studies \u2014 replaced by AltDrive 'Future in Motion' and removed in PR #9. Only the AltDrive card appears; no Work page.\n\u2022 Careers section and nav link \u2014 removed in PR #3.\n\u2022 Street address \u2014 removed in Aug; only 'Victoria Island, Lagos, Nigeria'.\n\u2022 Large dark surfaces \u2014 re-themed white in PR #1.\n\nPelumi's 8 Sept draft contains all of these, so worth confirming with her whether any should come back."
+      "text": "Deliberately NOT reintroduced (removed earlier by Pelumi's direction)\n\n\u2022 Fetuga S.O. / Project Manager profile \u2014 removed in PR #4. The About team section stays a single feature for the Business Lead / COO.\n\u2022 'Meet the Force' eyebrow and 'The people behind the moments.' headline \u2014 removed in PR #6. The role eyebrow ('Meet the Business Lead / COO') opens the section.\n\u2022 Closing 'Schedule a Chat' bands on About and Services \u2014 removed in PR #6. Only Home keeps one.\n\u2022 Footer nav links, logo, tagline and address \u2014 removed in PR #6 (tagline first in Aug). Footer stays one row: copyright plus mail and Instagram icons.\n\u2022 Midea Pro Shop and Terra case studies \u2014 replaced by AltDrive 'Future in Motion' and removed in PR #9. Only the AltDrive card appears; no Work page.\n\u2022 Careers section and nav link \u2014 removed in PR #3.\n\u2022 Street address \u2014 removed in Aug; only 'Victoria Island, Lagos, Nigeria'.\n\u2022 Large dark surfaces \u2014 re-themed white in PR #1. Exception, by the owner's call on 10 Sept: the Home hero uses the dark design from the first canvas; every other surface stays light.\n\nPelumi's 8 Sept draft contains all of these, so worth confirming with her whether any should come back."
     },
     {
       "id": "note-home",
       "x": -560,
       "y": 180,
       "w": 460,
-      "text": "Home\n\nSame section order as the live site; what changes is scale and rhythm:\n\u2022 Hero keeps the white split with the 'Attention Is Earned' photo; the H1 goes up to 118px.\n\u2022 The statement 'We create moments people don't just attend; they remember.' becomes an 84px display block instead of a paragraph.\n\u2022 'Most Marketing Is Ignored' gets a faint CREDOM watermark and 128px type.\n\u2022 4D1M becomes a numbered hairline list under the draft's 'From Insight To Impact.' heading, with the draft's fuller step copy; Measure stays the gold row.\n\u2022 'What we've done' keeps the single AltDrive card and the logo rail beneath it, exactly as shipped after PR #9.\n\nMobile: the hero photo sits as a 4:3 band under the hero text instead of being hidden; buttons go full width; process rows stack; logos stack one per row with hairlines."
+      "text": "Home \u2014 BUILT (branch claude/site-design-mobile-views)\n\n\u2022 Hero is the dark version from the first canvas, kept on the owner's instruction: ink ground, the 'Attention Is Earned' photo fading in from the right, the draft's headline as the H1 ('they remember.' in gold), Schedule a Chat + Explore Services, scroll cue. The one dark surface on the site.\n\u2022 'Attention Is Earned. Experience Makes It Last.' becomes the cream intro chapter under it.\n\u2022 'Most Marketing Is Ignored' gets a faint CREDOM watermark and 128px type.\n\u2022 4D1M is a numbered hairline list under 'From Insight To Impact.' with the draft's fuller step copy; Measure stays the gold row.\n\u2022 'What we've done' keeps the single AltDrive card and the logo rail, exactly as shipped after PR #9.\n\nMobile: the photo is a 300px band above the headline; buttons go full width; process rows stack; logos stack one per row."
     },
     {
       "id": "note-about",
       "x": -560,
-      "y": 7706,
+      "y": 7996,
       "w": 460,
       "text": "About\n\n'Bold. Strategic. Immersive.' is staggered and sticky beside the four intro paragraphs from Pelumi's draft. The belief quote gets a paper-2 band at 58px italic. Vision (teal) and Mission (gold) carry the draft's headline statements. 'Why choose us?' stays white with the headline at display scale and the draft's four paragraphs plus the italic gold line. Values become a bento grid (2-2-2 / 3-3). The team section is the single COO feature from PR #4/#6, with the draft's three-paragraph bio."
     },
     {
       "id": "note-services",
       "x": -560,
-      "y": 14462,
+      "y": 14752,
       "w": 460,
       "text": "Services\n\nSame six colour blocks as today, now with the full capability lists from Pelumi's draft (seven items each for Corporate Events and Digital). New: a numbered jump index under the intro so visitors go straight to a service. No closing CTA band, per PR #6."
     },
     {
       "id": "note-contact",
       "x": -560,
-      "y": 19119,
+      "y": 19409,
       "w": 460,
       "text": "Contact\n\nWhite hero with the draft's 'Let's Make MAGIC.' headline and a faint watermark. The form keeps today's five fields; submit still goes to FormBold. The sidebar keeps Email and Location and adds the phone number from the draft (+234 807 777 2827) \u2014 the one new contact detail. Mobile: single column, full-width button, 52px inputs."
     },

@@ -74,54 +74,30 @@ Official CREDOM wordmark as inline SVG (`components/Logo.tsx`), traced from the 
 ## 3. Pages
 
 ### 3.1 HOME
-1. **Hero** — **white** bg (`#FFFFFF`, bottom border `#E4DDD2`). A right-side panel (44% width, `#F0EBE3`, left border `#E4DDD2`) is the **hero image placeholder** (label "Hero Image"). Content (max-width 760): gold-deep eyebrow "Integrated Brand Experience Agency"; ink H1 "Attention / Is Earned."; gold-deep subhead (Rokkitt 600) "Experience Makes It Last."; body paragraph (`#4A443D`); two buttons — **Schedule a Chat** (gold) and **Explore Services** (outline `1px` ink, ink text).
-2. **Statement** — max-width 1000, Rokkitt 600 ~clamp(30,4.6vw,58): "We create moments people don't just attend; **they remember.**" (last two words gold).
-3. **Services preview** — bg `#F0EBE3`. Header row: eyebrow "What We Do" + H2 "Full-spectrum capability." + "All services →" link (gold underline). Grid of **6 cards** (`auto-fit minmax(300px,1fr)`, gap 18, min-height 220, padding `38px 34px`, radius 3), each with a numbered label (Rokkitt 700), H3, and one-line description. Card colors & titles in order:
-   - 01 Brand Experience Strategy — **gold** bg, ink text
-   - 02 Experiential Marketing & Activation — **ink** bg, cream text, gold number
-   - 03 Corporate Events & Experiences — **magenta** bg, cream text
-   - 04 Traditional Media — **brown** bg, cream text, gold number
-   - 05 Out-of-Home (OOH) — **teal** bg, cream text
-   - 06 Digital Marketing — **ink 2** bg, cream text, gold number
-4. **"Most Marketing Is Ignored"** — **gold** bg, cream text, padding `clamp(80,11vw,140)`. Two-column (`auto-fit minmax(320px,1fr)`, gap 50, center-aligned): left H2 (Rokkitt 800, clamp(48,7vw,96), white) "Most / Marketing / Is Ignored."; right two paragraphs (2nd bold).
-5. **How We Work (4D1M)** — header: eyebrow "Our Process — 4D1M", H2 "How We Work", intro paragraph. Then **5 rows** (`gap:14px`), each a `grid-template-columns:200px 1fr` card (radius 3): colored palette dot (10px — gold, magenta, teal, brown) + label (Rokkitt 700 30px) + description. First 4 rows **white** bg with `1px #E4DDD2` border; **Measure** row gold bg / ink with an ink dot.
-6. **Businesses We’ve Served** — bg `#F0EBE3`. Order: eyebrow "What we’ve done" + H2 "Work that moved people.", then one case-study card, then eyebrow "Businesses we’ve served" + the client logo rail as a closing band (hairline rail on md+, one logo per row on mobile). Card (`auto-fit minmax(320px,1fr)`, gap 20, radius 4, padding clamp(40,4vw,56)): **FUTURE IN MOTION** — AltDrive EV Experience 2.0, Lagos (ink bg — category eyebrow gold, gold takeaway line). Card is a two-column grid on md+ (image `minmax(280px,2fr)` / text `3fr`, stacked on mobile with a 4:3 image): placeholder image (`public/images/case-studies/`), then category eyebrow, H3 title, body paragraph, bold takeaway, and a gold "Read more" button.
-7. **Clients** — **white** bg, top border `#E4DDD2`. Centered gold-deep eyebrow "Brands We've Served" + centered wrapping row of names (Rokkitt 600, clamp(24,2.8vw,36), ink): AltDrive, AltBank, Midea.
-8. **CTA band** — `#F0EBE3`, centered. H2 "Let's make something they'll remember." + Schedule a Chat button.
+1. **Hero** — **ink** bg (`#201D1B`), paper text. The photo (`/images/hero-attention.jpg`) is a 4:3 band above the copy on phones and, from `sm` up, an absolutely positioned right-hand panel (52% wide) fading into the ink ground with two layered gradients (leftwards + downwards). A 640px hairline gold ring (35% opacity) sits at the top right on `lg+`. Column (`min-height:820px` on `sm+`, `justify-content:flex-end`, padding `140px 0 88px`): gold eyebrow "Integrated Brand Experience Agency"; H1 (Rokkitt 800, `clamp(50px,8.3vw,120px)`, line-height 0.88, tracking -0.03em) "We create moments people don't just attend; **they remember.**" (last two words gold); below, a row: intro paragraph (`#C9C0B6`, max 520) + buttons **Schedule a Chat** (gold) and **Explore Services** (`outline-light`: paper border/text), and a "Explore CREDOM ↓" scroll cue on `md+`.
+2. **Intro** — paper bg. Two columns (`1.15fr .85fr`, align end): H2 (Rokkitt 800, `clamp(60px,7.2vw,104px)`, line-height 0.88) "Attention / Is **Earned.** / Experience / Makes It Last." (Earned. gold); right: two paragraphs (second bold) + "About CREDOM →" gold-underlined link.
+3. **Services preview** — unchanged: `#F0EBE3`, eyebrow "What We Do", H2 "Full-spectrum capability.", "All services →", 6 colour cards.
+4. **"Most Marketing Is Ignored"** — **gold** bg, **ink** text. Faint "CREDOM" watermark (Rokkitt 900, `clamp(170px,29vw,420px)`, ink at 7%) pinned bottom-right. Two columns: H2 `clamp(68px,8.9vw,128px)` with a brown 12px label "Why experiences matter" above and "Ignored." in **brown**; right, two paragraphs (second bold, ink).
+5. **How We Work (4D1M)** — white bg. Eyebrow "Our Process — 4D1M", H2 "From Insight / To **Impact.**" (`clamp(60px,7.8vw,112px)`), intro paragraph. Then a hairline list (`border-t #E4DDD2`): each row `110px 260px 1fr` on `md+` — number (12px, gold-deep), H3 (Rokkitt 700, 40px) with a 10px palette dot, description (`#6E665F`). Rows separated by `#E4DDD2`; the **Measure** row is a gold block (ink text, brown number, `md:-mx-7` so it outdents the rail, radius 3).
+6. **What we've done** — unchanged from PR #9: eyebrow, H2 "Work that moved people.", the single AltDrive case card, "Businesses we've served" + logo rail.
+7. **CTA band** — white bg with top hairline (was `#F0EBE3`); H2 `clamp(48px,6.1vw,88px)` "Let's make something they'll **remember.**" (gold) + Schedule a Chat.
 
 ### 3.2 ABOUT
-1. **Hero** — eyebrow "About CREDOM"; H1 stacked "Bold. / Strategic. / Immersive." (Rokkitt 800, clamp(56,10vw,128)); two-column intro paragraphs (max-width 960).
-2. **Belief quote** — Rokkitt **italic** 600, gold, clamp(30,4.6vw,58), max-width 960: "We believe the most powerful brand experiences are not merely seen or attended, they are felt."
-3. **Vision / Mission** — full-bleed 2-column split (`auto-fit minmax(320px,1fr)`): **Vision** **teal** bg, white H2 + body; **Mission** gold bg, ink H2 + two paragraphs. Copy in reference.
-4. **Why Choose Us** — white bg, bottom border `#E4DDD2`. Eyebrow "Why Us" + H2 "Why choose us?" + two-column paragraphs (max-width 1000; "We hand you a system… integrators by design…" / "deep roots across FMCG, fintech, telecoms, banking…") + italic gold pull-quote (Rokkitt 600, clamp(24,3vw,36)): "Our end-to-end project management ensures nothing falls through the gaps — memorable for your audience, effortless for you."
-5. **What We Stand For** — header (eyebrow "Our Principles", H2, intro). Grid of **5 cards** (`auto-fit minmax(300px,1fr)`, gap 18, padding `36px 32px`, radius 3), numbered:
-   - 01 People-Centricity — magenta
-   - 02 Reliability & Detail — brown
-   - 03 Innovation — gold (ink text)
-   - 04 Excellence — teal
-   - 05 Teamwork — white bg, ink text, `1px #E4DDD2` border
-6. **Team** — **`#F0EBE3`** bg, ink text. No eyebrow or section headline — the member name is the section heading. Team members stacked (gap `clamp(56,8vw,96)`), each laid out as a **two-column feature** (`360px / 1fr`, stacking to one column under `md`, gap `clamp(36,6vw,72)`, vertically centered): left = an **offset photo** (photo up to 360px wide at the headshot’s native 312:367 ratio, `#E4DDD2` border, radius 2, with a colored block offset 20px down-left behind it — gold for the COO); right = an eyebrow reading "Meet the <role>" (gold-deep, 14px, uppercase, `0.2em` tracking), which opens the section now that the headline is gone + name (Rokkitt 700, `clamp(40,5.4vw,68)`) + bio (`#6E665F`, `clamp(16,1.5vw,19)`, max-width 620).
-   - **Pelumi Adese** — Business Lead / COO (bio in reference)
+1. **Hero** — two columns (`.95fr 1.05fr`): H1 "Bold. / Strategic. / Immersive." (Rokkitt 800, `clamp(64px,8.6vw,124px)`, line 0.84) staggered (2nd line gold, indented 8%; 3rd 16%), `sticky top:120px` on `md+`; right: eyebrow "About CREDOM" + the four intro paragraphs (`lib/content.ts` `aboutIntro`).
+2. **Belief quote** — `#F0EBE3` band: 96px gold rule, then the quote in Rokkitt 600 italic gold, `clamp(32px,4vw,58px)`.
+3. **Vision / Mission** — full-bleed split, `min-height:440px`, eyebrow at top, statement at bottom: **Vision** (teal) "Redefine brand impact in Africa." + copy; **Mission** (gold, brown eyebrow) "Connection that drives growth." + two paragraphs.
+4. **Why choose us** — white, bottom hairline. Two columns (`.8fr 1.2fr`): H2 "Why / choose / **us?**" (`clamp(68px,8.9vw,128px)`, sticky on `md+`); right: eyebrow "Why Us", four paragraphs, then the italic gold-deep line above a top hairline.
+5. **What We Stand For** — eyebrow "Our Principles", H2 "Built on belief. / Driven by **principle.**" (`clamp(56px,7.2vw,104px)`), "05 Principles" label. **Bento**: `md:grid-cols-6`, cards 01–03 span 2, 04–05 span 3, `min-height:340px`, number top / title+copy bottom. Colours unchanged (magenta, brown, gold, teal, white).
+6. **Team** — unchanged layout (single COO feature); bio is now three paragraphs (`bio: string[]`).
 
 ### 3.3 SERVICES
-1. **Header** — eyebrow "Our Services" + big statement: "Our capabilities span the full spectrum of experiential marketing." (ink, roman) + italic gold continuation "Every service works independently or as part of a fully integrated campaign strategy."
-2. **6 full service blocks** (stacked, `gap:20`, padding `clamp(40,4vw,56)`, radius 4). Each block is a 2-column grid (`auto-fit minmax(280px,1fr)`, gap 32): left = number + H3 (clamp(28,3vw,38)) + description; right = bulleted capability list (custom dot bullets, 6px, `padding-left:18px`). Colors & content match the Home preview order:
-   - 01 Brand Experience Strategy — gold / ink
-   - 02 Experiential Marketing & Activation — ink / cream
-   - 03 Corporate Events & Experiences — magenta / cream
-   - 04 Traditional Media — brown / cream
-   - 05 Out-of-Home (OOH) Marketing — teal / cream
-   - 06 Digital Marketing — ink 2 / cream
-   (Full bullet lists in the reference HTML.)
+1. **Header** — unchanged statement, then a **jump index**: six `44px`-tall white chips (`#E4DDD2` border, radius 2, gold-deep number + title) linking to `#service-01…06`.
+2. **6 service blocks** — unchanged colours; each carries `id="service-NN"` + `scroll-mt-24`; descriptions and full bullet lists per the September copy (`lib/services.ts`).
+3. No closing CTA band (PR #6).
 
 ### 3.4 CONTACT
-1. **Hero** — **white** bg, bottom border `#E4DDD2`. Gold-deep eyebrow "Let's Talk"; ink H1 "From Insight / To Impact." (clamp(52,9vw,120)); intro paragraph (`#4A443D`).
-2. **Body** — 2-column (`auto-fit minmax(320px,1fr)`, gap 60, align start):
-   - **Left — form.** Fields: Full Name (required), Email (required, type email), Company/Organization (optional), "What are you interested in?" (select — the 6 services + "An integrated campaign" + "Not sure yet"), "Tell us about your project" (textarea, 5 rows). Inputs: white bg, `1px #DDD4C7` border, radius 2, padding `14px 16px`, 15px. Labels: 13px Mulish 700. Submit: **Schedule a Chat** (gold, `16px 38px`).
-     - On submit → success panel appears (bg `#F0EBE3`, left border `4px #18827B`): "Thank you. Your message is ready to send…"
-   - **Right — sidebar** (`#F0EBE3`, radius 4, padding clamp(36,4vw,48)): H2 "Reach us directly"; **Email** `hello@credomlimited.com`; **Location** — Victoria Island, Lagos, Nigeria; divider; italic gold tagline.
-
----
+1. **Hero** — white, bottom hairline. Eyebrow "Let's Talk"; H1 "Let's Make / **MAGIC.**" (`clamp(76px,10.4vw,150px)`, line 0.8, MAGIC gold); intro paragraph. Faint "MAGIC" watermark (Rokkitt 900, gold at 9%) bottom-right, clipped by the section.
+2. **Body** — unchanged form. Sidebar: Email, **Phone** (`+234 807 777 2827`, `tel:` link), Location, then the italic tagline in gold-deep. Details live in `lib/content.ts` `contactDetails`.
 
 ## 4. Interactions & Behavior
 - **Routing:** four pages. Reference uses client-side state switching with smooth `window.scrollTo({top:0})` on change; production should use real routes and scroll-reset on navigation.
@@ -131,6 +107,7 @@ Official CREDOM wordmark as inline SVG (`components/Logo.tsx`), traced from the 
   - Client validation: Name + Email required; Email must be a valid address.
   - Reference behavior: builds a `mailto:ifeoluwaadese@gmail.com` with subject `Schedule a Chat — {name}` and a body containing Name / Email / Company / Interested in / Message, then shows the success panel.
   - **Production:** replace `mailto` with a real submission via **FormBold** (chosen for cost — free tier of 100 submissions/month, paid from ~$4/mo, cheaper than Formspree). POST the form to a FormBold form endpoint configured to deliver to **ifeoluwaadese@gmail.com**. Store the endpoint URL in `.env.local` (e.g. `NEXT_PUBLIC_FORMBOLD_ENDPOINT`), never hardcode it. Keep client-side validation and the success state. Enable FormBold's spam protection in the form settings.
+- The Home hero photo panel is decorative on phones (4:3 band) — do not hide it; it is the only imagery above the fold.
 - No entrance animations are required (an earlier fade was removed because it gated visibility — do not reintroduce opacity-based entrance animations that can get stuck).
 
 ## 5. Assets

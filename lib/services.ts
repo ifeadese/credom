@@ -100,7 +100,7 @@ export const services: Service[] = [
     bullets: [
       "Brand and campaign strategy",
       "Brand exhibitions and pop-ups",
-      "Experience design and storytelling",
+      "Brand experience design and storytelling",
       "Go-to-market activation planning",
     ],
     theme: "gold",
@@ -128,12 +128,15 @@ export const services: Service[] = [
     shortDescription:
       "Polished, professionally managed events and brand-owned platforms.",
     description:
-      "We produce polished, professionally managed events and brand-owned platforms that reflect your brand's ambition, credibility, and long-term equity.",
+      "We produce polished, professionally managed events, sponsored experiences, and brand-owned platforms that reflect your brand's ambition, credibility, and long-term equity.",
     bullets: [
       "Proprietary event creation",
-      "Brand sponsorship strategy & execution",
-      "Product launches, conferences & summits",
-      "Award ceremonies, galas & cultural festivals",
+      "Brand sponsorship strategy and execution",
+      "Sponsor experience design",
+      "Product launches",
+      "Conferences and summits",
+      "Award ceremonies and gala dinners",
+      "Cultural festivals",
     ],
     theme: "magenta",
   },
@@ -146,9 +149,9 @@ export const services: Service[] = [
     description:
       "We plan, place, and manage traditional media campaigns that extend your brand messaging and maximise reach at every stage of the consumer journey.",
     bullets: [
-      "Television and radio campaign planning & buying",
+      "Television and radio campaign planning and buying",
       "Print media strategy and placement",
-      "Media schedule development & audience targeting",
+      "Media schedule development and audience targeting",
       "Integrated campaign management",
     ],
     theme: "brown",
@@ -161,10 +164,11 @@ export const services: Service[] = [
     description:
       "We design and deploy OOH campaigns that make your brand unmissable in the environments where your audience lives, works, and moves.",
     bullets: [
-      "Billboard and large-format outdoor",
+      "Billboard and large-format outdoor advertising",
       "Transit and commuter media placements",
-      "Street furniture, mall & point-of-sale OOH",
-      "Digital OOH, site selection & media buying",
+      "Street furniture, mall, and point-of-sale OOH",
+      "Digital OOH and programmatic outdoor",
+      "OOH strategy, site selection, and media buying",
     ],
     theme: "teal",
   },
@@ -175,12 +179,15 @@ export const services: Service[] = [
     shortDescription:
       "Turning online attention into engagement, leads and sales.",
     description:
-      "We build and manage digital campaigns that keep your brand visible and competitive, turning online attention into engagement, leads, and long-term relationships.",
+      "We build and manage digital marketing campaigns that help your brand stay visible, relevant, and competitive across the platforms where your audience spends their time.",
     bullets: [
-      "Social media & content marketing",
-      "Paid digital & display advertising",
-      "Influencer & creator marketing",
-      "Email, CRM & performance reporting",
+      "Social media marketing",
+      "Display marketing",
+      "Performance tracking and reporting",
+      "Email marketing and CRM campaigns",
+      "Influencer and creator marketing",
+      "Paid digital advertising",
+      "Content marketing and creative production",
     ],
     theme: "ink2",
   },

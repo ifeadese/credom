@@ -74,18 +74,19 @@ CSS = r"""
     .icon-btn svg { width: 18px; height: 18px; }
 
     /* HOME HERO */
-    .hero { position: relative; overflow: hidden; background: #FFFFFF; color: #201D1B; border-bottom: 1px solid #E4DDD2; }
-    .hero-photo { position: absolute; top: 0; right: 0; width: 44%; height: 100%; border-left: 1px solid #E4DDD2; background: #F0EBE3; }
+    .hero { position: relative; overflow: hidden; background: #201D1B; color: #FAF7F2; min-height: 820px; display: flex; align-items: flex-end; }
+    .hero-photo { position: absolute; top: 0; right: 0; width: 52%; height: 100%; }
     .hero-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 62% center; }
-    .hero-inner { position: relative; z-index: 2; padding-top: 150px; padding-bottom: 140px; max-width: 760px; }
-    .hero h1 { font-size: 118px; line-height: 0.9; letter-spacing: -0.015em; margin-top: 26px; }
-    .hero .sub { font-family: 'Rokkitt', Georgia, serif; font-weight: 600; font-size: 34px; color: #B87D1E; margin-top: 22px; }
-    .hero .lede { max-width: 560px; margin-top: 26px; }
-    .hero-cta { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 40px; }
-    .hero-mobile-photo { display: none; }
-    .statement-open { background: #FAF7F2; padding: 130px 0; }
-    .statement-open p { font-family: 'Rokkitt', Georgia, serif; font-weight: 700; font-size: 84px; line-height: 0.96; letter-spacing: -0.02em; color: #201D1B; max-width: 1100px; }
-    .statement-open p span { color: #D89A2E; }
+    .hero-photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, #201D1B 0%, rgba(32,29,27,0.55) 38%, rgba(32,29,27,0.15) 70%, rgba(32,29,27,0.35) 100%), linear-gradient(180deg, rgba(32,29,27,0.2) 0%, rgba(32,29,27,0) 40%, rgba(32,29,27,0.85) 100%); }
+    .hero-ring { position: absolute; width: 640px; height: 640px; right: 8%; top: 12%; border: 1px solid rgba(216,154,46,0.35); border-radius: 50%; pointer-events: none; }
+    .hero-inner { position: relative; z-index: 2; padding-top: 140px; padding-bottom: 88px; width: 100%; }
+    .hero h1 { font-size: 120px; line-height: 0.88; letter-spacing: -0.03em; max-width: 1000px; margin-top: 28px; }
+    .hero h1 em { font-style: normal; color: #D89A2E; }
+    .hero-bottom { display: flex; justify-content: space-between; align-items: flex-end; gap: 40px; margin-top: 56px; }
+    .hero-bottom .lede { max-width: 520px; }
+    .hero-cta { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 30px; }
+    .scroll-cue { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #8A8079; font-weight: 700; display: flex; flex-direction: column; gap: 8px; align-items: flex-start; }
+    .scroll-cue svg { width: 22px; height: 22px; color: #D89A2E; }
 
     /* INTRO */
     .intro-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 80px; align-items: end; }
@@ -248,14 +249,17 @@ CSS = r"""
       .nav-inner { padding: 14px 20px; }
       .nav-links { display: none; }
       .nav-mobile { display: flex; }
-      .hero-photo { display: none; }
-      .hero-mobile-photo { display: block; aspect-ratio: 4 / 3; width: 100%; object-fit: cover; object-position: 62% center; border-top: 1px solid #E4DDD2; }
-      .hero-inner { padding-top: 64px; padding-bottom: 56px; max-width: none; }
-      .hero h1 { font-size: 60px; line-height: 0.92; margin-top: 20px; }
-      .hero .sub { font-size: 24px; }
+      .hero { min-height: 0; display: block; }
+      .hero-photo { position: relative; width: 100%; height: 300px; }
+      .hero-photo::after { background: linear-gradient(180deg, rgba(32,29,27,0.15) 0%, rgba(32,29,27,0) 40%, #201D1B 100%); }
+      .hero-ring { display: none; }
+      .hero-inner { padding-top: 12px; padding-bottom: 64px; }
+      .hero h1 { font-size: 50px; line-height: 0.92; margin-top: 18px; }
+      .hero-bottom { flex-direction: column; align-items: flex-start; gap: 28px; margin-top: 28px; }
       .hero-cta .btn { width: 100%; }
-      .statement-open { padding: 72px 0; }
-      .statement-open p { font-size: 42px; }
+      .scroll-cue { display: none; }
+      .intro-grid { grid-template-columns: minmax(0, 1fr); gap: 32px; }
+      .intro h2 { font-size: 60px; }
       .statement { padding: 80px 0; }
       .statement .mark { font-size: 170px; right: -6vw; bottom: -0.3em; }
       .statement-grid { grid-template-columns: minmax(0, 1fr); gap: 32px; }
@@ -471,20 +475,29 @@ def home():
     return nav("Home") + f"""
 <section class="hero">
   <div class="hero-photo"><img src="hero.jpg" alt="A guest in sunglasses in front of a glowing sign at a live brand event"></div>
-  <div class="wrap">
-    <div class="hero-inner">
-      <span class="eyebrow">Integrated Brand Experience Agency</span>
-      <h1>Attention<br>Is Earned.</h1>
-      <p class="sub">Experience Makes It Last.</p>
-      <p class="lede">CREDOM transforms ideas into immersive activations, strategic experiences, and memorable brand moments designed to capture attention and leave lasting impact.</p>
-      <div class="hero-cta"><a href="#" class="btn">Schedule a Chat</a><a href="#" class="btn btn-outline">Explore Services</a></div>
+  <div class="hero-ring"></div>
+  <div class="wrap hero-inner">
+    <span class="eyebrow gold">Integrated Brand Experience Agency</span>
+    <h1>We create moments people don't just attend; <em>they remember.</em></h1>
+    <div class="hero-bottom">
+      <div>
+        <p class="lede">CREDOM transforms ideas into immersive activations, strategic experiences, and memorable brand moments designed to capture attention and leave lasting impact.</p>
+        <div class="hero-cta"><a href="#" class="btn">Schedule a Chat</a><a href="#" class="btn btn-outline">Explore Services</a></div>
+      </div>
+      <div class="scroll-cue">Explore CREDOM {DOWN}</div>
     </div>
   </div>
-  <img class="hero-mobile-photo" src="hero.jpg" alt="">
 </section>
 
-<section class="statement-open">
-  <div class="wrap"><p>We create moments people don't just attend; <span>they remember.</span></p></div>
+<section class="section intro" style="background:#FAF7F2;">
+  <div class="wrap intro-grid">
+    <h2>Attention<br>Is <span>Earned.</span><br>Experience<br>Makes It Last.</h2>
+    <div class="intro-copy">
+      <p class="lede">From live activations to premium corporate experiences, we combine creativity, strategy, and seamless execution to help brands connect with people in meaningful ways.</p>
+      <p class="lede" style="font-weight:700;color:#201D1B;">The strongest brand moments aren't simply communicated. They're experienced.</p>
+      <a href="#" class="case-link" style="align-self:flex-start;margin-top:6px;">About CREDOM {ARROW}</a>
+    </div>
+  </div>
 </section>
 
 <section class="section" style="background:#F0EBE3;">

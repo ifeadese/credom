@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Container from "@/components/Container";
 import Eyebrow from "@/components/Eyebrow";
 import ContactForm from "@/components/ContactForm";
+import { contactDetails } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -18,17 +19,26 @@ function SidebarLabel({ children }: { children: React.ReactNode }) {
   );
 }
 
+const sidebarLinkClass =
+  "text-[17px] font-semibold text-ink transition-colors hover:text-gold-deep";
+
 export default function ContactPage() {
   return (
     <>
       {/* HERO */}
-      <section className="border-b border-line bg-white pb-[clamp(60px,8vw,100px)] pt-[clamp(70px,9vw,120px)] text-ink">
-        <Container>
+      <section className="relative overflow-hidden border-b border-line bg-white pb-[clamp(60px,8vw,100px)] pt-[clamp(70px,9vw,120px)] text-ink">
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -bottom-[0.2em] -right-[1vw] select-none font-display text-[clamp(180px,26vw,380px)] font-black leading-[0.8] tracking-[-0.04em] text-gold/[0.09]"
+        >
+          MAGIC
+        </div>
+        <Container className="relative">
           <Eyebrow className="mb-6">Let&apos;s Talk</Eyebrow>
-          <h1 className="m-0 mb-[26px] font-display text-[clamp(52px,9vw,120px)] font-extrabold leading-[0.9] tracking-[-0.015em] text-ink">
-            From Insight
+          <h1 className="m-0 mb-[26px] font-display text-[clamp(76px,10.4vw,150px)] font-extrabold leading-[0.8] tracking-[-0.035em] text-ink">
+            Let&apos;s Make
             <br />
-            To Impact.
+            <span className="text-gold">MAGIC.</span>
           </h1>
           <p className="m-0 max-w-[560px] text-[19px] leading-[1.7] text-body-ink">
             Tell us about the moment you want to create. We&apos;ll bring the
@@ -49,23 +59,26 @@ export default function ContactPage() {
           </h2>
           <div className="mb-7">
             <SidebarLabel>Email</SidebarLabel>
-            <a
-              href="mailto:hello@credomlimited.com"
-              className="text-[17px] font-semibold text-ink transition-colors hover:text-gold-deep"
-            >
-              hello@credomlimited.com
+            <a href={`mailto:${contactDetails.email}`} className={sidebarLinkClass}>
+              {contactDetails.email}
+            </a>
+          </div>
+          <div className="mb-7">
+            <SidebarLabel>Phone</SidebarLabel>
+            <a href={contactDetails.phoneHref} className={sidebarLinkClass}>
+              {contactDetails.phone}
             </a>
           </div>
           <div className="mb-7">
             <SidebarLabel>Location</SidebarLabel>
             <p className="m-0 text-[16px] leading-[1.7] text-body-ink">
-              Victoria Island,
+              {contactDetails.location[0]}
               <br />
-              Lagos, Nigeria.
+              {contactDetails.location[1]}
             </p>
           </div>
           <div className="border-t border-line-form pt-[26px]">
-            <p className="m-0 font-display text-[22px] font-semibold italic leading-[1.4] text-gold">
+            <p className="m-0 font-display text-[22px] font-semibold italic leading-[1.4] text-gold-deep">
               We create moments people don&apos;t just attend; they remember.
             </p>
           </div>
