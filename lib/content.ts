@@ -54,6 +54,16 @@ export const clients = [
 /** Home — Businesses We've Served case-study cards. */
 export type CaseStudyTheme = "ink" | "gold";
 
+/** One clip in a case-study reel. */
+export type CaseStudyVideo = {
+  /** Portrait 540x960 H.264 MP4 with an AAC audio track; starts muted in the reel. */
+  src: string;
+  /** Poster frame shown before the clip loads (and while paused under reduced motion). */
+  poster: string;
+  /** Description for assistive tech (the slide's accessible name). */
+  alt: string;
+};
+
 export type CaseStudy = {
   client: string;
   category: string;
@@ -61,8 +71,8 @@ export type CaseStudy = {
   description: string[];
   takeaway: string;
   theme: CaseStudyTheme;
-  /** Card image (public path). Swap the placeholder for a real event photo. */
-  image: { src: string; alt: string };
+  /** Clips for the swipeable reel, in swipe order (public/videos/case-studies). */
+  videos: CaseStudyVideo[];
   /** "Read more" destination. */
   href: string;
 };
@@ -102,10 +112,18 @@ export const caseStudies: CaseStudy[] = [
     takeaway:
       "It was more than an EV showcase. It was a glimpse of tomorrow, brought to life today.",
     theme: "ink",
-    image: {
-      src: "/images/case-studies/altdrive-ev-experience.svg",
-      alt: "AltDrive EV Experience 2.0 in Lagos",
-    },
+    videos: [
+      {
+        src: "/videos/case-studies/altdrive-ev-experience-1.mp4",
+        poster: "/images/case-studies/altdrive-ev-experience-1.jpg",
+        alt: "Guests exploring the AltDrive EV Experience 2.0 in Lagos",
+      },
+      {
+        src: "/videos/case-studies/altdrive-ev-experience-2.mp4",
+        poster: "/images/case-studies/altdrive-ev-experience-2.jpg",
+        alt: "Highlights from the AltDrive EV Experience 2.0 in Lagos",
+      },
+    ],
     href: "#",
   },
 ];
