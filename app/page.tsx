@@ -5,6 +5,7 @@ import Eyebrow from "@/components/Eyebrow";
 import Button from "@/components/Button";
 import ServiceCard from "@/components/ServiceCard";
 import CtaBand from "@/components/CtaBand";
+import VideoSwiper from "@/components/VideoSwiper";
 import { services } from "@/lib/services";
 import {
   processSteps,
@@ -27,6 +28,10 @@ const heroImage = {
 };
 
 export default function HomePage() {
+  /* Home shows one case study; the section heading is part of its copy. */
+  const study = caseStudies[0];
+  const studyTheme = caseStudyThemeClasses[study.theme];
+
   return (
     <>
       {/* HERO — ink surface; the photo is a 4:3 band above the copy on phones and a fading right-hand panel from sm up */}
@@ -240,82 +245,75 @@ export default function HomePage() {
         </Container>
       </section>
 
-      {/* WHAT WE'VE DONE — the case study carries the section heading; the client roster closes as a rail */}
-      <section className="flex flex-col bg-paper-2 py-[clamp(80px,10vw,120px)]">
-        <Container>
-          <div className="grid grid-cols-[repeat(auto-fit,minmax(min(320px,100%),1fr))] gap-5">
-            {caseStudies.map((study) => {
-              const t = caseStudyThemeClasses[study.theme];
-              return (
-                <article
-                  key={study.client}
-                  className="grid items-center gap-8 md:grid-cols-[minmax(280px,2fr)_3fr] md:gap-14"
-                >
-                  <div className="relative aspect-[4/3] overflow-hidden rounded-block">
-                    <Image
-                      src={study.image.src}
-                      alt={study.image.alt}
-                      fill
-                      sizes="(min-width: 768px) 40vw, 100vw"
-                      className="object-cover"
-                    />
-                  </div>
-                  {/* Copy sits directly on the section background — no card behind it */}
-                  <div className="flex flex-col gap-[18px] text-ink">
-                    {/* Section heading lives inside the copy column, beside the image */}
-                    <Eyebrow>What we&apos;ve done</Eyebrow>
-                    <h2 className="m-0 font-display text-[clamp(38px,5vw,64px)] font-bold leading-none tracking-[-0.01em] text-ink">
-                      {study.category}
-                    </h2>
-                    {study.description.map((paragraph) => (
-                      <p
-                        key={paragraph}
-                        className={`m-0 text-[16px] leading-[1.7] ${t.body}`}
-                      >
-                        {paragraph}
-                      </p>
-                    ))}
-                    <p className={`m-0 text-[15px] font-bold ${t.takeaway}`}>
-                      {study.takeaway}
-                    </p>
-                    <div className="mt-2">
-                      <Button href={study.href} variant={t.button}>
-                        Read more
-                      </Button>
-                    </div>
-                  </div>
-                </article>
-              );
-            })}
+      {/*
+        WHAT WE'VE DONE — full-bleed split in the About vision/mission pattern:
+        the reel fills the left cell edge to edge, the copy cell pads its inner
+        side with the gutter and its outer side with `edge` so text lines up
+        with the content column; below ~800px the two stack. One study today —
+        the section heading lives in the copy, so a second study would need
+        its own treatment rather than a repeat of this block.
+      */}
+      <section className="grid grid-cols-[repeat(auto-fit,minmax(min(400px,100%),1fr))] bg-paper-2">
+        {/* Portrait clips: a 4:5 band when stacked, full cell height side by side */}
+        <div className="relative aspect-[4/5] md:aspect-auto md:min-h-[560px]">
+          {/* absolute wrapper: Safari mis-sizes percentage heights inside aspect-ratio boxes */}
+          <div className="absolute inset-0">
+            <VideoSwiper
+              videos={study.videos}
+              title={`${study.category} highlights`}
+            />
           </div>
-        </Container>
+        </div>
+        {/* Copy sits directly on the section background — no card behind it */}
+        <div className="flex flex-col justify-center px-gutter py-[clamp(56px,8vw,96px)] text-ink md:py-[clamp(80px,10vw,120px)] md:pr-edge">
+          {/* max-width only bites when the split is stacked and the copy has the full width */}
+          <div className="flex max-w-[560px] flex-col gap-[18px]">
+            {/* Section heading lives inside the copy column, beside the reel */}
+            <Eyebrow>What we&apos;ve done</Eyebrow>
+            <h2 className="m-0 font-display text-[clamp(38px,5vw,64px)] font-bold leading-none tracking-[-0.01em] text-ink">
+              {study.category}
+            </h2>
+            {study.description.map((paragraph) => (
+              <p
+                key={paragraph}
+                className={`m-0 text-[16px] leading-[1.7] ${studyTheme.body}`}
+              >
+                {paragraph}
+              </p>
+            ))}
+            <p className={`m-0 text-[15px] font-bold ${studyTheme.takeaway}`}>
+              {study.takeaway}
+            </p>
+            <div className="mt-2">
+              <Button href={study.href} variant={studyTheme.button}>
+                Read more
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
 
-        {/*
-          Roster closes the section: one logo per row on mobile, reflowing into a
-          hairline rail from md up where three logos fit one line.
-        */}
-        <Container className="mt-12 md:mt-14">
-          <Eyebrow className="mb-[14px]">Businesses we&apos;ve served</Eyebrow>
-          <div className="[--logo-h:30px] md:flex md:items-center md:justify-start md:gap-10 md:border-y md:border-line md:py-[26px] md:[--logo-h:clamp(30px,2.5vw,36px)]">
-            <div className="flex flex-col md:flex-row md:items-center md:gap-14">
-              {clients.map((client, i) => (
-                <div
+      {/*
+        BUSINESSES WE'VE SERVED — its own section, kept tight: eyebrow on the
+        left, logo group on the right, one row; stacks (eyebrow above the
+        logos, logos one per row) below sm. Top hairline only.
+      */}
+      <section className="border-t border-line bg-paper-2 py-[clamp(40px,5vw,64px)]">
+        <Container>
+          <div className="flex items-center justify-between gap-10 [--logo-h:30px] max-sm:flex-col max-sm:items-start max-sm:gap-9 md:[--logo-h:clamp(30px,2.5vw,36px)]">
+            <Eyebrow className="shrink-0">Businesses we&apos;ve served</Eyebrow>
+            {/* justify-end matters when the three logos wrap 2+1 */}
+            <div className="flex flex-wrap items-center gap-x-14 gap-y-9 max-sm:flex-col max-sm:items-start sm:justify-end">
+              {clients.map((client) => (
+                <Image
                   key={client.name}
-                  className={`flex items-center justify-start py-4 md:py-0 ${
-                    i < clients.length - 1
-                      ? "border-b border-line md:border-b-0"
-                      : ""
-                  }`}
-                >
-                  <Image
-                    src={client.logo}
-                    alt={client.name}
-                    width={client.width}
-                    height={client.height}
-                    className="w-auto"
-                    style={{ height: `calc(var(--logo-h) * ${client.scale})` }}
-                  />
-                </div>
+                  src={client.logo}
+                  alt={client.name}
+                  width={client.width}
+                  height={client.height}
+                  className="w-auto"
+                  style={{ height: `calc(var(--logo-h) * ${client.scale})` }}
+                />
               ))}
             </div>
           </div>
