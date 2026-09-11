@@ -6,6 +6,7 @@ import Button from "@/components/Button";
 import ServiceCard from "@/components/ServiceCard";
 import CtaBand from "@/components/CtaBand";
 import VideoSwiper from "@/components/VideoSwiper";
+import Watermark from "@/components/Watermark";
 import { services } from "@/lib/services";
 import {
   processSteps,
@@ -155,12 +156,7 @@ export default function HomePage() {
 
       {/* MOST MARKETING IS IGNORED */}
       <section className="relative overflow-hidden bg-gold py-[clamp(80px,10vw,140px)] text-ink">
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute -bottom-[0.3em] -right-[6vw] select-none font-display text-[clamp(170px,29vw,420px)] font-black leading-[0.8] tracking-[-0.04em] text-ink/[0.07] sm:-bottom-[0.15em] sm:-right-[2vw]"
-        >
-          CREDOM
-        </div>
+        <Watermark word="CREDOM" className="text-ink/[0.07]" />
         <Container className="relative grid grid-cols-1 items-center gap-8 md:grid-cols-[1.1fr_0.9fr] md:gap-[60px]">
           <h2 className="m-0 font-display text-[clamp(68px,8.9vw,128px)] font-extrabold leading-[0.82] tracking-[-0.035em] text-ink">
             <span className="mb-[30px] block font-body text-[12px] font-bold uppercase tracking-[0.18em] text-brown">
