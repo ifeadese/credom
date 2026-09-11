@@ -34,7 +34,7 @@ export default function SchedulePage() {
         <iframe
           src={buildCalendlyEmbedUrl()}
           title="Schedule a Chat"
-          className="h-[900px] w-full bg-white sm:h-[720px]"
+          className="h-[720px] w-full bg-white"
         />
       </section>
     </>
