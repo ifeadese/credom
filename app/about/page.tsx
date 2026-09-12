@@ -25,6 +25,28 @@ const backdropClasses: Record<"gold" | "brown", string> = {
 /** Bento layout for the five principle cards: three across, then two wide. */
 const principleSpanClasses = ["md:col-span-2", "md:col-span-2", "md:col-span-2", "md:col-span-3", "md:col-span-3"];
 
+/**
+ * Decorative laughter portrait behind a vision/mission panel. Greyscale source,
+ * blended with `luminosity` so the panel colour tints it, and masked so it fades
+ * out towards the copy on the left. Purely decorative, so hidden from AT.
+ */
+function LaughterWatermark({ src, position }: { src: string; position: string }) {
+  return (
+    <div
+      aria-hidden="true"
+      className="pointer-events-none absolute inset-y-0 right-0 w-[min(62%,620px)] select-none [mask-image:linear-gradient(to_left,#000_45%,transparent)]"
+    >
+      <Image
+        src={src}
+        alt=""
+        fill
+        sizes="(min-width: 800px) 32vw, 62vw"
+        className={`object-cover opacity-[0.22] mix-blend-luminosity ${position}`}
+      />
+    </div>
+  );
+}
+
 export default function AboutPage() {
   return (
     <>
@@ -66,10 +88,12 @@ export default function AboutPage() {
 
       {/* VISION / MISSION */}
       {/* Full-bleed pair: the outer padding of each panel is the viewport→column distance (`edge`), the inner is the plain gutter; below 800px they stack and both collapse to the gutter */}
+      {/* Each panel carries a laughter-portrait watermark: greyscale stock photo pinned to the panel's outer edge, blended into the panel colour and faded out towards the copy so the statement stays fully legible */}
       <section className="grid grid-cols-[repeat(auto-fit,minmax(min(400px,100%),1fr))]">
-        <div className="flex min-h-[440px] flex-col justify-between gap-7 bg-teal py-[clamp(56px,7vw,90px)] pl-edge pr-gutter text-paper">
-          <Eyebrow className="!text-paper opacity-85">Vision</Eyebrow>
-          <div>
+        <div className="relative flex min-h-[440px] flex-col justify-between gap-7 overflow-hidden bg-teal py-[clamp(56px,7vw,90px)] pl-edge pr-gutter text-paper">
+          <LaughterWatermark src="/images/about/laughter-vision.jpg" position="object-[50%_20%]" />
+          <Eyebrow className="relative !text-paper opacity-85">Vision</Eyebrow>
+          <div className="relative">
             <h2 className="m-0 max-w-[480px] font-display text-[clamp(38px,4vw,56px)] font-bold leading-[0.98] text-white">
               Redefine brand impact in Africa.
             </h2>
@@ -78,9 +102,10 @@ export default function AboutPage() {
             </p>
           </div>
         </div>
-        <div className="flex min-h-[440px] flex-col justify-between gap-7 bg-gold py-[clamp(56px,7vw,90px)] pl-gutter pr-edge text-ink">
-          <Eyebrow className="!text-brown">Mission</Eyebrow>
-          <div>
+        <div className="relative flex min-h-[440px] flex-col justify-between gap-7 overflow-hidden bg-gold py-[clamp(56px,7vw,90px)] pl-gutter pr-edge text-ink">
+          <LaughterWatermark src="/images/about/laughter-mission.jpg" position="object-[50%_25%]" />
+          <Eyebrow className="relative !text-brown">Mission</Eyebrow>
+          <div className="relative">
             <h2 className="m-0 max-w-[480px] font-display text-[clamp(38px,4vw,56px)] font-bold leading-[0.98]">
               Connection that drives growth.
             </h2>

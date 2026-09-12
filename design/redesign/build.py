@@ -167,6 +167,10 @@ CSS = r"""
     .quote-band .rule-gold { border-top: 1px solid #D89A2E; margin-bottom: 40px; width: 96px; }
     .vm { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .vm-card { padding: 90px 70px; min-height: 440px; display: flex; flex-direction: column; justify-content: space-between; gap: 40px; }
+    .vm-card { position: relative; overflow: hidden; }
+    .vm-card > * { position: relative; }
+    .vm-mark { position: absolute; inset: 0 0 0 auto; width: min(62%, 620px); pointer-events: none; -webkit-mask-image: linear-gradient(to left, #000 45%, transparent); mask-image: linear-gradient(to left, #000 45%, transparent); }
+    .vm-mark img { width: 100%; height: 100%; object-fit: cover; opacity: 0.22; mix-blend-mode: luminosity; }
     .vm-card h3 { font-size: 56px; line-height: 0.98; font-weight: 700; max-width: 480px; }
     .vm-card p { font-size: 18px; line-height: 1.7; max-width: 480px; }
     .why { background: #FFFFFF; color: #201D1B; border-bottom: 1px solid #E4DDD2; }
@@ -577,10 +581,12 @@ def about():
 
 <section class="vm">
   <article class="vm-card" style="background:#18827B;color:#FAF7F2;">
+    <div class="vm-mark" aria-hidden="true"><img src="laughter-vision.jpg" alt="" style="object-position:50% 20%;"></div>
     <span class="eyebrow" style="color:#FAF7F2;opacity:0.85;">Vision</span>
     <div><h3>Redefine brand impact in Africa.</h3><p style="margin-top:20px;">To redefine brand impact in Africa through immersive experiences.</p></div>
   </article>
   <article class="vm-card" style="background:#D89A2E;color:#201D1B;">
+    <div class="vm-mark" aria-hidden="true"><img src="laughter-mission.jpg" alt="" style="object-position:50% 25%;"></div>
     <span class="eyebrow" style="color:#5A2A17;">Mission</span>
     <div><h3>Connection that drives growth.</h3><p style="margin-top:20px;">Design and deliver integrated brand experiences that forge deep connections that drive engagement and generate measurable growth.</p><p style="margin-top:14px;">Lead with creative excellence and strategic precision across every market that transcends Africa.</p></div>
   </article>
