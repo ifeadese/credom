@@ -6,8 +6,18 @@ export type ServiceTheme =
   | "teal"
   | "ink2";
 
+/** Line icon shown on the Home preview card (components/ServiceIcon.tsx). */
+export type ServiceIconName =
+  | "strategy"
+  | "activation"
+  | "events"
+  | "broadcast"
+  | "billboard"
+  | "digital";
+
 export type Service = {
   number: string;
+  icon: ServiceIconName;
   /** Full title used on the Services page. */
   title: string;
   /** Shorter title used in the Home preview grid (may differ from `title`). */
@@ -91,6 +101,7 @@ export const serviceThemeClasses: Record<
 export const services: Service[] = [
   {
     number: "01",
+    icon: "strategy",
     title: "Brand Experience Strategy",
     previewTitle: "Brand Experience Strategy",
     shortDescription:
@@ -107,6 +118,7 @@ export const services: Service[] = [
   },
   {
     number: "02",
+    icon: "activation",
     title: "Experiential Marketing & Activation",
     previewTitle: "Experiential Marketing & Activation",
     shortDescription:
@@ -123,6 +135,7 @@ export const services: Service[] = [
   },
   {
     number: "03",
+    icon: "events",
     title: "Corporate Events & Experiences",
     previewTitle: "Corporate Events & Experiences",
     shortDescription:
@@ -142,6 +155,7 @@ export const services: Service[] = [
   },
   {
     number: "04",
+    icon: "broadcast",
     title: "Traditional Media",
     previewTitle: "Traditional Media",
     shortDescription:
@@ -158,6 +172,7 @@ export const services: Service[] = [
   },
   {
     number: "05",
+    icon: "billboard",
     title: "Out-of-Home (OOH) Marketing",
     previewTitle: "Out-of-Home (OOH)",
     shortDescription: "Physical brand presence that makes you unmissable.",
@@ -174,6 +189,7 @@ export const services: Service[] = [
   },
   {
     number: "06",
+    icon: "digital",
     title: "Digital Marketing",
     previewTitle: "Digital Marketing",
     shortDescription:

@@ -86,7 +86,7 @@ export const caseStudyThemeClasses: Record<
     button: "gold" | "outline";
   }
 > = {
-  /* Copy sits on the light section background (no card), so both themes use ink-on-paper text. */
+  /* Copy sits on the card's light paper-2 surface, so both themes use ink-on-paper text. */
   ink: {
     category: "text-gold-deep",
     body: "text-body-ink",
