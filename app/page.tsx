@@ -9,6 +9,7 @@ import LogoMarquee from "@/components/LogoMarquee";
 import Watermark from "@/components/Watermark";
 import ParallaxBackdrop from "@/components/ParallaxBackdrop";
 import { services } from "@/lib/services";
+import { isEnabled } from "@/lib/flags";
 import {
   processSteps,
   clients,
@@ -172,68 +173,72 @@ export default function HomePage() {
         aspect ratio switch together. The copy opens with the study's category
         as H3. One study today; a second
         would need its own treatment rather than a repeat of this block.
+        Gated by the `homeCaseStudy` flag (lib/flags.ts): while it is off the
+        whole section is inert and the logo band follows What We Do directly.
       */}
-      <section className="relative isolate py-[clamp(72px,10vw,120px)]">
-        <ParallaxBackdrop />
-        <Container>
-          <div className="mb-6 md:mb-8">
-            <Eyebrow tone="gold" className="mb-[18px]">
-              What we&apos;ve done
-            </Eyebrow>
-            {/* Same type as the 4D1M heading ("From Insight To Impact.") */}
-            <h2 className="m-0 font-display text-[clamp(48px,6.1vw,88px)] font-extrabold leading-[0.85] tracking-[-0.03em] text-paper">
-              Work That
-              <br />
-              Moved <span className="text-gold">People.</span>
-            </h2>
-            {/* Same treatment as the 4D1M intro paragraph */}
-            <p className="m-0 mt-6 max-w-[760px] text-[18px] leading-[1.7] text-on-dark">
-              From immersive activations to corporate events, these are brand
-              experiences we&apos;ve designed and delivered end to end, each one
-              built to be felt, not just seen, and remembered long after the
-              day.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 overflow-hidden rounded-card border border-gold/40 bg-paper-2 min-[800px]:grid-cols-2">
-            {/* Portrait clips: a 4:5 band when stacked, full cell height side by side */}
-            <div className="relative aspect-[4/5] min-[800px]:aspect-auto min-[800px]:min-h-[560px]">
-              {/* absolute wrapper: Safari mis-sizes percentage heights inside aspect-ratio boxes */}
-              <div className="absolute inset-0">
-                <VideoSwiper
-                  videos={study.videos}
-                  title={`${study.category} highlights`}
-                />
-              </div>
+      {isEnabled("homeCaseStudy") && (
+        <section className="relative isolate py-[clamp(72px,10vw,120px)]">
+          <ParallaxBackdrop />
+          <Container>
+            <div className="mb-6 md:mb-8">
+              <Eyebrow tone="gold" className="mb-[18px]">
+                What we&apos;ve done
+              </Eyebrow>
+              {/* Same type as the 4D1M heading ("From Insight To Impact.") */}
+              <h2 className="m-0 font-display text-[clamp(48px,6.1vw,88px)] font-extrabold leading-[0.85] tracking-[-0.03em] text-paper">
+                Work That
+                <br />
+                Moved <span className="text-gold">People.</span>
+              </h2>
+              {/* Same treatment as the 4D1M intro paragraph */}
+              <p className="m-0 mt-6 max-w-[760px] text-[18px] leading-[1.7] text-on-dark">
+                From immersive activations to corporate events, these are brand
+                experiences we&apos;ve designed and delivered end to end, each one
+                built to be felt, not just seen, and remembered long after the
+                day.
+              </p>
             </div>
-            {/* Copy on the card surface; padding is ServiceCard's scaled up for the larger card */}
-            <div className="flex flex-col justify-center px-6 py-10 text-ink sm:px-12 sm:py-14 lg:px-16 lg:py-20">
-              {/* max-width only bites when the split is stacked and the copy has the full width */}
-              <div className="flex max-w-[560px] flex-col gap-[18px]">
-                {/* Card-sized heading: the half-width cell cannot hold the 4D1M display size; balanced so no line starts on "- Lagos" */}
-                <h3 className="m-0 font-display text-[clamp(38px,5vw,64px)] font-bold leading-none tracking-[-0.01em] text-ink [text-wrap:balance]">
-                  {study.category}
-                </h3>
-                {study.description.map((paragraph) => (
-                  <p
-                    key={paragraph}
-                    className={`m-0 text-[16px] leading-[1.7] ${studyTheme.body}`}
-                  >
-                    {paragraph}
+            <div className="grid grid-cols-1 overflow-hidden rounded-card border border-gold/40 bg-paper-2 min-[800px]:grid-cols-2">
+              {/* Portrait clips: a 4:5 band when stacked, full cell height side by side */}
+              <div className="relative aspect-[4/5] min-[800px]:aspect-auto min-[800px]:min-h-[560px]">
+                {/* absolute wrapper: Safari mis-sizes percentage heights inside aspect-ratio boxes */}
+                <div className="absolute inset-0">
+                  <VideoSwiper
+                    videos={study.videos}
+                    title={`${study.category} highlights`}
+                  />
+                </div>
+              </div>
+              {/* Copy on the card surface; padding is ServiceCard's scaled up for the larger card */}
+              <div className="flex flex-col justify-center px-6 py-10 text-ink sm:px-12 sm:py-14 lg:px-16 lg:py-20">
+                {/* max-width only bites when the split is stacked and the copy has the full width */}
+                <div className="flex max-w-[560px] flex-col gap-[18px]">
+                  {/* Card-sized heading: the half-width cell cannot hold the 4D1M display size; balanced so no line starts on "- Lagos" */}
+                  <h3 className="m-0 font-display text-[clamp(38px,5vw,64px)] font-bold leading-none tracking-[-0.01em] text-ink [text-wrap:balance]">
+                    {study.category}
+                  </h3>
+                  {study.description.map((paragraph) => (
+                    <p
+                      key={paragraph}
+                      className={`m-0 text-[16px] leading-[1.7] ${studyTheme.body}`}
+                    >
+                      {paragraph}
+                    </p>
+                  ))}
+                  <p className={`m-0 text-[15px] font-bold ${studyTheme.takeaway}`}>
+                    {study.takeaway}
                   </p>
-                ))}
-                <p className={`m-0 text-[15px] font-bold ${studyTheme.takeaway}`}>
-                  {study.takeaway}
-                </p>
-                <div className="mt-2">
-                  <Button href={study.href} variant={studyTheme.button}>
-                    Read more
-                  </Button>
+                  <div className="mt-2">
+                    <Button href={study.href} variant={studyTheme.button}>
+                      Read more
+                    </Button>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </Container>
-      </section>
+          </Container>
+        </section>
+      )}
 
       {/*
         BUSINESSES WE'VE SERVED — its own section, kept tight: eyebrow on the

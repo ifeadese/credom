@@ -74,6 +74,7 @@ npm run lint
 - `app/` — routes: `/` (Home), `/about`, `/services`, `/contact`, `/schedule` (Calendly), plus `sitemap.ts` / `robots.ts`.
 - `components/` — `Logo`, `Nav`, `Footer`, and layout primitives (`Button`, `Eyebrow`, `Container`, `CtaBand`, `ImagePlaceholder`, `ServiceCard`, `ContactForm`, `PageHero`).
 - `lib/` — copy/content data (`services.ts`, `content.ts`), the brand palette (`tokens.ts`, the only place hex values live) and integrations (`formbold.ts`, `calendly.ts`).
+- `lib/flags.ts` — feature flags, the one place a section or feature is switched on or off. Add a key with a comment, read it with `isEnabled("key")` where the feature renders; a disabled flag renders nothing (currently `homeCaseStudy` hides the home page "What we've done" case study).
 - Design tokens live in `tailwind.config.ts`, with colours imported from `lib/tokens.ts`; no hardcoded hex in components.
 
 ### Contact form (FormBold)
