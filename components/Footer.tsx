@@ -53,7 +53,7 @@ import Container from "./Container";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-line bg-paper py-8 text-body-ink">
+    <footer className="border-t border-line bg-paper-2 py-8 text-body-ink">
       <Container className="flex flex-col items-center gap-4 text-center min-[480px]:flex-row min-[480px]:justify-between min-[480px]:text-left">
         <span className="text-[13px] text-body-muted">
           &copy; 2026 CREDOM Limited. All rights reserved.

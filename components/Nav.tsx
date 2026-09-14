@@ -79,7 +79,7 @@ export default function Nav() {
             : "absolute"
         } ${
           glass
-            ? "border-line bg-paper/[.88] backdrop-blur-md"
+            ? "border-line bg-paper-2/[.88] backdrop-blur-md"
             : "border-transparent bg-transparent"
         }`}
       >
@@ -87,7 +87,8 @@ export default function Nav() {
           {/* Bar */}
           <div
             className={`flex items-center justify-between gap-3 transition-[padding] duration-300 md:gap-6 ${
-              pinned ? "py-[10px] md:py-3" : "py-[14px] md:py-4"
+              // Taller once pinned (the logo keeps its size; only the bar grows)
+              pinned ? "py-5 md:py-6" : "py-[14px] md:py-4"
             }`}
           >
             {/* Logo scales fluidly between 14px and 17px tall */}
@@ -119,17 +120,17 @@ export default function Nav() {
 
               <Link
                 href="/schedule"
-                className="shrink-0 whitespace-nowrap rounded-btn bg-gold px-[22px] py-[11px] font-body text-sm font-bold tracking-[0.02em] text-ink transition-opacity hover:opacity-90"
+                className="flex h-12 shrink-0 items-center whitespace-nowrap rounded-btn bg-gold px-7 font-body text-[15px] font-bold tracking-[0.02em] text-ink transition-opacity hover:opacity-90"
               >
                 Schedule a Chat
               </Link>
             </div>
 
-            {/* Mobile: CTA pill + hamburger */}
+            {/* Mobile: CTA + hamburger, both at least 44px tall so they are easy to tap */}
             <div className="flex shrink-0 items-center gap-2 min-[400px]:gap-3 md:hidden">
               <Link
                 href="/schedule"
-                className="shrink-0 whitespace-nowrap rounded-btn bg-gold px-3 py-[9px] font-body text-xs font-bold tracking-[0.02em] text-ink transition-opacity hover:opacity-90 min-[400px]:px-[14px] min-[400px]:text-[13px]"
+                className="flex h-11 shrink-0 items-center whitespace-nowrap rounded-btn bg-gold px-3 font-body text-xs font-bold tracking-[0.02em] text-ink transition-opacity hover:opacity-90 min-[400px]:px-4 min-[400px]:text-[13px]"
               >
                 Schedule a Chat
               </Link>
@@ -140,16 +141,16 @@ export default function Nav() {
                 aria-label={open ? "Close menu" : "Open menu"}
                 aria-expanded={open}
                 aria-controls="mobile-nav"
-                className="relative z-50 flex h-10 w-10 cursor-pointer flex-col items-end justify-center gap-[7px] rounded-full"
+                className="relative z-50 flex h-12 w-12 cursor-pointer flex-col items-end justify-center gap-2 rounded-full"
               >
                 <span
                   className={`block h-[2px] origin-center rounded-full transition-all duration-300 ease-in-out ${barColor} ${
-                    open ? "w-7 translate-y-[4.5px] rotate-45" : "w-9"
+                    open ? "w-8 translate-y-[5px] rotate-45" : "w-10"
                   }`}
                 />
                 <span
                   className={`block h-[2px] origin-center rounded-full transition-all duration-300 ease-in-out ${barColor} ${
-                    open ? "w-7 -translate-y-[4.5px] -rotate-45" : "w-7"
+                    open ? "w-8 -translate-y-[5px] -rotate-45" : "w-8"
                   }`}
                 />
               </button>
@@ -190,8 +191,8 @@ export default function Nav() {
         </div>
       </nav>
 
-      {/* Home lets the hero run under the bar; every other page starts below it. */}
-      {!overHero && <div aria-hidden="true" className="h-[76px]" />}
+      {/* Home lets the hero run under the bar; every other page starts below it (spacer = the at-rest bar height, 1px border included) */}
+      {!overHero && <div aria-hidden="true" className="h-[77px] md:h-[81px]" />}
     </>
   );
 }
