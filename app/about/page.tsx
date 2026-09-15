@@ -48,52 +48,46 @@ export default function AboutPage() {
                   {paragraph}
                 </p>
               ))}
+              <p className="m-0 mt-6 border-t border-line pt-[30px] font-display text-[clamp(26px,2.4vw,34px)] font-semibold italic leading-[1.2] text-gold-deep">
+                &ldquo;We believe the most powerful brand experiences are not
+                merely seen or attended, they are felt.&rdquo;
+              </p>
             </div>
           </div>
         </Container>
       </section>
 
-      {/* BELIEF QUOTE */}
-      <section className="bg-paper-2 py-[clamp(72px,8vw,110px)]">
-        <Container>
-          <div className="mb-10 w-24 border-t border-gold" />
-          <blockquote className="m-0 max-w-[1040px] font-display text-[clamp(32px,4vw,58px)] font-semibold italic leading-[1.12] tracking-[-0.01em] text-gold">
-            &ldquo;We believe the most powerful brand experiences are not merely
-            seen or attended, they are felt.&rdquo;
-          </blockquote>
-        </Container>
-      </section>
-
       {/* VISION / MISSION */}
-      {/* Full-bleed pair: the outer padding of each panel is the viewport→column distance (`edge`), the inner is the plain gutter; below 800px they stack and both collapse to the gutter */}
-      <section className="grid grid-cols-[repeat(auto-fit,minmax(min(400px,100%),1fr))]">
-        <div className="flex min-h-[440px] flex-col justify-between gap-7 bg-teal py-[clamp(56px,7vw,90px)] pl-edge pr-gutter text-paper">
-          <Eyebrow className="!text-paper opacity-85">Vision</Eyebrow>
-          <div>
-            <h2 className="m-0 max-w-[480px] font-display text-[clamp(38px,4vw,56px)] font-bold leading-[0.98] text-white">
-              Redefine brand impact in Africa.
-            </h2>
-            <p className="m-0 mt-5 max-w-[480px] text-[18px] leading-[1.7] text-white opacity-[0.92]">
-              To redefine brand impact in Africa through immersive experiences.
-            </p>
+      {/* Two cards inside the content column; below 800px they stack */}
+      <section className="py-[clamp(56px,7vw,90px)]">
+        <Container>
+          <div className="grid grid-cols-[repeat(auto-fit,minmax(min(400px,100%),1fr))] gap-[18px]">
+            <div className="flex min-h-[440px] flex-col justify-between gap-7 rounded-card bg-teal px-[clamp(28px,4vw,56px)] py-[clamp(48px,6vw,72px)] text-paper">
+              <Eyebrow className="!text-paper opacity-85">Vision</Eyebrow>
+              <div>
+                <h2 className="m-0 max-w-[480px] font-display text-[clamp(38px,4vw,56px)] font-bold leading-[0.98] text-white">
+                  Redefine brand impact in Africa.
+                </h2>
+                <p className="m-0 mt-5 max-w-[480px] text-[18px] leading-[1.7] text-white opacity-[0.92]">
+                  By designing immersive live experiences that make people feel a
+                  brand, not just see it.
+                </p>
+              </div>
+            </div>
+            <div className="flex min-h-[440px] flex-col justify-between gap-7 rounded-card bg-gold px-[clamp(28px,4vw,56px)] py-[clamp(48px,6vw,72px)] text-ink">
+              <Eyebrow className="!text-brown">Mission</Eyebrow>
+              <div>
+                <h2 className="m-0 max-w-[480px] font-display text-[clamp(38px,4vw,56px)] font-bold leading-[0.98]">
+                  Connection that drives growth.
+                </h2>
+                <p className="m-0 mt-5 max-w-[480px] text-[18px] leading-[1.7]">
+                  By pairing insight-led strategy with activations that turn
+                  attention into real results.
+                </p>
+              </div>
+            </div>
           </div>
-        </div>
-        <div className="flex min-h-[440px] flex-col justify-between gap-7 bg-gold py-[clamp(56px,7vw,90px)] pl-gutter pr-edge text-ink">
-          <Eyebrow className="!text-brown">Mission</Eyebrow>
-          <div>
-            <h2 className="m-0 max-w-[480px] font-display text-[clamp(38px,4vw,56px)] font-bold leading-[0.98]">
-              Connection that drives growth.
-            </h2>
-            <p className="m-0 mt-5 max-w-[480px] text-[18px] leading-[1.7]">
-              Design and deliver integrated brand experiences that forge deep
-              connections that drive engagement and generate measurable growth.
-            </p>
-            <p className="m-0 mt-[14px] max-w-[480px] text-[18px] leading-[1.7]">
-              Lead with creative excellence and strategic precision across every
-              market that transcends Africa.
-            </p>
-          </div>
-        </div>
+        </Container>
       </section>
 
       {/* WHY CHOOSE US */}
