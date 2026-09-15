@@ -11,31 +11,31 @@ export const processSteps: ProcessStep[] = [
     number: "01",
     label: "Discover",
     description:
-      "We dive deep into your brand, audience, objectives, competitive landscape, and media environment. Before any concept is sketched, we understand what success looks and feels like at every level.",
+      "We gather information on your brand, audience, objectives and market before a single concept is sketched, so we know what success looks like.",
   },
   {
     number: "02",
     label: "Design",
     description:
-      "We develop bold, insight-led concepts and immersive integrated experience strategies that connect your brand story across all marketing channels.",
+      "We plan bold, insight-led concepts and an integrated experience strategy that carries your brand story across every channel.",
   },
   {
     number: "03",
     label: "Develop",
     description:
-      "We plan every detail from logistics, production, and execution frameworks to media scheduling and site selection, ensuring every channel is aligned and deployed with precision.",
+      "We implement every detail, from logistics, production and site selection to media scheduling, so every channel is aligned and ready to go.",
   },
   {
     number: "04",
     label: "Deliver",
     description:
-      "We seamlessly execute every element end-to-end, bringing the campaign to life with the same standard of precision, control, and excellence across every touchpoint.",
+      "We run the campaign end to end, bringing it to life with the same precision and control at every touchpoint.",
   },
   {
     number: "05",
     label: "Measure",
     description:
-      "We evaluate performance across every channel, quantifying reach, engagement, and commercial impact to optimise for future growth.",
+      "We measure reach, engagement and commercial impact across every channel, and use it to sharpen what comes next.",
     highlight: true,
   },
 ];

@@ -3,10 +3,8 @@ import Container from "@/components/Container";
 import Eyebrow from "@/components/Eyebrow";
 import Button from "@/components/Button";
 import ServiceCard from "@/components/ServiceCard";
-import CtaBand from "@/components/CtaBand";
 import VideoSwiper from "@/components/VideoSwiper";
 import LogoMarquee from "@/components/LogoMarquee";
-import Watermark from "@/components/Watermark";
 import ParallaxBackdrop from "@/components/ParallaxBackdrop";
 import { services } from "@/lib/services";
 import {
@@ -161,9 +159,8 @@ export default function HomePage() {
         (ParallaxBackdrop; also behind How We Work and the closing CTA), right
         after the Who we are + What We Do section. Above the card, gold on the photo, the
         "What we've done" eyebrow over the section H2 "Work That / Moved People."
-        (same type and two-line break as the 4D1M heading, "People." in gold)
-        and a short description set like the 4D1M intro, 24px above the card
-        (32px from md). Below it the split card, inset in
+        (same type and two-line break as the 4D1M heading, "Moved People." in
+        gold), 24px above the card (32px from md). Below it the split card, inset in
         the column in the service-card shape (radius 3, 1px gold border at 40%
         framing reel and copy, no shadow, `overflow-hidden` so the reel follows
         the corners; paper-2 surface). The reel fills the left cell flush to
@@ -184,15 +181,9 @@ export default function HomePage() {
             <h2 className="m-0 font-display text-[clamp(48px,6.1vw,88px)] font-extrabold leading-[0.85] tracking-[-0.03em] text-paper">
               Work That
               <br />
-              Moved <span className="text-gold">People.</span>
+              <span className="text-gold">Moved People.</span>
             </h2>
             {/* Same treatment as the 4D1M intro paragraph */}
-            <p className="m-0 mt-6 max-w-[760px] text-[18px] leading-[1.7] text-on-dark">
-              From immersive activations to corporate events, these are brand
-              experiences we&apos;ve designed and delivered end to end, each one
-              built to be felt, not just seen, and remembered long after the
-              day.
-            </p>
           </div>
           <div className="grid grid-cols-1 overflow-hidden rounded-card border border-gold/40 bg-paper-2 min-[800px]:grid-cols-2">
             {/* Portrait clips: a 4:5 band when stacked, full cell height side by side */}
@@ -255,9 +246,9 @@ export default function HomePage() {
       </section>
 
       {/*
-        HOW WE WORK — 4D1M, on the same fixed parallax photo as What we've done
-        (above the logo band) and the closing CTA band (after the gold band
-        below), so its type is set light: paper headings,
+        WHY WORK WITH US — the 4D1M process (eyebrow "Why work with us"),
+        closing with the pitch + CTA, on the same fixed parallax photo as What
+        we've done (above the logo band), so its type is set light: paper headings,
         on-dark body. Steps are glass cards (paper at 6%, blurred photo behind,
         paper hairline border; the -webkit- blur is spelled out because the
         build emits no prefix and Safari before 18 needs it). The Measure card
@@ -268,19 +259,26 @@ export default function HomePage() {
       <section className="relative isolate py-[clamp(72px,10vw,120px)]">
         <ParallaxBackdrop />
         <Container>
-          <div className="max-w-[760px]">
+          <div className="max-w-[900px]">
             <Eyebrow tone="gold" className="mb-[18px]">
-              Our Process &mdash; 4D1M
+              Why work with us
             </Eyebrow>
-            <h2 className="m-0 font-display text-[clamp(48px,6.1vw,88px)] font-extrabold leading-[0.85] tracking-[-0.03em] text-paper">
-              From Insight
-              <br />
-              To <span className="text-gold">Impact.</span>
+            <h2 className="m-0 font-display text-[clamp(48px,6.1vw,88px)] font-extrabold leading-[0.85] tracking-[-0.03em] text-paper [text-wrap:balance]">
+              Our Process From Insight{" "}
+              <span className="text-gold">To Impact.</span>
             </h2>
-            <p className="m-0 mt-6 text-[18px] leading-[1.7] text-on-dark">
-              Great experiences don&apos;t happen by chance. Every campaign
-              follows an intentional yet flexible process that takes ideas from
-              insight to full-spectrum results.
+            <p className="m-0 mt-6 max-w-[760px] text-[18px] leading-[1.7] text-on-dark">
+              Most marketing is ignored. Attention is earned, and experience
+              is what makes it last. So we leave nothing to chance: every
+              campaign follows an intentional yet flexible process, built to
+              deliver results and an experience worth remembering.
+            </p>
+            {/* Short attributed quote, set like the About page's belief line */}
+            <p className="m-0 mt-5 max-w-[760px] font-display text-[clamp(20px,2vw,26px)] font-semibold italic leading-[1.3] text-gold">
+              &ldquo;People will never forget how you made them feel.&rdquo;{" "}
+              <span className="not-italic font-body text-[13px] font-bold uppercase tracking-eyebrow text-on-dark">
+                &mdash; Maya Angelou
+              </span>
             </p>
           </div>
           {/* Steps as a stack of cards: glass over the parallax photo, the Measure step solid gold; same padding so every card's content shares one rail */}
@@ -325,52 +323,25 @@ export default function HomePage() {
               )
             )}
           </div>
-        </Container>
-      </section>
 
-      {/*
-        MOST MARKETING IS IGNORED — gold band between How We Work and the
-        closing CTA. On gold only the dark service colours hold contrast
-        (ink 6.9:1, ink-2 6.1:1, brown 4.8:1; teal and magenta fall to ~2:1),
-        so: brown label and "Ignored.", ink heading and bold paragraph, ink-2
-        lead paragraph, and teal kept for the decorative CREDOM watermark.
-      */}
-      <section className="relative overflow-hidden bg-gold py-[clamp(80px,10vw,140px)] text-ink">
-        <Watermark word="CREDOM" className="text-teal/[0.14]" />
-        <Container className="relative grid grid-cols-1 items-center gap-8 md:grid-cols-[1.1fr_0.9fr] md:gap-[60px]">
-          <h2 className="m-0 font-display text-[clamp(48px,6.1vw,88px)] font-extrabold leading-[0.85] tracking-[-0.03em] text-ink">
-            <span className="mb-[30px] block font-body text-[12px] font-bold uppercase tracking-[0.18em] text-brown">
-              Why experiences matter
-            </span>
-            Most
-            <br />
-            Marketing
-            <br />
-            Is <span className="text-brown">Ignored.</span>
-          </h2>
-          <div className="flex max-w-[460px] flex-col gap-5 text-[17px] leading-[1.7] md:text-[19px]">
-            <p className="m-0 text-ink-2">
-              Consumers scroll past ads. Skip commercials. Forget campaigns.
-            </p>
-            <p className="m-0 font-bold text-ink">
-              But experiences? Experiences create emotion, conversation, and
-              memory. Brands that win today don&apos;t just market to people.
-              They involve them.
-            </p>
+          {/*
+            CLOSING CTA — eyebrow, heading and Schedule a Chat, centred.
+          */}
+          <div className="mx-auto mt-[clamp(80px,10vw,140px)] max-w-[900px] text-center">
+            <Eyebrow tone="gold" className="mb-[18px]">
+              Now it&apos;s your turn
+            </Eyebrow>
+            <h2 className="m-0 mb-8 font-display text-[clamp(48px,6.1vw,88px)] font-extrabold leading-[0.94] tracking-[-0.02em] text-paper">
+              Let&apos;s make something{" "}
+              <span className="text-gold">they&apos;ll remember.</span>
+            </h2>
+            <Button href="/schedule" size="lg" variant="outline-light">
+              Schedule a Chat
+            </Button>
           </div>
         </Container>
       </section>
 
-      {/* CTA */}
-      <CtaBand
-        tone="parallax"
-        heading={
-          <>
-            Let&apos;s make something they&apos;ll{" "}
-            <span className="text-gold">remember.</span>
-          </>
-        }
-      />
     </>
   );
 }

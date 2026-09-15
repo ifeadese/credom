@@ -72,7 +72,7 @@ npm run lint
 
 ### Project structure
 - `app/` — routes: `/` (Home), `/about`, `/services`, `/contact`, `/schedule` (Calendly), plus `sitemap.ts` / `robots.ts`.
-- `components/` — `Logo`, `Nav`, `Footer`, and layout primitives (`Button`, `Eyebrow`, `Container`, `CtaBand`, `ImagePlaceholder`, `ServiceCard`, `ContactForm`, `PageHero`).
+- `components/` — `Logo`, `Nav`, `Footer`, and layout primitives (`Button`, `Eyebrow`, `Container`, `ServiceCard`, `ServiceIcon`, `ContactForm`, `PageHero`, `ParallaxBackdrop`, `LogoMarquee`, `VideoSwiper`, `Watermark`).
 - `lib/` — copy/content data (`services.ts`, `content.ts`), the brand palette (`tokens.ts`, the only place hex values live) and integrations (`formbold.ts`, `calendly.ts`).
 - Design tokens live in `tailwind.config.ts`, with colours imported from `lib/tokens.ts`; no hardcoded hex in components.
 
