@@ -268,11 +268,10 @@ export default function HomePage() {
               <span className="text-gold">To Impact.</span>
             </h2>
             <p className="m-0 mt-6 max-w-[760px] text-[18px] leading-[1.7] text-on-dark">
-              Most marketing is ignored, and experiences worth remembering are
-              rare. Attention has to be earned; experience is what makes it
-              last. Great experiences don&apos;t happen by chance, so every
-              campaign follows an intentional yet flexible process built to
-              produce results while ensuring a memorable experience.
+              Most marketing is ignored. Attention is earned, and experience
+              is what makes it last. So we leave nothing to chance: every
+              campaign follows an intentional yet flexible process, built to
+              deliver results and an experience worth remembering.
             </p>
             {/* Short attributed quote, set like the About page's belief line */}
             <p className="m-0 mt-5 max-w-[760px] font-display text-[clamp(20px,2vw,26px)] font-semibold italic leading-[1.3] text-gold">
