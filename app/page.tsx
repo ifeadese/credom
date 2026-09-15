@@ -159,9 +159,8 @@ export default function HomePage() {
         (ParallaxBackdrop; also behind How We Work and the closing CTA), right
         after the Who we are + What We Do section. Above the card, gold on the photo, the
         "What we've done" eyebrow over the section H2 "Work That / Moved People."
-        (same type and two-line break as the 4D1M heading, "People." in gold)
-        and a short description set like the 4D1M intro, 24px above the card
-        (32px from md). Below it the split card, inset in
+        (same type and two-line break as the 4D1M heading, "Moved People." in
+        gold), 24px above the card (32px from md). Below it the split card, inset in
         the column in the service-card shape (radius 3, 1px gold border at 40%
         framing reel and copy, no shadow, `overflow-hidden` so the reel follows
         the corners; paper-2 surface). The reel fills the left cell flush to
@@ -185,12 +184,6 @@ export default function HomePage() {
               <span className="text-gold">Moved People.</span>
             </h2>
             {/* Same treatment as the 4D1M intro paragraph */}
-            <p className="m-0 mt-6 max-w-[760px] text-[18px] leading-[1.7] text-on-dark">
-              From immersive activations to corporate events, these are brand
-              experiences we&apos;ve designed and delivered end to end, each one
-              built to be felt, not just seen, and remembered long after the
-              day.
-            </p>
           </div>
           <div className="grid grid-cols-1 overflow-hidden rounded-card border border-gold/40 bg-paper-2 min-[800px]:grid-cols-2">
             {/* Portrait clips: a 4:5 band when stacked, full cell height side by side */}
@@ -333,8 +326,7 @@ export default function HomePage() {
           </div>
 
           {/*
-            CLOSING CTA — eyebrow, heading and Schedule a Chat, centred like
-            the old CtaBand it replaces.
+            CLOSING CTA — eyebrow, heading and Schedule a Chat, centred.
           */}
           <div className="mx-auto mt-[clamp(80px,10vw,140px)] max-w-[900px] text-center">
             <Eyebrow tone="gold" className="mb-[18px]">
