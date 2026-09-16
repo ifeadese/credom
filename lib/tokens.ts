@@ -1,8 +1,8 @@
 /**
  * Brand palette — the single source of truth for every hex value in the
  * codebase (DESIGN_SPEC.md §1). `tailwind.config.ts` turns these into
- * utilities; anything that needs a raw value (e.g. the Calendly embed query)
- * reads it from here instead of repeating the literal.
+ * utilities; anything that needs a raw value (e.g. the Cal.com embed's
+ * brand colour) reads it from here instead of repeating the literal.
  */
 export const colors = {
   white: "#FFFFFF",
@@ -39,8 +39,3 @@ export const colors = {
 } as const;
 
 export type ColorToken = keyof typeof colors;
-
-/** `#D89A2E` → `d89a2e`, the form third-party embeds (Calendly) expect. */
-export function hexWithoutHash(token: ColorToken): string {
-  return colors[token].slice(1).toLowerCase();
-}
