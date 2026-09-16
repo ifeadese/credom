@@ -100,7 +100,7 @@ Official CREDOM wordmark as inline SVG (`components/Logo.tsx`), traced from the 
 
 ### 3.4 CONTACT
 1. **Hero** — white, bottom hairline. Eyebrow "Let's Talk"; H1 "Let's Make / **MAGIC.**" (`clamp(76px,10.4vw,150px)`, line 0.8, MAGIC gold); intro paragraph. Faint "MAGIC" watermark (Rokkitt 900, gold at 9%) spanning the section's full width along its bottom edge (`components/Watermark.tsx`).
-2. **Body** — unchanged form (submit button "Send Message"). Sidebar: Email, **Phone** (`+234 807 777 2827`, `tel:` link), **"Prefer to pick a time?"** → "Schedule a 30-minute chat →" linking `/schedule`, Location, then the italic tagline in gold-deep. Details live in `lib/content.ts` `contactDetails`.
+2. **Form + sidebar** — inside the hero section, in the same content column below the intro (`clamp(40px,5vw,64px)` above; no separate body section), a two-column `auto-fit` grid (`minmax(320px,1fr)`, 60px gap, stacked when narrow): the unchanged form (submit button "Send Message") and the "Reach us directly" card. Sidebar: Email, **Phone** (`+234 807 777 2827`, `tel:` link), **"Prefer to pick a time?"** → "Schedule a 30-minute chat →" linking `/schedule`, Location, then the italic tagline in gold-deep. Details live in `lib/content.ts` `contactDetails`.
 
 ### 3.5 SCHEDULE (`/schedule`)
 The destination of every **Schedule a Chat** button (nav pill, Home hero, Home CTA band, Contact sidebar link). Not in the nav link row — the gold pill is its only entry.
