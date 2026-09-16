@@ -71,8 +71,18 @@ function ensureCal(): CalApi {
 }
 
 /**
- * CREDOM's Cal.com booking page, rendered inline. Cal.com sizes the iframe to
- * its content, so the wrapper needs no fixed height.
+ * Cal.com's month-view booker is three fixed columns — meta 280px, calendar
+ * 480px, time slots 280px on frames 1024px and wider (240/480/240 below) —
+ * and it centres that card inside the iframe. Capping the wrapper at the
+ * card's width keeps the frame hugging the card, so its left edge sits on
+ * the column's left edge with the headings instead of floating centred.
+ */
+const BOOKER_MAX_WIDTH = "max-w-[1040px]";
+
+/**
+ * CREDOM's Cal.com booking page, rendered inline and left-aligned to the
+ * content column. Cal.com sizes the iframe to its content, so the wrapper
+ * needs no fixed height.
  */
 export default function CalEmbed() {
   // Strict mode runs effects twice in development; mounting the embed twice
@@ -101,5 +111,10 @@ export default function CalEmbed() {
     });
   }, []);
 
-  return <div id={CONTAINER_ID} className="h-full w-full overflow-scroll" />;
+  return (
+    <div
+      id={CONTAINER_ID}
+      className={`h-full w-full overflow-scroll ${BOOKER_MAX_WIDTH}`}
+    />
+  );
 }
