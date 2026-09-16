@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Container from "@/components/Container";
 import PageHero from "@/components/PageHero";
 import ContactForm from "@/components/ContactForm";
 import Link from "next/link";
@@ -42,11 +41,10 @@ export default function ContactPage() {
             strategy, creativity, and seamless execution to make it happen.
           </>
         }
-      />
-
-      {/* BODY */}
-      <section className="py-[clamp(70px,9vw,110px)]">
-        <Container className="grid grid-cols-[repeat(auto-fit,minmax(min(320px,100%),1fr))] items-start gap-[60px]">
+      >
+        {/* Form + "Reach us directly" card, side by side in the hero's
+            column below the intro (stacked when the column is narrow). */}
+        <div className="grid grid-cols-[repeat(auto-fit,minmax(min(320px,100%),1fr))] items-start gap-[60px]">
           {/* Form */}
           <ContactForm />
 
@@ -81,8 +79,8 @@ export default function ContactPage() {
               </p>
             </div>
           </aside>
-        </Container>
-      </section>
+        </div>
+      </PageHero>
     </>
   );
 }
