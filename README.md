@@ -71,9 +71,9 @@ npm run lint
 ```
 
 ### Project structure
-- `app/` — routes: `/` (Home), `/about`, `/services`, `/contact`, `/schedule` (Calendly), plus `sitemap.ts` / `robots.ts`.
+- `app/` — routes: `/` (Home), `/about`, `/services`, `/contact`, `/schedule` (Cal.com), plus `sitemap.ts` / `robots.ts`.
 - `components/` — `Logo`, `Nav`, `Footer`, and layout primitives (`Button`, `Eyebrow`, `Container`, `ServiceCard`, `ServiceIcon`, `ContactForm`, `PageHero`, `ParallaxBackdrop`, `LogoMarquee`, `VideoSwiper`, `Watermark`).
-- `lib/` — copy/content data (`services.ts`, `content.ts`), the brand palette (`tokens.ts`, the only place hex values live) and integrations (`formbold.ts`, `calendly.ts`).
+- `lib/` — copy/content data (`services.ts`, `content.ts`), the brand palette (`tokens.ts`, the only place hex values live) and integrations (`formbold.ts`, `cal.ts`).
 - Design tokens live in `tailwind.config.ts`, with colours imported from `lib/tokens.ts`; no hardcoded hex in components.
 
 ### Contact form (FormBold)
@@ -81,10 +81,10 @@ npm run lint
 - Client-side validation requires a name and a valid email; a hidden honeypot field backs up FormBold's spam protection.
 - Set the same env var in Vercel's project settings before deploying.
 
-### Schedule a Chat (Calendly)
-- Every "Schedule a Chat" button links to `/schedule`, which renders CREDOM's Calendly event as a plain server-rendered `<iframe>` (no client JS, no dependency). `lib/calendly.ts` holds the event URL and builds the embed URL: brand colours from `lib/tokens.ts`, event-type / landing-page chrome hidden, so only the calendar and time picker show.
-- Calendly's GDPR cookie banner is hidden on purpose (`hide_gdpr_banner=1`): the site sets no cookies of its own and has no consent UI, and the banner would cover the calendar inside the iframe. Revisit if a site-wide consent mechanism is added.
-- Event copy (description, "What to expect") and invitee questions (company, service interest, project notes, phone) are configured on the Calendly event itself, not in this repo.
+### Schedule a Chat (Cal.com)
+- Every "Schedule a Chat" button links to `/schedule`, which renders CREDOM's Cal.com booking (`credomlimited/30min`) as an inline embed. `components/CalEmbed.tsx` is a client component that ports Cal.com's loader snippet: it defines `window.Cal` as a command queue, injects `https://app.cal.com/embed/embed.js` once, and mounts the calendar (month view, slots view on small screens) inside the page hero, below the intro. `lib/cal.ts` holds the event slug, namespace and origin.
+- The embed's brand colour (`cal-brand`, dark theme) is the gold token from `lib/tokens.ts`; `forwardQueryParams` is on, so UTM/query params on `/schedule` reach the booking.
+- Event copy (description, duration) and booking questions are configured on the Cal.com event itself, not in this repo.
 
 ### Deploy (Vercel)
 1. Import the repo into Vercel (framework auto-detected as Next.js).

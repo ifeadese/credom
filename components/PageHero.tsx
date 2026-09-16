@@ -9,19 +9,23 @@ type PageHeroProps = {
   /** Display heading; pass line breaks and the gold span inline. */
   heading: React.ReactNode;
   intro: React.ReactNode;
+  /** Optional content set below the intro, inside the same column. */
+  children?: React.ReactNode;
 };
 
 /**
  * Statement hero shared by Contact and Schedule: white, bottom hairline,
  * eyebrow → oversized Rokkitt H1 → intro paragraph, with a faint gold
  * watermark word spanning the section's full width along its bottom edge
- * (DESIGN_SPEC §3.4 / §3.5).
+ * (DESIGN_SPEC §3.4 / §3.5). Anything passed as children (Schedule's
+ * booking embed) sits below the intro in the same column.
  */
 export default function PageHero({
   eyebrow,
   watermark,
   heading,
   intro,
+  children,
 }: PageHeroProps) {
   return (
     <section className="relative overflow-hidden border-b border-line bg-white pb-[clamp(60px,8vw,100px)] pt-[clamp(70px,9vw,120px)] text-ink">
@@ -34,6 +38,9 @@ export default function PageHero({
         <p className="m-0 max-w-[560px] text-[19px] leading-[1.7] text-body-ink">
           {intro}
         </p>
+        {children ? (
+          <div className="mt-[clamp(40px,5vw,64px)]">{children}</div>
+        ) : null}
       </Container>
     </section>
   );

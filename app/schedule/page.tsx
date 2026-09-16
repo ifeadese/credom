@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
+import CalEmbed from "@/components/CalEmbed";
 import PageHero from "@/components/PageHero";
-import { buildCalendlyEmbedUrl } from "@/lib/calendly";
 import { scheduleIntro } from "@/lib/content";
 
 export const metadata: Metadata = {
@@ -24,19 +24,12 @@ export default function SchedulePage() {
           </>
         }
         intro={scheduleIntro}
-      />
-
-      {/* BODY — Calendly's calendar + time picker, server-rendered as a plain
-          iframe and run edge to edge. Event details and landing-page chrome
-          are hidden; the event description lives on Calendly and reaches
-          invitees on the booking step and in the confirmation email. */}
-      <section className="bg-white">
-        <iframe
-          src={buildCalendlyEmbedUrl()}
-          title="Schedule a Chat"
-          className="h-[720px] w-full bg-white"
-        />
-      </section>
+      >
+        {/* Cal.com's inline embed (calendar + time picker, month view),
+            mounted client-side by `components/CalEmbed.tsx`, in the hero's
+            column below the intro. Cal.com sizes the frame to its content. */}
+        <CalEmbed />
+      </PageHero>
     </>
   );
 }
