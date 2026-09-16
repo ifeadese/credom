@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
-import Script from "next/script";
+import { Suspense } from "react";
 import { Rokkitt, DM_Sans } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import { GoogleTag } from "@/components/analytics/GoogleTag";
 
 const rokkitt = Rokkitt({
   subsets: ["latin"],
@@ -21,9 +22,6 @@ const dmSans = DM_Sans({
 });
 
 const siteUrl = "https://www.credomlimited.com";
-
-/* Google Analytics 4 (gtag.js) measurement ID. */
-const GA_MEASUREMENT_ID = "G-TP0P6BTK06";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -77,6 +75,10 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  // Google Analytics 4 measurement ID (G-…), production only. Read here on
+  // the server so the variable needs no NEXT_PUBLIC_ prefix.
+  const googleAnalyticsId = process.env.GOOGLE_ANALYTICS_ID || undefined;
+
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": ["Organization", "ProfessionalService"],
@@ -114,19 +116,11 @@ export default function RootLayout({
             __html: JSON.stringify(organizationSchema),
           }}
         />
-        {/* Google tag (gtag.js) — loaded via next/script so it's injected once and after hydration. */}
-        <Script
-          src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', '${GA_MEASUREMENT_ID}');
-          `}
-        </Script>
+        {/* useSearchParams bails a prerendered route out to client rendering
+            up to the nearest Suspense boundary; this keeps that contained. */}
+        <Suspense fallback={null}>
+          <GoogleTag id={googleAnalyticsId} />
+        </Suspense>
         {/* overflow-x-clip, not -hidden: `hidden` makes this a scroll container and breaks the nav's sticky. */}
         <div className="flex min-h-screen flex-col overflow-x-clip bg-paper">
           <Nav />
