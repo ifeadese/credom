@@ -9,6 +9,8 @@ const links = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/services", label: "Services" },
+  // RSVP and event passes live on the standalone events app.
+  { href: "https://events.credomlimited.com", label: "Events" },
   { href: "/contact", label: "Contact" },
 ];
 
