@@ -10,7 +10,7 @@ const links = [
   { href: "/about", label: "About" },
   { href: "/services", label: "Services" },
   // RSVP and event passes live on the standalone events app.
-  { href: "https://events.credomlimited.com", label: "Events", external: true },
+  { href: "https://events.credomlimited.com", label: "Events" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -103,14 +103,12 @@ export default function Nav() {
 
             {/* Desktop links */}
             <div className="hidden items-center gap-x-[34px] md:flex">
-              {links.map(({ href, label, external }) => {
+              {links.map(({ href, label }) => {
                 const active = isActive(href);
                 return (
                   <Link
                     key={href}
                     href={href}
-                    target={external ? "_blank" : undefined}
-                    rel={external ? "noopener" : undefined}
                     aria-current={active ? "page" : undefined}
                     className={`relative py-[6px] font-body text-sm font-semibold tracking-[0.04em] transition-colors duration-300 hover:text-gold ${textColor}`}
                   >
@@ -172,14 +170,12 @@ export default function Nav() {
             <div className="overflow-hidden">
               <div className="pb-5 pt-1">
                 <div className="flex flex-col gap-3 border-t border-gold/40 pt-4">
-                  {links.map(({ href, label, external }) => {
+                  {links.map(({ href, label }) => {
                     const active = isActive(href);
                     return (
                       <Link
                         key={href}
                         href={href}
-                        target={external ? "_blank" : undefined}
-                        rel={external ? "noopener" : undefined}
                         tabIndex={open ? 0 : -1}
                         aria-current={active ? "page" : undefined}
                         className={`rounded-xl px-3 py-2 text-left font-body text-base text-ink transition-colors hover:bg-gold/10 ${
