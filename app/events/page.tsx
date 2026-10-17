@@ -4,7 +4,6 @@ import Container from "@/components/Container";
 import EventsEmptyState from "@/components/EventsEmptyState";
 import PageHero from "@/components/PageHero";
 import {
-  EVENTS_APP_URL,
   type PublicEvent,
   formatDayNumber,
   formatMonthShort,
@@ -96,18 +95,13 @@ export default async function EventsPage() {
             <EventsEmptyState
               title="We couldn't load events just now"
               actions={
-                <a
-                  href={EVENTS_APP_URL}
-                  target="_blank"
-                  rel="noopener"
-                  className={primaryAction}
-                >
-                  See events on our events site
-                </a>
+                <Link href="/contact" className={secondaryAction}>
+                  Get in touch
+                </Link>
               }
             >
-              Please try again in a moment. You can also find every open
-              event, and RSVP, on events.credomlimited.com.
+              Please refresh in a moment. If you&apos;re trying to RSVP and
+              this keeps happening, let us know and we&apos;ll save your place.
             </EventsEmptyState>
           )}
 
@@ -176,11 +170,8 @@ function EventCard({ event }: { event: PublicEvent }) {
         )}
       </dl>
       <div className="mt-auto px-6 pb-6 sm:px-[30px] sm:pb-[30px]">
-        {/* RSVP lives on the events app, which owns guest data and passes */}
-        <a
-          href={`${EVENTS_APP_URL}/${encodeURIComponent(event.slug)}`}
-          target="_blank"
-          rel="noopener"
+        <Link
+          href={`/events/${encodeURIComponent(event.slug)}`}
           className={`block rounded-btn px-6 py-4 text-center font-body text-[15px] font-bold transition-opacity ${
             open
               ? "bg-gold text-ink hover:opacity-90"
@@ -188,7 +179,7 @@ function EventCard({ event }: { event: PublicEvent }) {
           }`}
         >
           {open ? "RSVP" : "View event"}
-        </a>
+        </Link>
       </div>
     </li>
   );

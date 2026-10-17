@@ -1,8 +1,8 @@
 /**
  * "No events yet" panel: a fanned stack of blank event passes with a gold
  * sparkle, then a heading, a line of copy and any actions passed as children.
- * The events app (events.credomlimited.com) home page carries a copy of this
- * component so the two empty states read as one product; keep them in step.
+ * The internal events app's home page carries a copy of this component so
+ * the two empty states read as one product; keep them in step.
  */
 export default function EventsEmptyState({
   title,
